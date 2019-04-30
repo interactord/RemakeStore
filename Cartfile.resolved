@@ -1,0 +1,4 @@
+github "ReactiveX/RxSwift" "4.5.0"
+github "RxSwiftCommunity/RxFlow" "2.2.0"
+github "SwiftyBeaver/SwiftyBeaver" "1.7.0"
+github "Swinject/Swinject" "2.6.0"
