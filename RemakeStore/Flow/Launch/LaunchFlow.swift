@@ -11,48 +11,61 @@ import RxFlow
 
 class LaunchFlow {
 
-	// MARK: - Private
+  // MARK: - Private
 
-	private let rootViewController: UINavigationController = {
-		let navController = UINavigationController()
-		navController.setNavigationBarHidden(true, animated: false)
-		return navController
-	}()
+  private let rootViewController: UINavigationController = {
+    let navController = UINavigationController()
+    navController.setNavigationBarHidden(true, animated: false)
+    return navController
+  }()
 
-	// MARK: - Initializing
-	init() {
-	}
+  // MARK: - Initializing
+  init() {
+  }
 
-	deinit {
-	  print("\(type(of: self)): \(#function)")
-	}
+  deinit {
+    print("\(type(of: self)): \(#function)")
+  }
 
 }
 
 extension LaunchFlow: Flow {
 
-	// MARK: - Protocol Variables
-	public var root: Presentable {
-		return rootViewController
-	}
+  // MARK: - Protocol Variables
+  public var root: Presentable {
+    return rootViewController
+  }
 
-	// MARK: - functions for protocol
-	public func navigate(to step: Step) -> FlowContributors {
+  // MARK: - functions for protocol
+  public func navigate(to step: Step) -> FlowContributors {
 
-		guard let step = step as? AppStep else {
-			return .none
-		}
+    guard let step = step as? AppStep else {
+      return .none
+    }
 
-		switch step {
-		case .dashboardIsRequired:
-			return navigateToDashboard()
-		default:
-			return .none
-		}
+    switch step {
+    case .dashboardIsRequired:
+      return navigateToDashboard()
+    default:
+      return .none
+    }
 
-	}
+  }
 
-	private func navigateToDashboard() -> FlowContributors {
-		return .none
-	}
+  private func navigateToDashboard() -> FlowContributors {
+
+    let dashboardFlow = DashboardFlow()
+
+    Flows.whenReady(flow1: dashboardFlow) { [unowned self] root in
+      DispatchQueue.main.async {
+        self.rootViewController.pushViewController(root, animated: false)
+      }
+    }
+
+    return .one(
+      flowContributor: .contribute(
+        withNextPresentable: dashboardFlow,
+        withNextStepper: OneStepper(withSingleStep: AppStep.dashboardIsRequired)
+      ))
+  }
 }
