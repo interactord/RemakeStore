@@ -9,16 +9,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  lazy var rootFlow = RootFlow()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     window = UIWindow()
 
-    let viewController = UIViewController()
-    viewController.view.backgroundColor = .red
-    window?.rootViewController = viewController
+    guard let window = window else {
+      return false
+    }
 
-    window?.makeKeyAndVisible()
+    rootFlow.onDebugNavigate()
+    rootFlow.start(with: window)
 
     return true
   }
