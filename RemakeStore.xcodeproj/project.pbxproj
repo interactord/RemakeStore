@@ -21,6 +21,7 @@
 		29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B802278D1A200A3A4B8 /* RxTest.framework */; };
 		29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B822278D1C900A3A4B8 /* RxBlocking.framework */; };
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
+		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		29602B7A2278D16300A3A4B8 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		29602B802278D1A200A3A4B8 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		F426E98B13FD64316E62EC01 /* RootFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		2910AC322278B5E500EC7A77 /* RemakeStore */ = {
 			isa = PBXGroup;
 			children = (
+				295A82692278E4EE00F011C7 /* Flow */,
 				29602B862278D26900A3A4B8 /* zResource */,
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
 			);
@@ -114,6 +117,30 @@
 				2910AC4A2278B5E600EC7A77 /* Info.plist */,
 			);
 			path = RemakeStoreTests;
+			sourceTree = "<group>";
+		};
+		295A82692278E4EE00F011C7 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				295A826B2278E4F600F011C7 /* Launch */,
+				295A826A2278E4EE00F011C7 /* Dashboard */,
+				F426E98B13FD64316E62EC01 /* RootFlow.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		295A826A2278E4EE00F011C7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		295A826B2278E4F600F011C7 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		29602B712278D0EE00A3A4B8 /* Frameworks */ = {
@@ -330,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
+				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
