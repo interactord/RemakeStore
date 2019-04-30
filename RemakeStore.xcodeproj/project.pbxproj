@@ -21,7 +21,10 @@
 		29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B802278D1A200A3A4B8 /* RxTest.framework */; };
 		29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B822278D1C900A3A4B8 /* RxBlocking.framework */; };
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
+		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
 		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
+		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
+		F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,10 @@
 		29602B7A2278D16300A3A4B8 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		29602B802278D1A200A3A4B8 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		F426E57862B529221A8E6C09 /* LaunchStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStepper.swift; sourceTree = "<group>"; };
+		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		F426E98B13FD64316E62EC01 /* RootFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
+		F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				295A826B2278E4F600F011C7 /* Launch */,
 				295A826A2278E4EE00F011C7 /* Dashboard */,
 				F426E98B13FD64316E62EC01 /* RootFlow.swift */,
+				F426E80E6DB9428149B9B55D /* AppStep.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -139,6 +146,8 @@
 		295A826B2278E4F600F011C7 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */,
+				F426E57862B529221A8E6C09 /* LaunchStepper.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -358,6 +367,9 @@
 			files = (
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
 				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
+				F426E98400CE2377738F6D39 /* AppStep.swift in Sources */,
+				F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */,
+				F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

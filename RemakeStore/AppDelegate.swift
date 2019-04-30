@@ -11,7 +11,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   lazy var rootFlow = RootFlow()
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     window = UIWindow()
@@ -21,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     rootFlow.onDebugNavigate()
-    return rootFlow.start(with: window)
+    rootFlow.start(with: window)
+
+    return true
   }
 
 }
