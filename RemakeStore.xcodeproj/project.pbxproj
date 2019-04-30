@@ -21,6 +21,8 @@
 		29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B802278D1A200A3A4B8 /* RxTest.framework */; };
 		29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B822278D1C900A3A4B8 /* RxBlocking.framework */; };
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
+		29D72D172278FD6C00909EFD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D162278FD6C00909EFD /* Logger.swift */; };
+		29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D182278FD9900909EFD /* LoggerLevel.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
 		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
@@ -54,6 +56,8 @@
 		29602B7A2278D16300A3A4B8 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		29602B802278D1A200A3A4B8 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		29D72D162278FD6C00909EFD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		29D72D182278FD9900909EFD /* LoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerLevel.swift; sourceTree = "<group>"; };
 		F426E57862B529221A8E6C09 /* LaunchStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStepper.swift; sourceTree = "<group>"; };
 		F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
 		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		2910AC322278B5E500EC7A77 /* RemakeStore */ = {
 			isa = PBXGroup;
 			children = (
+				29D72D142278FD5500909EFD /* Services */,
 				295A82692278E4EE00F011C7 /* Flow */,
 				29602B862278D26900A3A4B8 /* zResource */,
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
@@ -177,6 +182,31 @@
 				2910AC3F2278B5E600EC7A77 /* Info.plist */,
 			);
 			path = zResource;
+			sourceTree = "<group>";
+		};
+		29D72D142278FD5500909EFD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				29D72D1C2278FE8E00909EFD /* Provider */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		29D72D152278FD6000909EFD /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				29D72D162278FD6C00909EFD /* Logger.swift */,
+				29D72D182278FD9900909EFD /* LoggerLevel.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		29D72D1C2278FE8E00909EFD /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				29D72D152278FD6000909EFD /* Logger */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +402,8 @@
 				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
 				F426E98400CE2377738F6D39 /* AppStep.swift in Sources */,
 				F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */,
+				29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */,
+				29D72D172278FD6C00909EFD /* Logger.swift in Sources */,
 				F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */,
 				F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */,
 			);
