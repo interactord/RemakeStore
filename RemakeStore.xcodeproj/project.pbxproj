@@ -23,7 +23,10 @@
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
 		29D72D172278FD6C00909EFD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D162278FD6C00909EFD /* Logger.swift */; };
 		29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D182278FD9900909EFD /* LoggerLevel.swift */; };
+		29D72D202278FF2900909EFD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D1F2278FF2900909EFD /* AppLogger.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
+		F426E4B9C3A72B0440282238 /* AppLoggerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */; };
+		F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */; };
 		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
 		F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */; };
@@ -58,10 +61,13 @@
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		29D72D162278FD6C00909EFD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		29D72D182278FD9900909EFD /* LoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerLevel.swift; sourceTree = "<group>"; };
+		29D72D1F2278FF2900909EFD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		F426E57862B529221A8E6C09 /* LaunchStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStepper.swift; sourceTree = "<group>"; };
 		F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
 		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		F426E98B13FD64316E62EC01 /* RootFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
+		F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLoggerConfig.swift; sourceTree = "<group>"; };
+		F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLoggerSpec.swift; sourceTree = "<group>"; };
 		F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +193,7 @@
 		29D72D142278FD5500909EFD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				29D72D1D2278FF1200909EFD /* Plaform */,
 				29D72D1C2278FE8E00909EFD /* Provider */,
 			);
 			path = Services;
@@ -207,6 +214,24 @@
 				29D72D152278FD6000909EFD /* Logger */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		29D72D1D2278FF1200909EFD /* Plaform */ = {
+			isa = PBXGroup;
+			children = (
+				29D72D1E2278FF2100909EFD /* Logger */,
+			);
+			path = Plaform;
+			sourceTree = "<group>";
+		};
+		29D72D1E2278FF2100909EFD /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				29D72D1F2278FF2900909EFD /* AppLogger.swift */,
+				F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */,
+				F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,8 +429,10 @@
 				F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */,
 				29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */,
 				29D72D172278FD6C00909EFD /* Logger.swift in Sources */,
+				29D72D202278FF2900909EFD /* AppLogger.swift in Sources */,
 				F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */,
 				F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */,
+				F426E4B9C3A72B0440282238 /* AppLoggerConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
+				F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
