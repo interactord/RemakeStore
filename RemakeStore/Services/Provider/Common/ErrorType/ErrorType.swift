@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol ErrorType {
+protocol ErrorType: Error {
 	var raw: Error? { get }
 	var messageKey: String { get }
 }
