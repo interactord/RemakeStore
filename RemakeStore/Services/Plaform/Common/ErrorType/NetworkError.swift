@@ -29,4 +29,5 @@ extension NetworkError: ErrorType {
 	var messageKey: String {
 		return Constant.translationKey
 	}
+
 }
