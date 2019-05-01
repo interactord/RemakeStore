@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290D7EC5227978370099A3C0 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290D7EC4227978370099A3C0 /* Swifter.framework */; };
+		290D7EC72279789C0099A3C0 /* StubServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290D7EC62279789C0099A3C0 /* StubServer.swift */; };
 		2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC332278B5E500EC7A77 /* AppDelegate.swift */; };
 		2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3A2278B5E600EC7A77 /* Assets.xcassets */; };
 		2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */; };
@@ -26,8 +28,10 @@
 		29D72D202278FF2900909EFD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D1F2278FF2900909EFD /* AppLogger.swift */; };
 		29F4F64722790A98000C39BB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EFFC1D9AE1B00CD9E7D6 /* HTTPMethod.swift */; };
 		F426E1FFCCDBF8B3D02B9AF9 /* NetworkErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E8009428CC5B0CD6D62A /* NetworkErrorSpec.swift */; };
+		F426E22165913F3F00D62EC5 /* URLSessionNetworkAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF35F8ED7BA0DD46290A /* URLSessionNetworkAdapterSpec.swift */; };
 		F426E2D16371729BA56BC4F6 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5E5B7BCEC9332A852F6 /* EndPoint.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
+		F426E367FC78FFDE59E28441 /* NetworkActivityMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */; };
 		F426E4B9C3A72B0440282238 /* AppLoggerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */; };
 		F426E5A51E2AC17603904E16 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5EDA4EC75319614BEE6 /* HttpClient.swift */; };
 		F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */; };
@@ -38,6 +42,7 @@
 		F426E74EE7D8CA4B935CA726 /* ResultContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E3C727D25A03938E49DC /* ResultContent.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
 		F426EA7A6BBBB4ADD4ACD6FB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E6FC13411F25D7D84D0B /* NetworkError.swift */; };
+		F426EBDA0D3DF0C1AEADE24A /* URLSessionNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC473876527E47B3DABE /* URLSessionNetworkAdapter.swift */; };
 		F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */; };
 		F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB47164522671E91140D /* AppResponseSpec.swift */; };
 		F426ECCAC6E7A1676AFDFAA6 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED56522A8E1BD4674592 /* Deserializable.swift */; };
@@ -59,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290D7EC4227978370099A3C0 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
+		290D7EC62279789C0099A3C0 /* StubServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubServer.swift; sourceTree = "<group>"; };
 		2910AC302278B5E500EC7A77 /* RemakeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemakeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2910AC332278B5E500EC7A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2910AC3A2278B5E600EC7A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +84,7 @@
 		29D72D162278FD6C00909EFD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		29D72D182278FD9900909EFD /* LoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerLevel.swift; sourceTree = "<group>"; };
 		29D72D1F2278FF2900909EFD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityMock.swift; sourceTree = "<group>"; };
 		F426E187F087F8CF0FF42BCE /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		F426E1D794DC634E2262B1BB /* AppResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		F426E1E5F327832D3AB24EB7 /* NetworkActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivity.swift; sourceTree = "<group>"; };
@@ -97,7 +105,9 @@
 		F426EB47164522671E91140D /* AppResponseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponseSpec.swift; sourceTree = "<group>"; };
 		F426EC0C7BE5D6771C41711E /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
+		F426EC473876527E47B3DABE /* URLSessionNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkAdapter.swift; sourceTree = "<group>"; };
 		F426ED56522A8E1BD4674592 /* Deserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
+		F426EF35F8ED7BA0DD46290A /* URLSessionNetworkAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkAdapterSpec.swift; sourceTree = "<group>"; };
 		F426EFFC1D9AE1B00CD9E7D6 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290D7EC5227978370099A3C0 /* Swifter.framework in Frameworks */,
 				29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */,
 				29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */,
 				29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */,
@@ -164,6 +175,7 @@
 			children = (
 				2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */,
 				2910AC4A2278B5E600EC7A77 /* Info.plist */,
+				F426EED806329A6683AA3D01 /* Stub */,
 			);
 			path = RemakeStoreTests;
 			sourceTree = "<group>";
@@ -199,6 +211,7 @@
 		29602B712278D0EE00A3A4B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				290D7EC4227978370099A3C0 /* Swifter.framework */,
 				29602B822278D1C900A3A4B8 /* RxBlocking.framework */,
 				29602B802278D1A200A3A4B8 /* RxTest.framework */,
 				29602B7A2278D16300A3A4B8 /* Swinject.framework */,
@@ -315,8 +328,18 @@
 			isa = PBXGroup;
 			children = (
 				F426E3E6904543C89B3ED44A /* Response */,
+				F426EE82289C725BE46231A3 /* NetworkAdapter */,
+				F426E57CB806661F5945A76D /* NetworkAcitivy */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F426E57CB806661F5945A76D /* NetworkAcitivy */ = {
+			isa = PBXGroup;
+			children = (
+				F426ED2296CDAB66B748508F /* Mock */,
+			);
+			path = NetworkAcitivy;
 			sourceTree = "<group>";
 		};
 		F426E6201D645C1D62000F86 /* Parser */ = {
@@ -375,12 +398,37 @@
 			path = HTTPErrorHandler;
 			sourceTree = "<group>";
 		};
+		F426ED2296CDAB66B748508F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		F426EE2E7A45874E783D3D1C /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
 				F426E5E5B7BCEC9332A852F6 /* EndPoint.swift */,
 			);
 			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		F426EE82289C725BE46231A3 /* NetworkAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				F426EC473876527E47B3DABE /* URLSessionNetworkAdapter.swift */,
+				F426EF35F8ED7BA0DD46290A /* URLSessionNetworkAdapterSpec.swift */,
+			);
+			path = NetworkAdapter;
+			sourceTree = "<group>";
+		};
+		F426EED806329A6683AA3D01 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				290D7EC62279789C0099A3C0 /* StubServer.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 		F426EF8ED042B1F9E7CFAA9A /* Common */ = {
@@ -420,8 +468,8 @@
 				2910AC402278B5E600EC7A77 /* Sources */,
 				2910AC412278B5E600EC7A77 /* Frameworks */,
 				2910AC422278B5E600EC7A77 /* Resources */,
-				29602B6F2278D09B00A3A4B8 /* SwiftLint Run Script */,
 				29602B702278D0B200A3A4B8 /* Carthage Run Script */,
+				290D7EC32279289D0099A3C0 /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -491,6 +539,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		290D7EC32279289D0099A3C0 /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		29602B6D2278D04700A3A4B8 /* SwiftLint Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,24 +598,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		29602B6F2278D09B00A3A4B8 /* SwiftLint Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftLint Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 		29602B702278D0B200A3A4B8 /* Carthage Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -563,6 +611,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxFlow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Swifter.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -603,6 +652,7 @@
 				F426E7134F9255BC3D9619A6 /* AppResponse.swift in Sources */,
 				F426EE313E837849E0ED9BAF /* ErrorType.swift in Sources */,
 				F426EA7A6BBBB4ADD4ACD6FB /* NetworkError.swift in Sources */,
+				F426EBDA0D3DF0C1AEADE24A /* URLSessionNetworkAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,10 +660,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290D7EC72279789C0099A3C0 /* StubServer.swift in Sources */,
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
 				F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */,
 				F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */,
 				F426E1FFCCDBF8B3D02B9AF9 /* NetworkErrorSpec.swift in Sources */,
+				F426E22165913F3F00D62EC5 /* URLSessionNetworkAdapterSpec.swift in Sources */,
+				F426E367FC78FFDE59E28441 /* NetworkActivityMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

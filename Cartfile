@@ -2,3 +2,4 @@ github "ReactiveX/RxSwift"
 github "RxSwiftCommunity/RxFlow"
 github "SwiftyBeaver/SwiftyBeaver"
 github "Swinject/Swinject"
+github "httpswift/swifter" ~> 1.4.6
