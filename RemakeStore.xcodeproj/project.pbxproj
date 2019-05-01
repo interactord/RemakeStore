@@ -38,6 +38,7 @@
 		F426E4B9C3A72B0440282238 /* AppLoggerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */; };
 		F426E4D4761185BE91EDACA1 /* InterceptorChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDC8A07683F4B7CEE87D /* InterceptorChain.swift */; };
 		F426E53361ADAD1FCF00CE85 /* AnyInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E91C84C3B3F63C287FC1 /* AnyInterceptorSpec.swift */; };
+		F426E5858BC12B5551B783BF /* LoggerInterceptorURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */; };
 		F426E5A51E2AC17603904E16 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5EDA4EC75319614BEE6 /* HttpClient.swift */; };
 		F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */; };
 		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
@@ -46,6 +47,7 @@
 		F426E71EAA2A0C8CD8489D07 /* NetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E1E5F327832D3AB24EB7 /* NetworkActivity.swift */; };
 		F426E74EE7D8CA4B935CA726 /* ResultContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E3C727D25A03938E49DC /* ResultContent.swift */; };
 		F426E795D2E1D5CBFFFC8AD9 /* NSLocalizedTranslatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E33C7CFCA43D8E265F11 /* NSLocalizedTranslatorSpec.swift */; };
+		F426E86BAF3FC4D0471181C9 /* LoggerInterceptorURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EBDE8DED8A1C749C3550 /* LoggerInterceptorURLRequestSpec.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
 		F426E9CAB39F05E4F0800E13 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EBA9FBD9C1C9C53A4991 /* Interceptor.swift */; };
 		F426EA7A6BBBB4ADD4ACD6FB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E6FC13411F25D7D84D0B /* NetworkError.swift */; };
@@ -101,6 +103,7 @@
 		F426E3C727D25A03938E49DC /* ResultContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultContent.swift; sourceTree = "<group>"; };
 		F426E4586A553478973ED1AB /* StringMockInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMockInterceptor.swift; sourceTree = "<group>"; };
 		F426E57862B529221A8E6C09 /* LaunchStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStepper.swift; sourceTree = "<group>"; };
+		F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInterceptorURLRequest.swift; sourceTree = "<group>"; };
 		F426E5E5B7BCEC9332A852F6 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		F426E5EDA4EC75319614BEE6 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		F426EAC4FB99BFCF59A0DF8D /* InterceptorChainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptorChainSpec.swift; sourceTree = "<group>"; };
 		F426EB47164522671E91140D /* AppResponseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponseSpec.swift; sourceTree = "<group>"; };
 		F426EBA9FBD9C1C9C53A4991 /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		F426EBDE8DED8A1C749C3550 /* LoggerInterceptorURLRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInterceptorURLRequestSpec.swift; sourceTree = "<group>"; };
 		F426EC0C7BE5D6771C41711E /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		F426EC473876527E47B3DABE /* URLSessionNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkAdapter.swift; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 			children = (
 				29D72D162278FD6C00909EFD /* Logger.swift */,
 				29D72D182278FD9900909EFD /* LoggerLevel.swift */,
+				F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */,
+				F426EBDE8DED8A1C749C3550 /* LoggerInterceptorURLRequestSpec.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -725,6 +731,7 @@
 				F426E9CAB39F05E4F0800E13 /* Interceptor.swift in Sources */,
 				F426E4D4761185BE91EDACA1 /* InterceptorChain.swift in Sources */,
 				F426EDE129B4F08356B48F32 /* AnyInterceptor.swift in Sources */,
+				F426E5858BC12B5551B783BF /* LoggerInterceptorURLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +750,7 @@
 				F426E53361ADAD1FCF00CE85 /* AnyInterceptorSpec.swift in Sources */,
 				F426E47FD8B0326AED935EB1 /* StringMockInterceptor.swift in Sources */,
 				F426E1BD828A0F75BE3010BC /* InterceptorChainSpec.swift in Sources */,
+				F426E86BAF3FC4D0471181C9 /* LoggerInterceptorURLRequestSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
