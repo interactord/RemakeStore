@@ -9,23 +9,23 @@ import XCTest
 
 class NSLocalizedTranslatorSpec: XCTestCase {
 
-	var sut: NSLocalizedStringTranslator?
+  var sut: NSLocalizedStringTranslator?
 
-	override func setUp() {
-		super.setUp()
-	}
+  override func setUp() {
+    super.setUp()
+  }
 
-	override func tearDown() {
-		super.tearDown()
-		sut = nil
-	}
+  override func tearDown() {
+    super.tearDown()
+    sut = nil
+  }
 
-	func test_inject_dummyKey_init() {
-		let expectedKey = "test.global"
+  func test_inject_dummyKey_init() {
+    let expectedKey = "test.global"
 
-		sut = NSLocalizedStringTranslator()
-		let action = sut?.translation(for: expectedKey)
+    sut = NSLocalizedStringTranslator()
+    let action = sut?.translation(for: expectedKey)
 
-		XCTAssertEqual(expectedKey, action)
-	}
+    XCTAssertEqual(expectedKey, action)
+  }
 }
