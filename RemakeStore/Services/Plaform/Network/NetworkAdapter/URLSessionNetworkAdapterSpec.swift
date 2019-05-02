@@ -19,7 +19,7 @@ class URLSessionNetworkAdapterSpec: XCTestCase {
   override func setUp() {
     super.setUp()
     disposeBag = DisposeBag()
-    networkActivityMock = NetworkActivityMock(with: 0)
+    networkActivityMock = NetworkActivityMock()
     stubServer.setup()
   }
 

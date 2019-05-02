@@ -14,7 +14,7 @@ final class NetworkActivityMock {
   private var count: Int
 
   // MARK: - Initializing
-  init(with count: Int) {
+  init(with count: Int = 0) {
     self.count = count
   }
 
