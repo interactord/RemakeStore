@@ -28,6 +28,8 @@
 		29D72D202278FF2900909EFD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D1F2278FF2900909EFD /* AppLogger.swift */; };
 		29F4F64722790A98000C39BB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EFFC1D9AE1B00CD9E7D6 /* HTTPMethod.swift */; };
 		29F51B04227AD8E3008756C6 /* EndPointToURLRequestTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EAD57A12E93EC6D8538C /* EndPointToURLRequestTransformerSpec.swift */; };
+		29F51B0F227AE26D008756C6 /* DeserializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F51B0D227AE26D008756C6 /* DeserializationError.swift */; };
+		29F51B10227AE26F008756C6 /* DeserializationErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */; };
 		F426E03A27610B98F642C03E /* EndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E60FB69FB02E0CF29E76 /* EndpointMock.swift */; };
 		F426E0E4BAF542295EAB28D2 /* AnyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED6C1722C8CA66D14E7B /* AnyTransformer.swift */; };
 		F426E0E722472ADC6C4B3501 /* NSLocalizedTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E83E9EE86205E5A05644 /* NSLocalizedTranslator.swift */; };
@@ -106,6 +108,8 @@
 		29D72D162278FD6C00909EFD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		29D72D182278FD9900909EFD /* LoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerLevel.swift; sourceTree = "<group>"; };
 		29D72D1F2278FF2900909EFD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationErrorSpec.swift; sourceTree = "<group>"; };
+		29F51B0D227AE26D008756C6 /* DeserializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationError.swift; sourceTree = "<group>"; };
 		F426E0D685100564ADE82C45 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityMock.swift; sourceTree = "<group>"; };
 		F426E156BB6FB85E4AFDCAAD /* SerializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationErrorSpec.swift; sourceTree = "<group>"; };
@@ -458,6 +462,8 @@
 		F426E65167C027B79C098E26 /* ErrorType */ = {
 			isa = PBXGroup;
 			children = (
+				29F51B0D227AE26D008756C6 /* DeserializationError.swift */,
+				29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */,
 				F426E6FC13411F25D7D84D0B /* NetworkError.swift */,
 				F426E8009428CC5B0CD6D62A /* NetworkErrorSpec.swift */,
 				F426EE62F39720B0415FB08F /* MalformedURLError.swift */,
@@ -799,6 +805,7 @@
 				F426EA7A6BBBB4ADD4ACD6FB /* NetworkError.swift in Sources */,
 				F426EBDA0D3DF0C1AEADE24A /* URLSessionNetworkAdapter.swift in Sources */,
 				F426ECB25E5C728085E2BC41 /* Translator.swift in Sources */,
+				29F51B0F227AE26D008756C6 /* DeserializationError.swift in Sources */,
 				F426E0E722472ADC6C4B3501 /* NSLocalizedTranslator.swift in Sources */,
 				F426E9CAB39F05E4F0800E13 /* Interceptor.swift in Sources */,
 				F426E4D4761185BE91EDACA1 /* InterceptorChain.swift in Sources */,
@@ -822,6 +829,7 @@
 				290D7EC72279789C0099A3C0 /* StubServer.swift in Sources */,
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
 				F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */,
+				29F51B10227AE26F008756C6 /* DeserializationErrorSpec.swift in Sources */,
 				F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */,
 				29F51B04227AD8E3008756C6 /* EndPointToURLRequestTransformerSpec.swift in Sources */,
 				F426E1FFCCDBF8B3D02B9AF9 /* NetworkErrorSpec.swift in Sources */,
