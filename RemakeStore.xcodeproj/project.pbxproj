@@ -23,6 +23,8 @@
 		29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B802278D1A200A3A4B8 /* RxTest.framework */; };
 		29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B822278D1C900A3A4B8 /* RxBlocking.framework */; };
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
+		29BA3283227B3AE8004FA062 /* TypeCastingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BA3281227B3AE7004FA062 /* TypeCastingError.swift */; };
+		29BA3285227B3AEA004FA062 /* TypeCastingErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BA3282227B3AE8004FA062 /* TypeCastingErrorSpec.swift */; };
 		29D72D172278FD6C00909EFD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D162278FD6C00909EFD /* Logger.swift */; };
 		29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D182278FD9900909EFD /* LoggerLevel.swift */; };
 		29D72D202278FF2900909EFD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D1F2278FF2900909EFD /* AppLogger.swift */; };
@@ -105,6 +107,8 @@
 		29602B7A2278D16300A3A4B8 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		29602B802278D1A200A3A4B8 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		29BA3281227B3AE7004FA062 /* TypeCastingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCastingError.swift; sourceTree = "<group>"; };
+		29BA3282227B3AE8004FA062 /* TypeCastingErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCastingErrorSpec.swift; sourceTree = "<group>"; };
 		29D72D162278FD6C00909EFD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		29D72D182278FD9900909EFD /* LoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerLevel.swift; sourceTree = "<group>"; };
 		29D72D1F2278FF2900909EFD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
@@ -458,12 +462,14 @@
 			children = (
 				29F51B0D227AE26D008756C6 /* DeserializationError.swift */,
 				29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */,
-				F426E6FC13411F25D7D84D0B /* NetworkError.swift */,
-				F426E8009428CC5B0CD6D62A /* NetworkErrorSpec.swift */,
 				F426EE62F39720B0415FB08F /* MalformedURLError.swift */,
 				F426E75EB5FFC64B44050773 /* MalformedURLErrorSpec.swift */,
+				F426E6FC13411F25D7D84D0B /* NetworkError.swift */,
+				F426E8009428CC5B0CD6D62A /* NetworkErrorSpec.swift */,
 				F426E6A18BE6DE137879860C /* SerializationError.swift */,
 				F426E156BB6FB85E4AFDCAAD /* SerializationErrorSpec.swift */,
+				29BA3281227B3AE7004FA062 /* TypeCastingError.swift */,
+				29BA3282227B3AE8004FA062 /* TypeCastingErrorSpec.swift */,
 			);
 			path = ErrorType;
 			sourceTree = "<group>";
@@ -761,6 +767,7 @@
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
 				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
 				F426E98400CE2377738F6D39 /* AppStep.swift in Sources */,
+				29BA3283227B3AE8004FA062 /* TypeCastingError.swift in Sources */,
 				F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */,
 				29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */,
 				29D72D172278FD6C00909EFD /* Logger.swift in Sources */,
@@ -805,6 +812,7 @@
 				290D7EC72279789C0099A3C0 /* StubServer.swift in Sources */,
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
 				F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */,
+				29BA3285227B3AEA004FA062 /* TypeCastingErrorSpec.swift in Sources */,
 				29F51B10227AE26F008756C6 /* DeserializationErrorSpec.swift in Sources */,
 				F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */,
 				29F51B04227AD8E3008756C6 /* EndPointToURLRequestTransformerSpec.swift in Sources */,
