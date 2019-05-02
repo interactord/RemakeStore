@@ -75,6 +75,10 @@ extension StubServer {
       return HttpResponse.created
     }
 
+    let forbiddenResponse: ((HttpRequest) -> HttpResponse) = { _ in
+      return HttpResponse.forbidden
+    }
+
     let notFoundResponse: ((HttpRequest) -> HttpResponse) = { _ in
       return HttpResponse.notFound
     }
@@ -88,6 +92,11 @@ extension StubServer {
     server.DELETE["/default"] = notFoundResponse
     server.POST["/default"] = notMatedSuccessResponse
     server.PATCH["/default"] = successNoContentResponse
+
+    server.GET["/user"] = successResponse
+    server.PUT["/user"] = forbiddenResponse
+    server.PATCH["/user"] = successResponse
+    server.DELETE["/user"] = forbiddenResponse
 
     let failResponse: ((HttpRequest) -> HttpResponse) = { _ in
       return HttpResponse.unauthorized

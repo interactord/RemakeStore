@@ -9,8 +9,10 @@ import Foundation
 
 enum UserEndpointMock {
 
-  case read(with: ReadUserParameterMock)
+  case create
+  case read
   case update(with: UpdateUserParameterMock)
+  case delete
 
   private enum Constant {
     static let baseUrl = "http://localhost:7000"
@@ -38,26 +40,27 @@ extension UserEndpointMock: Endpoint {
 
   var httpMethod: HTTPMethod {
     switch self {
+    case .create:
+      return HTTPMethod.PUT
     case .read:
       return HTTPMethod.GET
     case .update:
-      return HTTPMethod.PUT
+      return HTTPMethod.PATCH
+    case .delete:
+      return HTTPMethod.DELETE
     }
   }
 
   var queryParameters: [String: String]? {
     switch self {
-    case.read(let parameter):
-      return [
-        Key.name: parameter.name,
-        Key.surname: parameter.surname,
-        Key.age: parameter.age
-      ]
     case .update(let parameter):
       return [
         Key.name: parameter.name,
         Key.surname: parameter.surname
       ]
+    default:
+      return nil
     }
+
   }
 }

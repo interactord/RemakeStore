@@ -20,10 +20,6 @@ extension Endpoint {
 		return  nil
 	}
 
-	var queryParameters: [String: String]? {
-		return  nil
-	}
-
 	var bodyParameters: [String: Any]? {
 		return nil
 	}

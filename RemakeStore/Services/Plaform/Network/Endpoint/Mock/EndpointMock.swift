@@ -12,8 +12,8 @@ struct EndpointMock: Endpoint {
   var baseURL: String
   var path: String
   var httpMethod: HTTPMethod
-  private(set) var queryParameters: [String: String]?
-  private(set) var headers: [String: String]?
+  var queryParameters: [String: String]?
+  var headers: [String: String]?
   var bodyParameters: [String: Any]?
 
   init(

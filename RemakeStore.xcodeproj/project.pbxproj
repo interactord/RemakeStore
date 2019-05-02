@@ -15,6 +15,15 @@
 		2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */; };
 		295F3750227B41C500613702 /* AppHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F374E227B41C500613702 /* AppHTTPClient.swift */; };
 		295F3751227B41CA00613702 /* AppHTTPClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F374D227B41C500613702 /* AppHTTPClientSpec.swift */; };
+		295F3772227B4E2B00613702 /* UserEndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3770227B4E2900613702 /* UserEndpointMock.swift */; };
+		295F377B227B4E4C00613702 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3774227B4E4C00613702 /* AnyRepository.swift */; };
+		295F3781227B4E5000613702 /* UpdateUserParameterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3776227B4E4C00613702 /* UpdateUserParameterMock.swift */; };
+		295F3782227B4E5300613702 /* UserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3777227B4E4C00613702 /* UserMock.swift */; };
+		295F3783227B4E5500613702 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3778227B4E4C00613702 /* UserRepositoryMock.swift */; };
+		295F3788227B4E6B00613702 /* RepositoryParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3786227B4E6B00613702 /* RepositoryParameter.swift */; };
+		295F3789227B4E6B00613702 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3787227B4E6B00613702 /* Repository.swift */; };
+		295F378A227B4E7600613702 /* AnyRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F377A227B4E4C00613702 /* AnyRepositorySpec.swift */; };
+		295F3792227B540900613702 /* ReadUserParameterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F3791227B540900613702 /* ReadUserParameterMock.swift */; };
 		29602B752278D0EE00A3A4B8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B722278D0EE00A3A4B8 /* SwiftyBeaver.framework */; };
 		29602B762278D0EE00A3A4B8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B732278D0EE00A3A4B8 /* RxSwift.framework */; };
 		29602B772278D0EE00A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
@@ -46,6 +55,7 @@
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
 		F426E367FC78FFDE59E28441 /* NetworkActivityMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */; };
 		F426E3EA2A0F5ED8DAC45677 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ECF7D17553E8B9B65EB4 /* Transformer.swift */; };
+		F426E428261D3FA24D3632DE /* NoRespositoryParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB64044171E8C4F37826 /* NoRespositoryParameter.swift */; };
 		F426E47FD8B0326AED935EB1 /* StringMockInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E4586A553478973ED1AB /* StringMockInterceptor.swift */; };
 		F426E4B9C3A72B0440282238 /* AppLoggerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */; };
 		F426E4D4761185BE91EDACA1 /* InterceptorChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDC8A07683F4B7CEE87D /* InterceptorChain.swift */; };
@@ -106,6 +116,15 @@
 		2910AC4A2278B5E600EC7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295F374D227B41C500613702 /* AppHTTPClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPClientSpec.swift; sourceTree = "<group>"; };
 		295F374E227B41C500613702 /* AppHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPClient.swift; sourceTree = "<group>"; };
+		295F3770227B4E2900613702 /* UserEndpointMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpointMock.swift; sourceTree = "<group>"; };
+		295F3774227B4E4C00613702 /* AnyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
+		295F3776227B4E4C00613702 /* UpdateUserParameterMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserParameterMock.swift; sourceTree = "<group>"; };
+		295F3777227B4E4C00613702 /* UserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMock.swift; sourceTree = "<group>"; };
+		295F3778227B4E4C00613702 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
+		295F377A227B4E4C00613702 /* AnyRepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRepositorySpec.swift; sourceTree = "<group>"; };
+		295F3786227B4E6B00613702 /* RepositoryParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryParameter.swift; sourceTree = "<group>"; };
+		295F3787227B4E6B00613702 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		295F3791227B540900613702 /* ReadUserParameterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadUserParameterMock.swift; sourceTree = "<group>"; };
 		29602B722278D0EE00A3A4B8 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		29602B732278D0EE00A3A4B8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		29602B742278D0EE00A3A4B8 /* RxFlow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxFlow.framework; path = Carthage/Build/iOS/RxFlow.framework; sourceTree = "<group>"; };
@@ -155,6 +174,7 @@
 		F426EAC4FB99BFCF59A0DF8D /* InterceptorChainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptorChainSpec.swift; sourceTree = "<group>"; };
 		F426EAD57A12E93EC6D8538C /* EndPointToURLRequestTransformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointToURLRequestTransformerSpec.swift; sourceTree = "<group>"; };
 		F426EB47164522671E91140D /* AppResponseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponseSpec.swift; sourceTree = "<group>"; };
+		F426EB64044171E8C4F37826 /* NoRespositoryParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoRespositoryParameter.swift; sourceTree = "<group>"; };
 		F426EBA9FBD9C1C9C53A4991 /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		F426EBDE8DED8A1C749C3550 /* LoggerInterceptorURLRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInterceptorURLRequestSpec.swift; sourceTree = "<group>"; };
 		F426EC0C7BE5D6771C41711E /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
@@ -278,6 +298,37 @@
 			path = HTTPClient;
 			sourceTree = "<group>";
 		};
+		295F3773227B4E4C00613702 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				295F3774227B4E4C00613702 /* AnyRepository.swift */,
+				295F3775227B4E4C00613702 /* Mock */,
+				295F377A227B4E4C00613702 /* AnyRepositorySpec.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		295F3775227B4E4C00613702 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				295F3776227B4E4C00613702 /* UpdateUserParameterMock.swift */,
+				295F3777227B4E4C00613702 /* UserMock.swift */,
+				295F3778227B4E4C00613702 /* UserRepositoryMock.swift */,
+				295F3791227B540900613702 /* ReadUserParameterMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		295F3785227B4E6B00613702 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F426EB64044171E8C4F37826 /* NoRespositoryParameter.swift */,
+				295F3786227B4E6B00613702 /* RepositoryParameter.swift */,
+				295F3787227B4E6B00613702 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		29602B712278D0EE00A3A4B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +377,7 @@
 		29D72D1C2278FE8E00909EFD /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				295F3785227B4E6B00613702 /* Repository */,
 				F426E49F15C462D5CED95B4E /* ErrorType */,
 				F426E1428D71531DAD32E230 /* Translator */,
 				F426EF93FF867F9839AA6C6B /* Transformer */,
@@ -339,6 +391,7 @@
 		29D72D1D2278FF1200909EFD /* Plaform */ = {
 			isa = PBXGroup;
 			children = (
+				295F3773227B4E4C00613702 /* Repository */,
 				F426E2A589CA92B449EBB91F /* Transformer */,
 				F426E3CA229AE99D4E74FAE6 /* Translator */,
 				F426E65167C027B79C098E26 /* ErrorType */,
@@ -362,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				F426E60FB69FB02E0CF29E76 /* EndpointMock.swift */,
+				295F3770227B4E2900613702 /* UserEndpointMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -811,6 +865,7 @@
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
 				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
 				F426E98400CE2377738F6D39 /* AppStep.swift in Sources */,
+				295F3788227B4E6B00613702 /* RepositoryParameter.swift in Sources */,
 				29BA3283227B3AE8004FA062 /* TypeCastingError.swift in Sources */,
 				F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */,
 				29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */,
@@ -825,6 +880,7 @@
 				F426EDD08D385A371F42CCE6 /* HTTPErrorHandler.swift in Sources */,
 				F426E70623E0185CFEB158E2 /* NetworkAdapter.swift in Sources */,
 				F426E5A51E2AC17603904E16 /* HTTPClient.swift in Sources */,
+				295F377B227B4E4C00613702 /* AnyRepository.swift in Sources */,
 				F426E2D16371729BA56BC4F6 /* EndPoint.swift in Sources */,
 				F426ECCAC6E7A1676AFDFAA6 /* Deserializable.swift in Sources */,
 				F426E7134F9255BC3D9619A6 /* AppResponse.swift in Sources */,
@@ -832,6 +888,7 @@
 				F426EA7A6BBBB4ADD4ACD6FB /* NetworkError.swift in Sources */,
 				295F3750227B41C500613702 /* AppHTTPClient.swift in Sources */,
 				F426EBDA0D3DF0C1AEADE24A /* URLSessionNetworkAdapter.swift in Sources */,
+				295F3789227B4E6B00613702 /* Repository.swift in Sources */,
 				F426ECB25E5C728085E2BC41 /* Translator.swift in Sources */,
 				29F51B0F227AE26D008756C6 /* DeserializationError.swift in Sources */,
 				F426E0E722472ADC6C4B3501 /* NSLocalizedTranslator.swift in Sources */,
@@ -847,6 +904,7 @@
 				F426ED336AD3A45199F3DD0B /* JSONDeserializable.swift in Sources */,
 				F426EB843EF8D4D825B8D23B /* EndPointToURLRequestTransformer.swift in Sources */,
 				F426EDB15BE71AD56AAB8871 /* ResultContent.swift in Sources */,
+				F426E428261D3FA24D3632DE /* NoRespositoryParameter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,7 +919,10 @@
 				29F51B10227AE26F008756C6 /* DeserializationErrorSpec.swift in Sources */,
 				F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */,
 				29F51B04227AD8E3008756C6 /* EndPointToURLRequestTransformerSpec.swift in Sources */,
+				295F378A227B4E7600613702 /* AnyRepositorySpec.swift in Sources */,
 				F426E1FFCCDBF8B3D02B9AF9 /* NetworkErrorSpec.swift in Sources */,
+				295F3783227B4E5500613702 /* UserRepositoryMock.swift in Sources */,
+				295F3792227B540900613702 /* ReadUserParameterMock.swift in Sources */,
 				F426E22165913F3F00D62EC5 /* URLSessionNetworkAdapterSpec.swift in Sources */,
 				F426E367FC78FFDE59E28441 /* NetworkActivityMock.swift in Sources */,
 				F426E795D2E1D5CBFFFC8AD9 /* NSLocalizedTranslatorSpec.swift in Sources */,
@@ -872,7 +933,10 @@
 				F426E86BAF3FC4D0471181C9 /* LoggerInterceptorURLRequestSpec.swift in Sources */,
 				F426E3044674466C2BCE84AC /* MalformedURLErrorSpec.swift in Sources */,
 				F426E82B10E8CDEBF4B7D193 /* SerializationErrorSpec.swift in Sources */,
+				295F3782227B4E5300613702 /* UserMock.swift in Sources */,
 				F426E03A27610B98F642C03E /* EndpointMock.swift in Sources */,
+				295F3781227B4E5000613702 /* UpdateUserParameterMock.swift in Sources */,
+				295F3772227B4E2B00613702 /* UserEndpointMock.swift in Sources */,
 				F426ED11221DA3B1F2E56776 /* TestHTTPErrorHandlerMock.swift in Sources */,
 				F426E4DB48D3E80E44F76ED9 /* MockBuilder.swift in Sources */,
 			);

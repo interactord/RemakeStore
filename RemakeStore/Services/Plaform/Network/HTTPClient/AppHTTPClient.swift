@@ -39,6 +39,36 @@ extension AppHTTPClient: HTTPClient {
 
   // MARK: - functions for protocol
 
+  func request<T: Deserializable>(endpoint: Endpoint) -> Observable<ResultContent<T>> {
+    let requestChain = self.requestChain
+    let networkAdapter = self.networkAdapter
+    let responseChain = self.responseChain
+    let httpErrorHandler = self.httpErrorHandler
+
+    return transformer
+      .rx_transform(object: endpoint)
+      .flatMap { requestChain.proceed(object: $0) }
+      .flatMap { networkAdapter.rx_send(request: $0) }
+      .flatMap { responseChain.proceed(object: $0) }
+      .flatMap { response -> Observable<ResultContent<T>> in
+
+        if false == response.succeed {
+          return Observable.error(httpErrorHandler.handle(response: response))
+        }
+
+        guard let data = response.data else {
+          return Observable.just(ResultContent.noContent)
+        }
+
+        do {
+          let object = try T(data: data)
+          return Observable.just(ResultContent.value(object))
+        } catch {
+          return Observable.error(error)
+        }
+      }
+  }
+
   func request(endpoint: Endpoint) -> Observable<Response> {
     let requestChain = self.requestChain
     let networkAdapter = self.networkAdapter

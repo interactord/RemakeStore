@@ -32,4 +32,14 @@ struct MockBuilder {
 		)
 	}
 
+	static func makeAppHttpClient() -> AppHTTPClient {
+		return AppHTTPClient(
+			transformer: MockBuilder.makeTransformer(),
+			networkAdapter: MockBuilder.makeNetworkAdapter(),
+			requestChain: InterceptorChain<URLRequest>(),
+			responseChain: InterceptorChain<Response>(),
+			httpErrorHandler: TestHTTPErrorHandlerMock()
+		)
+	}
+
 }
