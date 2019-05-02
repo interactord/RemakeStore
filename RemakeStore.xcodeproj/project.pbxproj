@@ -44,7 +44,7 @@
 		F426E4D4761185BE91EDACA1 /* InterceptorChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDC8A07683F4B7CEE87D /* InterceptorChain.swift */; };
 		F426E53361ADAD1FCF00CE85 /* AnyInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E91C84C3B3F63C287FC1 /* AnyInterceptorSpec.swift */; };
 		F426E5858BC12B5551B783BF /* LoggerInterceptorURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */; };
-		F426E5A51E2AC17603904E16 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5EDA4EC75319614BEE6 /* HttpClient.swift */; };
+		F426E5A51E2AC17603904E16 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5EDA4EC75319614BEE6 /* HTTPClient.swift */; };
 		F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */; };
 		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
 		F426E70623E0185CFEB158E2 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E784C5C2D73C88B26924 /* NetworkAdapter.swift */; };
@@ -66,7 +66,7 @@
 		F426ECB25E5C728085E2BC41 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E616591F950BF9316F46 /* Translator.swift */; };
 		F426ECCAC6E7A1676AFDFAA6 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED56522A8E1BD4674592 /* Deserializable.swift */; };
 		F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */; };
-		F426EDC3BFE7EEEAF189DB70 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E187F087F8CF0FF42BCE /* HttpStatusCode.swift */; };
+		F426EDC3BFE7EEEAF189DB70 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E187F087F8CF0FF42BCE /* HTTPStatusCode.swift */; };
 		F426EDD08D385A371F42CCE6 /* HTTPErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E61F695B9805E5C8AF16 /* HTTPErrorHandler.swift */; };
 		F426EDE129B4F08356B48F32 /* AnyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E79DE4B2A9DBDA377F5B /* AnyInterceptor.swift */; };
 		F426EE313E837849E0ED9BAF /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC0C7BE5D6771C41711E /* ErrorType.swift */; };
@@ -108,7 +108,7 @@
 		F426E01948F77A93F8CD696C /* EndPointToURLRequestTransformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointToURLRequestTransformerSpec.swift; sourceTree = "<group>"; };
 		F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityMock.swift; sourceTree = "<group>"; };
 		F426E156BB6FB85E4AFDCAAD /* SerializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationErrorSpec.swift; sourceTree = "<group>"; };
-		F426E187F087F8CF0FF42BCE /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		F426E187F087F8CF0FF42BCE /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		F426E1D794DC634E2262B1BB /* AppResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		F426E1E5F327832D3AB24EB7 /* NetworkActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivity.swift; sourceTree = "<group>"; };
 		F426E33A4940CFBB2BA40CFC /* Transformer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transformer+Rx.swift"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		F426E57862B529221A8E6C09 /* LaunchStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStepper.swift; sourceTree = "<group>"; };
 		F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInterceptorURLRequest.swift; sourceTree = "<group>"; };
 		F426E5E5B7BCEC9332A852F6 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		F426E5EDA4EC75319614BEE6 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		F426E5EDA4EC75319614BEE6 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
 		F426E60FB69FB02E0CF29E76 /* EndpointMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointMock.swift; sourceTree = "<group>"; };
 		F426E616591F950BF9316F46 /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
@@ -333,10 +333,17 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		F426E06E1A03D47CDFE61517 /* HttpClien */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpClien;
+			sourceTree = "<group>";
+		};
 		F426E12E56FCC04DF9ADAF39 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				F426E187F087F8CF0FF42BCE /* HttpStatusCode.swift */,
+				F426E187F087F8CF0FF42BCE /* HTTPStatusCode.swift */,
 				F426E9B4C904B4326472F0CF /* Response.swift */,
 				F426E3C727D25A03938E49DC /* ResultContent.swift */,
 			);
@@ -411,6 +418,7 @@
 				F426EE82289C725BE46231A3 /* NetworkAdapter */,
 				F426E57CB806661F5945A76D /* NetworkAcitivy */,
 				F426EBA76F97FCB53B83E5C6 /* Endpoint */,
+				F426E06E1A03D47CDFE61517 /* HttpClien */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -492,7 +500,7 @@
 		F426EADB8966134693DABD4C /* HTTPClient */ = {
 			isa = PBXGroup;
 			children = (
-				F426E5EDA4EC75319614BEE6 /* HttpClient.swift */,
+				F426E5EDA4EC75319614BEE6 /* HTTPClient.swift */,
 			);
 			path = HTTPClient;
 			sourceTree = "<group>";
@@ -775,12 +783,12 @@
 				F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */,
 				F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */,
 				F426E4B9C3A72B0440282238 /* AppLoggerConfig.swift in Sources */,
-				F426EDC3BFE7EEEAF189DB70 /* HttpStatusCode.swift in Sources */,
+				F426EDC3BFE7EEEAF189DB70 /* HTTPStatusCode.swift in Sources */,
 				F426EFE77E591FFA39A2069B /* Response.swift in Sources */,
 				F426E71EAA2A0C8CD8489D07 /* NetworkActivity.swift in Sources */,
 				F426EDD08D385A371F42CCE6 /* HTTPErrorHandler.swift in Sources */,
 				F426E70623E0185CFEB158E2 /* NetworkAdapter.swift in Sources */,
-				F426E5A51E2AC17603904E16 /* HttpClient.swift in Sources */,
+				F426E5A51E2AC17603904E16 /* HTTPClient.swift in Sources */,
 				F426E2D16371729BA56BC4F6 /* EndPoint.swift in Sources */,
 				F426E74EE7D8CA4B935CA726 /* ResultContent.swift in Sources */,
 				F426ECCAC6E7A1676AFDFAA6 /* Deserializable.swift in Sources */,

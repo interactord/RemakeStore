@@ -52,7 +52,7 @@ class AppResponseTest: XCTestCase {
     let request = makeRequest("https://test.com")
     let expectedSucceed = true
     let expectedHeader = ["Cookie": "sessionId=123123"]
-    let expectedStatusCode = HttpStatusCode.ok.rawValue
+    let expectedStatusCode = HTTPStatusCode.ok.rawValue
     let expectedData = "😀".data(using: .utf8)
 
     let response = HTTPURLResponse(
@@ -118,7 +118,7 @@ class AppResponseTest: XCTestCase {
 
     let request = makeRequest("https://test.com")
     let expectedSucceed = false
-    let statusCode = HttpStatusCode.internalServerError.rawValue
+    let statusCode = HTTPStatusCode.internalServerError.rawValue
     let error = NetworkErrorMock.statusCode(statusCode)
 
     sut = AppResponse(request: request, error: error)

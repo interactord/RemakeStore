@@ -9,7 +9,7 @@ protocol Response {
 	var succeed: Bool { get }
 	var data: Data? { get }
 	var error: Error? { get }
-	var statusCode: HttpStatusCode? { get }
+	var statusCode: HTTPStatusCode? { get }
 	var request: URLRequest { get }
 	var headers: [String: Any]? { get }
 }

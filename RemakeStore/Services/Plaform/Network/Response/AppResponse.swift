@@ -30,8 +30,8 @@ extension AppResponse: Response {
       return false
     }
 
-    return httpResponse.statusCode >= HttpStatusCode.ok.rawValue
-      && httpResponse.statusCode < HttpStatusCode.badRequest.rawValue
+    return httpResponse.statusCode >= HTTPStatusCode.ok.rawValue
+      && httpResponse.statusCode < HTTPStatusCode.badRequest.rawValue
   }
 
   var data: Data? {
@@ -42,11 +42,11 @@ extension AppResponse: Response {
     return _error
   }
 
-  var statusCode: HttpStatusCode? {
+  var statusCode: HTTPStatusCode? {
     guard let httpResponse = httpResponse as? HTTPURLResponse else {
       return nil
     }
-    return HttpStatusCode(rawValue: httpResponse.statusCode)
+    return HTTPStatusCode(rawValue: httpResponse.statusCode)
   }
 
   var request: URLRequest {
