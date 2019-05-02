@@ -9,11 +9,7 @@ protocol Deserializable {
 	init(data: Data) throws
 }
 
-protocol AnyInitialization {
-	init(object: Any) throws
-}
-
-extension Deserializable where Self: AnyInitialization {
+extension Deserializable where Self: JSONDeserializable {
 	init(data: Data) throws {
 		let object: Any = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
 		try self.init(object: object)

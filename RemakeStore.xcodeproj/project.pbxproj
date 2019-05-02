@@ -27,6 +27,7 @@
 		29D72D192278FD9900909EFD /* LoggerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D182278FD9900909EFD /* LoggerLevel.swift */; };
 		29D72D202278FF2900909EFD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D72D1F2278FF2900909EFD /* AppLogger.swift */; };
 		29F4F64722790A98000C39BB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EFFC1D9AE1B00CD9E7D6 /* HTTPMethod.swift */; };
+		29F51B04227AD8E3008756C6 /* EndPointToURLRequestTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EAD57A12E93EC6D8538C /* EndPointToURLRequestTransformerSpec.swift */; };
 		F426E03A27610B98F642C03E /* EndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E60FB69FB02E0CF29E76 /* EndpointMock.swift */; };
 		F426E0E4BAF542295EAB28D2 /* AnyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED6C1722C8CA66D14E7B /* AnyTransformer.swift */; };
 		F426E0E722472ADC6C4B3501 /* NSLocalizedTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E83E9EE86205E5A05644 /* NSLocalizedTranslator.swift */; };
@@ -50,7 +51,6 @@
 		F426E70623E0185CFEB158E2 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E784C5C2D73C88B26924 /* NetworkAdapter.swift */; };
 		F426E7134F9255BC3D9619A6 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E1D794DC634E2262B1BB /* AppResponse.swift */; };
 		F426E71EAA2A0C8CD8489D07 /* NetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E1E5F327832D3AB24EB7 /* NetworkActivity.swift */; };
-		F426E74EE7D8CA4B935CA726 /* ResultContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E3C727D25A03938E49DC /* ResultContent.swift */; };
 		F426E795D2E1D5CBFFFC8AD9 /* NSLocalizedTranslatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E33C7CFCA43D8E265F11 /* NSLocalizedTranslatorSpec.swift */; };
 		F426E82B10E8CDEBF4B7D193 /* SerializationErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E156BB6FB85E4AFDCAAD /* SerializationErrorSpec.swift */; };
 		F426E86BAF3FC4D0471181C9 /* LoggerInterceptorURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EBDE8DED8A1C749C3550 /* LoggerInterceptorURLRequestSpec.swift */; };
@@ -59,18 +59,19 @@
 		F426E9CAB39F05E4F0800E13 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EBA9FBD9C1C9C53A4991 /* Interceptor.swift */; };
 		F426E9EDF0DB0B9747F0B5FD /* MalformedURLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE62F39720B0415FB08F /* MalformedURLError.swift */; };
 		F426EA7A6BBBB4ADD4ACD6FB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E6FC13411F25D7D84D0B /* NetworkError.swift */; };
+		F426EB843EF8D4D825B8D23B /* EndPointToURLRequestTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED457AA6C9142F44E490 /* EndPointToURLRequestTransformer.swift */; };
 		F426EBDA0D3DF0C1AEADE24A /* URLSessionNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC473876527E47B3DABE /* URLSessionNetworkAdapter.swift */; };
 		F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */; };
 		F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB47164522671E91140D /* AppResponseSpec.swift */; };
-		F426EC1F7AB20205C01D39AD /* EndPointToURLRequestTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED98FE44F1B0EB1E4272 /* EndPointToURLRequestTransformer.swift */; };
 		F426ECB25E5C728085E2BC41 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E616591F950BF9316F46 /* Translator.swift */; };
 		F426ECCAC6E7A1676AFDFAA6 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED56522A8E1BD4674592 /* Deserializable.swift */; };
+		F426ED336AD3A45199F3DD0B /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E0D685100564ADE82C45 /* JSONDeserializable.swift */; };
 		F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */; };
+		F426EDB15BE71AD56AAB8871 /* ResultContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC9F2D09498106D62143 /* ResultContent.swift */; };
 		F426EDC3BFE7EEEAF189DB70 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E187F087F8CF0FF42BCE /* HTTPStatusCode.swift */; };
 		F426EDD08D385A371F42CCE6 /* HTTPErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E61F695B9805E5C8AF16 /* HTTPErrorHandler.swift */; };
 		F426EDE129B4F08356B48F32 /* AnyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E79DE4B2A9DBDA377F5B /* AnyInterceptor.swift */; };
 		F426EE313E837849E0ED9BAF /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC0C7BE5D6771C41711E /* ErrorType.swift */; };
-		F426EF558434BA8A2830E0AC /* EndPointToURLRequestTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E01948F77A93F8CD696C /* EndPointToURLRequestTransformerSpec.swift */; };
 		F426EFE77E591FFA39A2069B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E9B4C904B4326472F0CF /* Response.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +106,7 @@
 		29D72D162278FD6C00909EFD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		29D72D182278FD9900909EFD /* LoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerLevel.swift; sourceTree = "<group>"; };
 		29D72D1F2278FF2900909EFD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
-		F426E01948F77A93F8CD696C /* EndPointToURLRequestTransformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointToURLRequestTransformerSpec.swift; sourceTree = "<group>"; };
+		F426E0D685100564ADE82C45 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		F426E0FF0EE56E86D7B3B5A4 /* NetworkActivityMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityMock.swift; sourceTree = "<group>"; };
 		F426E156BB6FB85E4AFDCAAD /* SerializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationErrorSpec.swift; sourceTree = "<group>"; };
 		F426E187F087F8CF0FF42BCE /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		F426E1E5F327832D3AB24EB7 /* NetworkActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivity.swift; sourceTree = "<group>"; };
 		F426E33A4940CFBB2BA40CFC /* Transformer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transformer+Rx.swift"; sourceTree = "<group>"; };
 		F426E33C7CFCA43D8E265F11 /* NSLocalizedTranslatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLocalizedTranslatorSpec.swift; sourceTree = "<group>"; };
-		F426E3C727D25A03938E49DC /* ResultContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultContent.swift; sourceTree = "<group>"; };
 		F426E4586A553478973ED1AB /* StringMockInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMockInterceptor.swift; sourceTree = "<group>"; };
 		F426E57862B529221A8E6C09 /* LaunchStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStepper.swift; sourceTree = "<group>"; };
 		F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInterceptorURLRequest.swift; sourceTree = "<group>"; };
@@ -137,16 +137,18 @@
 		F426E9B4C904B4326472F0CF /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F426EA9EEFD73EFA3145FEA1 /* AppLoggerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLoggerSpec.swift; sourceTree = "<group>"; };
 		F426EAC4FB99BFCF59A0DF8D /* InterceptorChainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptorChainSpec.swift; sourceTree = "<group>"; };
+		F426EAD57A12E93EC6D8538C /* EndPointToURLRequestTransformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointToURLRequestTransformerSpec.swift; sourceTree = "<group>"; };
 		F426EB47164522671E91140D /* AppResponseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResponseSpec.swift; sourceTree = "<group>"; };
 		F426EBA9FBD9C1C9C53A4991 /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		F426EBDE8DED8A1C749C3550 /* LoggerInterceptorURLRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerInterceptorURLRequestSpec.swift; sourceTree = "<group>"; };
 		F426EC0C7BE5D6771C41711E /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		F426EC473876527E47B3DABE /* URLSessionNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkAdapter.swift; sourceTree = "<group>"; };
+		F426EC9F2D09498106D62143 /* ResultContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultContent.swift; sourceTree = "<group>"; };
 		F426ECF7D17553E8B9B65EB4 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		F426ED457AA6C9142F44E490 /* EndPointToURLRequestTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointToURLRequestTransformer.swift; sourceTree = "<group>"; };
 		F426ED56522A8E1BD4674592 /* Deserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
 		F426ED6C1722C8CA66D14E7B /* AnyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTransformer.swift; sourceTree = "<group>"; };
-		F426ED98FE44F1B0EB1E4272 /* EndPointToURLRequestTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointToURLRequestTransformer.swift; sourceTree = "<group>"; };
 		F426EDC8A07683F4B7CEE87D /* InterceptorChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptorChain.swift; sourceTree = "<group>"; };
 		F426EE62F39720B0415FB08F /* MalformedURLError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MalformedURLError.swift; sourceTree = "<group>"; };
 		F426EF35F8ED7BA0DD46290A /* URLSessionNetworkAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkAdapterSpec.swift; sourceTree = "<group>"; };
@@ -333,19 +335,11 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		F426E06E1A03D47CDFE61517 /* HttpClien */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HttpClien;
-			sourceTree = "<group>";
-		};
 		F426E12E56FCC04DF9ADAF39 /* Response */ = {
 			isa = PBXGroup;
 			children = (
 				F426E187F087F8CF0FF42BCE /* HTTPStatusCode.swift */,
 				F426E9B4C904B4326472F0CF /* Response.swift */,
-				F426E3C727D25A03938E49DC /* ResultContent.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -356,6 +350,15 @@
 				F426E616591F950BF9316F46 /* Translator.swift */,
 			);
 			path = Translator;
+			sourceTree = "<group>";
+		};
+		F426E2A589CA92B449EBB91F /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				F426ED457AA6C9142F44E490 /* EndPointToURLRequestTransformer.swift */,
+				F426EAD57A12E93EC6D8538C /* EndPointToURLRequestTransformerSpec.swift */,
+			);
+			path = Transformer;
 			sourceTree = "<group>";
 		};
 		F426E33328008F5CD70311ED /* NetworkActivity */ = {
@@ -406,6 +409,7 @@
 				F426E49F15C462D5CED95B4E /* ErrorType */,
 				F426E1428D71531DAD32E230 /* Translator */,
 				F426EF93FF867F9839AA6C6B /* Transformer */,
+				F426EC9F2D09498106D62143 /* ResultContent.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -418,7 +422,6 @@
 				F426EE82289C725BE46231A3 /* NetworkAdapter */,
 				F426E57CB806661F5945A76D /* NetworkAcitivy */,
 				F426EBA76F97FCB53B83E5C6 /* Endpoint */,
-				F426E06E1A03D47CDFE61517 /* HttpClien */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				F426ED56522A8E1BD4674592 /* Deserializable.swift */,
+				F426E0D685100564ADE82C45 /* JSONDeserializable.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -462,15 +466,6 @@
 				F426E156BB6FB85E4AFDCAAD /* SerializationErrorSpec.swift */,
 			);
 			path = ErrorType;
-			sourceTree = "<group>";
-		};
-		F426E7142F152D75C15333F8 /* Transformer */ = {
-			isa = PBXGroup;
-			children = (
-				F426ED98FE44F1B0EB1E4272 /* EndPointToURLRequestTransformer.swift */,
-				F426E01948F77A93F8CD696C /* EndPointToURLRequestTransformerSpec.swift */,
-			);
-			path = Transformer;
 			sourceTree = "<group>";
 		};
 		F426E750906E1CD87958F77C /* NetworkAdapter */ = {
@@ -537,6 +532,13 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		F426EDF202344A25B3F4B1B7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		F426EE2E7A45874E783D3D1C /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,7 +569,8 @@
 			children = (
 				F426E65167C027B79C098E26 /* ErrorType */,
 				F426E3CA229AE99D4E74FAE6 /* Translator */,
-				F426E7142F152D75C15333F8 /* Transformer */,
+				F426EDF202344A25B3F4B1B7 /* Entity */,
+				F426E2A589CA92B449EBB91F /* Transformer */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -790,7 +793,6 @@
 				F426E70623E0185CFEB158E2 /* NetworkAdapter.swift in Sources */,
 				F426E5A51E2AC17603904E16 /* HTTPClient.swift in Sources */,
 				F426E2D16371729BA56BC4F6 /* EndPoint.swift in Sources */,
-				F426E74EE7D8CA4B935CA726 /* ResultContent.swift in Sources */,
 				F426ECCAC6E7A1676AFDFAA6 /* Deserializable.swift in Sources */,
 				F426E7134F9255BC3D9619A6 /* AppResponse.swift in Sources */,
 				F426EE313E837849E0ED9BAF /* ErrorType.swift in Sources */,
@@ -807,7 +809,9 @@
 				F426E980919EA58CB14BED14 /* Transformer+Rx.swift in Sources */,
 				F426E9EDF0DB0B9747F0B5FD /* MalformedURLError.swift in Sources */,
 				F426E3061A506285D5A92033 /* SerializationError.swift in Sources */,
-				F426EC1F7AB20205C01D39AD /* EndPointToURLRequestTransformer.swift in Sources */,
+				F426ED336AD3A45199F3DD0B /* JSONDeserializable.swift in Sources */,
+				F426EB843EF8D4D825B8D23B /* EndPointToURLRequestTransformer.swift in Sources */,
+				F426EDB15BE71AD56AAB8871 /* ResultContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +823,7 @@
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
 				F426E5A6C1A0B97E077F6249 /* AppLoggerSpec.swift in Sources */,
 				F426EC1C55AC202DB39FEF42 /* AppResponseSpec.swift in Sources */,
+				29F51B04227AD8E3008756C6 /* EndPointToURLRequestTransformerSpec.swift in Sources */,
 				F426E1FFCCDBF8B3D02B9AF9 /* NetworkErrorSpec.swift in Sources */,
 				F426E22165913F3F00D62EC5 /* URLSessionNetworkAdapterSpec.swift in Sources */,
 				F426E367FC78FFDE59E28441 /* NetworkActivityMock.swift in Sources */,
@@ -829,7 +834,6 @@
 				F426E86BAF3FC4D0471181C9 /* LoggerInterceptorURLRequestSpec.swift in Sources */,
 				F426E3044674466C2BCE84AC /* MalformedURLErrorSpec.swift in Sources */,
 				F426E82B10E8CDEBF4B7D193 /* SerializationErrorSpec.swift in Sources */,
-				F426EF558434BA8A2830E0AC /* EndPointToURLRequestTransformerSpec.swift in Sources */,
 				F426E03A27610B98F642C03E /* EndpointMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
