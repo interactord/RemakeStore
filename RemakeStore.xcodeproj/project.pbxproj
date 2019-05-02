@@ -304,9 +304,12 @@
 		29D72D1C2278FE8E00909EFD /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				F426E49F15C462D5CED95B4E /* ErrorType */,
+				F426E1428D71531DAD32E230 /* Translator */,
+				F426EF93FF867F9839AA6C6B /* Transformer */,
+				F426EC9F2D09498106D62143 /* ResultContent.swift */,
 				29D72D152278FD6000909EFD /* Logger */,
 				F426E7CC5C21DC7013C8F6C9 /* Network */,
-				F426E515DAC606A9DA8FEA8C /* Common */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -314,9 +317,11 @@
 		29D72D1D2278FF1200909EFD /* Plaform */ = {
 			isa = PBXGroup;
 			children = (
+				F426E2A589CA92B449EBB91F /* Transformer */,
+				F426E3CA229AE99D4E74FAE6 /* Translator */,
+				F426E65167C027B79C098E26 /* ErrorType */,
 				29D72D1E2278FF2100909EFD /* Logger */,
 				F426E56B388F6760168E5967 /* Network */,
-				F426EF8ED042B1F9E7CFAA9A /* Common */,
 			);
 			path = Plaform;
 			sourceTree = "<group>";
@@ -407,25 +412,14 @@
 			path = ErrorType;
 			sourceTree = "<group>";
 		};
-		F426E515DAC606A9DA8FEA8C /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				F426E49F15C462D5CED95B4E /* ErrorType */,
-				F426E1428D71531DAD32E230 /* Translator */,
-				F426EF93FF867F9839AA6C6B /* Transformer */,
-				F426EC9F2D09498106D62143 /* ResultContent.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		F426E56B388F6760168E5967 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F426E62C9B8FECAB3A42AE00 /* Interceptor */,
-				F426E3E6904543C89B3ED44A /* Response */,
-				F426EE82289C725BE46231A3 /* NetworkAdapter */,
-				F426E57CB806661F5945A76D /* NetworkAcitivy */,
 				F426EBA76F97FCB53B83E5C6 /* Endpoint */,
+				F426E62C9B8FECAB3A42AE00 /* Interceptor */,
+				F426E57CB806661F5945A76D /* NetworkAcitivy */,
+				F426EE82289C725BE46231A3 /* NetworkAdapter */,
+				F426E3E6904543C89B3ED44A /* Response */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -538,13 +532,6 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		F426EDF202344A25B3F4B1B7 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		F426EE2E7A45874E783D3D1C /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,17 +555,6 @@
 				290D7EC62279789C0099A3C0 /* StubServer.swift */,
 			);
 			path = Stub;
-			sourceTree = "<group>";
-		};
-		F426EF8ED042B1F9E7CFAA9A /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				F426E65167C027B79C098E26 /* ErrorType */,
-				F426E3CA229AE99D4E74FAE6 /* Translator */,
-				F426EDF202344A25B3F4B1B7 /* Entity */,
-				F426E2A589CA92B449EBB91F /* Transformer */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		F426EF93FF867F9839AA6C6B /* Transformer */ = {
