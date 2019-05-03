@@ -14,6 +14,15 @@
 		2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */; };
 		2958077B227CD2FA00C0CE4D /* ObserableTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958077A227CD2FA00C0CE4D /* ObserableTypeSpec.swift */; };
 		2958077D227CD30B00C0CE4D /* UIViewControllerRxSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958077C227CD30B00C0CE4D /* UIViewControllerRxSpec.swift */; };
+		295933AE227CE82300B6D5CA /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933A4227CE82300B6D5CA /* ServiceViewModel.swift */; };
+		295933B0227CE82300B6D5CA /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933A6227CE82300B6D5CA /* ViewModelBase.swift */; };
+		295933B7227CE83400B6D5CA /* ViewModelBaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933A5227CE82300B6D5CA /* ViewModelBaseSpec.swift */; };
+		295933B8227CE83C00B6D5CA /* ViewModelBasedTableViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933A8227CE82300B6D5CA /* ViewModelBasedTableViewCellMock.swift */; };
+		295933B9227CE83C00B6D5CA /* TestViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933A9227CE82300B6D5CA /* TestViewModelMock.swift */; };
+		295933BA227CE83C00B6D5CA /* ViewModelBasedCRViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933AA227CE82300B6D5CA /* ViewModelBasedCRViewCellMock.swift */; };
+		295933BB227CE83C00B6D5CA /* ViewModelBasedCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933AB227CE82300B6D5CA /* ViewModelBasedCollectionViewCellMock.swift */; };
+		295933BC227CE83C00B6D5CA /* ViewModelBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933AC227CE82300B6D5CA /* ViewModelBaseViewController.swift */; };
+		295933BD227CE83C00B6D5CA /* ServiceViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295933AD227CE82300B6D5CA /* ServiceViewModelMock.swift */; };
 		29602B752278D0EE00A3A4B8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B722278D0EE00A3A4B8 /* SwiftyBeaver.framework */; };
 		29602B762278D0EE00A3A4B8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B732278D0EE00A3A4B8 /* RxSwift.framework */; };
 		29602B772278D0EE00A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
@@ -191,6 +200,15 @@
 		2910AC4A2278B5E600EC7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2958077A227CD2FA00C0CE4D /* ObserableTypeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserableTypeSpec.swift; sourceTree = "<group>"; };
 		2958077C227CD30B00C0CE4D /* UIViewControllerRxSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRxSpec.swift; sourceTree = "<group>"; };
+		295933A4227CE82300B6D5CA /* ServiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
+		295933A5227CE82300B6D5CA /* ViewModelBaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBaseSpec.swift; sourceTree = "<group>"; };
+		295933A6227CE82300B6D5CA /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
+		295933A8227CE82300B6D5CA /* ViewModelBasedTableViewCellMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBasedTableViewCellMock.swift; sourceTree = "<group>"; };
+		295933A9227CE82300B6D5CA /* TestViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModelMock.swift; sourceTree = "<group>"; };
+		295933AA227CE82300B6D5CA /* ViewModelBasedCRViewCellMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBasedCRViewCellMock.swift; sourceTree = "<group>"; };
+		295933AB227CE82300B6D5CA /* ViewModelBasedCollectionViewCellMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBasedCollectionViewCellMock.swift; sourceTree = "<group>"; };
+		295933AC227CE82300B6D5CA /* ViewModelBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBaseViewController.swift; sourceTree = "<group>"; };
+		295933AD227CE82300B6D5CA /* ServiceViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewModelMock.swift; sourceTree = "<group>"; };
 		295F374D227B41C500613702 /* AppHTTPClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPClientSpec.swift; sourceTree = "<group>"; };
 		295F374E227B41C500613702 /* AppHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPClient.swift; sourceTree = "<group>"; };
 		295F3770227B4E2900613702 /* UserEndpointMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpointMock.swift; sourceTree = "<group>"; };
@@ -380,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
+				295933A1227CE82300B6D5CA /* Application */,
 				29E8A565227C229600E7A894 /* Config */,
 				29E8A588227C35B500E7A894 /* DIContainer */,
 				29E8A576227C268600E7A894 /* Extensions */,
@@ -397,6 +416,46 @@
 				2910AC4A2278B5E600EC7A77 /* Info.plist */,
 			);
 			path = RemakeStoreTests;
+			sourceTree = "<group>";
+		};
+		295933A1227CE82300B6D5CA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				295933A2227CE82300B6D5CA /* Scene */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		295933A2227CE82300B6D5CA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				295933A3227CE82300B6D5CA /* Base */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		295933A3227CE82300B6D5CA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				295933A4227CE82300B6D5CA /* ServiceViewModel.swift */,
+				295933A5227CE82300B6D5CA /* ViewModelBaseSpec.swift */,
+				295933A6227CE82300B6D5CA /* ViewModelBase.swift */,
+				295933A7227CE82300B6D5CA /* Mock */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		295933A7227CE82300B6D5CA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				295933A8227CE82300B6D5CA /* ViewModelBasedTableViewCellMock.swift */,
+				295933A9227CE82300B6D5CA /* TestViewModelMock.swift */,
+				295933AA227CE82300B6D5CA /* ViewModelBasedCRViewCellMock.swift */,
+				295933AB227CE82300B6D5CA /* ViewModelBasedCollectionViewCellMock.swift */,
+				295933AC227CE82300B6D5CA /* ViewModelBaseViewController.swift */,
+				295933AD227CE82300B6D5CA /* ServiceViewModelMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		295A82692278E4EE00F011C7 /* Flow */ = {
@@ -1289,9 +1348,11 @@
 				29E8A583227C2F8800E7A894 /* Service.swift in Sources */,
 				F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */,
 				29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */,
+				295933B0227CE82300B6D5CA /* ViewModelBase.swift in Sources */,
 				29E8A58E227C35B500E7A894 /* ServiceDIContainer.swift in Sources */,
 				F426EA47088D319BB0B235CA /* PropertyListDecoder+Decodable.swift in Sources */,
 				F426E05FB71D3E681C84F1E8 /* CellContentClassIdentifiable.swift in Sources */,
+				295933AE227CE82300B6D5CA /* ServiceViewModel.swift in Sources */,
 				F426EE4F8804868379A171BF /* CellContentClassIdentifiable+UICollectionView.swift in Sources */,
 				F426EECC2FCF75C89A0350D5 /* CellContentClassIdentifiable+UITableView.swift in Sources */,
 				F426E485E6308350B4388387 /* OptionalType.swift in Sources */,
@@ -1304,13 +1365,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295933BA227CE83C00B6D5CA /* ViewModelBasedCRViewCellMock.swift in Sources */,
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
 				2972BD5E227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift in Sources */,
+				295933BB227CE83C00B6D5CA /* ViewModelBasedCollectionViewCellMock.swift in Sources */,
+				295933B7227CE83400B6D5CA /* ViewModelBaseSpec.swift in Sources */,
 				2989A91A227CCAC30088A221 /* TestTableViewCellMock.swift in Sources */,
+				295933BC227CE83C00B6D5CA /* ViewModelBaseViewController.swift in Sources */,
 				2972BD58227CC335007AFB9C /* TestCollectionViewCellMock.swift in Sources */,
 				2989A91C227CD0160088A221 /* OptionalTypeSpec.swift in Sources */,
 				2958077B227CD2FA00C0CE4D /* ObserableTypeSpec.swift in Sources */,
+				295933B9227CE83C00B6D5CA /* TestViewModelMock.swift in Sources */,
 				29E8A587227C328300E7A894 /* AppHTTPErrorHandlerSpec.swift in Sources */,
+				295933BD227CE83C00B6D5CA /* ServiceViewModelMock.swift in Sources */,
+				295933B8227CE83C00B6D5CA /* ViewModelBasedTableViewCellMock.swift in Sources */,
 				2989A918227CCA8B0088A221 /* CellContentClassIdentifiableUITViewSpec.swift in Sources */,
 				F426E851D91130C4A75CA69B /* PropertyListDecoderDecodableSpec.swift in Sources */,
 				2958077D227CD30B00C0CE4D /* UIViewControllerRxSpec.swift in Sources */,
