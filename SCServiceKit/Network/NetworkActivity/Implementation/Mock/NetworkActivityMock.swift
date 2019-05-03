@@ -23,14 +23,10 @@ final class NetworkActivityMock {
 extension NetworkActivityMock: NetworkActivity {
 
   func show() {
-    count += 1
+    count = count.increase(1)
   }
 
   func hide() {
-    count -= 1
-
-    if count > -1 {
-      count = 0
-    }
+    count = count.decrease(1, min: 0)
   }
 }
