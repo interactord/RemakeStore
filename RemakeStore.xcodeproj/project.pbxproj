@@ -107,6 +107,8 @@
 		29E8A584227C2F8800E7A894 /* AppHTTPErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A580227C2F8800E7A894 /* AppHTTPErrorHandler.swift */; };
 		29E8A586227C2F8800E7A894 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A582227C2F8800E7A894 /* AppService.swift */; };
 		29E8A587227C328300E7A894 /* AppHTTPErrorHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A581227C2F8800E7A894 /* AppHTTPErrorHandlerSpec.swift */; };
+		29E8A58E227C35B500E7A894 /* ServiceDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A58B227C35B500E7A894 /* ServiceDIContainer.swift */; };
+		29E8A58F227C35B500E7A894 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A58C227C35B500E7A894 /* DIContainer.swift */; };
 		F426E0DCDF2564BBE6C1FC34 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E63E8691590353CD58DC /* Int+Extensions.swift */; };
 		F426E30765BF2CEA609B4B8D /* UIApplicationNetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB954290AC319213014C /* UIApplicationNetworkActivity.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
@@ -210,6 +212,8 @@
 		29E8A580227C2F8800E7A894 /* AppHTTPErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPErrorHandler.swift; sourceTree = "<group>"; };
 		29E8A581227C2F8800E7A894 /* AppHTTPErrorHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPErrorHandlerSpec.swift; sourceTree = "<group>"; };
 		29E8A582227C2F8800E7A894 /* AppService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		29E8A58B227C35B500E7A894 /* ServiceDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDIContainer.swift; sourceTree = "<group>"; };
+		29E8A58C227C35B500E7A894 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationErrorSpec.swift; sourceTree = "<group>"; };
 		29F51B0D227AE26D008756C6 /* DeserializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationError.swift; sourceTree = "<group>"; };
 		F426E0D685100564ADE82C45 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 		2910AC322278B5E500EC7A77 /* RemakeStore */ = {
 			isa = PBXGroup;
 			children = (
+				29E8A588227C35B500E7A894 /* DIContainer */,
 				29E8A57D227C2F8800E7A894 /* Service */,
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
 				29E8A565227C229600E7A894 /* Config */,
@@ -646,6 +651,23 @@
 				29E8A581227C2F8800E7A894 /* AppHTTPErrorHandlerSpec.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		29E8A588227C35B500E7A894 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				29E8A58A227C35B500E7A894 /* Implementation */,
+				29E8A58C227C35B500E7A894 /* DIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		29E8A58A227C35B500E7A894 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				29E8A58B227C35B500E7A894 /* ServiceDIContainer.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		29F51B03227A5475008756C6 /* Mock */ = {
@@ -1177,6 +1199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E8A58F227C35B500E7A894 /* DIContainer.swift in Sources */,
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
 				29E8A586227C2F8800E7A894 /* AppService.swift in Sources */,
 				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
@@ -1188,6 +1211,7 @@
 				F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */,
 				29E8A578227C26C500E7A894 /* PropertyListDecoder+Decodable.swift in Sources */,
 				29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */,
+				29E8A58E227C35B500E7A894 /* ServiceDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
