@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum ResultContent<T> {
+public enum ResultContent<T> {
 	case noContent
 	case value(T)
 }

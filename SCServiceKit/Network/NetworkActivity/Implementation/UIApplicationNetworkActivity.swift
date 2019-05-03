@@ -5,7 +5,7 @@
 
 import UIKit
 
-public final class UIApplicationNetworkActivity {
+public class UIApplicationNetworkActivity {
 
 	// MARK: - Private
 
@@ -13,7 +13,7 @@ public final class UIApplicationNetworkActivity {
 	var counter: Int
 
 	// MARK: - Initializing
-	init(application: UIApplication) {
+	public init(application: UIApplication) {
 		self.application = application
 		counter = 0
 	}
@@ -24,7 +24,7 @@ extension UIApplicationNetworkActivity: NetworkActivity {
 
 	// MARK: - functions for protocol
 
-	func show() {
+	public func show() {
 		counter = counter.increase(1)
 
 		if false == application.isNetworkActivityIndicatorVisible {
@@ -32,7 +32,7 @@ extension UIApplicationNetworkActivity: NetworkActivity {
 		}
 	}
 
-	func hide() {
+	public func hide() {
 		counter = counter.decrease(1, min: 0)
 
 		if counter == 0 && application.isNetworkActivityIndicatorVisible {

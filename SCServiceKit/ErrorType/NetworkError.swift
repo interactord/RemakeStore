@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct NetworkError {
+public struct NetworkError {
 
 	// MARK: - Private
 
@@ -15,18 +15,18 @@ struct NetworkError {
 	}
 
 	// MARK: - Initializing
-	init(error: Error? = nil) {
+	public init(error: Error? = nil) {
 		self.error = error
 	}
 }
 
 extension NetworkError: ErrorType {
 
-	var raw: Error? {
+	public var raw: Error? {
 		return error
 	}
 
-	var messageKey: String {
+	public var messageKey: String {
 		return Constant.translationKey
 	}
 

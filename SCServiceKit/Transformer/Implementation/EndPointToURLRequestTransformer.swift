@@ -5,10 +5,15 @@
 
 import Foundation
 
-struct EndPointToURLRequestTransformer: Transformer {
+public struct EndPointToURLRequestTransformer: Transformer {
+
+  // MARK: - Initializing
+
+  public init() { }
 
   // MARK: - Protocol functions
-  func transform(object: Endpoint) throws -> URLRequest {
+
+  public func transform(object: Endpoint) throws -> URLRequest {
     guard let url = finalURL(object: object) else {
       throw MalformedURLError()
     }

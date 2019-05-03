@@ -5,6 +5,6 @@
 
 import Foundation
 
-protocol Logger {
+public protocol Logger {
   func log(level: LoggerLevel, message: Any)
 }

@@ -7,6 +7,6 @@ import Foundation
 
 import RxSwift
 
-protocol NetworkAdapter {
+public protocol NetworkAdapter {
 	func rx_send(request: URLRequest) -> Observable<Response>
 }

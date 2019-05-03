@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct AppLoggerConfig: Decodable {
+public struct AppLoggerConfig: Decodable {
 	let appId: String
 	let appSecret: String
 	let encryptionKey: String

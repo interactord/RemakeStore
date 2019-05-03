@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct TypeCastingError {
+public struct TypeCastingError {
 
 	// MARK: - Private
 
@@ -17,7 +17,7 @@ struct TypeCastingError {
 
 	// MARK: - Initializing
 
-	init(developerMessage: String) {
+	public init(developerMessage: String) {
 		self.developerMessage = developerMessage
 	}
 }
@@ -25,11 +25,11 @@ struct TypeCastingError {
 extension TypeCastingError: ErrorType {
 
 	// MARK: - Protocol Variables
-	var raw: Error? {
+	public var raw: Error? {
 		return nil
 	}
 
-	var messageKey: String {
+	public var messageKey: String {
 		return  Constant.translationKey
 	}
 

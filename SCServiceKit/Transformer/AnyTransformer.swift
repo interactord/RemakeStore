@@ -5,19 +5,19 @@
 
 import Foundation
 
-struct AnyTransformer<Input, Output>: Transformer {
+public struct AnyTransformer<Input, Output>: Transformer {
 
 	// MARK: - Private
 
 	private let transform: (Input) throws -> Output
 
 	// MARK: - Initializing
-	init<T: Transformer>(base: T) where T.Input == Input, T.Output == Output {
+	public init<T: Transformer>(base: T) where T.Input == Input, T.Output == Output {
 		self.transform = base.transform
 	}
 
 	// MARK: - functions for protocol
-	func transform(object: Input) throws -> Output {
+	public func transform(object: Input) throws -> Output {
 		return try transform(object)
 	}
 

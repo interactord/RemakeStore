@@ -5,8 +5,11 @@
 
 import Foundation
 
-final class NSLocalizedStringTranslator: Translator {
-	func translation(for key: String) -> String {
-		return NSLocalizedString(key, comment: key)
-	}
+public class NSLocalizedStringTranslator: Translator {
+
+  public init() { }
+
+  public func translation(for key: String) -> String {
+    return NSLocalizedString(key, comment: key)
+  }
 }

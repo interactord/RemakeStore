@@ -5,21 +5,24 @@
 
 import Foundation
 
-struct MalformedURLError {
+public struct MalformedURLError {
 
   private enum Constant {
     static let translationKet = "error.global.network"
   }
+
+  public init() { }
 
 }
 
 extension MalformedURLError: ErrorType {
 
   // MARK: - Protocol Variables
-  var raw: Error? {
+  public var raw: Error? {
     return nil
   }
-  var messageKey: String {
+
+  public var messageKey: String {
     return Constant.translationKet
   }
 

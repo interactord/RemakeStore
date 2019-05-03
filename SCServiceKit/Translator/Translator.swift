@@ -5,6 +5,6 @@
 
 import Foundation
 
-protocol Translator {
+public protocol Translator {
 	func translation(for key: String) -> String
 }

@@ -7,7 +7,7 @@ import Foundation
 
 import RxSwift
 
-protocol Interceptor {
+public protocol Interceptor {
 	associatedtype Input
 
 	func intercept(chain: InterceptorChain<Input>) -> Observable<Input>

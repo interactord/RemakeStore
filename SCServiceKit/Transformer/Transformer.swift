@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol Transformer {
+public protocol Transformer {
 	associatedtype Input
 	associatedtype Output
 

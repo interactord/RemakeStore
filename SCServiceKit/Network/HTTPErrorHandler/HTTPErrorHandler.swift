@@ -5,6 +5,6 @@
 
 import Foundation
 
-protocol HTTPErrorHandler {
+public protocol HTTPErrorHandler {
 	func handle(response: Response) -> Error
 }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol Deserializable {
+public protocol Deserializable {
 	init(data: Data) throws
 }
 

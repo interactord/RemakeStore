@@ -15,7 +15,7 @@ public class AppLogger {
 	var env = false
 
 	// MARK: - Initializing
-	init(with config: AppLoggerConfig? = nil) {
+	public init(with config: AppLoggerConfig? = nil) {
 		logger = SwiftyBeaver.self
 		setupConsole()
 
@@ -47,7 +47,7 @@ public class AppLogger {
 }
 
 extension AppLogger: Logger {
-	func log(level: LoggerLevel, message: Any) {
+	public func log(level: LoggerLevel, message: Any) {
 
 		switch level {
 		case .debug:

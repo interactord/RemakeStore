@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol NetworkActivity {
+public protocol NetworkActivity {
 	func show()
 	func hide()
 }

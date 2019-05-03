@@ -7,7 +7,7 @@ import Foundation
 
 import RxSwift
 
-final class AppHTTPClient {
+public final class AppHTTPClient {
 
   // MARK: - Private
 
@@ -19,7 +19,7 @@ final class AppHTTPClient {
 
   // MARK: - Initializing
 
-  init(
+  public init(
     transformer: AnyTransformer<Endpoint, URLRequest>,
     networkAdapter: NetworkAdapter,
     requestChain: InterceptorChain<URLRequest>,
@@ -39,7 +39,7 @@ extension AppHTTPClient: HTTPClient {
 
   // MARK: - functions for protocol
 
-  func request<T: Deserializable>(endpoint: Endpoint) -> Observable<ResultContent<T>> {
+  public func request<T: Deserializable>(endpoint: Endpoint) -> Observable<ResultContent<T>> {
     let requestChain = self.requestChain
     let networkAdapter = self.networkAdapter
     let responseChain = self.responseChain
@@ -69,7 +69,7 @@ extension AppHTTPClient: HTTPClient {
       }
   }
 
-  func request(endpoint: Endpoint) -> Observable<Response> {
+  public func request(endpoint: Endpoint) -> Observable<Response> {
     let requestChain = self.requestChain
     let networkAdapter = self.networkAdapter
     let responseChain = self.responseChain

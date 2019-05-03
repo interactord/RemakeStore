@@ -100,6 +100,7 @@
 		29E00A93227BD71B004A7A49 /* LoggerInterceptorURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5936AF69D9E6DB215F6 /* LoggerInterceptorURLRequest.swift */; };
 		29E00A94227BD832004A7A49 /* StubServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290D7EC62279789C0099A3C0 /* StubServer.swift */; };
 		29E00A95227BD835004A7A49 /* MockBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E2FF0D2937F922A68768 /* MockBuilder.swift */; };
+		29E00AB3227C07B3004A7A49 /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E00AB2227C07B3004A7A49 /* env.plist */; };
 		F426E0DCDF2564BBE6C1FC34 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E63E8691590353CD58DC /* Int+Extensions.swift */; };
 		F426E30765BF2CEA609B4B8D /* UIApplicationNetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB954290AC319213014C /* UIApplicationNetworkActivity.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
@@ -195,6 +196,7 @@
 		29E00A09227BCE61004A7A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29E00A0E227BCE61004A7A49 /* SCServiceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCServiceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E00A17227BCE61004A7A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29E00AB2227C07B3004A7A49 /* env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
 		29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationErrorSpec.swift; sourceTree = "<group>"; };
 		29F51B0D227AE26D008756C6 /* DeserializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationError.swift; sourceTree = "<group>"; };
 		F426E0D685100564ADE82C45 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -335,7 +337,6 @@
 			children = (
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
 				295A82692278E4EE00F011C7 /* Flow */,
-				29D72D142278FD5500909EFD /* Services */,
 				29602B862278D26900A3A4B8 /* zResource */,
 			);
 			path = RemakeStore;
@@ -422,15 +423,9 @@
 				2910AC3A2278B5E600EC7A77 /* Assets.xcassets */,
 				2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */,
 				2910AC3F2278B5E600EC7A77 /* Info.plist */,
+				29E00AB2227C07B3004A7A49 /* env.plist */,
 			);
 			path = zResource;
-			sourceTree = "<group>";
-		};
-		29D72D142278FD5500909EFD /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		29D72D152278FD6000909EFD /* Logger */ = {
@@ -917,6 +912,7 @@
 			files = (
 				2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */,
 				2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */,
+				29E00AB3227C07B3004A7A49 /* env.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

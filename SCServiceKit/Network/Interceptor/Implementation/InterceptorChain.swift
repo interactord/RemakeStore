@@ -7,7 +7,7 @@ import Foundation
 
 import RxSwift
 
-final class InterceptorChain<T> {
+public class InterceptorChain<T> {
 
   // MARK: - Private
 
@@ -18,12 +18,12 @@ final class InterceptorChain<T> {
   public var input: T?
 
   // MARK: - Initializing
-  init(interceptors: [AnyInterceptor<T>], input: T?) {
+  public init(interceptors: [AnyInterceptor<T>], input: T?) {
     self.interceptors = interceptors
     self.input = input
   }
 
-  convenience init() {
+  public convenience init() {
     self.init(interceptors: [AnyInterceptor<T>](), input: nil)
   }
 

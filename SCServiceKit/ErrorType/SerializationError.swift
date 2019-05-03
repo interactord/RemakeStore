@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct SerializationError {
+public struct SerializationError {
 
 	// MARK: - Private
 
@@ -17,7 +17,7 @@ struct SerializationError {
 
 	// MARK: - Initializing
 
-	init(error: Error) {
+	public init(error: Error) {
 		self.error = error
 	}
 
@@ -27,10 +27,11 @@ extension SerializationError: ErrorType {
 
 	// MARK: - functions for protocol
 
-	var raw: Error? {
+	public var raw: Error? {
 		return error
 	}
-	var messageKey: String {
+
+	public var messageKey: String {
 		return Constant.translationKey
 	}
 }

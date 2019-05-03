@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct DeserializationError {
+public struct DeserializationError {
 
 	// MARK: - Private
 
@@ -17,7 +17,7 @@ struct DeserializationError {
 
 	// MARK: - Initializing
 
-	init(developerMessage: String) {
+	public init(developerMessage: String) {
 		self.developerMessage = developerMessage
 	}
 }
@@ -25,11 +25,11 @@ struct DeserializationError {
 extension DeserializationError: ErrorType {
 
 	// MARK: - Protocol Variables
-	var raw: Error? {
+	public var raw: Error? {
 		return nil
 	}
 
-	var messageKey: String {
+	public var messageKey: String {
 		return  Constant.translationKey
 	}
 
