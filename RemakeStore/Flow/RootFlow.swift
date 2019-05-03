@@ -15,9 +15,11 @@ class RootFlow {
 
   private let disposeBag = DisposeBag()
   private let coordinator = FlowCoordinator()
+  private let service: Service
 
   // MARK: - Initializing
-  init() {
+  init(with service: Service) {
+    self.service = service
   }
 
   deinit {
@@ -29,23 +31,24 @@ extension RootFlow {
 
   func onDebugNavigate() {
 
+    let logger = service.logger
     self.coordinator.rx
       .willNavigate
       .subscribe(onNext: {
-        print("Dill navigate to flow=\($0) and step=\($0)")
+        logger.log(level: .info, message: "Will navigate to flow=\($0) and step=\($0)")
       }).disposed(by: disposeBag)
 
     self.coordinator.rx
       .didNavigate
       .subscribe(onNext: {
-        print("Did navigate to flow=\($0) and step=\($0)")
+        logger.log(level: .info, message: "Did navigate to flow=\($0) and step=\($0)")
       }).disposed(by: disposeBag)
 
   }
 
   func start(with window: UIWindow) {
 
-    let launchFlow = LaunchFlow()
+    let launchFlow = LaunchFlow(with: service)
 
     Flows.whenReady(flow1: launchFlow) { root in
       window.rootViewController = root

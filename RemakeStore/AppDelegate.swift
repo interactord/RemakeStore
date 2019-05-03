@@ -11,7 +11,8 @@ import SCServiceKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  lazy var rootFlow = RootFlow()
+  lazy var serviceDIContainer = ServiceDIContainer()
+  lazy var rootFlow = RootFlow(with: serviceDIContainer.service)
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
