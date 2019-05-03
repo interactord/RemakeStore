@@ -17,8 +17,11 @@ class DashboardFlow {
 		return controller
 	}()
 
+	private let service: Service
+
 	// MARK: - Initializing
-	init() {
+	init(with service: Service) {
+		self.service = service
 	}
 
 	deinit {

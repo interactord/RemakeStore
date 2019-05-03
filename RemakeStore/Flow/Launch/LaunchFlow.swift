@@ -19,8 +19,11 @@ class LaunchFlow {
     return navController
   }()
 
+  let service: Service
+
   // MARK: - Initializing
-  init() {
+  init(with service: Service) {
+    self.service = service
   }
 
   deinit {
@@ -54,7 +57,7 @@ extension LaunchFlow: Flow {
 
   private func navigateToDashboard() -> FlowContributors {
 
-    let dashboardFlow = DashboardFlow()
+    let dashboardFlow = DashboardFlow(with: service)
 
     Flows.whenReady(flow1: dashboardFlow) { [unowned self] root in
       DispatchQueue.main.async {
