@@ -101,6 +101,8 @@
 		29E00A94227BD832004A7A49 /* StubServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290D7EC62279789C0099A3C0 /* StubServer.swift */; };
 		29E00A95227BD835004A7A49 /* MockBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E2FF0D2937F922A68768 /* MockBuilder.swift */; };
 		29E00AB3227C07B3004A7A49 /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E00AB2227C07B3004A7A49 /* env.plist */; };
+		29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A568227C229600E7A894 /* EnvConfigModel.swift */; };
+		29E8A578227C26C500E7A894 /* PropertyListDecoder+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A577227C26C500E7A894 /* PropertyListDecoder+Decodable.swift */; };
 		F426E0DCDF2564BBE6C1FC34 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E63E8691590353CD58DC /* Int+Extensions.swift */; };
 		F426E30765BF2CEA609B4B8D /* UIApplicationNetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB954290AC319213014C /* UIApplicationNetworkActivity.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
@@ -108,6 +110,7 @@
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
 		F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */; };
 		F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */; };
+		F426EF04C311E84B7FEEB777 /* PropertyListDecoderDecodableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF07107718B9706B9A47 /* PropertyListDecoderDecodableSpec.swift */; };
 		F426EF58B86A785D49F17AAA /* UIApplicationNetworkActivitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC397CCEED8D4AA31598 /* UIApplicationNetworkActivitySpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +200,8 @@
 		29E00A0E227BCE61004A7A49 /* SCServiceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCServiceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E00A17227BCE61004A7A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29E00AB2227C07B3004A7A49 /* env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
+		29E8A568227C229600E7A894 /* EnvConfigModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvConfigModel.swift; sourceTree = "<group>"; };
+		29E8A577227C26C500E7A894 /* PropertyListDecoder+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyListDecoder+Decodable.swift"; sourceTree = "<group>"; };
 		29F51B0C227AE26C008756C6 /* DeserializationErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationErrorSpec.swift; sourceTree = "<group>"; };
 		29F51B0D227AE26D008756C6 /* DeserializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationError.swift; sourceTree = "<group>"; };
 		F426E0D685100564ADE82C45 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -250,6 +255,7 @@
 		F426ED6C1722C8CA66D14E7B /* AnyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTransformer.swift; sourceTree = "<group>"; };
 		F426EDC8A07683F4B7CEE87D /* InterceptorChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptorChain.swift; sourceTree = "<group>"; };
 		F426EE62F39720B0415FB08F /* MalformedURLError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MalformedURLError.swift; sourceTree = "<group>"; };
+		F426EF07107718B9706B9A47 /* PropertyListDecoderDecodableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListDecoderDecodableSpec.swift; sourceTree = "<group>"; };
 		F426EF35F8ED7BA0DD46290A /* URLSessionNetworkAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkAdapterSpec.swift; sourceTree = "<group>"; };
 		F426EFFC1D9AE1B00CD9E7D6 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +342,8 @@
 			isa = PBXGroup;
 			children = (
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
+				29E8A565227C229600E7A894 /* Config */,
+				29E8A576227C268600E7A894 /* Extensions */,
 				295A82692278E4EE00F011C7 /* Flow */,
 				29602B862278D26900A3A4B8 /* zResource */,
 			);
@@ -585,6 +593,31 @@
 				F426E2CC5D81E8C0DFEB39A8 /* Mock */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		29E8A565227C229600E7A894 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				29E8A567227C229600E7A894 /* Models */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		29E8A567227C229600E7A894 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29E8A568227C229600E7A894 /* EnvConfigModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		29E8A576227C268600E7A894 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29E8A577227C26C500E7A894 /* PropertyListDecoder+Decodable.swift */,
+				F426EF07107718B9706B9A47 /* PropertyListDecoderDecodableSpec.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		29F51B03227A5475008756C6 /* Mock */ = {
@@ -1122,6 +1155,8 @@
 				F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */,
 				F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */,
 				F426ED5822CA81793AB831D2 /* DashboardFlow.swift in Sources */,
+				29E8A578227C26C500E7A894 /* PropertyListDecoder+Decodable.swift in Sources */,
+				29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1130,6 +1165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
+				F426EF04C311E84B7FEEB777 /* PropertyListDecoderDecodableSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
