@@ -5,6 +5,8 @@
 
 import UIKit
 
+import SCServiceKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

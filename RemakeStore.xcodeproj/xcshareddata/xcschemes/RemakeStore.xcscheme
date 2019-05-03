@@ -48,6 +48,16 @@
                ReferencedContainer = "container:RemakeStore.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "29E00A0D227BCE61004A7A49"
+               BuildableName = "SCServiceKitTests.xctest"
+               BlueprintName = "SCServiceKitTests"
+               ReferencedContainer = "container:RemakeStore.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -8,7 +8,7 @@ cache:
 
 env:
   global:
-    - PROJECT="RemakeStore.xcodeproj"
+    - PROJECT="RemakeStore.xcworkspace"
     - SCHEME="RemakeStore"
     - IOS_SDK="iphonesimulator12.2"
     - DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=12.2"
@@ -28,7 +28,7 @@ before_script:
 script:
   - set -o pipefail
   - xcodebuild clean build test
-    -project "$PROJECT"
+    -workspace "$PROJECT"
     -scheme "$SCHEME"
     -sdk "$IOS_SDK"
     -destination "$DESTINATION"
