@@ -5,22 +5,22 @@
 
 import UIKit
 
-class SearchController: BaseController {
+class TodayController: BaseController {
 
   // MARK: - ViewModel
 
-  var viewModel: SearchViewModel!
+  var viewModel: TodayViewModel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .red
+    view.backgroundColor = .green
   }
 
 }
 
-extension SearchController: ViewModelBased {
+extension TodayController: ViewModelBased {
 
   func bindViewModel() {
-    print("SearchController")
+    print("TodayController")
   }
 }
