@@ -7,7 +7,7 @@ import UIKit
 
 import RxFlow
 
-class DashboardFlow {
+class DashboardFlow: BaseFlow {
 
   // MARK: - Private
 
@@ -17,20 +17,16 @@ class DashboardFlow {
     return controller
   }()
 
-  private let service: Service
+  let service: Service
 
   // MARK: - Initializing
-  init(with service: Service) {
+  required init(with service: Service) {
     self.service = service
   }
 
-}
-
-extension DashboardFlow: BaseFlow {
-
   // MARK: - Protocol Variables
 
-  public var root: Presentable {
+  var root: Presentable {
     return rootViewController
   }
 

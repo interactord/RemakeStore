@@ -20,7 +20,8 @@ class BaseFlowSpec: XCTestCase {
   }
 
   func test_navigateToStep() {
-    let mock = BaseFlowMock()
+    var container = ServiceDIContainer()
+    let mock = BaseFlowMock(with: container.service)
 
     XCTAssertNotNil(mock.makeContributor(with: .none, flow: mock))
     XCTAssertNotNil(mock.navigate(to: .dashboardIsRequired))

@@ -8,6 +8,10 @@ import UIKit
 import RxFlow
 
 protocol BaseFlow: Flow {
+	associatedtype ServiceType
+	var service: ServiceType { get }
+
+	init(with service: Service)
 	func navigate(to step: AppStep) -> FlowContributors
 }
 

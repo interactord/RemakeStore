@@ -589,12 +589,12 @@
 		295A82692278E4EE00F011C7 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				29428FCD227D860A00BD688D /* Mock */,
 				F426E80E6DB9428149B9B55D /* AppStep.swift */,
 				F426E98B13FD64316E62EC01 /* RootFlow.swift */,
 				F426E093CF563732C7670957 /* Base */,
 				295A826A2278E4EE00F011C7 /* Dashboard */,
 				295A826B2278E4F600F011C7 /* Launch */,
+				29428FCD227D860A00BD688D /* Mock */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
