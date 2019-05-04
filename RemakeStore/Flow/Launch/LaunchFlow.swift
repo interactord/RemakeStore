@@ -9,7 +9,7 @@ import RxCocoa
 import RxSwift
 import RxFlow
 
-class LaunchFlow {
+class LaunchFlow: BaseFlow {
 
   // MARK: - Private
 
@@ -19,15 +19,12 @@ class LaunchFlow {
     return navController
   }()
 
-  let service: Service
+  var service: Service
 
   // MARK: - Initializing
-  init(with service: Service) {
+  required init(with service: Service) {
     self.service = service
   }
-}
-
-extension LaunchFlow: BaseFlow {
 
   // MARK: - Protocol Variables
   public var root: Presentable {
@@ -55,7 +52,7 @@ extension LaunchFlow: BaseFlow {
       }
     }
 
-    let contributor = makeContributor(with: .dashboardIsRequired, flow: dashboardFlow)
+    let contributor = FlowContributor.makeContributor(with: .dashboardIsRequired, flow: dashboardFlow)
     return .one(flowContributor: contributor)
   }
 }

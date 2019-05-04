@@ -11,13 +11,19 @@ import RxFlow
 
 class BaseFlowMock: BaseFlow {
 
+  let service: Service
+
+  required init(with service: Service) {
+    self.service = service
+  }
+
   var root: Presentable {
     return UIViewController()
   }
 
   func navigate(to step: AppStep) -> FlowContributors {
-    let flow = BaseFlowMock()
-    let contributor = makeContributor(with: .none, flow: flow)
+    let flow = BaseFlowMock(with: service)
+    let contributor = FlowContributor.makeContributor(with: .none, flow: flow)
     return .one(flowContributor: contributor)
   }
 

@@ -8,6 +8,10 @@ import UIKit
 import RxFlow
 
 protocol BaseFlow: Flow {
+	associatedtype ServiceType
+	var service: ServiceType { get }
+
+	init(with service: Service)
 	func navigate(to step: AppStep) -> FlowContributors
 }
 
@@ -18,10 +22,5 @@ extension BaseFlow {
 			return  .none
 		}
 		return navigate(to: step)
-	}
-
-	func makeContributor(with step: AppStep, flow: Flow) -> FlowContributor {
-		let step = OneStepper(withSingleStep: step)
-		return .contribute(withNextPresentable: flow, withNextStepper: step)
 	}
 }

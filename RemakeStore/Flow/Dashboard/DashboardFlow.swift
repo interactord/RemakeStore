@@ -7,7 +7,7 @@ import UIKit
 
 import RxFlow
 
-class DashboardFlow {
+class DashboardFlow: BaseFlow {
 
   // MARK: - Private
 
@@ -17,20 +17,16 @@ class DashboardFlow {
     return controller
   }()
 
-  private let service: Service
+  let service: Service
 
   // MARK: - Initializing
-  init(with service: Service) {
+  required init(with service: Service) {
     self.service = service
   }
 
-}
-
-extension DashboardFlow: BaseFlow {
-
   // MARK: - Protocol Variables
 
-  public var root: Presentable {
+  var root: Presentable {
     return rootViewController
   }
 
@@ -48,6 +44,36 @@ extension DashboardFlow: BaseFlow {
   // MARK: - Private
 
   private func navigateToDashboard() -> FlowContributors {
-    return .none
+    let todayFlow = TodayFlow(with: service)
+    let appsFlow = AppsFlow(with: service)
+    let musicFlow = MusicFlow(with: service)
+    let searchFlow = SearchFlow(with: service)
+
+    Flows.whenReady(
+      flow1: todayFlow,
+      flow2: appsFlow,
+      flow3: musicFlow,
+      flow4: searchFlow
+    ) {
+      self.rootViewController.setViewControllers([
+        $0, $1, $2, $3
+      ], animated: false)
+    }
+
+    let contributors = makeContributors(
+      with: .dashboardIsComplete, flows: [
+        todayFlow,
+        appsFlow,
+        musicFlow,
+        searchFlow
+      ])
+
+    return .multiple(flowContributors: contributors)
+  }
+
+  private func makeContributors(with step: AppStep, flows: [Flow]) -> [FlowContributor] {
+    return flows.map {
+      FlowContributor.makeContributor(with: step, flow: $0)
+    }
   }
 }
