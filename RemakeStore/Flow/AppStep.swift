@@ -9,10 +9,11 @@ import RxFlow
 
 enum AppStep: Step {
 
-	/// Global
-	case none
+  /// Global
+  case none
 
-	/// Dashboard
-	case dashboardIsRequired
+  /// Dashboard
+  case dashboardIsRequired
+  case dashboardIsComplete
 
 }

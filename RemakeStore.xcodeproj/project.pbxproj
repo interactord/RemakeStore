@@ -46,6 +46,10 @@
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
 		2972BD58227CC335007AFB9C /* TestCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */; };
 		2972BD5E227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */; };
+		29738CDF227DA4A1001D58FB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29738CDD227DA4A1001D58FB /* SearchController.swift */; };
+		29738CE0227DA4A1001D58FB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29738CDE227DA4A1001D58FB /* SearchViewModel.swift */; };
+		29738CE2227DA4C1001D58FB /* SearchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29738CE1227DA4C1001D58FB /* SearchFlow.swift */; };
+		29738CE4227DA4DA001D58FB /* SearchDIContainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29738CE3227DA4DA001D58FB /* SearchDIContainter.swift */; };
 		2989A918227CCA8B0088A221 /* CellContentClassIdentifiableUITViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989A917227CCA8B0088A221 /* CellContentClassIdentifiableUITViewSpec.swift */; };
 		2989A91A227CCAC30088A221 /* TestTableViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989A919227CCAC30088A221 /* TestTableViewCellMock.swift */; };
 		2989A91C227CD0160088A221 /* OptionalTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989A91B227CD0160088A221 /* OptionalTypeSpec.swift */; };
@@ -278,6 +282,10 @@
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCellMock.swift; sourceTree = "<group>"; };
 		2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentClassIdentifiableUICViewSpec.swift; sourceTree = "<group>"; };
+		29738CDD227DA4A1001D58FB /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		29738CDE227DA4A1001D58FB /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		29738CE1227DA4C1001D58FB /* SearchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFlow.swift; sourceTree = "<group>"; };
+		29738CE3227DA4DA001D58FB /* SearchDIContainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDIContainter.swift; sourceTree = "<group>"; };
 		2989A917227CCA8B0088A221 /* CellContentClassIdentifiableUITViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentClassIdentifiableUITViewSpec.swift; sourceTree = "<group>"; };
 		2989A919227CCAC30088A221 /* TestTableViewCellMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCellMock.swift; sourceTree = "<group>"; };
 		2989A91B227CD0160088A221 /* OptionalTypeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalTypeSpec.swift; sourceTree = "<group>"; };
@@ -555,6 +563,7 @@
 		295933A2227CE82300B6D5CA /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				29738CDC227DA4A1001D58FB /* Search */,
 				29428FC0227D82AE00BD688D /* Dashboard */,
 			);
 			path = Scene;
@@ -603,6 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				F426E5F31CBE1FACB35E8BA1 /* DashboardFlow.swift */,
+				29738CE1227DA4C1001D58FB /* SearchFlow.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -672,6 +682,15 @@
 				2989A919227CCAC30088A221 /* TestTableViewCellMock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		29738CDC227DA4A1001D58FB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				29738CDD227DA4A1001D58FB /* SearchController.swift */,
+				29738CDE227DA4A1001D58FB /* SearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		29D72D152278FD6000909EFD /* Logger */ = {
@@ -891,6 +910,7 @@
 		29E8A58A227C35B500E7A894 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				29738CE3227DA4DA001D58FB /* SearchDIContainter.swift */,
 				29E8A58B227C35B500E7A894 /* ServiceDIContainer.swift */,
 			);
 			path = Implementation;
@@ -1550,6 +1570,7 @@
 				29E8A58F227C35B500E7A894 /* DIContainer.swift in Sources */,
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
 				29E8A586227C2F8800E7A894 /* AppService.swift in Sources */,
+				29738CDF227DA4A1001D58FB /* SearchController.swift in Sources */,
 				F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */,
 				29428FC2227D82AE00BD688D /* DashboardController.swift in Sources */,
 				F426E98400CE2377738F6D39 /* AppStep.swift in Sources */,
@@ -1567,9 +1588,12 @@
 				F426EECC2FCF75C89A0350D5 /* CellContentClassIdentifiable+UITableView.swift in Sources */,
 				F426E485E6308350B4388387 /* OptionalType.swift in Sources */,
 				F426E8DBE735A9DA2AAEA3AE /* ObserableType.swift in Sources */,
+				29738CE2227DA4C1001D58FB /* SearchFlow.swift in Sources */,
+				29738CE4227DA4DA001D58FB /* SearchDIContainter.swift in Sources */,
 				F426E72FEECE484347EFF674 /* UIViewController+Rx.swift in Sources */,
 				F426E70BFE520EA56FF79DCA /* ViewModelBase.swift in Sources */,
 				F426EBBF38E95363ECFF8972 /* UINavigationController+Style.swift in Sources */,
+				29738CE0227DA4A1001D58FB /* SearchViewModel.swift in Sources */,
 				F426EDB88E352C472DEE6BF5 /* BaseController.swift in Sources */,
 				F426EBD3C06776B83F176681 /* BaseFlow.swift in Sources */,
 			);

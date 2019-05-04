@@ -44,6 +44,17 @@ class DashboardFlow: BaseFlow {
   // MARK: - Private
 
   private func navigateToDashboard() -> FlowContributors {
-    return .none
+    let searchFlow = SearchFlow(with: service)
+    Flows.whenReady(flow1: searchFlow) {
+      self.rootViewController.setViewControllers([
+        $0
+      ], animated: false)
+    }
+
+    let contributor = makeContributor(
+      with: .dashboardIsComplete,
+      flow: searchFlow
+    )
+    return .one(flowContributor: contributor)
   }
 }
