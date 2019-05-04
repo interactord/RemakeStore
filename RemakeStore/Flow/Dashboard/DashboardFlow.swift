@@ -44,17 +44,36 @@ class DashboardFlow: BaseFlow {
   // MARK: - Private
 
   private func navigateToDashboard() -> FlowContributors {
+    let todayFlow = TodayFlow(with: service)
+    let appsFlow = AppsFlow(with: service)
+    let musicFlow = MusicFlow(with: service)
     let searchFlow = SearchFlow(with: service)
-    Flows.whenReady(flow1: searchFlow) {
+
+    Flows.whenReady(
+      flow1: todayFlow,
+      flow2: appsFlow,
+      flow3: musicFlow,
+      flow4: searchFlow
+    ) {
       self.rootViewController.setViewControllers([
-        $0
+        $0, $1, $2, $3
       ], animated: false)
     }
 
-    let contributor = makeContributor(
-      with: .dashboardIsComplete,
-      flow: searchFlow
-    )
-    return .one(flowContributor: contributor)
+    let contributors = makeContributors(
+      with: .dashboardIsComplete, flows: [
+        todayFlow,
+        appsFlow,
+        musicFlow,
+        searchFlow
+      ])
+
+    return .multiple(flowContributors: contributors)
+  }
+
+  private func makeContributors(with step: AppStep, flows: [Flow]) -> [FlowContributor] {
+    return flows.map {
+      FlowContributor.makeContributor(with: step, flow: $0)
+    }
   }
 }

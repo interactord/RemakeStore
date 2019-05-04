@@ -42,7 +42,6 @@
 		29602B7C2278D1A200A3A4B8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B782278D12500A3A4B8 /* RxCocoa.framework */; };
 		29602B7D2278D1A200A3A4B8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B732278D0EE00A3A4B8 /* RxSwift.framework */; };
 		29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B802278D1A200A3A4B8 /* RxTest.framework */; };
-		29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B822278D1C900A3A4B8 /* RxBlocking.framework */; };
 		29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B742278D0EE00A3A4B8 /* RxFlow.framework */; };
 		2972BD58227CC335007AFB9C /* TestCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */; };
 		2972BD5E227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */; };
@@ -61,7 +60,6 @@
 		29E00A2A227BCF8D004A7A49 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B732278D0EE00A3A4B8 /* RxSwift.framework */; };
 		29E00A2B227BCF8D004A7A49 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B722278D0EE00A3A4B8 /* SwiftyBeaver.framework */; };
 		29E00A2C227BCF8D004A7A49 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B7A2278D16300A3A4B8 /* Swinject.framework */; };
-		29E00A2D227BCFF6004A7A49 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B822278D1C900A3A4B8 /* RxBlocking.framework */; };
 		29E00A2E227BCFF6004A7A49 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B782278D12500A3A4B8 /* RxCocoa.framework */; };
 		29E00A2F227BCFF6004A7A49 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B732278D0EE00A3A4B8 /* RxSwift.framework */; };
 		29E00A31227BCFF6004A7A49 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290D7EC4227978370099A3C0 /* Swifter.framework */; };
@@ -156,6 +154,7 @@
 		F426E80AB55665828F6F6885 /* AppsDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF432FA9442E84078ADD /* AppsDIContainer.swift */; };
 		F426E851D91130C4A75CA69B /* PropertyListDecoderDecodableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ECB82348F1DC9DF93155 /* PropertyListDecoderDecodableSpec.swift */; };
 		F426E8DBE735A9DA2AAEA3AE /* ObserableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF485A10492571F67174 /* ObserableType.swift */; };
+		F426E977F1F27E9BFDAB8492 /* FlowContributor+AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
 		F426EA47088D319BB0B235CA /* PropertyListDecoder+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5D5DAF942F15B29F8F0 /* PropertyListDecoder+Decodable.swift */; };
 		F426EA706614B94DDDF231EB /* MusicFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE011039147A4A77BB8B /* MusicFlow.swift */; };
@@ -361,6 +360,7 @@
 		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		F426E83E9EE86205E5A05644 /* NSLocalizedTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLocalizedTranslator.swift; sourceTree = "<group>"; };
 		F426E91C84C3B3F63C287FC1 /* AnyInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyInterceptorSpec.swift; sourceTree = "<group>"; };
+		F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowContributor+AppStep.swift"; sourceTree = "<group>"; };
 		F426E98B13FD64316E62EC01 /* RootFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
 		F426E98DEB04C703D0912875 /* AppLoggerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLoggerConfig.swift; sourceTree = "<group>"; };
 		F426E9B4C904B4326472F0CF /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -422,7 +422,6 @@
 			files = (
 				290D7EC5227978370099A3C0 /* Swifter.framework in Frameworks */,
 				29602B852278D25100A3A4B8 /* RxFlow.framework in Frameworks */,
-				29602B832278D1CA00A3A4B8 /* RxBlocking.framework in Frameworks */,
 				29602B812278D1A200A3A4B8 /* RxTest.framework in Frameworks */,
 				29602B7C2278D1A200A3A4B8 /* RxCocoa.framework in Frameworks */,
 				29602B7D2278D1A200A3A4B8 /* RxSwift.framework in Frameworks */,
@@ -459,7 +458,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E00A2D227BCFF6004A7A49 /* RxBlocking.framework in Frameworks */,
 				29E00A2E227BCFF6004A7A49 /* RxCocoa.framework in Frameworks */,
 				29E00A2F227BCFF6004A7A49 /* RxSwift.framework in Frameworks */,
 				29E00A31227BCFF6004A7A49 /* Swifter.framework in Frameworks */,
@@ -905,6 +903,7 @@
 				F426E4EF30057EF10F804DA5 /* PropertyListDecoder */,
 				F426E8B91252ABDCC95CFDBE /* Reuseable */,
 				F426E90CF8FB6E654C59EEE6 /* Rx */,
+				F426E496352EA55EE9FF3BA6 /* RxFlow */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1020,6 +1019,14 @@
 				F426EBA9FBD9C1C9C53A4991 /* Interceptor.swift */,
 			);
 			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		F426E496352EA55EE9FF3BA6 /* RxFlow */ = {
+			isa = PBXGroup;
+			children = (
+				F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */,
+			);
+			path = RxFlow;
 			sourceTree = "<group>";
 		};
 		F426E49F15C462D5CED95B4E /* ErrorType */ = {
@@ -1522,7 +1529,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxFlow.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Swifter.framework",
 			);
 			name = "Carthage Run Script";
@@ -1584,7 +1590,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Swifter.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyBeaver.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
@@ -1668,6 +1673,7 @@
 				F426EB00AA28C81A5EB819F9 /* AppsFlow.swift in Sources */,
 				F426EC12CA58E8184CAE1D4C /* TodayFlow.swift in Sources */,
 				F426EA706614B94DDDF231EB /* MusicFlow.swift in Sources */,
+				F426E977F1F27E9BFDAB8492 /* FlowContributor+AppStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

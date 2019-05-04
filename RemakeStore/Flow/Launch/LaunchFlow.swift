@@ -52,7 +52,7 @@ class LaunchFlow: BaseFlow {
       }
     }
 
-    let contributor = makeContributor(with: .dashboardIsRequired, flow: dashboardFlow)
+    let contributor = FlowContributor.makeContributor(with: .dashboardIsRequired, flow: dashboardFlow)
     return .one(flowContributor: contributor)
   }
 }

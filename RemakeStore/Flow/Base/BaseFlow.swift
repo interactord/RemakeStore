@@ -23,9 +23,4 @@ extension BaseFlow {
 		}
 		return navigate(to: step)
 	}
-
-	func makeContributor(with step: AppStep, flow: Flow) -> FlowContributor {
-		let step = OneStepper(withSingleStep: step)
-		return .contribute(withNextPresentable: flow, withNextStepper: step)
-	}
 }

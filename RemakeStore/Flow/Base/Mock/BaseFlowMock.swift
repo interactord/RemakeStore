@@ -23,7 +23,7 @@ class BaseFlowMock: BaseFlow {
 
   func navigate(to step: AppStep) -> FlowContributors {
     let flow = BaseFlowMock(with: service)
-    let contributor = makeContributor(with: .none, flow: flow)
+    let contributor = FlowContributor.makeContributor(with: .none, flow: flow)
     return .one(flowContributor: contributor)
   }
 
