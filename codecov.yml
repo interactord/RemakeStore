@@ -10,6 +10,11 @@ coverage:
   - Carthage/.*
   - .*Tests.swift
   - .*Spec.swift
+  - .Stub*.swift
+  - .*Mock.swift
   - RemakeStoreTests/*
+  - SCServiceKitTests/*
+  - SCLayoutKitTests/*
+  
   status:
     patch: false
