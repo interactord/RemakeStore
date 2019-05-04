@@ -27,6 +27,7 @@ class BaseControllerSpec: XCTestCase {
   func test_override_call() {
     sut = BaseController()
 
+    sut?.steps.accept(AppStep.none)
     sut?.viewDidLoad()
     sut?.updateViewConstraints()
   }

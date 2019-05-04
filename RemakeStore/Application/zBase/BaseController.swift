@@ -11,58 +11,59 @@ import RxCocoa
 
 class BaseController: UIViewController {
 
-	// MARK: - Private
+  // MARK: - Private
 
-	private let disposeBag = DisposeBag()
-	private var didSetupConstraints = false
+  private let disposeBag = DisposeBag()
+  private var didSetupConstraints = false
 
-	// MARK: - Initializing
+  // MARK: - Initializing
 
-	init() {
-		super.init(nibName: nil, bundle: nil)
-	}
+  init() {
+    super.init(nibName: nil, bundle: nil)
+  }
 
-	required convenience init?(coder aDecoder: NSCoder) {
-		self.init()
-	}
+  required convenience init?(coder aDecoder: NSCoder) {
+    self.init()
+  }
 
-	// MARK: - Lifecycle
+  // MARK: - Lifecycle
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.setupNavigation()
-		self.view.setNeedsUpdateConstraints()
-		self.view.backgroundColor = .white
-	}
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.setupNavigation()
+    self.setupViews()
+    self.view.setNeedsUpdateConstraints()
+    self.view.backgroundColor = .white
+  }
 
-	override func updateViewConstraints() {
-		if false == self.didSetupConstraints {
-			self.setupConstraints()
-			self.didSetupConstraints = true
-		}
-		super.updateViewConstraints()
-	}
+  override func updateViewConstraints() {
+    if false == self.didSetupConstraints {
+      self.setupConstraints()
+      self.didSetupConstraints = true
+    }
+    super.updateViewConstraints()
+  }
 
-	// MARK: Overriding functions
+  // MARK: Overriding functions
 
-	func setupViews() {
-		/// view.addSubview()
-	}
+  func setupViews() {
+    /// view.addSubview()
+  }
 
-	func setupConstraints() {
-		/// Autolayout
-	}
+  func setupConstraints() {
+    /// Autolayout
+  }
 
-	func setupNavigation() {
-		/// navigation.title = "TITLE"
-	}
+  func setupNavigation() {
+    /// navigation.title = "TITLE"
+  }
 
 }
 
 extension BaseController: Stepper {
 
-	public var steps: PublishRelay<Step> {
-		return PublishRelay<Step>()
-	}
+  public var steps: PublishRelay<Step> {
+    return PublishRelay<Step>()
+  }
 
 }
