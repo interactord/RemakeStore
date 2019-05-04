@@ -1,6 +1,6 @@
 //
-//  Created by Scott Moon on 01/05/2019.
-//  Copyright © 2019 Scott Moon. All rights reserved.
+// Created by Scott Moon on 2019-05-03.
+// Copyright (c) 2019 Scott Moon. All rights reserved.
 //
 
 import Foundation
@@ -16,7 +16,7 @@ extension PropertyListDecoder {
       let data = try? Data(contentsOf: url, options: .mappedIfSafe),
       let object = try? self.decode(D.self, from: data)
       else {
-      return nil
+        return nil
     }
     return object
   }

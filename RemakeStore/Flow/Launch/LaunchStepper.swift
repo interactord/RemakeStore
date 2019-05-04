@@ -18,10 +18,6 @@ class LaunchStepper {
   // MARK: - Initializing
   init() {
   }
-
-  deinit {
-    print("\(type(of: self)): \(#function)")
-  }
 }
 
 extension LaunchStepper: Stepper {

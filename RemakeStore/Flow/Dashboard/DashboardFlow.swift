@@ -9,49 +9,45 @@ import RxFlow
 
 class DashboardFlow {
 
-	// MARK: - Private
+  // MARK: - Private
 
-	private let rootViewController: UITabBarController = {
-		let controller = UITabBarController()
-		controller.view.backgroundColor = .yellow
-		return controller
-	}()
+  private let rootViewController: DashboardController = {
+    let controller = DashboardController()
+    controller.view.backgroundColor = .yellow
+    return controller
+  }()
 
-	private let service: Service
+  private let service: Service
 
-	// MARK: - Initializing
-	init(with service: Service) {
-		self.service = service
-	}
-
-	deinit {
-	  print("\(type(of: self)): \(#function)")
-	}
+  // MARK: - Initializing
+  init(with service: Service) {
+    self.service = service
+  }
 
 }
 
-extension DashboardFlow: Flow {
+extension DashboardFlow: BaseFlow {
 
-	// MARK: - Protocol Variables
-	public var root: Presentable {
-		return rootViewController
-	}
+  // MARK: - Protocol Variables
 
-	// MARK: - functions for protocol
-	public func navigate(to step: Step) -> FlowContributors {
-		guard let step = step as? AppStep else {
-			return .none
-		}
+  public var root: Presentable {
+    return rootViewController
+  }
 
-		switch step {
-		case .dashboardIsRequired:
-			return navigateToDashboard()
-		default:
-			return .none
-		}
-	}
+  // MARK: - functions for protocol
 
-	private func navigateToDashboard() -> FlowContributors {
-		return .none
-	}
+  public func navigate(to step: AppStep) -> FlowContributors {
+    switch step {
+    case .dashboardIsRequired:
+      return navigateToDashboard()
+    default:
+      return .none
+    }
+  }
+
+  // MARK: - Private
+
+  private func navigateToDashboard() -> FlowContributors {
+    return .none
+  }
 }
