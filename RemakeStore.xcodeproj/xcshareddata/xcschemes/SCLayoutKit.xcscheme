@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2910AC2F2278B5E500EC7A77"
-               BuildableName = "RemakeStore.app"
-               BlueprintName = "RemakeStore"
+               BlueprintIdentifier = "29428F9F227D696200BD688D"
+               BuildableName = "SCLayoutKit.framework"
+               BlueprintName = "SCLayoutKit"
                ReferencedContainer = "container:RemakeStore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,33 +32,13 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2910AC2F2278B5E500EC7A77"
-            BuildableName = "RemakeStore.app"
-            BlueprintName = "RemakeStore"
+            BlueprintIdentifier = "29E00A05227BCE60004A7A49"
+            BuildableName = "SCServiceKit.framework"
+            BlueprintName = "SCServiceKit"
             ReferencedContainer = "container:RemakeStore.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2910AC432278B5E600EC7A77"
-               BuildableName = "RemakeStoreTests.xctest"
-               BlueprintName = "RemakeStoreTests"
-               ReferencedContainer = "container:RemakeStore.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29E00A0D227BCE61004A7A49"
-               BuildableName = "SCServiceKitTests.xctest"
-               BlueprintName = "SCServiceKitTests"
-               ReferencedContainer = "container:RemakeStore.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -72,9 +53,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2910AC2F2278B5E500EC7A77"
-            BuildableName = "RemakeStore.app"
-            BlueprintName = "RemakeStore"
+            BlueprintIdentifier = "29428F9F227D696200BD688D"
+            BuildableName = "SCLayoutKit.framework"
+            BlueprintName = "SCLayoutKit"
             ReferencedContainer = "container:RemakeStore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -91,16 +72,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2910AC2F2278B5E500EC7A77"
-            BuildableName = "RemakeStore.app"
-            BlueprintName = "RemakeStore"
+            BlueprintIdentifier = "29428F9F227D696200BD688D"
+            BuildableName = "SCLayoutKit.framework"
+            BlueprintName = "SCLayoutKit"
             ReferencedContainer = "container:RemakeStore.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -113,9 +93,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2910AC2F2278B5E500EC7A77"
-            BuildableName = "RemakeStore.app"
-            BlueprintName = "RemakeStore"
+            BlueprintIdentifier = "29428F9F227D696200BD688D"
+            BuildableName = "SCLayoutKit.framework"
+            BlueprintName = "SCLayoutKit"
             ReferencedContainer = "container:RemakeStore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

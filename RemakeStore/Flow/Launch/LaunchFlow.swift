@@ -25,14 +25,9 @@ class LaunchFlow {
   init(with service: Service) {
     self.service = service
   }
-
-  deinit {
-    print("\(type(of: self)): \(#function)")
-  }
-
 }
 
-extension LaunchFlow: Flow {
+extension LaunchFlow: BaseFlow {
 
   // MARK: - Protocol Variables
   public var root: Presentable {
@@ -40,12 +35,7 @@ extension LaunchFlow: Flow {
   }
 
   // MARK: - functions for protocol
-  public func navigate(to step: Step) -> FlowContributors {
-
-    guard let step = step as? AppStep else {
-      return .none
-    }
-
+  public func navigate(to step: AppStep) -> FlowContributors {
     switch step {
     case .dashboardIsRequired:
       return navigateToDashboard()
@@ -65,10 +55,7 @@ extension LaunchFlow: Flow {
       }
     }
 
-    return .one(
-      flowContributor: .contribute(
-        withNextPresentable: dashboardFlow,
-        withNextStepper: OneStepper(withSingleStep: AppStep.dashboardIsRequired)
-      ))
+    let contributor = makeContributor(with: .dashboardIsRequired, flow: dashboardFlow)
+    return .one(flowContributor: contributor)
   }
 }

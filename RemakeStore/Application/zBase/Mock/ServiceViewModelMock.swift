@@ -8,9 +8,9 @@ import Foundation
 @testable import RemakeStore
 
 class ServiceViewModelMock: ServiceViewModel {
-  var service: Service
+  let service: Service
 
-  init(with service: Service) {
+  required init(with service: Service) {
     self.service = service
   }
 }

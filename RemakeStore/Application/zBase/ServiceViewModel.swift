@@ -5,7 +5,9 @@
 
 import Foundation
 
-protocol ServiceViewModel {
+protocol ServiceViewModel: class {
 	associatedtype ServiceType
 	var service: ServiceType { get }
+
+	init(with service: ServiceType)
 }
