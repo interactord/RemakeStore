@@ -25,16 +25,3 @@ target 'RemakeStore' do
   end
 
 end
-
-target 'SCLayoutKit' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for SCLayoutKit
-
-  target 'SCLayoutKitTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
