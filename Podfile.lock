@@ -1,0 +1,54 @@
+PODS:
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxFlow (2.2.0):
+    - RxCocoa (>= 4.5.0)
+    - RxSwift (>= 4.5.0)
+  - RxSwift (4.5.0)
+  - RxTest (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - SCServiceKit (1.0.0):
+    - RxSwift (>= 4.5.0)
+    - SwiftyBeaver (>= 1.7.0)
+  - Swifter (1.4.6)
+  - SwiftyBeaver (1.7.0)
+  - Swinject (2.6.0)
+
+DEPENDENCIES:
+  - RxBlocking (~> 4.5)
+  - RxCocoa (~> 4.5)
+  - RxFlow
+  - RxSwift (~> 4.5)
+  - RxTest (~> 4.5)
+  - SCServiceKit
+  - Swifter
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxBlocking
+    - RxCocoa
+    - RxFlow
+    - RxSwift
+    - RxTest
+    - SCServiceKit
+    - Swifter
+    - SwiftyBeaver
+    - Swinject
+
+SPEC CHECKSUMS:
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxFlow: f8cdfc0be3c837464fad1fcd28187fd414bcc716
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
+  SCServiceKit: 571013f0ff49308918af1d9ae616385e71c0e9db
+  Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
+  SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+
+PODFILE CHECKSUM: 5ffdb0d9404b275ff37a074e821870767ff1e161
+
+COCOAPODS: 1.6.1
