@@ -8,6 +8,7 @@ coverage:
   ignore:
   - Carthage/.*
   - Carthage/.*
+  - Pods/.*
   - .*Tests.swift
   - .*Spec.swift
   - .Stub*.swift
