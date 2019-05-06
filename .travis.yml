@@ -2,10 +2,6 @@ osx_image: xcode10.2
 language: objective-c
 sudo: required
 
-cache:
-  directories:
-  - Carthage
-
 env:
   global:
     - PROJECT="RemakeStore.xcworkspace"
@@ -15,15 +11,16 @@ env:
     - FRAMEWORK="RemakeStore"
     - CODE_COV_TOKEN="c826c35f-6230-414e-b819-d8b61a733bba"
 
-before_install:
-  - brew install carthage || true
-  - brew outdated carthage || brew upgrade carthage
-  - brew install swiftlint
-  - gem install xcpretty -N
-  - gem install xcpretty-travis-formatter
+install:
+  - swift --version
 
 before_script:
-  - carthage bootstrap --platform iOS --no-use-binaries --cache-builds
+  - gem install xcpretty -N
+  - gem install xcpretty-travis-formatter
+  - gem install cocoapods
+  - pod repo update
+  - pod update
+  - brew install swiftlint
 
 script:
   - set -o pipefail
