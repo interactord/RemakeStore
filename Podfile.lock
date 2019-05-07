@@ -12,6 +12,7 @@ PODS:
   - SCServiceKit (1.0.0):
     - RxSwift (>= 4.5.0)
     - SwiftyBeaver (>= 1.7.0)
+  - SCUIBuildKit (1.0.0)
   - Swifter (1.4.6)
   - SwiftyBeaver (1.7.0)
   - Swinject (2.6.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RxSwift (~> 4.5)
   - RxTest (~> 4.5)
   - SCServiceKit
+  - SCUIBuildKit
   - Swifter
   - Swinject
 
@@ -34,6 +36,7 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SCServiceKit
+    - SCUIBuildKit
     - Swifter
     - SwiftyBeaver
     - Swinject
@@ -45,10 +48,11 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
   SCServiceKit: 571013f0ff49308918af1d9ae616385e71c0e9db
+  SCUIBuildKit: 27448445521e9211314361ce22eec56e924511b1
   Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 5c6c030d6516bd16b0930f38900ac4e7572d8e34
+PODFILE CHECKSUM: 4c5d7981f7c0db5a56884d572059d68967860a53
 
 COCOAPODS: 1.6.1
