@@ -35,3 +35,7 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -j RemakeStore --cover-xml
+
+notifications:
+  slack: interactord:Z4o1u31lio6owH5ic2qWuSGo
+  on_success: always
