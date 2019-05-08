@@ -18,12 +18,8 @@ class BaseController: UIViewController {
 
   // MARK: - Initializing
 
-  init() {
-    super.init(nibName: nil, bundle: nil)
-  }
-
-  required convenience init?(coder aDecoder: NSCoder) {
-    self.init()
+  convenience init() {
+    self.init(nibName: nil, bundle: nil)
   }
 
   // MARK: - Lifecycle

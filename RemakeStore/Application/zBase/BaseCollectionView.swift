@@ -9,31 +9,27 @@ import RxSwift
 
 class BaseCollectionView: UICollectionView {
 
-	lazy private(set) public var disposeBag = DisposeBag()
+  lazy private(set) public var disposeBag = DisposeBag()
 
-	// MARK: - Initializing
+  // MARK: - Initializing
 
-	init() {
-		let layout = UICollectionViewFlowLayout()
-		super.init(frame: .zero, collectionViewLayout: layout)
-		setupView()
-		registerCell()
-		setupDelegate()
-	}
+  convenience init() {
+    let layout = UICollectionViewFlowLayout()
+    self.init(frame: .zero, collectionViewLayout: layout)
+    setupView()
+    registerCell()
+    setupDelegate()
+  }
 
-	required convenience init?(coder aDecoder: NSCoder) {
-		self.init()
-	}
+  deinit {
+    print("\(type(of: self)): \(#function)")
+  }
 
-	deinit {
-		print("\(type(of: self)): \(#function)")
-	}
+  func setupDelegate() { }
 
-	func setupDelegate() {}
+  func registerCell() { }
 
-	func registerCell() {}
-
-	func setupView() {
-		self.backgroundColor = .white
-	}
+  func setupView() {
+    self.backgroundColor = .white
+  }
 }
