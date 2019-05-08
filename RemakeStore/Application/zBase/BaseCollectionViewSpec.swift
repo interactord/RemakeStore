@@ -26,9 +26,4 @@ class BaseCollectionViewSpec: XCTestCase {
 		sut = BaseCollectionView()
 		XCTAssertNotNil(sut)
 	}
-
-	func test_init_coder() {
-		sut = BaseCollectionView(coder: NSCoder())
-		XCTAssertNotNil(sut)
-	}
 }

@@ -13,6 +13,7 @@
 		2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3A2278B5E600EC7A77 /* Assets.xcassets */; };
 		2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */; };
 		2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */; };
+		2935C7372282E68700D2F333 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935C7362282E68700D2F333 /* SearchResultView.swift */; };
 		29428FC2227D82AE00BD688D /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC1227D82AE00BD688D /* DashboardController.swift */; };
 		29428FC4227D833F00BD688D /* UINavigationControllerStyleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC3227D833F00BD688D /* UINavigationControllerStyleSpec.swift */; };
 		29428FC6227D841E00BD688D /* BaseControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC5227D841E00BD688D /* BaseControllerSpec.swift */; };
@@ -131,6 +132,7 @@
 		2910AC442278B5E600EC7A77 /* RemakeStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemakeStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemakeStoreTests.swift; sourceTree = "<group>"; };
 		2910AC4A2278B5E600EC7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2935C7362282E68700D2F333 /* SearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		29428FC1227D82AE00BD688D /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		29428FC3227D833F00BD688D /* UINavigationControllerStyleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerStyleSpec.swift; sourceTree = "<group>"; };
 		29428FC5227D841E00BD688D /* BaseControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllerSpec.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 		29738CDC227DA4A1001D58FB /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				2935C7362282E68700D2F333 /* SearchResultView.swift */,
 				29738CDD227DA4A1001D58FB /* SearchController.swift */,
 				29738CDE227DA4A1001D58FB /* SearchViewModel.swift */,
 			);
@@ -866,6 +869,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLayoutKit/SCLayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCServiceKit/SCServiceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCUIBuildKit/SCUIBuildKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
@@ -878,6 +882,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCServiceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCUIBuildKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
@@ -918,6 +923,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E8A58F227C35B500E7A894 /* DIContainer.swift in Sources */,
+				2935C7372282E68700D2F333 /* SearchResultView.swift in Sources */,
 				2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */,
 				29E8A586227C2F8800E7A894 /* AppService.swift in Sources */,
 				29738CDF227DA4A1001D58FB /* SearchController.swift in Sources */,

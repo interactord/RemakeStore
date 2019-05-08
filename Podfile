@@ -7,8 +7,11 @@ target 'RemakeStore' do
   pod 'RxCocoa', '~> 4.5', :inhibit_warnings => true
   pod 'Swinject', :inhibit_warnings => true 
   pod 'RxFlow', :inhibit_warnings => true
+
   pod 'SCUIBuildKit'
   pod 'SCServiceKit'
+  pod 'SCLayoutKit'
+
 
   target 'RemakeStoreTests' do
     inherit! :search_paths
