@@ -278,12 +278,12 @@
 				2910AC332278B5E500EC7A77 /* AppDelegate.swift */,
 				295933A1227CE82300B6D5CA /* Application */,
 				29E8A565227C229600E7A894 /* Config */,
+				F426EB3BE59931C3E8D7A992 /* Define */,
 				29E8A588227C35B500E7A894 /* DIContainer */,
 				29E8A576227C268600E7A894 /* Extensions */,
 				295A82692278E4EE00F011C7 /* Flow */,
 				29E8A57D227C2F8800E7A894 /* Service */,
 				29602B862278D26900A3A4B8 /* zResource */,
-				F426EB3BE59931C3E8D7A992 /* Define */,
 			);
 			path = RemakeStore;
 			sourceTree = "<group>";
