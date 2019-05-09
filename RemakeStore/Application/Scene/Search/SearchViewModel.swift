@@ -5,8 +5,12 @@
 
 import Foundation
 
+import RxSwift
+
 class SearchViewModel: ServiceViewModel {
 	let service: Service
+
+ let searchText: BehaviorSubject<String> = .init(value: "")
 
 	required init(with service: Service) {
 		self.service = service

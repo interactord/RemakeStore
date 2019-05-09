@@ -5,6 +5,8 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
 import SCLayoutKit
 
 class SearchController: BaseController {
@@ -21,6 +23,8 @@ class SearchController: BaseController {
     return searchResultView
   }()
 
+  private lazy var searchController = UISearchController(searchResultsController: nil)
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
@@ -31,11 +35,25 @@ class SearchController: BaseController {
     searchResultView.fillSuperView()
   }
 
+  override func setupNavigation() {
+    super.setupNavigation()
+
+    definesPresentationContext = true
+    navigationItem.searchController = self.searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
+    searchController.dimsBackgroundDuringPresentation = false
+  }
+
 }
 
 extension SearchController: ViewModelBased {
 
   func bindViewModel() {
-    print("SearchController")
+    searchController.searchBar.rx
+      .text.orEmpty
+      .throttle(.microseconds(300), scheduler: MainScheduler.instance)
+      .distinctUntilChanged()
+      .bind(to: viewModel.searchText)
+      .disposed(by: disposeBag)
   }
 }
