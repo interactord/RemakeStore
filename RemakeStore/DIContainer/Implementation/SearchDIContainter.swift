@@ -26,7 +26,7 @@ struct SearchDIContainer: DIContainer {
   private(set) lazy var controller: SearchController = {
     container.register(SearchController.self) { _ in
       SearchController()
-    }.inObjectScope(.container)
+    }.inObjectScope(.weak)
 
     guard let controller = container.resolve(SearchController.self) else {
       fatalError("Should be not nil")
