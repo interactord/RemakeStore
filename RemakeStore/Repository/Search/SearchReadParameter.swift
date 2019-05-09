@@ -9,7 +9,11 @@ import SCServiceKit
 
 struct SearchReadParameter: RepositoryParameter {
 
+  // MARK: - Private
+
 	let query: [String: String]
+
+  // MARK: - Initializing
 
   init(withTerm term: String) {
     query = [

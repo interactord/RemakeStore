@@ -17,17 +17,18 @@ class DashboardFlow: BaseFlow {
     return controller
   }()
 
-  let service: Service
-
-  // MARK: - Initializing
-  required init(with service: Service) {
-    self.service = service
-  }
-
   // MARK: - Protocol Variables
+
+  let service: Service
 
   var root: Presentable {
     return rootViewController
+  }
+
+  // MARK: - Initializing
+
+  required init(with service: Service) {
+    self.service = service
   }
 
   // MARK: - functions for protocol

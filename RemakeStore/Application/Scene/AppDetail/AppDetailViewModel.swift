@@ -8,9 +8,16 @@ import Foundation
 import RxSwift
 
 class AppDetailViewModel: ServiceViewModel {
-  let service: Service
+
 
   let appId: PublishSubject<Int> = .init()
+
+
+  // MARK: - Protocol Variables
+
+  let service: Service
+
+  // MARK: - Initializing
 
   required init(with service: Service) {
     self.service = service

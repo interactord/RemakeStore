@@ -11,6 +11,8 @@ enum SearchEndpoint {
 
   case read(with: SearchReadParameter)
 
+  // MARK: - Private
+
   private enum Constant {
     static let baseUrl = "https://itunes.apple.com"
     static let path = "search"

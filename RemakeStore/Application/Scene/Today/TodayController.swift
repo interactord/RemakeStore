@@ -20,6 +20,8 @@ class TodayController: BaseController {
 
 extension TodayController: ViewModelBased {
 
+  // MARK: - functions for protocol
+
   func bindViewModel() {
     print("TodayController")
   }

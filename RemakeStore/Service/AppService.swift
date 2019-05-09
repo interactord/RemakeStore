@@ -9,9 +9,13 @@ import SCServiceKit
 
 struct AppService {
 
+  // MARK: - Private
+
   private let _httpClient: HTTPClient
   private let _translator: Translator
   private let _logger: Logger
+
+  // MARK: - Initializing
 
   init(httpClient: HTTPClient, translator: Translator, logger: Logger) {
     _httpClient = httpClient
@@ -21,6 +25,8 @@ struct AppService {
 }
 
 extension AppService: Service {
+
+  // MARK: - Protocol Variables
 
   var httpClient: HTTPClient {
     return _httpClient

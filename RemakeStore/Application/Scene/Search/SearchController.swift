@@ -15,7 +15,7 @@ class SearchController: BaseController {
 
   var viewModel: SearchViewModel!
 
-  // MARK: - Private
+  // MARK: - Views
 
   private lazy var searchResultView: SearchResultView = {
     let searchResultView = SearchResultView()
@@ -48,6 +48,8 @@ class SearchController: BaseController {
 }
 
 extension SearchController: ViewModelBased {
+
+  // MARK: - functions for protocol
 
   func bindViewModel() {
     searchController.searchBar.rx

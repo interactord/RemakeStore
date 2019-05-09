@@ -19,19 +19,22 @@ class LaunchFlow: BaseFlow {
     return navController
   }()
 
+  // MARK: - Protocol Variables
+
   var service: Service
 
-  // MARK: - Initializing
-  required init(with service: Service) {
-    self.service = service
-  }
-
-  // MARK: - Protocol Variables
   public var root: Presentable {
     return rootViewController
   }
 
+  // MARK: - Initializing
+
+  required init(with service: Service) {
+    self.service = service
+  }
+
   // MARK: - functions for protocol
+
   public func navigate(to step: AppStep) -> FlowContributors {
     switch step {
     case .dashboardIsRequired:

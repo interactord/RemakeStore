@@ -17,6 +17,8 @@ protocol SearchResultCellType {
 
 class SearchResultCell: BaseCollectionViewCell {
 
+  // MARK: - Views
+
   lazy var appIconImageView: UIImageView = {
     return ImageViewBuilder()
       .setBackgroundColor(.red)
@@ -120,7 +122,8 @@ class SearchResultCell: BaseCollectionViewCell {
 }
 
 extension SearchResultCell: SearchResultCellType {
-  // MARK: - Private
+
+  // MARK: - functions for protocol
 
   func bind(to viewModel: SearchResultCellViewModel) {
 

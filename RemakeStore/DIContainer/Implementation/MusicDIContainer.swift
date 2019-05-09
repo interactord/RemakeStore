@@ -8,8 +8,14 @@ import UIKit
 import Swinject
 
 struct MusicDIContainer: DIContainer {
+
+	// MARK: - Protocol Variables
+
 	let container: Container
-	let service: Service
+
+	// MARK: - Private
+
+	private let service: Service
 
 	private lazy var viewModel: MusicViewModel = {
 		let service = self.service
@@ -52,6 +58,7 @@ struct MusicDIContainer: DIContainer {
 	}()
 
 	// MARK: - Initializing
+
 	init(with service: Service) {
 		self.service = service
 		container = Container()

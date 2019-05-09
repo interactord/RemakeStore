@@ -9,7 +9,12 @@ import Swinject
 import SCServiceKit
 
 struct ServiceDIContainer: DIContainer {
+
+  // MARK: - Protocol Variables
+
   var container: Container
+
+  // MARK: - Private
 
   private lazy var networkActivity: NetworkActivity = {
     container.register(NetworkActivity.self) { _ in
@@ -97,6 +102,12 @@ struct ServiceDIContainer: DIContainer {
     return httpClient
   }()
 
+  // MARK: - Initializing
+
+  init() {
+    self.container = Container()
+  }
+
   // MARK: - Public
 
   lazy var service: Service = {
@@ -118,10 +129,4 @@ struct ServiceDIContainer: DIContainer {
     }
     return service
   }()
-
-  // MARK: - Initializing
-
-  init() {
-    self.container = Container()
-  }
 }

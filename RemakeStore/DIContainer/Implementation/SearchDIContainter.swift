@@ -8,8 +8,14 @@ import UIKit
 import Swinject
 
 struct SearchDIContainer: DIContainer {
+
+  // MARK: - Protocol Variables
+
   let container: Container
-  let service: Service
+
+  // MARK: - Private
+
+  private let service: Service
 
   private(set) lazy var viewModel: SearchViewModel = {
     let service = self.service
@@ -51,10 +57,13 @@ struct SearchDIContainer: DIContainer {
   }()
 
   // MARK: - Initializing
+
   init(with service: Service) {
     self.service = service
     container = Container()
   }
+
+  // MARK: Public
 
   mutating func getController() -> SearchController {
     return controller

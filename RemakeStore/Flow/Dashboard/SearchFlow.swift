@@ -11,23 +11,27 @@ class SearchFlow: BaseFlow {
 
   // MARK: - Private
 
-  let service: Service
-
   lazy var rootViewController: UINavigationController = {
     var container = SearchDIContainer(with: service)
     return container.navigationController
   }()
 
-  required init(with service: Service) {
-    self.service = service
-  }
-
   // MARK: - Protocol Variables
+
+  let service: Service
+
   var root: Presentable {
     return rootViewController
   }
 
+  // MARK: - Initializing
+
+  required init(with service: Service) {
+    self.service = service
+  }
+
   // MARK: - functions for protocol
+
   internal func navigate(to step: AppStep) -> FlowContributors {
 
     switch step {

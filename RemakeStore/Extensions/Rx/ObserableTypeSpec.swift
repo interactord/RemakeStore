@@ -11,7 +11,7 @@ import RxSwift
 
 class ObserableTypeSpec: XCTestCase {
 
-  var disposebBag: DisposeBag?
+  var disposeBag: DisposeBag?
 
   override func setUp() {
     super.setUp()
@@ -19,14 +19,14 @@ class ObserableTypeSpec: XCTestCase {
 
   override func tearDown() {
     super.tearDown()
-    disposebBag = nil
+    disposeBag = nil
   }
 
   func test_mapToVoid() {
     let expectedCell = XCTestExpectation(description: "called event")
-    disposebBag = DisposeBag()
+    disposeBag = DisposeBag()
 
-    guard let disponseBag = disposebBag else {
+    guard let disposeBag = disposeBag else {
       fatalError("Should be not nil")
     }
 
@@ -34,7 +34,7 @@ class ObserableTypeSpec: XCTestCase {
       .mapToVoid()
       .subscribe(onNext: { _ in
         expectedCell.fulfill()
-      }).disposed(by: disponseBag)
+      }).disposed(by: disposeBag)
 
     wait(for: [expectedCell], timeout: 5.0)
   }

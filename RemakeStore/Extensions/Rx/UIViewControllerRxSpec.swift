@@ -25,7 +25,7 @@ class UIViewControllerRxSpec: XCTestCase {
     sut = nil
   }
 
-  func test_swizzing_viewWillAppearAction() {
+  func test_swizzling_viewWillAppearAction() {
     let expectedCell = XCTestExpectation(description: "called event")
 
     sut = UIViewController()
@@ -49,7 +49,7 @@ class UIViewControllerRxSpec: XCTestCase {
 
   }
 
-  func test_swizzing_viewWillDisappearAction() {
+  func test_swizzling_viewWillDisappearAction() {
     let expectedCell = XCTestExpectation(description: "called event")
 
     sut = UIViewController()

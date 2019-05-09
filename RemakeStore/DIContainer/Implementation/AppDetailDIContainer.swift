@@ -8,9 +8,15 @@ import UIKit
 import Swinject
 
 struct AppDetailDIContainer: DIContainer {
+
+  // MARK: - Protocol Variables
+
   let container: Container
-  let service: Service
-  let appId: Int
+
+  // MARK: - Private
+
+  private let service: Service
+  private let appId: Int
 
   private lazy var viewModel: AppDetailViewModel = {
     let service = self.service
@@ -42,11 +48,14 @@ struct AppDetailDIContainer: DIContainer {
   }()
 
   // MARK: - Initializing
+
   init(with service: Service, appId: Int) {
     self.service = service
     self.appId = appId
     container = Container()
   }
+
+  // MARK: Public
 
   mutating func getController() -> AppDetailController {
     return self.controller

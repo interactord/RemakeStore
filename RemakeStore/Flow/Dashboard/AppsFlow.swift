@@ -9,25 +9,29 @@ import RxFlow
 
 class AppsFlow: BaseFlow {
 
-	// MARK: - Private
+	// MARK: - Protocol Variables
 
 	let service: Service
+
+	var root: Presentable {
+		return rootViewController
+	}
+
+	// MARK: - Private
 
 	private lazy var rootViewController: UINavigationController = {
 		var container = AppsDIContainer(with: service)
 		return container.navigationController
 	}()
 
+	// MARK: - Initializing
+
 	required init(with service: Service) {
 		self.service = service
 	}
 
-	// MARK: - Protocol Variables
-	var root: Presentable {
-		return rootViewController
-	}
-
 	// MARK: - functions for protocol
+
 	internal func navigate(to step: AppStep) -> FlowContributors {
 		return .none
 	}
