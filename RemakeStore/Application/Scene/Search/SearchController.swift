@@ -5,15 +5,30 @@
 
 import UIKit
 
+import TinyConstraints
+
 class SearchController: BaseController {
 
   // MARK: - ViewModel
 
   var viewModel: SearchViewModel!
 
+  // MARK: - Private
+
+  private lazy var searchResultView: SearchResultView = {
+    let searchResultView = SearchResultView()
+    view.addSubview(searchResultView)
+    return searchResultView
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .red
+    view.backgroundColor = .white
+  }
+
+  override func setupConstraints() {
+    super.setupConstraints()
+    searchResultView.edgesToSuperview()
   }
 
 }

@@ -18,7 +18,7 @@ class SearchResultView: BaseCollectionView {
 
   override func registerCell() {
     super.registerCell()
-    self.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+    self.register(cellType: SearchResultCell.self)
   }
 }
 
@@ -30,8 +30,7 @@ extension SearchResultView: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-    cell.backgroundColor = .yellow
+    let cell: SearchResultCell = collectionView.dequeueReusableCell(indexPath: indexPath)
     return cell
   }
 }
@@ -39,4 +38,8 @@ extension SearchResultView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension SearchResultView: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = frame.width
+    return .init(width: width, height: 350)
+  }
 }

@@ -60,12 +60,14 @@
 		7E39B4750707C25E8752C4EC /* Pods_RemakeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F17B09FB33BFB70FF6346E /* Pods_RemakeStore.framework */; };
 		F426E05E41424F7041613D9D /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E28696FBD75101E119DC /* MusicViewModel.swift */; };
 		F426E05FB71D3E681C84F1E8 /* CellContentClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E45D37734DAA3D653DDA /* CellContentClassIdentifiable.swift */; };
+		F426E080783DDBD3A99C1E49 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE79DE790DA3B028CCCD /* BaseCollectionViewCell.swift */; };
 		F426E0C82F4C470D374CDA9F /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA8A86DC998F7DEF22D8 /* AppsViewModel.swift */; };
 		F426E29E1762923A85C8751D /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E6F86C24DEC25FDE20E9 /* BaseCollectionView.swift */; };
 		F426E2CA1A882C63D3B1E165 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E440DCBF8BDB60A28573 /* Theme.swift */; };
 		F426E307972D8F6536D08C33 /* BaseCollectionVIewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE00EA37F6D0FF3A3F17 /* BaseCollectionVIewMock.swift */; };
 		F426E30F296F0F3EED25C0AA /* LaunchStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E57862B529221A8E6C09 /* LaunchStepper.swift */; };
 		F426E38CDE646CD2D3CE8DE2 /* DefaultTheme+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E837FBFDC52CAF4E9017 /* DefaultTheme+Font.swift */; };
+		F426E3F3BED7C4BEF08A687A /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF147085E314BA314AC2 /* SearchResultCell.swift */; };
 		F426E464418FE9904729BFEC /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E20016AB7016900E4215 /* AppsController.swift */; };
 		F426E485E6308350B4388387 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E51382E167C7A6658AD4 /* OptionalType.swift */; };
 		F426E4FA707BDDFD7C821DAD /* TodayDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EEED0DD47BD52266F147 /* TodayDIContainer.swift */; };
@@ -217,7 +219,9 @@
 		F426EE00EA37F6D0FF3A3F17 /* BaseCollectionVIewMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionVIewMock.swift; sourceTree = "<group>"; };
 		F426EE011039147A4A77BB8B /* MusicFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicFlow.swift; sourceTree = "<group>"; };
 		F426EE1D12DFDFC271D26642 /* BaseFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFlow.swift; sourceTree = "<group>"; };
+		F426EE79DE790DA3B028CCCD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		F426EEED0DD47BD52266F147 /* TodayDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDIContainer.swift; sourceTree = "<group>"; };
+		F426EF147085E314BA314AC2 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		F426EF3BEF1F63315E601F35 /* BaseCollectionViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewSpec.swift; sourceTree = "<group>"; };
 		F426EF432FA9442E84078ADD /* AppsDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDIContainer.swift; sourceTree = "<group>"; };
 		F426EF485A10492571F67174 /* ObserableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserableType.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				29428FC5227D841E00BD688D /* BaseControllerSpec.swift */,
 				F426E6F86C24DEC25FDE20E9 /* BaseCollectionView.swift */,
 				F426EF3BEF1F63315E601F35 /* BaseCollectionViewSpec.swift */,
+				F426EE79DE790DA3B028CCCD /* BaseCollectionViewCell.swift */,
 			);
 			path = zBase;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				2935C7362282E68700D2F333 /* SearchResultView.swift */,
 				29738CDD227DA4A1001D58FB /* SearchController.swift */,
 				29738CDE227DA4A1001D58FB /* SearchViewModel.swift */,
+				F426E2054F9F9303ADE797A2 /* Cells */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -558,6 +564,14 @@
 				29428FC7227D854B00BD688D /* BaseFlowSpec.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F426E2054F9F9303ADE797A2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F426EF147085E314BA314AC2 /* SearchResultCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F426E3689E91D381610F90B9 /* Today */ = {
@@ -808,6 +822,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-RemakeStoreTests/Pods-RemakeStoreTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCServiceKit/SCServiceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCUIBuildKit/SCUIBuildKit.framework",
@@ -822,6 +837,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCServiceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCUIBuildKit.framework",
@@ -868,12 +884,14 @@
 				"${PODS_ROOT}/Target Support Files/Pods-RemakeStore/Pods-RemakeStore-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLayoutKit/SCLayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCServiceKit/SCServiceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCUIBuildKit/SCUIBuildKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -881,12 +899,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCServiceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCUIBuildKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -970,6 +990,8 @@
 				F426E651C955FA717E0F0BB6 /* DefaultTheme+Color.swift in Sources */,
 				F426E38CDE646CD2D3CE8DE2 /* DefaultTheme+Font.swift in Sources */,
 				F426E29E1762923A85C8751D /* BaseCollectionView.swift in Sources */,
+				F426E3F3BED7C4BEF08A687A /* SearchResultCell.swift in Sources */,
+				F426E080783DDBD3A99C1E49 /* BaseCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
