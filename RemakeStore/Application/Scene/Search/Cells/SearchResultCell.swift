@@ -124,32 +124,32 @@ extension SearchResultCell: SearchResultCellType {
 
   func bind(to viewModel: SearchResultCellViewModel) {
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { $0.trackName }
       .bind(to: nameLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { $0.primaryGenreName }
       .bind(to: categoryLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { "Rating: \($0.averageUserRating ?? 0)" }
       .bind(to: ratingsLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { $0.artworkUrl100 }
       .bind(to: appIconImageView.rx.loadImage)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { $0.screenshotUrls?[0] ?? "" }
       .bind(to: screenShots[0].rx.loadImage)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map {
         $0.screenshotUrls?.count ?? 0 > 1
           ? $0.screenshotUrls?[1] ?? ""
@@ -158,7 +158,7 @@ extension SearchResultCell: SearchResultCellType {
       .bind(to: screenShots[1].rx.loadImage)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map {
         $0.screenshotUrls?.count ?? 0 > 2
           ? $0.screenshotUrls?[2] ?? ""

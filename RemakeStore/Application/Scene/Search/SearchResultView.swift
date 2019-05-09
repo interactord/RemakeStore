@@ -13,6 +13,8 @@ import RxSwift
 
 class SearchResultView: BaseCollectionView {
 
+  // MARK: Public
+
   var items: [SearchResultCellViewModel]?
 
   override func setupDelegate() {

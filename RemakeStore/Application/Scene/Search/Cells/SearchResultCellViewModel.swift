@@ -10,17 +10,40 @@ import Foundation
 
 import RxSwift
 
-class SearchResultCellViewModel {
+protocol SearchResultCellViewModelInput {
+}
 
-  private let appInfo: AppResult.AppInformation
-  let appInfomation: Observable<AppResult.AppInformation>
+protocol SearchResultCellViewModelOutput {
+  var appInformation: Observable<AppResult.AppInformation> { get }
+  var result: AppResult.AppInformation { get }
+}
 
-  init(withResult result: AppResult.AppInformation) {
-    self.appInfomation = Observable.just(result).observeOn(MainScheduler.asyncInstance)
-    self.appInfo = result
+protocol SearchResultCellViewModelType {
+  var inputs: SearchResultCellViewModelInput { get }
+  var outputs: SearchResultCellViewModelOutput { get }
+}
+
+typealias SearchResultCellViewModelTypes =
+  SearchResultCellViewModelInput & SearchResultCellViewModelOutput & SearchResultCellViewModelType
+
+class SearchResultCellViewModel: SearchResultCellViewModelTypes {
+
+  // MARK: - Inputs & Outputs
+
+  var inputs: SearchResultCellViewModelInput {
+    return self
+  }
+  var outputs: SearchResultCellViewModelOutput {
+    return  self
   }
 
-  lazy var appId: Int = {
-    self.appInfo.trackId
-  }()
+  // MARK: - Outputs
+
+  var appInformation: Observable<AppResult.AppInformation>
+  var result: AppResult.AppInformation
+
+  init(withResult result: AppResult.AppInformation) {
+    self.appInformation = Observable.just(result).observeOn(MainScheduler.asyncInstance)
+    self.result = result
+  }
 }

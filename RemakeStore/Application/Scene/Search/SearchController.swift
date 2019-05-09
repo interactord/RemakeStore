@@ -54,20 +54,20 @@ extension SearchController: ViewModelBased {
       .text.orEmpty
       .throttle(.seconds(2), scheduler: MainScheduler.instance)
       .distinctUntilChanged()
-      .bind(to: viewModel.searchText)
+      .bind(to: viewModel.inputs.searchText)
       .disposed(by: disposeBag)
 
-    viewModel.search
+    viewModel.outputs.search
       .bind(to: searchResultView.rx.updateItems)
       .disposed(by: disposeBag)
 
     searchResultView.rx
       .itemSelected
-      .map { [unowned self] (indexPath: IndexPath) -> Int? in
-        return self.searchResultView.items?[indexPath.item].appId
+      .map { [unowned self] (indexPath: IndexPath) -> SearchResultCellViewModelOutput? in
+        return self.searchResultView.items?[indexPath.item].outputs
       }
       .ignoreNil()
-      .map { AppStep.detailAppIsRequired(appId: $0) }
+      .map { AppStep.detailAppIsRequired(appId: $0.result.trackId) }
       .subscribe(onNext: { step in
         print("step \(step)")
         self.steps.accept(step)

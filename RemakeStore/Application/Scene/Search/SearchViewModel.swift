@@ -8,12 +8,38 @@ import Foundation
 import RxSwift
 import SCServiceKit
 
-class SearchViewModel: ServiceViewModel {
-  let service: Service
+protocol SearchViewModelInput {
+  var searchText: BehaviorSubject<String> { get }
+}
 
-  let searchText: BehaviorSubject<String> = .init(value: "")
+protocol SearchViewModelOutput {
+  var search: Observable<[SearchResultCellViewModel]> { get }
+}
 
-  lazy var searchRepository = AnyRepository<AppResult>(base: SearchRepository(httpClient: self.service.httpClient))
+protocol SearchViewModelType {
+  var inputs: SearchViewModelInput { get }
+  var outputs: SearchViewModelOutput { get }
+}
+
+typealias SearchViewModelTypes =
+  SearchViewModelInput & SearchViewModelOutput & SearchViewModelType
+
+class SearchViewModel: ServiceViewModel, SearchViewModelTypes {
+
+  // MARK: - Inputs & Outputs
+
+  var inputs: SearchViewModelInput {
+    return self
+  }
+  var outputs: SearchViewModelOutput {
+    return  self
+  }
+
+  // MARK: - Input
+
+  var searchText: BehaviorSubject<String> = .init(value: "")
+
+  // MARK: - Outputs
 
   lazy var search = self.searchText.flatMapLatest { [unowned self] term in
     self.searchRepository.read(with: SearchReadParameter(withTerm: term))
@@ -28,6 +54,16 @@ class SearchViewModel: ServiceViewModel {
     }
   }
   .observeOn(MainScheduler.instance)
+
+  // MARK: - Private
+
+  private lazy var searchRepository = AnyRepository<AppResult>(base: SearchRepository(httpClient: self.service.httpClient))
+
+  // MARK: - Protocol Variables
+
+  let service: Service
+
+  // MARK: - Initializing
 
   required init(with service: Service) {
     self.service = service
