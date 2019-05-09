@@ -53,7 +53,7 @@ class SearchResultCell: BaseCollectionViewCell {
       .setFont(DefaultTheme.Font.body)
       .setWidthAnchor(80)
       .setHeightAnchor(32)
-      .setBackgroundColor(#colorLiteral(red: 0.9601849914, green: 0.9601849914, blue: 0.9601849914, alpha: 1))
+      .setBackgroundColor(DefaultTheme.Color.secondaryColor)
       .setCornerRadius(16)
       .build()
   }()
