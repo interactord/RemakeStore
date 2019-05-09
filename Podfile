@@ -11,6 +11,7 @@ target 'RemakeStore' do
   pod 'SCUIBuildKit'
   pod 'SCServiceKit'
   pod 'SCLayoutKit'
+  pod 'moa'
 
   target 'RemakeStoreTests' do
     inherit! :search_paths
