@@ -21,7 +21,7 @@ class SearchResultCell: BaseCollectionViewCell {
 
   lazy var appIconImageView: UIImageView = {
     return ImageViewBuilder()
-      .setBackgroundColor(.red)
+      .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
       .setWidthAnchor(64)
       .setHeightAnchor(64)
       .setCornerRadius(12)
@@ -63,7 +63,7 @@ class SearchResultCell: BaseCollectionViewCell {
 
     for _ in 1...3 {
       let imageView = ImageViewBuilder()
-        .setBackgroundColor(.blue)
+        .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
         .setContentMode(.scaleAspectFill)
         .setCornerRadius(8)
         .setClipToBounds(true)
