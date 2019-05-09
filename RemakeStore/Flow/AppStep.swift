@@ -17,6 +17,6 @@ enum AppStep: Step {
   case dashboardIsComplete
 
   /// DetailApp
-  case detailAppIsRequired(appId: Int)
-  case detailAppIsComplete
+  case appDetailIsRequired(appId: Int)
+  case appDetailIsComplete
 }

@@ -7,11 +7,11 @@ import UIKit
 
 import RxSwift
 
-class DetailAppController: BaseController {
+class AppDetailController: BaseController {
 
   // MARK: - ViewModel
 
-  var viewModel: DetailAppViewModel!
+  var viewModel: AppDetailViewModel!
 
   var appId: Int!
 
@@ -22,7 +22,7 @@ class DetailAppController: BaseController {
 
 }
 
-extension DetailAppController: ViewModelBased {
+extension AppDetailController: ViewModelBased {
 
   func bindViewModel() {
 

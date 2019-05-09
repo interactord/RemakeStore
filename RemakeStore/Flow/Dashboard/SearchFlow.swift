@@ -33,10 +33,10 @@ class SearchFlow: BaseFlow {
     switch step {
     case .dashboardIsComplete:
       return navigateToSearchScreen()
-    case .detailAppIsRequired(let appId):
-      return navigateToDetailApp(with: appId)
-    case .detailAppIsComplete:
-      return dismissDetailAppController()
+    case .appDetailIsRequired(let appId):
+      return navigateToAppDetail(with: appId)
+    case .appDetailIsComplete:
+      return dismissAppDetailScreen()
     default:
       return .none
     }
@@ -55,8 +55,8 @@ class SearchFlow: BaseFlow {
     return .one(flowContributor: contributor)
   }
 
-  private func navigateToDetailApp(with appId: Int) -> FlowContributors {
-    var container = DetailAppDIContainer(with: service, appId: appId)
+  private func navigateToAppDetail(with appId: Int) -> FlowContributors {
+    var container = AppDetailDIContainer(with: service, appId: appId)
     let controller = container.getController()
     rootViewController.pushViewController(controller, animated: true)
 
@@ -65,7 +65,7 @@ class SearchFlow: BaseFlow {
     return .one(flowContributor: contributor)
   }
 
-  private func dismissDetailAppController() -> FlowContributors {
+  private func dismissAppDetailScreen() -> FlowContributors {
     rootViewController.popViewController(animated: true)
     return .none
   }

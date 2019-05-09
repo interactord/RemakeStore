@@ -7,29 +7,29 @@ import UIKit
 
 import Swinject
 
-struct DetailAppDIContainer: DIContainer {
+struct AppDetailDIContainer: DIContainer {
   let container: Container
   let service: Service
   let appId: Int
 
-  private lazy var viewModel: DetailAppViewModel = {
+  private lazy var viewModel: AppDetailViewModel = {
     let service = self.service
-    container.register(DetailAppViewModel.self) { _ in
-      DetailAppViewModel(with: service)
+    container.register(AppDetailViewModel.self) { _ in
+      AppDetailViewModel(with: service)
     }.inObjectScope(.weak)
 
-    guard let viewModel = container.resolve(DetailAppViewModel.self) else {
+    guard let viewModel = container.resolve(AppDetailViewModel.self) else {
       fatalError("Should be not nil")
     }
     return viewModel
   }()
 
-  private lazy var controller: DetailAppController = {
-    container.register(DetailAppController.self) { _ in
-      DetailAppController()
+  private lazy var controller: AppDetailController = {
+    container.register(AppDetailController.self) { _ in
+      AppDetailController()
     }.inObjectScope(.weak)
 
-    guard let controller = container.resolve(DetailAppController.self) else {
+    guard let controller = container.resolve(AppDetailController.self) else {
       fatalError("Should be not nil")
     }
 
@@ -48,7 +48,7 @@ struct DetailAppDIContainer: DIContainer {
     container = Container()
   }
 
-  mutating func getController() -> DetailAppController {
+  mutating func getController() -> AppDetailController {
     return self.controller
   }
 }

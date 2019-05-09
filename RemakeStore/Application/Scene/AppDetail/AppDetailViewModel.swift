@@ -7,7 +7,7 @@ import Foundation
 
 import RxSwift
 
-class DetailAppViewModel: ServiceViewModel {
+class AppDetailViewModel: ServiceViewModel {
   let service: Service
 
   let appId: PublishSubject<Int> = .init()

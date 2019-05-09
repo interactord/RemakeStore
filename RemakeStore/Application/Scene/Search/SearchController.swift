@@ -67,7 +67,7 @@ extension SearchController: ViewModelBased {
         return self.searchResultView.items?[indexPath.item].outputs
       }
       .ignoreNil()
-      .map { AppStep.detailAppIsRequired(appId: $0.result.trackId) }
+      .map { AppStep.appDetailIsRequired(appId: $0.result.trackId) }
       .subscribe(onNext: { step in
         print("step \(step)")
         self.steps.accept(step)
