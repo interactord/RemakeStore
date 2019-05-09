@@ -11,7 +11,7 @@ struct SearchDIContainer: DIContainer {
   let container: Container
   let service: Service
 
-  private lazy var viewModel: SearchViewModel = {
+  private(set) lazy var viewModel: SearchViewModel = {
     let service = self.service
     container.register(SearchViewModel.self) { _ in
       SearchViewModel(with: service)
@@ -23,10 +23,10 @@ struct SearchDIContainer: DIContainer {
     return viewModel
   }()
 
-  private lazy var controller: SearchController = {
+  private(set) lazy var controller: SearchController = {
     container.register(SearchController.self) { _ in
       SearchController()
-    }.inObjectScope(.weak)
+    }.inObjectScope(.container)
 
     guard let controller = container.resolve(SearchController.self) else {
       fatalError("Should be not nil")
@@ -37,10 +37,9 @@ struct SearchDIContainer: DIContainer {
     return controller
   }()
 
-  lazy var navigationController: UINavigationController = {
-    let controller = self.controller
+  private(set) lazy var navigationController: UINavigationController = {
     container.register(UINavigationController.self) { _ -> UINavigationController in
-      UINavigationController(rootViewController: controller)
+      UINavigationController()
     }.inObjectScope(.weak)
 
     guard let navController = container.resolve(UINavigationController.self) else {
@@ -55,5 +54,9 @@ struct SearchDIContainer: DIContainer {
   init(with service: Service) {
     self.service = service
     container = Container()
+  }
+
+  mutating func getController() -> SearchController {
+    return controller
   }
 }
