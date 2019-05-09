@@ -9,9 +9,7 @@ import RxSwift
 
 class AppDetailViewModel: ServiceViewModel {
 
-
   let appId: PublishSubject<Int> = .init()
-
 
   // MARK: - Protocol Variables
 

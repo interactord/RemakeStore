@@ -7,7 +7,6 @@ import Foundation
 
 class AppsViewModel: ServiceViewModel {
 
-
   // MARK: - Protocol Variables
 
   let service: Service
