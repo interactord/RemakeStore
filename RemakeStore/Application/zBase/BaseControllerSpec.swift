@@ -20,10 +20,6 @@ class BaseControllerSpec: XCTestCase {
     sut = nil
   }
 
-  func test_coder_nil_init() {
-    sut = BaseController(coder: NSCoder())
-  }
-
   func test_override_call() {
     sut = BaseController()
 

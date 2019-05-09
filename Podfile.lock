@@ -1,54 +1,71 @@
 PODS:
-  - RxBlocking (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxFlow (2.2.0):
-    - RxCocoa (>= 4.5.0)
-    - RxSwift (>= 4.5.0)
-  - RxSwift (4.5.0)
-  - RxTest (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
+  - moa (11.0.1)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxFlow (2.3.0):
+    - RxCocoa (>= 5.0.0)
+    - RxSwift (>= 5.0.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - SCLayoutKit (1.0.0)
   - SCServiceKit (1.0.0):
     - RxSwift (>= 4.5.0)
     - SwiftyBeaver (>= 1.7.0)
+  - SCUIBuildKit (1.0.0)
   - Swifter (1.4.6)
   - SwiftyBeaver (1.7.0)
   - Swinject (2.6.0)
 
 DEPENDENCIES:
-  - RxBlocking (~> 4.5)
-  - RxCocoa (~> 4.5)
+  - moa
+  - RxBlocking
+  - RxCocoa
   - RxFlow
-  - RxSwift (~> 4.5)
-  - RxTest (~> 4.5)
+  - RxSwift
+  - RxTest
+  - SCLayoutKit
   - SCServiceKit
+  - SCUIBuildKit
   - Swifter
   - Swinject
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - moa
     - RxBlocking
     - RxCocoa
     - RxFlow
+    - RxRelay
     - RxSwift
     - RxTest
+    - SCLayoutKit
     - SCServiceKit
+    - SCUIBuildKit
     - Swifter
     - SwiftyBeaver
     - Swinject
 
 SPEC CHECKSUMS:
-  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxFlow: f8cdfc0be3c837464fad1fcd28187fd414bcc716
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
+  moa: a26c4e97c7ac9345e87c4bb999e85116c8ec0310
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxFlow: ee6f1fdbacfa4ca8926122e466dfba32e3edf73f
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  SCLayoutKit: 866df3eec20b5f38bb4afb52efde16447f242e68
   SCServiceKit: 571013f0ff49308918af1d9ae616385e71c0e9db
+  SCUIBuildKit: 27448445521e9211314361ce22eec56e924511b1
   Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 5c6c030d6516bd16b0930f38900ac4e7572d8e34
+PODFILE CHECKSUM: 3a297343f5575f6b30bbb2be4a17c3b8269790aa
 
 COCOAPODS: 1.6.1
