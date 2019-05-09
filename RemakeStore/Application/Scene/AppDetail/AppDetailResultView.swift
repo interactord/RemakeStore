@@ -46,7 +46,6 @@ extension AppDetailResultView: UICollectionViewDataSource {
 		switch cellType {
 		case .appDetailCell:
 			let cell: AppDetailCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-			cell.backgroundColor = .red
 			return cell
 		case .previewCell:
 			let cell: PreviewCell = collectionView.dequeueReusableCell(indexPath: indexPath)

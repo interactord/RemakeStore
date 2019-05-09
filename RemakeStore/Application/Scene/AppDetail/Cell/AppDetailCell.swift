@@ -10,6 +10,110 @@ import SCLayoutKit
 
 class AppDetailCell: BaseCollectionViewCell {
 
+	// MARK: - Views
+
+	lazy var appIconImageView: UIImageView = {
+		return ImageViewBuilder()
+			.setBackgroundColor(DefaultTheme.Color.placeHolderColor)
+			.setCornerRadius(16)
+			.setContentMode(.scaleAspectFill)
+			.setWidthAnchor(140)
+			.setHeightAnchor(140)
+			.build()
+	}()
+
+	lazy var nameLabel: UILabel = {
+		return LabelBuilder()
+			.setText("APP NAME")
+			.setFont(DefaultTheme.Font.title3)
+			.setNumberOfLines(2)
+			.build()
+	}()
+
+	lazy var priceButton: UIButton = {
+		return ButtonBuilder()
+			.setTitle("$4.99")
+			.setFont(DefaultTheme.Font.headline)
+			.setBackgroundColor(DefaultTheme.Color.primaryColor)
+			.setTitleColor(.white)
+			.setCornerRadius(16)
+			.setWidthAnchor(80)
+			.setHeightAnchor(32)
+			.build()
+	}()
+
+	lazy var whatsNewLabel: UILabel = {
+		return LabelBuilder()
+			.setText("What's New")
+			.setFont(DefaultTheme.Font.title3)
+			.build()
+	}()
+
+	lazy var releaseNotesLabel: UILabel = {
+		return LabelBuilder()
+			.setText("Release Notes")
+			.setFont(DefaultTheme.Font.body)
+			.setNumberOfLines(0)
+			.build()
+	}()
+
+	lazy var stackView: UIStackView = {
+
+		/// -----------------------
+		/// [priceButton]
+		///      | 0
+		/// [UIView]
+		/// ------------------------
+		let priceWrapper = StackViewBuilder(
+			arrangedSubViews: [self.priceButton, UIView()]
+		).build()
+
+
+		/// --------------------------------
+		/// [nameLabel] -12- | [priceButton]
+		///									 |    | 0
+		/// 						     | [UIView]
+		/// -------------------------------
+		let namePriceWrapper = StackViewBuilder(
+			arrangedSubViews: [self.nameLabel, priceWrapper, UIView()
+			]).setAxis(.vertical).setSpacing(12).build()
+
+
+		/// -----------------------------------------------------------
+		///  [appIconImageView]	 -16-	|	[nameLabel] -12- | [priceButton
+		///														| -------------------------------
+		///														|
+		///														|
+		/// -----------------------------------------------------------
+
+		let topInfoWrapper = StackViewBuilder(
+			arrangedSubViews: [self.appIconImageView, namePriceWrapper]
+		).setSpacing(20).build()
+
+		/// -----------------------------------------------------------
+		///  [appIconImageView]	 -16-	|	[nameLabel] -12- | [priceButton
+		///														| -------------------------------
+		///														|
+		///														|
+		/// -----------------------------------------------------------
+		/// [whatsNewLabel]--------------------------------------------
+		///   | 16
+		/// [releaseNotesLabel]----------------------------------------
+
+		return StackViewBuilder(
+			arrangedSubViews: [topInfoWrapper, self.whatsNewLabel, self.releaseNotesLabel]
+		).setAxis(.vertical).setSpacing(16).build()
+	}()
+
+	override func setupSubView() {
+		super.setupSubView()
+		self.backgroundColor = .white
+
+		addSubview(stackView)
+		stackView.fillSuperView(
+			padding: .init(top: 20, left: 20, bottom: 20, right: 20)
+		)
+	}
 }
 
 extension AppDetailCell: CellContentClassIdentifiable {
