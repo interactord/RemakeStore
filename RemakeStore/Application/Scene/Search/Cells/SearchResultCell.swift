@@ -156,29 +156,17 @@ extension SearchResultCell: SearchResultCellType {
       .bind(to: appIconImageView.rx.loadImage)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.appInformation
-      .map { $0.screenshotUrls?[0] ?? "" }
-      .bind(to: screenShots[0].rx.loadImage)
-      .disposed(by: disposeBag)
+    let screenShots = self.screenShots
 
     viewModel.outputs.appInformation
+      .map { $0.screenshotUrls }
+      .ignoreNil()
       .map {
-        $0.screenshotUrls?.count ?? 0 > 1
-          ? $0.screenshotUrls?[1] ?? ""
-          : ""
-      }
-      .bind(to: screenShots[1].rx.loadImage)
+        zip(screenShots, $0).map {
+          $0.0.moa.url = $0.1
+        }
+      }.subscribe()
       .disposed(by: disposeBag)
-
-    viewModel.outputs.appInformation
-      .map {
-        $0.screenshotUrls?.count ?? 0 > 2
-          ? $0.screenshotUrls?[2] ?? ""
-          : ""
-      }
-      .bind(to: screenShots[2].rx.loadImage)
-      .disposed(by: disposeBag)
-
   }
 
 }
