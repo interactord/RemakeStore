@@ -9,7 +9,6 @@ extension UINavigationController {
   func makeTabBarStyle(with title: String, imageName: String) {
     self.navigationBar.prefersLargeTitles = true
     self.view.backgroundColor = .white
-    self.viewControllers.first?.title = title
     self.tabBarItem.title = title
     self.tabBarItem.image = UIImage(named: imageName)
   }
