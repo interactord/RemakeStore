@@ -9,7 +9,9 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-class BaseController: UIViewController {
+class BaseController: UIViewController, Stepper {
+
+  var steps: PublishRelay<Step> = .init()
 
   // MARK: - Private
 
@@ -55,14 +57,6 @@ class BaseController: UIViewController {
 
   func setupNavigation() {
     /// navigation.title = "TITLE"
-  }
-
-}
-
-extension BaseController: Stepper {
-
-  public var steps: PublishRelay<Step> {
-    return PublishRelay<Step>()
   }
 
 }
