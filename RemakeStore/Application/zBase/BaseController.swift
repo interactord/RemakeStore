@@ -13,8 +13,11 @@ class BaseController: UIViewController {
 
   // MARK: - Private
 
-  private let disposeBag = DisposeBag()
   private var didSetupConstraints = false
+
+  // MARK: - Public
+
+  let disposeBag = DisposeBag()
 
   // MARK: - Initializing
 
