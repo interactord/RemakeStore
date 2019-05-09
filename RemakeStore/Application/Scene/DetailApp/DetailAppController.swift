@@ -11,6 +11,8 @@ class DetailAppController: BaseController {
 
   var viewModel: DetailAppViewModel!
 
+  var appId: Int?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .green

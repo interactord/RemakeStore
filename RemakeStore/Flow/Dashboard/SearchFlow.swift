@@ -13,7 +13,7 @@ class SearchFlow: BaseFlow {
 
   let service: Service
 
-  private lazy var rootViewController: UINavigationController = {
+  lazy var rootViewController: UINavigationController = {
     var container = SearchDIContainer(with: service)
     return container.navigationController
   }()
@@ -29,9 +29,12 @@ class SearchFlow: BaseFlow {
 
   // MARK: - functions for protocol
   internal func navigate(to step: AppStep) -> FlowContributors {
+
     switch step {
-    case .detailAppIsRequired:
-      return navigateToDetailApp()
+    case .dashboardIsComplete:
+      return navigateToSearchScreen()
+    case .detailAppIsRequired(let appId):
+      return navigateToDetailApp(with: appId)
     case .detailAppIsComplete:
       return dismissDetailAppController()
     default:
@@ -39,9 +42,23 @@ class SearchFlow: BaseFlow {
     }
   }
 
-  private func navigateToDetailApp() -> FlowContributors {
-    var detailAppContainer = DetailAppDIContainer(with: service)
-    let controller = detailAppContainer.getController()
+  private func navigateToSearchScreen() -> FlowContributors {
+    var container = SearchDIContainer(with: service)
+    let controller = container.getController()
+    rootViewController.setViewControllers([controller], animated: false)
+
+    let contributor = FlowContributor.contribute(
+      withNextPresentable: controller,
+      withNextStepper: controller
+    )
+
+    return .one(flowContributor: contributor)
+  }
+
+  private func navigateToDetailApp(with appId: Int) -> FlowContributors {
+    var container = DetailAppDIContainer(with: service)
+    let controller = container.getController()
+    controller.appId = appId
     rootViewController.pushViewController(controller, animated: true)
 
     let contributor = FlowContributor.makeContributor(withNextPresentable: controller)

@@ -39,6 +39,7 @@ class SearchController: BaseController {
     super.setupNavigation()
 
     definesPresentationContext = true
+    navigationItem.title = "Search"
     navigationItem.searchController = self.searchController
     navigationItem.hidesSearchBarWhenScrolling = false
     searchController.dimsBackgroundDuringPresentation = false
@@ -59,5 +60,17 @@ extension SearchController: ViewModelBased {
     viewModel.searchResult
       .bind(to: searchResultView.rx.updateItems)
       .disposed(by: disposeBag)
+
+    searchResultView.rx
+      .itemSelected
+      .map { [unowned self] (indexPath: IndexPath) -> Int? in
+        return self.searchResultView.items?[indexPath.item].appId
+      }
+      .ignoreNil()
+      .map { AppStep.detailAppIsRequired(appId: $0) }
+      .subscribe(onNext: { step in
+        print("step \(step)")
+        self.steps.accept(step)
+      }).disposed(by: disposeBag)
   }
 }
