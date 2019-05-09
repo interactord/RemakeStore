@@ -17,12 +17,14 @@ class SearchViewModel: ServiceViewModel {
 
   lazy var searchResult = self.searchText.flatMapLatest { [unowned self] term in
     self.searchRepository.read(with: SearchResultReadParameter(withTerm: term))
-  }.map { result -> [SearchResult.AppInformation] in
+  }.map { result -> [SearchResultCellViewModel] in
     switch result {
     case .noContent:
       return []
     case .value(let searchResult):
-      return searchResult.results
+      return searchResult.results.map {
+        SearchResultCellViewModel(withResult: $0)
+      }
     }
   }
   .observeOn(MainScheduler.instance)

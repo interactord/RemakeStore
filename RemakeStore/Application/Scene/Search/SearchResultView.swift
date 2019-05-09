@@ -13,7 +13,7 @@ import RxSwift
 
 class SearchResultView: BaseCollectionView {
 
-  var items: [SearchResult.AppInformation]?
+  var items: [SearchResultCellViewModel]?
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -36,6 +36,9 @@ extension SearchResultView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: SearchResultCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+    if let viewModel = items?[indexPath.item] {
+      cell.bind(to: viewModel)
+    }
     return cell
   }
 }
@@ -50,7 +53,7 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: SearchResultView {
-  internal var updateItems: Binder<[SearchResult.AppInformation]> {
+  internal var updateItems: Binder<[SearchResultCellViewModel]> {
     return Binder(self.base) { base, result in
       base.items = result
       base.reloadData()
