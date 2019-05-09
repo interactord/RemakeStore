@@ -116,9 +116,18 @@ class SearchResultCell: BaseCollectionViewCell {
 
     addSubview(overallStackView)
     overallStackView.fillSuperView(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
-
   }
 
+  override func reset() {
+    super.reset()
+    appIconImageView.image = nil
+    nameLabel.text = ""
+    categoryLabel.text = ""
+    ratingsLabel.text = ""
+    screenShots.forEach {
+      $0.image = nil
+    }
+  }
 }
 
 extension SearchResultCell: SearchResultCellType {
