@@ -1,13 +1,5 @@
 codecov:
   notify:
-    slack:
-      default:
-        url: "https://hooks.slack.com/services/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"
-        threshold: 1%
-	only_pulls: false
-        branches: null
-        flags: null
-	paths: null
     require_ci_to_pass: yes
 comment:
   layout: "header, changes, diff, sunburst"
