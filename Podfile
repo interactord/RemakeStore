@@ -7,7 +7,6 @@ target 'RemakeStore' do
   pod 'RxCocoa', :inhibit_warnings => true
   pod 'Swinject', :inhibit_warnings => true 
   pod 'RxFlow', :inhibit_warnings => true
-  pod 'TinyConstraints', :inhibit_warnings => true
 
   pod 'SCUIBuildKit'
   pod 'SCServiceKit'

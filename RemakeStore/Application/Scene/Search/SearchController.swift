@@ -5,7 +5,7 @@
 
 import UIKit
 
-import TinyConstraints
+import SCLayoutKit
 
 class SearchController: BaseController {
 
@@ -28,7 +28,7 @@ class SearchController: BaseController {
 
   override func setupConstraints() {
     super.setupConstraints()
-    searchResultView.edgesToSuperview()
+    searchResultView.fillSuperView()
   }
 
 }

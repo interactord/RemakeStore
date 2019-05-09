@@ -20,7 +20,6 @@ PODS:
   - Swifter (1.4.6)
   - SwiftyBeaver (1.7.0)
   - Swinject (2.6.0)
-  - TinyConstraints (4.0.0)
 
 DEPENDENCIES:
   - RxBlocking
@@ -33,7 +32,6 @@ DEPENDENCIES:
   - SCUIBuildKit
   - Swifter
   - Swinject
-  - TinyConstraints
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -49,7 +47,6 @@ SPEC REPOS:
     - Swifter
     - SwiftyBeaver
     - Swinject
-    - TinyConstraints
 
 SPEC CHECKSUMS:
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
@@ -64,8 +61,7 @@ SPEC CHECKSUMS:
   Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
-  TinyConstraints: 03bc091844b98c18dbaead8b1153242a42721b56
 
-PODFILE CHECKSUM: 0cd446b177fb74d90aaef16993c84b8ff2408917
+PODFILE CHECKSUM: e41ff022f78da85d3b629f1d09b316cb94efe338
 
 COCOAPODS: 1.6.1
