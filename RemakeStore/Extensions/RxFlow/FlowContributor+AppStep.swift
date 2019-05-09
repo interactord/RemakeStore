@@ -10,4 +10,8 @@ extension FlowContributor {
 		let step = OneStepper(withSingleStep: step)
 		return .contribute(withNextPresentable: flow, withNextStepper: step)
 	}
+
+	static func makeContributor(withNextPresentable presentable: Presentable & Stepper) -> FlowContributor {
+		return  .contribute(withNextPresentable: presentable, withNextStepper: presentable)
+	}
 }
