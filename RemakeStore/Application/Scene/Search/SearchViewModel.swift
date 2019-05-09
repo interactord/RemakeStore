@@ -13,7 +13,7 @@ class SearchViewModel: ServiceViewModel {
 
   let searchText: BehaviorSubject<String> = .init(value: "")
 
-  lazy var searchRepository = AnyRepository<SearchResult>(base: SearchResultRepository(httpClient: self.service.httpClient))
+  lazy var searchRepository = AnyRepository<AppResult>(base: SearchResultRepository(httpClient: self.service.httpClient))
 
   lazy var searchResult = self.searchText.flatMapLatest { [unowned self] term in
     self.searchRepository.read(with: SearchResultReadParameter(withTerm: term))

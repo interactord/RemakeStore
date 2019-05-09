@@ -12,10 +12,10 @@ import RxSwift
 
 class SearchResultCellViewModel {
 
-  private let appInfo: SearchResult.AppInformation
-  let appInfomation: Observable<SearchResult.AppInformation>
+  private let appInfo: AppResult.AppInformation
+  let appInfomation: Observable<AppResult.AppInformation>
 
-  init(withResult result: SearchResult.AppInformation) {
+  init(withResult result: AppResult.AppInformation) {
     self.appInfomation = Observable.just(result).observeOn(MainScheduler.asyncInstance)
     self.appInfo = result
   }

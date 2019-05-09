@@ -29,22 +29,22 @@ extension SearchResultRepository: Repository {
 
 	// MARK: - functions for protocol
 
-	public func create(with parameter: RepositoryParameter?) -> Observable<ResultContent<SearchResult>> {
+	public func create(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
 		fatalError("create(with:) has not been implemented")
 	}
 
-	public func read(with parameter: RepositoryParameter?) -> Observable<ResultContent<SearchResult>> {
+	public func read(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
     guard let parameter = parameter as? SearchResultReadParameter else {
 			fatalError("Should be not nil")
 		}
 		return httpClient.request(endpoint: SearchResultEndpoint.read(with: parameter))
 	}
 
-	public func update(with parameter: RepositoryParameter?) -> Observable<ResultContent<SearchResult>> {
+	public func update(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
 		fatalError("update(with:) has not been implemented")
 	}
 
-	public func delete(with parameter: RepositoryParameter?) -> Observable<ResultContent<SearchResult>> {
+	public func delete(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
 		fatalError("delete(with:) has not been implemented")
 	}
 }

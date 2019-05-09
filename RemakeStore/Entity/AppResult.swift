@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct SearchResult: Decodable {
+struct AppResult: Decodable {
 
   struct AppInformation: Decodable {
     let trackId: Int

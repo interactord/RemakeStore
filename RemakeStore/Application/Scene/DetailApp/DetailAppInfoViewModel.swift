@@ -5,8 +5,12 @@
 
 import Foundation
 
+import RxSwift
+
 class DetailAppViewModel: ServiceViewModel {
   let service: Service
+
+  let appId: PublishSubject<Int> = .init()
 
   required init(with service: Service) {
     self.service = service

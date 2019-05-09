@@ -5,13 +5,15 @@
 
 import UIKit
 
+import RxSwift
+
 class DetailAppController: BaseController {
 
   // MARK: - ViewModel
 
   var viewModel: DetailAppViewModel!
 
-  var appId: Int?
+  var appId: Int!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +25,10 @@ class DetailAppController: BaseController {
 extension DetailAppController: ViewModelBased {
 
   func bindViewModel() {
-    print("DetailAppController")
+
+    Observable.just(appId)
+      .bind(to: viewModel.appId)
+      .disposed(by: disposeBag)
+
   }
 }
