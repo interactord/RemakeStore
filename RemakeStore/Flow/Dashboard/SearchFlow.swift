@@ -56,9 +56,8 @@ class SearchFlow: BaseFlow {
   }
 
   private func navigateToDetailApp(with appId: Int) -> FlowContributors {
-    var container = DetailAppDIContainer(with: service)
+    var container = DetailAppDIContainer(with: service, appId: appId)
     let controller = container.getController()
-    controller.appId = appId
     rootViewController.pushViewController(controller, animated: true)
 
     let contributor = FlowContributor.makeContributor(withNextPresentable: controller)

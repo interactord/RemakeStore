@@ -10,6 +10,7 @@ import Swinject
 struct DetailAppDIContainer: DIContainer {
   let container: Container
   let service: Service
+  let appId: Int
 
   private lazy var viewModel: DetailAppViewModel = {
     let service = self.service
@@ -33,13 +34,17 @@ struct DetailAppDIContainer: DIContainer {
     }
 
     let viewModel = self.viewModel
-    controller.bind(to: viewModel)
+    let appId = self.appId
+    controller.bind(to: viewModel) {
+      controller.appId = appId
+    }
     return controller
   }()
 
   // MARK: - Initializing
-  init(with service: Service) {
+  init(with service: Service, appId: Int) {
     self.service = service
+    self.appId = appId
     container = Container()
   }
 

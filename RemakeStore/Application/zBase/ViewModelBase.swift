@@ -6,32 +6,39 @@
 import UIKit
 
 protocol ViewModelBased: class {
-	associatedtype ViewModelType
-	var viewModel: ViewModelType! { get set }
+  associatedtype ViewModelType
+  var viewModel: ViewModelType! { get set }
 
-	func bindViewModel()
+  func bindViewModel()
 }
 
 extension ViewModelBased where Self: UIViewController {
-	func bind(to viewModel: Self.ViewModelType) {
-		self.viewModel = viewModel
-		loadViewIfNeeded()
-		bindViewModel()
-	}
+  func bind(to viewModel: Self.ViewModelType, before: (() -> Void)? = nil) {
+    self.viewModel = viewModel
+    if let closure = before {
+      closure()
+    }
+    loadViewIfNeeded()
+    bindViewModel()
+  }
 }
 
 extension ViewModelBased where Self: UICollectionViewCell {
-	func bind(to viewModel: Self.ViewModelType) {
-		self.viewModel = viewModel
-		bindViewModel()
-	}
+  func bind(to viewModel: Self.ViewModelType, before: (() -> Void)? = nil) {
+    self.viewModel = viewModel
+
+    if let closure = before {
+      closure()
+    }
+    bindViewModel()
+  }
 }
 
 extension ViewModelBased where Self: UITableViewCell {
-	func bind(to viewModel: Self.ViewModelType) {
-		self.viewModel = viewModel
-		bindViewModel()
-	}
+  func bind(to viewModel: Self.ViewModelType) {
+    self.viewModel = viewModel
+    bindViewModel()
+  }
 }
 
 extension ViewModelBased where Self: UICollectionReusableView {
