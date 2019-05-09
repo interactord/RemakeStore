@@ -1,5 +1,5 @@
 //
-//  SearchResultRepository.swift
+//  SearchRepository.swift
 //  RemakeStore
 //
 //  Created by Scott Moon on 09/05/2019.
@@ -11,7 +11,7 @@ import Foundation
 import RxSwift
 import SCServiceKit
 
-final class SearchResultRepository {
+final class SearchRepository {
 
 	// MARK: - Private
 
@@ -25,7 +25,7 @@ final class SearchResultRepository {
 
 }
 
-extension SearchResultRepository: Repository {
+extension SearchRepository: Repository {
 
 	// MARK: - functions for protocol
 
@@ -34,10 +34,10 @@ extension SearchResultRepository: Repository {
 	}
 
 	public func read(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
-    guard let parameter = parameter as? SearchResultReadParameter else {
+    guard let parameter = parameter as? SearchReadParameter else {
 			fatalError("Should be not nil")
 		}
-		return httpClient.request(endpoint: SearchResultEndpoint.read(with: parameter))
+		return httpClient.request(endpoint: SearchEndpoint.read(with: parameter))
 	}
 
 	public func update(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {

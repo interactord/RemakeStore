@@ -7,7 +7,7 @@ import Foundation
 
 import SCServiceKit
 
-struct SearchResultReadParameter: RepositoryParameter {
+struct SearchReadParameter: RepositoryParameter {
 
 	let query: [String: String]
 

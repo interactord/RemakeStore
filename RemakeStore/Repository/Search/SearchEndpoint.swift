@@ -7,9 +7,9 @@ import Foundation
 
 import SCServiceKit
 
-enum SearchResultEndpoint {
+enum SearchEndpoint {
 
-  case read(with: SearchResultReadParameter)
+  case read(with: SearchReadParameter)
 
   private enum Constant {
     static let baseUrl = "https://itunes.apple.com"
@@ -18,7 +18,7 @@ enum SearchResultEndpoint {
 
 }
 
-extension SearchResultEndpoint: Endpoint {
+extension SearchEndpoint: Endpoint {
 
   // MARK: - functions for protocol
 

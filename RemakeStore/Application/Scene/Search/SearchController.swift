@@ -57,7 +57,7 @@ extension SearchController: ViewModelBased {
       .bind(to: viewModel.searchText)
       .disposed(by: disposeBag)
 
-    viewModel.searchResult
+    viewModel.search
       .bind(to: searchResultView.rx.updateItems)
       .disposed(by: disposeBag)
 
