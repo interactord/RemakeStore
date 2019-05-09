@@ -6,13 +6,28 @@
 import Foundation
 
 import RxSwift
+import SCServiceKit
 
 class SearchViewModel: ServiceViewModel {
-	let service: Service
+  let service: Service
 
- let searchText: BehaviorSubject<String> = .init(value: "")
+  let searchText: BehaviorSubject<String> = .init(value: "")
 
-	required init(with service: Service) {
-		self.service = service
-	}
+  lazy var searchRepository = AnyRepository<SearchResult>(base: SearchResultRepository(httpClient: self.service.httpClient))
+
+  lazy var searchResult = self.searchText.flatMapLatest { [unowned self] term in
+    self.searchRepository.read(with: SearchResultReadParameter(withTerm: term))
+  }.map { result -> [SearchResult.AppInformation] in
+    switch result {
+    case .noContent:
+      return []
+    case .value(let searchResult):
+      return searchResult.results
+    }
+  }
+  .observeOn(MainScheduler.instance)
+
+  required init(with service: Service) {
+    self.service = service
+  }
 }

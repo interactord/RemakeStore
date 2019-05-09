@@ -8,7 +8,12 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 class SearchResultView: BaseCollectionView {
+
+  var items: [SearchResult.AppInformation]?
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -26,7 +31,7 @@ class SearchResultView: BaseCollectionView {
 
 extension SearchResultView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 30
+    return items?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,5 +46,14 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = frame.width
     return .init(width: width, height: 350)
+  }
+}
+
+extension Reactive where Base: SearchResultView {
+  internal var updateItems: Binder<[SearchResult.AppInformation]> {
+    return Binder(self.base) { base, result in
+      base.items = result
+      base.reloadData()
+    }
   }
 }

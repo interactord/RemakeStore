@@ -51,9 +51,13 @@ extension SearchController: ViewModelBased {
   func bindViewModel() {
     searchController.searchBar.rx
       .text.orEmpty
-      .throttle(.microseconds(300), scheduler: MainScheduler.instance)
+      .throttle(.microseconds(500), scheduler: MainScheduler.instance)
       .distinctUntilChanged()
       .bind(to: viewModel.searchText)
+      .disposed(by: disposeBag)
+
+    viewModel.searchResult
+      .bind(to: searchResultView.rx.updateItems)
       .disposed(by: disposeBag)
   }
 }
