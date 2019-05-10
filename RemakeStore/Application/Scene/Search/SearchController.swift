@@ -13,7 +13,7 @@ class SearchController: BaseController {
 
   // MARK: - ViewModel
 
-  var viewModel: SearchViewModel!
+  var viewModel: SearchViewModeling!
 
   // MARK: - Views
 

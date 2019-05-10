@@ -12,7 +12,7 @@ class SearchResultView: BaseCollectionView {
 
   // MARK: Public
 
-  var items: [LookupViewModel]?
+  var items: [LookupViewModeling]?
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -52,7 +52,7 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: SearchResultView {
-  internal var updateItems: Binder<[LookupViewModel]> {
+  internal var updateItems: Binder<[LookupViewModeling]> {
     return Binder(self.base) { base, result in
       base.items = result
       base.reloadData()

@@ -23,6 +23,10 @@ protocol LookupViewModeling {
   var outputs: LookupViewModelOutput { get }
 }
 
+protocol LookupViewModelBindable {
+  func bind(to viewModel: LookupViewModeling)
+}
+
 typealias LookupViewModelType =
   LookupViewModelInput & LookupViewModelOutput & LookupViewModeling
 

@@ -11,10 +11,6 @@ import SCUIBuildKit
 import SCLayoutKit
 import moa
 
-protocol SearchResultCellType {
-  func bind(to: LookupViewModel)
-}
-
 class SearchResultCell: BaseCollectionViewCell {
 
   // MARK: - Views
@@ -130,11 +126,11 @@ class SearchResultCell: BaseCollectionViewCell {
   }
 }
 
-extension SearchResultCell: SearchResultCellType {
+extension SearchResultCell: LookupViewModelBindable {
 
   // MARK: - functions for protocol
 
-  func bind(to viewModel: LookupViewModel) {
+  func bind(to viewModel: LookupViewModeling) {
 
     viewModel.outputs.appInformation
       .map { $0.trackName }

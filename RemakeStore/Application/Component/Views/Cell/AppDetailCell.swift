@@ -8,10 +8,6 @@ import UIKit
 import SCUIBuildKit
 import SCLayoutKit
 
-protocol LookupCellBindable {
-  func bind(to viewModel: LookupViewModeling)
-}
-
 class LookupCell: BaseCollectionViewCell {
 
   // MARK: - Views
@@ -126,7 +122,7 @@ class LookupCell: BaseCollectionViewCell {
   }
 }
 
-extension LookupCell: LookupCellBindable {
+extension LookupCell: LookupViewModelBindable {
 
   // MARK: - functions for protocol
 

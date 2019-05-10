@@ -28,7 +28,7 @@ class BaseCollectionView: UICollectionView {
 		loadView()
 	}
 
-	convenience init(withLayoutStyle style: LayoutStyle) {
+	convenience init(withLayoutStyle style: LayoutStyle = .default) {
 		let layout: UICollectionViewFlowLayout
 
 		switch style {
