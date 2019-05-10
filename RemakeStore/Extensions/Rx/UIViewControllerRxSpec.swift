@@ -73,4 +73,28 @@ class UIViewControllerRxSpec: XCTestCase {
 
   }
 
+  func test_swizzling_viewDidLoadAction() {
+    let expectedCell = XCTestExpectation(description: "called event")
+
+    sut = UIViewController()
+    disposeBag = DisposeBag()
+
+    guard
+      let sut = sut,
+      let disposeBag = disposeBag
+      else {
+      fatalError("Should be not nil")
+    }
+
+    sut.viewDidLoadAction
+      .subscribe(onNext: { _ in
+        expectedCell.fulfill()
+      }).disposed(by: disposeBag)
+
+    sut.viewDidLoad()
+
+    wait(for: [expectedCell], timeout: 5.0)
+
+  }
+
 }
