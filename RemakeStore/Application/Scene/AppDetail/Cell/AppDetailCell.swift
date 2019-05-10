@@ -67,7 +67,6 @@ class AppDetailCell: BaseCollectionViewCell {
 			arrangedSubViews: [self.priceButton, UIView()]
 		).build()
 
-
 		/// --------------------------------
 		/// [nameLabel] -12- | [priceButton]
 		///									 |    | 0
@@ -76,7 +75,6 @@ class AppDetailCell: BaseCollectionViewCell {
 		let namePriceWrapper = StackViewBuilder(
 			arrangedSubViews: [self.nameLabel, priceWrapper, UIView()
 			]).setAxis(.vertical).setSpacing(12).build()
-
 
 		/// -----------------------------------------------------------
 		///  [appIconImageView]	 -16-	|	[nameLabel] -12- | [priceButton

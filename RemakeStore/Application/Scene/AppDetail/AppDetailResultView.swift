@@ -37,6 +37,7 @@ class AppDetailResultView: BaseCollectionView {
 
 extension AppDetailResultView: UICollectionViewDataSource {
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		print(cellItems.count)
 		return cellItems.count
 	}
 
@@ -52,7 +53,6 @@ extension AppDetailResultView: UICollectionViewDataSource {
 			return cell
 		case .reviewRowCell:
 			let cell: ReviewRowCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-			cell.backgroundColor = .blue
 			return cell
 		}
 	}

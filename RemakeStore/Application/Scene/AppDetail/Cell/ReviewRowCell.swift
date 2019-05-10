@@ -5,7 +5,46 @@
 
 import UIKit
 
+import SCUIBuildKit
+import SCLayoutKit
+
 class ReviewRowCell: BaseCollectionViewCell {
+
+	// MARK: - Views
+	private lazy var reviewRatingLabel: UILabel = {
+		return LabelBuilder()
+			.setText("Reviews & Ratings")
+			.setFont(DefaultTheme.Font.title3)
+			.build()
+	}()
+
+	private lazy var reviewListView: ReviewListView = {
+		return ReviewListView(withLayoutStyle: .horizontalSnapping)
+	}()
+
+	override func setupSubView() {
+		super.setupSubView()
+
+		backgroundColor = .white
+		addSubview(reviewRatingLabel)
+		addSubview(reviewListView)
+	}
+
+	override func setupConstant() {
+		super.setupConstant()
+
+		reviewRatingLabel
+			.setTopAnchor(topAnchor, padding: 20)
+			.setLeadingAnchor(leadingAnchor, padding: 20)
+			.setTrailingAnchor(trailingAnchor, padding: 20)
+
+		reviewListView
+			.setTopAnchor(reviewRatingLabel.bottomAnchor, padding: 20)
+			.setLeadingAnchor(leadingAnchor)
+			.setTrailingAnchor(trailingAnchor)
+			.setBottomAnchor(bottomAnchor)
+	}
+
 }
 
 extension ReviewRowCell: CellContentClassIdentifiable {

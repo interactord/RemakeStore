@@ -22,5 +22,9 @@ extension DefaultTheme {
     static var placeHolderColor: UIColor {
       return #colorLiteral(red: 0.9843137255, green: 0.9843137255, blue: 0.9843137255, alpha: 1)
     }
+
+    static var lightGrayColor: UIColor {
+      return #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+    }
   }
 }
