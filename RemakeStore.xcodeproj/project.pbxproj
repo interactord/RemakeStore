@@ -386,10 +386,10 @@
 		295933A1227CE82300B6D5CA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F426E071853C7A4626C07A0C /* Component */,
 				295933A2227CE82300B6D5CA /* Scene */,
 				F426E25660D04500FAFD59D4 /* view */,
 				F426ED6C0EB800DD79697C69 /* zBase */,
-				F426E071853C7A4626C07A0C /* Component */,
 			);
 			path = Application;
 			sourceTree = "<group>";

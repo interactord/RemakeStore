@@ -12,7 +12,7 @@ class AppDetailResultView: BaseCollectionView {
 
   // MARK: - Private
 
-  var item: LookupViewModel?
+  var item: LookupViewModeling?
 
   private enum CollectionViewCellType: Int {
     case appDetailCell = 0, previewCell, reviewRowCell
@@ -92,7 +92,7 @@ extension AppDetailResultView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: AppDetailResultView {
-  internal var updateItems: Binder<LookupViewModel> {
+  internal var updateItems: Binder<LookupViewModeling> {
     return Binder(self.base) { base, result in
       base.item = result
       base.reloadData()

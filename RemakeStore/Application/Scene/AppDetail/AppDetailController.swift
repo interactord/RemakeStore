@@ -50,10 +50,10 @@ extension AppDetailController: ViewModelBased {
       .asObservable()
       .map { appId }
       .ignoreNil()
-      .bind(to: viewModel.appId)
+      .bind(to: viewModel.inputs.appId)
       .disposed(by: disposeBag)
 
-    viewModel.appDetail
+    viewModel.outputs.lookup
       .bind(to: appDetailResultView.rx.updateItems)
       .disposed(by: disposeBag)
   }
