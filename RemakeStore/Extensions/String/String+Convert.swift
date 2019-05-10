@@ -6,7 +6,7 @@
 import Foundation
 
 extension String {
-	func toInt() -> Int? {
-		return Int(self)
-	}
+  func toInt() -> Int? {
+    return Int(self)
+  }
 }
