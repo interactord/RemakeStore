@@ -13,7 +13,7 @@ protocol SearchViewModelInput {
 }
 
 protocol SearchViewModelOutput {
-  var search: Observable<[SearchResultCellViewModel]> { get }
+  var search: Observable<[LookupViewModel]> { get }
 }
 
 protocol SearchViewModelType {
@@ -43,13 +43,13 @@ class SearchViewModel: ServiceViewModel, SearchViewModelTypes {
 
   lazy var search = self.searchText.flatMapLatest { [unowned self] term in
     self.searchRepository.read(with: SearchReadParameter(withTerm: term))
-  }.map { result -> [SearchResultCellViewModel] in
+  }.map { result -> [LookupViewModel] in
     switch result {
     case .noContent:
       return []
     case .value(let searchResult):
       return searchResult.results.map {
-        SearchResultCellViewModel(withResult: $0)
+        LookupViewModel(withResult: $0)
       }
     }
   }

@@ -65,7 +65,7 @@ extension SearchController: ViewModelBased {
 
     searchResultView.rx
       .itemSelected
-      .map { [unowned self] (indexPath: IndexPath) -> SearchResultCellViewModelOutput? in
+      .map { [unowned self] (indexPath: IndexPath) -> LookupViewModelOutput? in
         return self.searchResultView.items?[indexPath.item].outputs
       }
       .ignoreNil()

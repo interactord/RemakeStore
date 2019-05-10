@@ -1,5 +1,5 @@
 //
-//  SearchResultCellViewModel.swift
+//  LookupViewModel.swift
 //  RemakeStore
 //
 //  Created by Scott Moon on 09/05/2019.
@@ -10,30 +10,30 @@ import Foundation
 
 import RxSwift
 
-protocol SearchResultCellViewModelInput {
+protocol LookupViewModelInput {
 }
 
-protocol SearchResultCellViewModelOutput {
+protocol LookupViewModelOutput {
   var appInformation: Observable<AppResult.AppInformation> { get }
   var result: AppResult.AppInformation { get }
 }
 
-protocol SearchResultCellViewModelType {
-  var inputs: SearchResultCellViewModelInput { get }
-  var outputs: SearchResultCellViewModelOutput { get }
+protocol LookupViewModeling {
+  var inputs: LookupViewModelInput { get }
+  var outputs: LookupViewModelOutput { get }
 }
 
-typealias SearchResultCellViewModelTypes =
-  SearchResultCellViewModelInput & SearchResultCellViewModelOutput & SearchResultCellViewModelType
+typealias LookupViewModelType =
+  LookupViewModelInput & LookupViewModelOutput & LookupViewModeling
 
-class SearchResultCellViewModel: SearchResultCellViewModelTypes {
+class LookupViewModel: LookupViewModelType {
 
   // MARK: - Inputs & Outputs
 
-  var inputs: SearchResultCellViewModelInput {
+  var inputs: LookupViewModelInput {
     return self
   }
-  var outputs: SearchResultCellViewModelOutput {
+  var outputs: LookupViewModelOutput {
     return  self
   }
 

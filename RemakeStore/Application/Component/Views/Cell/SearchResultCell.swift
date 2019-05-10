@@ -12,7 +12,7 @@ import SCLayoutKit
 import moa
 
 protocol SearchResultCellType {
-  func bind(to: SearchResultCellViewModel)
+  func bind(to: LookupViewModel)
 }
 
 class SearchResultCell: BaseCollectionViewCell {
@@ -134,7 +134,7 @@ extension SearchResultCell: SearchResultCellType {
 
   // MARK: - functions for protocol
 
-  func bind(to viewModel: SearchResultCellViewModel) {
+  func bind(to viewModel: LookupViewModel) {
 
     viewModel.outputs.appInformation
       .map { $0.trackName }

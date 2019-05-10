@@ -8,8 +8,8 @@ import UIKit
 import SCUIBuildKit
 import SCLayoutKit
 
-protocol AppDetailCellType {
-  func bind(to viewModel: SearchResultCellViewModel)
+protocol AppDetailCellBindable {
+  func bind(to viewModel: LookupViewModeling)
 }
 
 class AppDetailCell: BaseCollectionViewCell {
@@ -126,11 +126,11 @@ class AppDetailCell: BaseCollectionViewCell {
   }
 }
 
-extension AppDetailCell: AppDetailCellType {
+extension AppDetailCell: AppDetailCellBindable {
 
   // MARK: - functions for protocol
 
-  func bind(to viewModel: SearchResultCellViewModel) {
+  func bind(to viewModel: LookupViewModeling) {
 
     viewModel.outputs.appInformation
       .map { $0.trackName }

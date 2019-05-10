@@ -23,7 +23,7 @@ class AppDetailViewModel: ServiceViewModel {
       return appResult.results.first
     }
   }.ignoreNil()
-    .map { SearchResultCellViewModel(withResult: $0) }
+    .map { LookupViewModel(withResult: $0) }
 
   // MARK: - Private
 
