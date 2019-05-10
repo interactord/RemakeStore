@@ -44,9 +44,13 @@ extension AppDetailController: ViewModelBased {
 
   func bindViewModel() {
 
-    Observable.just(appId)
+    let appId = self.appId
+
+    viewWillAppearAction
+      .asObservable()
+      .map { appId }
+      .ignoreNil()
       .bind(to: viewModel.appId)
       .disposed(by: disposeBag)
-
   }
 }
