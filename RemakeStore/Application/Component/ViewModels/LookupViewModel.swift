@@ -11,8 +11,8 @@ protocol LookupViewModelInput {
 }
 
 protocol LookupViewModelOutput {
-  var appInformation: Observable<AppResult.AppInformation> { get }
-  var result: AppResult.AppInformation { get }
+  var appInformation: Observable<AppResult.Lookup> { get }
+  var result: AppResult.Lookup { get }
 }
 
 protocol LookupViewModeling {
@@ -40,10 +40,10 @@ class LookupViewModel: LookupViewModelType {
 
   // MARK: - Outputs
 
-  var appInformation: Observable<AppResult.AppInformation>
-  var result: AppResult.AppInformation
+  var appInformation: Observable<AppResult.Lookup>
+  var result: AppResult.Lookup
 
-  init(withResult result: AppResult.AppInformation) {
+  init(withResult result: AppResult.Lookup) {
     self.appInformation = Observable.just(result).observeOn(MainScheduler.asyncInstance)
     self.result = result
   }

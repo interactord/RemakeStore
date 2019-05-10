@@ -7,7 +7,7 @@ import Foundation
 
 struct AppResult: Decodable {
 
-  struct AppInformation: Decodable {
+  struct Lookup: Decodable {
     let trackId: Int
     let trackName: String
     let primaryGenreName: String
@@ -22,5 +22,5 @@ struct AppResult: Decodable {
   }
 
   let resultCount: Int
-  let results: [AppInformation]
+  let results: [Lookup]
 }
