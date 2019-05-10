@@ -52,5 +52,9 @@ extension AppDetailController: ViewModelBased {
       .ignoreNil()
       .bind(to: viewModel.appId)
       .disposed(by: disposeBag)
+
+    viewModel.appDetail
+      .bind(to: appDetailResultView.rx.updateItems)
+      .disposed(by: disposeBag)
   }
 }

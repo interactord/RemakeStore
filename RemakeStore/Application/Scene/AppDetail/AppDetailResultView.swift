@@ -5,80 +5,97 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class AppDetailResultView: BaseCollectionView {
 
-	// MARK: - Private
+  // MARK: - Private
 
-	private enum CollectionViewCellType: Int {
-		case appDetailCell = 0, previewCell, reviewRowCell
-	}
+  var item: SearchResultCellViewModel?
 
-	private let cellItems = [
-		CollectionViewCellType.appDetailCell,
-		CollectionViewCellType.previewCell,
-		CollectionViewCellType.reviewRowCell
-	]
+  private enum CollectionViewCellType: Int {
+    case appDetailCell = 0, previewCell, reviewRowCell
+  }
 
-	override func setupDelegate() {
-		super.setupDelegate()
-		self.dataSource = self
-		self.delegate = self
-	}
+  private let cellItems = [
+    CollectionViewCellType.appDetailCell,
+    CollectionViewCellType.previewCell,
+    CollectionViewCellType.reviewRowCell
+  ]
 
-	override func registerCell() {
-		super.registerCell()
-		self.register(cellType: AppDetailCell.self)
-		self.register(cellType: PreviewCell.self)
-		self.register(cellType: ReviewRowCell.self)
-	}
+  override func setupDelegate() {
+    super.setupDelegate()
+    self.dataSource = self
+    self.delegate = self
+  }
+
+  override func registerCell() {
+    super.registerCell()
+    self.register(cellType: AppDetailCell.self)
+    self.register(cellType: PreviewCell.self)
+    self.register(cellType: ReviewRowCell.self)
+  }
 }
 
 // MARK: - UICollectionViewDataSource
 
 extension AppDetailResultView: UICollectionViewDataSource {
-	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		print(cellItems.count)
-		return cellItems.count
-	}
+  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    print(cellItems.count)
+    return cellItems.count
+  }
 
-	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cellType = cellItems[indexPath.item]
+  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cellType = cellItems[indexPath.item]
 
-		switch cellType {
-		case .appDetailCell:
-			let cell: AppDetailCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-			return cell
-		case .previewCell:
-			let cell: PreviewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-			return cell
-		case .reviewRowCell:
-			let cell: ReviewRowCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-			return cell
-		}
-	}
+    switch cellType {
+    case .appDetailCell:
+      let cell: AppDetailCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+      if let viewModel = item {
+        cell.bind(to: viewModel)
+      }
+      return cell
+    case .previewCell:
+      let cell: PreviewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+      return cell
+    case .reviewRowCell:
+      let cell: ReviewRowCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+      return cell
+    }
+  }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension AppDetailResultView: UICollectionViewDelegateFlowLayout {
-	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let width = frame.width
-		var height: CGFloat = 280
-		let cellType = cellItems[indexPath.item]
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = frame.width
+    var height: CGFloat = 280
+    let cellType = cellItems[indexPath.item]
 
-		switch cellType {
-		case .appDetailCell:
-			height = 280
-		case .previewCell:
-			height = 500
-		case .reviewRowCell:
-			height = 280
-		}
+    switch cellType {
+    case .appDetailCell:
+      height = 280
+    case .previewCell:
+      height = 500
+    case .reviewRowCell:
+      height = 280
+    }
 
-		return .init(width: width, height: height)
-	}
+    return .init(width: width, height: height)
+  }
 
-	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		return .init(top: 0, left: 0, bottom: 10, right: 0)
-	}
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return .init(top: 0, left: 0, bottom: 10, right: 0)
+  }
+}
+
+extension Reactive where Base: AppDetailResultView {
+  internal var updateItems: Binder<SearchResultCellViewModel> {
+    return Binder(self.base) { base, result in
+      base.item = result
+      base.reloadData()
+    }
+  }
 }
