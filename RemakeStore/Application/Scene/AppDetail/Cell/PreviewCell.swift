@@ -19,7 +19,7 @@ class PreviewCell: BaseCollectionViewCell {
 			.build()
 	}()
 
-	lazy var previewScreensView = PreviewScreenshotsView()
+	lazy var previewScreensView = PreviewScreenshotsView(withLayoutStyle: .horizontalSnapping)
 
 	override func setupSubView() {
 		super.setupSubView()
