@@ -60,5 +60,9 @@ extension AppDetailController: ViewModelBased {
     viewModel.outputs.screenshotViewModels
       .bind(to: appDetailResultView.rx.updateScreenshotViewModels)
       .disposed(by: disposeBag)
+
+    viewModel.outputs.reviewsEntryModels
+      .bind(to: appDetailResultView.rx.updateReviewsEntryViewModels)
+      .disposed(by: disposeBag)
   }
 }

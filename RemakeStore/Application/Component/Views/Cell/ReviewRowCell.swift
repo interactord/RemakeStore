@@ -7,6 +7,7 @@ import UIKit
 
 import SCUIBuildKit
 import SCLayoutKit
+import RxSwift
 
 class ReviewRowCell: BaseCollectionViewCell {
 
@@ -43,6 +44,12 @@ class ReviewRowCell: BaseCollectionViewCell {
 			.setLeadingAnchor(leadingAnchor)
 			.setTrailingAnchor(trailingAnchor)
 			.setBottomAnchor(bottomAnchor)
+	}
+
+	func bind(to viewModels: [ReviewsEntryViewModeling]) {
+		Observable.just(viewModels)
+			.bind(to: reviewListView.rx.updateViewModels)
+			.disposed(by: disposeBag)
 	}
 
 }

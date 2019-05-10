@@ -7,6 +7,8 @@ import UIKit
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxSwift
+import RxCocoa
 
 class ReviewCell: BaseCollectionViewCell {
 
@@ -36,7 +38,7 @@ class ReviewCell: BaseCollectionViewCell {
       .build()
   }()
 
-  private lazy var starsStackView: UIStackView = {
+  fileprivate lazy var starsStackView: UIStackView = {
     var arrangedView = [UIView()]
     (0..<5).forEach { _ in
       let imgView = ImageViewBuilder()
@@ -51,7 +53,7 @@ class ReviewCell: BaseCollectionViewCell {
       .build()
   }()
 
-  private lazy var contentStackView: UIStackView = {
+  lazy var contentStackView: UIStackView = {
 
     ///---------------------------------
     /// [titleLabel] -8- [authorLabel]
@@ -87,7 +89,7 @@ class ReviewCell: BaseCollectionViewCell {
   override func setupConstant() {
     super.setupConstant()
 
-//    titleLabel.setContentHuggingPriority(.init(0), for: .horizontal)
+    titleLabel.setContentHuggingPriority(.init(0), for: .horizontal)
     contentStackView
       .setTopAnchor(topAnchor, padding: 20)
       .setLeadingAnchor(leadingAnchor, padding: 20)
@@ -95,5 +97,39 @@ class ReviewCell: BaseCollectionViewCell {
   }
 }
 
+extension ReviewCell: ReviewsEntryViewModelBindable {
+
+  func bind(to viewModel: ReviewsEntryViewModeling) {
+    viewModel.outputs.author
+      .bind(to: authorLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.title
+      .bind(to: titleLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.body
+      .bind(to: bodyLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.rating
+      .bind(to: self.rx.updateRating)
+      .disposed(by: disposeBag)
+  }
+}
+
 extension ReviewCell: CellContentClassIdentifiable {
+}
+
+// MARK: - RX Binder
+
+extension Reactive where Base: ReviewCell {
+
+  internal var updateRating: Binder<Int> {
+    return Binder(self.base) { base, result in
+      for (index, view) in base.starsStackView.arrangedSubviews.enumerated() {
+        view.alpha = index >= result ? 0 : 1
+      }
+    }
+  }
 }

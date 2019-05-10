@@ -14,6 +14,7 @@ class AppDetailResultView: BaseCollectionView {
 
   var lookupViewModel: LookupViewModeling?
   var screenshotViewModels: [ScreenshotViewModeling]?
+  var reviewEntryViewModels: [ReviewsEntryViewModeling]?
 
   private enum CollectionViewCellType: Int {
     case lookupCell = 0, previewCell, reviewRowCell
@@ -65,6 +66,9 @@ extension AppDetailResultView: UICollectionViewDataSource {
       return cell
     case .reviewRowCell:
       let cell: ReviewRowCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+      if let viewModel = reviewEntryViewModels {
+        cell.bind(to: viewModel)
+      }
       return cell
     }
   }
@@ -95,6 +99,8 @@ extension AppDetailResultView: UICollectionViewDelegateFlowLayout {
   }
 }
 
+// MARK: - RX Binder
+
 extension Reactive where Base: AppDetailResultView {
 
   internal var updateLookupViewModel: Binder<LookupViewModeling> {
@@ -107,6 +113,13 @@ extension Reactive where Base: AppDetailResultView {
   internal var updateScreenshotViewModels: Binder<[ScreenshotViewModeling]> {
     return Binder(self.base) { base, result in
       base.screenshotViewModels = result
+      base.reloadData()
+    }
+  }
+
+  internal var updateReviewsEntryViewModels: Binder<[ReviewsEntryViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.reviewEntryViewModels = result
       base.reloadData()
     }
   }
