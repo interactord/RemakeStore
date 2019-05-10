@@ -17,7 +17,7 @@ class PreviewScreenshotsView: BaseCollectionView {
 
 	override func registerCell() {
 		super.registerCell()
-		self.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+		self.register(cellType: ScreenshotCell.self)
 	}
 
 	override func setupView() {
@@ -36,8 +36,7 @@ extension PreviewScreenshotsView: UICollectionViewDataSource {
 	}
 
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-		cell.backgroundColor = .red
+		let cell: ScreenshotCell = collectionView.dequeueReusableCell(indexPath: indexPath)
 		return cell
 	}
 }
