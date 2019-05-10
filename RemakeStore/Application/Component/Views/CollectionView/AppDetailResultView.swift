@@ -15,11 +15,11 @@ class AppDetailResultView: BaseCollectionView {
   var item: LookupViewModeling?
 
   private enum CollectionViewCellType: Int {
-    case appDetailCell = 0, previewCell, reviewRowCell
+    case lookupCell = 0, previewCell, reviewRowCell
   }
 
   private let cellItems = [
-    CollectionViewCellType.appDetailCell,
+    CollectionViewCellType.lookupCell,
     CollectionViewCellType.previewCell,
     CollectionViewCellType.reviewRowCell
   ]
@@ -32,7 +32,7 @@ class AppDetailResultView: BaseCollectionView {
 
   override func registerCell() {
     super.registerCell()
-    self.register(cellType: AppDetailCell.self)
+    self.register(cellType: LookupCell.self)
     self.register(cellType: PreviewCell.self)
     self.register(cellType: ReviewRowCell.self)
   }
@@ -50,8 +50,8 @@ extension AppDetailResultView: UICollectionViewDataSource {
     let cellType = cellItems[indexPath.item]
 
     switch cellType {
-    case .appDetailCell:
-      let cell: AppDetailCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+    case .lookupCell:
+      let cell: LookupCell = collectionView.dequeueReusableCell(indexPath: indexPath)
       if let viewModel = item {
         cell.bind(to: viewModel)
       }
@@ -75,7 +75,7 @@ extension AppDetailResultView: UICollectionViewDelegateFlowLayout {
     let cellType = cellItems[indexPath.item]
 
     switch cellType {
-    case .appDetailCell:
+    case .lookupCell:
       height = 280
     case .previewCell:
       height = 500

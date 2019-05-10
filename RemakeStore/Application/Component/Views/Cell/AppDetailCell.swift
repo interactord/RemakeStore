@@ -8,11 +8,11 @@ import UIKit
 import SCUIBuildKit
 import SCLayoutKit
 
-protocol AppDetailCellBindable {
+protocol LookupCellBindable {
   func bind(to viewModel: LookupViewModeling)
 }
 
-class AppDetailCell: BaseCollectionViewCell {
+class LookupCell: BaseCollectionViewCell {
 
   // MARK: - Views
 
@@ -126,7 +126,7 @@ class AppDetailCell: BaseCollectionViewCell {
   }
 }
 
-extension AppDetailCell: AppDetailCellBindable {
+extension LookupCell: LookupCellBindable {
 
   // MARK: - functions for protocol
 
@@ -156,5 +156,5 @@ extension AppDetailCell: AppDetailCellBindable {
 
 }
 
-extension AppDetailCell: CellContentClassIdentifiable {
+extension LookupCell: CellContentClassIdentifiable {
 }
