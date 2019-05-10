@@ -7,9 +7,9 @@ import Foundation
 
 import SCServiceKit
 
-enum AppDetailEndpoint {
+enum LookupEndpoint {
 
-  case read(with: AppDetailReadParameter)
+  case read(with: LookupReadParameter)
 
   // MARK: - Private
 
@@ -20,7 +20,7 @@ enum AppDetailEndpoint {
 
 }
 
-extension AppDetailEndpoint: Endpoint {
+extension LookupEndpoint: Endpoint {
 
   // MARK: - functions for protocol
 

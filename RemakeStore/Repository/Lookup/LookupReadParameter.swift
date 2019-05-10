@@ -7,7 +7,7 @@ import Foundation
 
 import SCServiceKit
 
-struct AppDetailReadParameter: RepositoryParameter {
+struct LookupReadParameter: RepositoryParameter {
 
 	// MARK: Public
 

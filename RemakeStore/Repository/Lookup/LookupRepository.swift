@@ -8,7 +8,7 @@ import Foundation
 import RxSwift
 import SCServiceKit
 
-final class AppDetailRepository {
+final class LookupRepository {
 
 	// MARK: - Private
 
@@ -22,7 +22,7 @@ final class AppDetailRepository {
 
 }
 
-extension AppDetailRepository: Repository {
+extension LookupRepository: Repository {
 
 	// MARK: - functions for protocol
 	public func create(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
@@ -30,10 +30,10 @@ extension AppDetailRepository: Repository {
 	}
 
 	public func read(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {
-		guard let parameter = parameter as? AppDetailReadParameter else {
+		guard let parameter = parameter as? LookupReadParameter else {
 			fatalError("Should be not nil")
 		}
-		return httpClient.request(endpoint: AppDetailEndpoint.read(with: parameter))
+		return httpClient.request(endpoint: LookupEndpoint.read(with: parameter))
 	}
 
 	public func update(with parameter: RepositoryParameter?) -> Observable<ResultContent<AppResult>> {

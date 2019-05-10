@@ -13,7 +13,7 @@ class AppDetailViewModel: ServiceViewModel {
   let appId: PublishSubject<Int> = .init()
 
   lazy var appDetail = appId.flatMapLatest { [unowned self] appId in
-    self.appDetailRepository.read(with: AppDetailReadParameter(withAppId: appId))
+    self.appDetailRepository.read(with: LookupReadParameter(withAppId: appId))
   }.map { [unowned self] result -> AppResult.AppInformation? in
     self.service.logger.log(level: .info, message: result)
     switch result {
@@ -28,7 +28,7 @@ class AppDetailViewModel: ServiceViewModel {
   // MARK: - Private
 
   private lazy var appDetailRepository = AnyRepository<AppResult>(
-    base: AppDetailRepository(
+    base: LookupRepository(
       httpClient: self.service.httpClient
     ))
 
