@@ -22,8 +22,7 @@ class AppDetailCell: BaseCollectionViewCell {
 			.build()
 	}()
 
-	lazy var nameLabel: UILabel = {
-		return LabelBuilder()
+	lazy var nameLabel: UILabel = {		return LabelBuilder()
 			.setText("APP NAME")
 			.setFont(DefaultTheme.Font.title3)
 			.setNumberOfLines(2)
