@@ -12,7 +12,7 @@ class AppDetailController: BaseController {
 
   // MARK: - ViewModel
 
-  var viewModel: AppDetailViewModel!
+  var viewModel: AppDetailViewModeling!
 
   // MARK: Public
 
