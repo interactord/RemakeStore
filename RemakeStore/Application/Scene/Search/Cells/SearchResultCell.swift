@@ -173,11 +173,3 @@ extension SearchResultCell: SearchResultCellType {
 
 extension SearchResultCell: CellContentClassIdentifiable {
 }
-
-extension Reactive where Base: UIImageView {
-  internal var loadImage: Binder<String> {
-    return Binder(self.base) { base, result in
-      base.moa.url = result
-    }
-  }
-}
