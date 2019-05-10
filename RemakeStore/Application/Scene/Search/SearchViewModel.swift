@@ -16,15 +16,15 @@ protocol SearchViewModelOutput {
   var search: Observable<[LookupViewModel]> { get }
 }
 
-protocol SearchViewModelType {
+protocol SearchViewModeling {
   var inputs: SearchViewModelInput { get }
   var outputs: SearchViewModelOutput { get }
 }
 
-typealias SearchViewModelTypes =
-  SearchViewModelInput & SearchViewModelOutput & SearchViewModelType
+typealias SearchViewModelType =
+  SearchViewModelInput & SearchViewModelOutput & SearchViewModeling
 
-class SearchViewModel: ServiceViewModel, SearchViewModelTypes {
+class SearchViewModel: ServiceViewModel, SearchViewModelType {
 
   // MARK: - Inputs & Outputs
 
