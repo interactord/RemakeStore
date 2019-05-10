@@ -48,4 +48,3 @@ extension PreviewScreenshotsView: UICollectionViewDelegateFlowLayout {
 		return .init(width: 250, height: frame.height)
 	}
 }
-
