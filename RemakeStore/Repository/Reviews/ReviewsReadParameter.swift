@@ -13,9 +13,16 @@ struct ReviewsReadParameter: RepositoryParameter {
 
   let appId: Int
 
+  let query: [String: String]
+
   // MARK: - Initializing
 
   init(withAppId appId: Int) {
     self.appId = appId
+
+    query = [
+      "l": "en",
+      "cc": "us"
+    ]
   }
 }

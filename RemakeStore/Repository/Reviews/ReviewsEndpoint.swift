@@ -32,7 +32,7 @@ extension ReviewsEndpoint: Endpoint {
 
     switch self {
     case .read(let parameter):
-      return path + "page=1/id=\(parameter.appId)/sortby=mostrecent/json?l=en&cc=us"
+      return path + "/page=1/id=\(parameter.appId)/sortby=mostrecent/json"
     }
   }
 
@@ -44,6 +44,9 @@ extension ReviewsEndpoint: Endpoint {
   }
 
   public var queryParameters: [String: String]? {
-    return nil
+    switch self {
+    case .read(let parameter):
+      return parameter.query
+    }
   }
 }
