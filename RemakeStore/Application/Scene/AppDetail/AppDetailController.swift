@@ -53,8 +53,12 @@ extension AppDetailController: ViewModelBased {
       .bind(to: viewModel.inputs.appId)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.lookup
-      .bind(to: appDetailResultView.rx.updateItems)
+    viewModel.outputs.lookupViewModel
+      .bind(to: appDetailResultView.rx.updateLookupViewModel)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.screenshotViewModels
+      .bind(to: appDetailResultView.rx.updateScreenshotViewModels)
       .disposed(by: disposeBag)
   }
 }

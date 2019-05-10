@@ -7,40 +7,51 @@ import UIKit
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxSwift
+import RxCocoa
 
 class PreviewCell: BaseCollectionViewCell {
 
-	// MARK: - Views
+  // MARK: - Views
 
-	lazy var previewLabel: UILabel = {
-		return LabelBuilder()
-			.setText("Preview")
-			.setFont(DefaultTheme.Font.title3)
-			.build()
-	}()
+  lazy var previewLabel: UILabel = {
+    return LabelBuilder()
+      .setText("Preview")
+      .setFont(DefaultTheme.Font.title3)
+      .build()
+  }()
 
-	lazy var previewScreensView = PreviewScreenshotsView(withLayoutStyle: .horizontalSnapping)
+  lazy var previewScreenshotsView = PreviewScreenshotsView(
+		withLayoutStyle: .horizontalSnapping
+	)
 
-	override func setupSubView() {
-		super.setupSubView()
-		addSubview(previewLabel)
-		addSubview(previewScreensView)
-	}
+  override func setupSubView() {
+    super.setupSubView()
+    addSubview(previewLabel)
+    addSubview(previewScreenshotsView)
+  }
 
-	override func setupConstant() {
-		super.setupConstant()
+  override func setupConstant() {
+    super.setupConstant()
 
-		previewLabel
-			.setTopAnchor(topAnchor)
-			.setLeadingAnchor(leadingAnchor, padding: 20)
-			.setTrailingAnchor(trailingAnchor, padding: 20)
+    previewLabel
+      .setTopAnchor(topAnchor)
+      .setLeadingAnchor(leadingAnchor, padding: 20)
+      .setTrailingAnchor(trailingAnchor, padding: 20)
 
-		previewScreensView
-			.setTopAnchor(previewLabel.bottomAnchor, padding: 20)
-			.setLeadingAnchor(leadingAnchor)
-			.setBottomAnchor(bottomAnchor)
-			.setTrailingAnchor(trailingAnchor)
-	}
+    previewScreenshotsView
+      .setTopAnchor(previewLabel.bottomAnchor, padding: 20)
+      .setLeadingAnchor(leadingAnchor)
+      .setBottomAnchor(bottomAnchor)
+      .setTrailingAnchor(trailingAnchor)
+  }
+
+  func bind(to viewModels: [ScreenshotViewModeling]) {
+    Observable.just(viewModels)
+      .bind(to: previewScreenshotsView.rx.updateViewModels)
+      .disposed(by: disposeBag)
+  }
+
 }
 
 extension PreviewCell: CellContentClassIdentifiable {

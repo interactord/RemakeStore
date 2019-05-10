@@ -13,7 +13,8 @@ protocol AppDetailViewModelInput {
 }
 
 protocol AppDetailViewModelOutput {
-  var lookup: Observable<LookupViewModeling> { get }
+  var lookupViewModel: Observable<LookupViewModeling> { get }
+  var screenshotViewModels: Observable<[ScreenshotViewModeling]> { get }
 }
 
 protocol AppDetailViewModeling {
@@ -33,7 +34,7 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
   }
 
   var outputs: AppDetailViewModelOutput {
-    return  self
+    return self
   }
 
   // MARK: - Inputs
@@ -42,7 +43,30 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
 
   // MARK: - Outputs
 
-  lazy var lookup: Observable<LookupViewModeling> = appId.flatMapLatest { [unowned self] appId in
+  lazy var lookupViewModel: Observable<LookupViewModeling> = lookupData
+    .ignoreNil()
+    .map {
+      LookupViewModel(withResult: $0)
+    }
+
+  lazy var screenshotViewModels: Observable<[ScreenshotViewModeling]> = lookupData
+    .ignoreNil()
+    .map { $0.screenshotUrls }
+    .ignoreNil()
+    .map {
+      $0.map {
+        ScreenshotViewModel(withScreenshot: $0)
+      }
+    }
+
+  // MARK: - Private
+
+  private lazy var lookupRepository = AnyRepository<AppResult>(
+    base: LookupRepository(
+      httpClient: self.service.httpClient
+    ))
+
+  private lazy var lookupData: Observable<AppResult.AppInformation?> = appId.flatMapLatest { [unowned self] appId in
     self.lookupRepository.read(with: LookupReadParameter(withAppId: appId))
   }.map { [unowned self] result -> AppResult.AppInformation? in
     self.service.logger.log(level: .info, message: result)
@@ -52,15 +76,7 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     case .value(let appResult):
       return appResult.results.first
     }
-  }.ignoreNil()
-    .map { LookupViewModel(withResult: $0) }
-
-  // MARK: - Private
-
-  private lazy var lookupRepository = AnyRepository<AppResult>(
-    base: LookupRepository(
-      httpClient: self.service.httpClient
-    ))
+  }
 
   // MARK: - Protocol Variables
 

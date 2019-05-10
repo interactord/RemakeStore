@@ -77,6 +77,7 @@
 		F426E5BD3000DF98382F1770 /* AppDetailResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */; };
 		F426E5FAE2D41B21650EC751 /* ReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E222E508A49332F48150 /* ReviewListView.swift */; };
 		F426E651C955FA717E0F0BB6 /* DefaultTheme+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E39D97D070862697231C /* DefaultTheme+Color.swift */; };
+		F426E6709585DCABDBD96AAF /* ScreenshotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E9D8E73228A19DF0AB33 /* ScreenshotViewModel.swift */; };
 		F426E6865EDCB456BF005BA4 /* ViewModelBasedCRViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E59FE1D942DE95E5219F /* ViewModelBasedCRViewCellMock.swift */; };
 		F426E6B2DFB79CBEB1CE2B74 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98B13FD64316E62EC01 /* RootFlow.swift */; };
 		F426E72FEECE484347EFF674 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDE5921522C249C40EC2 /* UIViewController+Rx.swift */; };
@@ -241,6 +242,7 @@
 		F426E98B13FD64316E62EC01 /* RootFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
 		F426E99BBBFA0B4DAE5A1E95 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		F426E9C5F2E82A6689D7DFAD /* BaseCollectionVIewMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionVIewMock.swift; sourceTree = "<group>"; };
+		F426E9D8E73228A19DF0AB33 /* ScreenshotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotViewModel.swift; sourceTree = "<group>"; };
 		F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailResultView.swift; sourceTree = "<group>"; };
 		F426EA07B7FE30016BECBBEB /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		F426EA2334CBF801451A764E /* TodayFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayFlow.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 			isa = PBXGroup;
 			children = (
 				F426ECF4466C908866DEC93B /* LookupViewModel.swift */,
+				F426E9D8E73228A19DF0AB33 /* ScreenshotViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1152,6 +1155,7 @@
 				F426E3357E9504C38D8BE3CE /* ReviewCell.swift in Sources */,
 				F426E391267915EFDA28CD53 /* SearchResultView.swift in Sources */,
 				F426E7305BBDE3D72EBBBAE5 /* HorizontalSnappingLayout.swift in Sources */,
+				F426E6709585DCABDBD96AAF /* ScreenshotViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

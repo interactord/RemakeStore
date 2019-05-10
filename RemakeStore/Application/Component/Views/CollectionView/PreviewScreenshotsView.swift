@@ -5,7 +5,16 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class PreviewScreenshotsView: BaseCollectionView {
+
+	// MARK: - Public
+
+	var screenshotViewModels: [ScreenshotViewModeling]?
+
+	// MARK: - Private
 
 	private let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 
@@ -32,11 +41,14 @@ class PreviewScreenshotsView: BaseCollectionView {
 extension PreviewScreenshotsView: UICollectionViewDataSource {
 
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 5
+    return screenshotViewModels?.count ?? 0
 	}
 
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell: ScreenshotCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+    if let viewModel = screenshotViewModels?[indexPath.item] {
+      cell.bind(to: viewModel)
+    }
 		return cell
 	}
 }
@@ -47,4 +59,13 @@ extension PreviewScreenshotsView: UICollectionViewDelegateFlowLayout {
 	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		return .init(width: 250, height: frame.height)
 	}
+}
+
+extension Reactive where Base: PreviewScreenshotsView {
+  internal var updateViewModels: Binder<[ScreenshotViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.screenshotViewModels = result
+      base.reloadData()
+    }
+  }
 }

@@ -12,7 +12,8 @@ class AppDetailResultView: BaseCollectionView {
 
   // MARK: - Private
 
-  var item: LookupViewModeling?
+  var lookupViewModel: LookupViewModeling?
+  var screenshotViewModels: [ScreenshotViewModeling]?
 
   private enum CollectionViewCellType: Int {
     case lookupCell = 0, previewCell, reviewRowCell
@@ -52,12 +53,15 @@ extension AppDetailResultView: UICollectionViewDataSource {
     switch cellType {
     case .lookupCell:
       let cell: LookupCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-      if let viewModel = item {
+      if let viewModel = lookupViewModel {
         cell.bind(to: viewModel)
       }
       return cell
     case .previewCell:
       let cell: PreviewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+      if let viewModel = screenshotViewModels {
+        cell.bind(to: viewModel)
+      }
       return cell
     case .reviewRowCell:
       let cell: ReviewRowCell = collectionView.dequeueReusableCell(indexPath: indexPath)
@@ -92,10 +96,19 @@ extension AppDetailResultView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: AppDetailResultView {
-  internal var updateItems: Binder<LookupViewModeling> {
+
+  internal var updateLookupViewModel: Binder<LookupViewModeling> {
     return Binder(self.base) { base, result in
-      base.item = result
+      base.lookupViewModel = result
       base.reloadData()
     }
   }
+
+  internal var updateScreenshotViewModels: Binder<[ScreenshotViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.screenshotViewModels = result
+      base.reloadData()
+    }
+  }
+
 }

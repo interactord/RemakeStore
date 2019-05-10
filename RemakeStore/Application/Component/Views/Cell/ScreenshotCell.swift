@@ -7,6 +7,8 @@ import Foundation
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxCocoa
+import RxSwift
 
 class ScreenshotCell: BaseCollectionViewCell {
 
@@ -24,6 +26,20 @@ class ScreenshotCell: BaseCollectionViewCell {
   override func setupConstant() {
     super.setupConstant()
     screenshotImage.fillSuperView()
+  }
+
+  override func reset() {
+    super.reset()
+    screenshotImage.image = nil
+  }
+}
+
+extension ScreenshotCell: ScreenshotViewModelBindable {
+  func bind(to viewModel: ScreenshotViewModeling) {
+
+    viewModel.outputs.screenshot
+      .bind(to: screenshotImage.rx.loadImage)
+      .disposed(by: disposeBag)
   }
 }
 
