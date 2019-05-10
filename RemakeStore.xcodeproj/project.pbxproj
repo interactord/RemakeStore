@@ -90,6 +90,7 @@
 		F426E80AB55665828F6F6885 /* AppsDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF432FA9442E84078ADD /* AppsDIContainer.swift */; };
 		F426E83CC9FB1E7089127B6D /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E6A28DDE15B97BA3212D /* BaseCollectionView.swift */; };
 		F426E851D91130C4A75CA69B /* PropertyListDecoderDecodableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ECB82348F1DC9DF93155 /* PropertyListDecoderDecodableSpec.swift */; };
+		F426E86ADDE49A1098FBD61E /* ReviewsEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E8635FF9B9E626825186 /* ReviewsEntryViewModel.swift */; };
 		F426E88646CBA7CBB74BF3CB /* BaseCollectionVIewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E9C5F2E82A6689D7DFAD /* BaseCollectionVIewMock.swift */; };
 		F426E8DBE735A9DA2AAEA3AE /* ObserableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EF485A10492571F67174 /* ObserableType.swift */; };
 		F426E92CE77C334D41F54574 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E99BBBFA0B4DAE5A1E95 /* ViewModelBase.swift */; };
@@ -101,6 +102,7 @@
 		F426EA8E6CC8FCE298F2B8A7 /* ReviewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EAD287F2CB546FCAA1E7 /* ReviewsEndpoint.swift */; };
 		F426EACBF3A582FB8A89D1F2 /* BaseCollectionViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E938497457A4244A65FC /* BaseCollectionViewSpec.swift */; };
 		F426EB00AA28C81A5EB819F9 /* AppsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EFE48D7B01D3301ECC8E /* AppsFlow.swift */; };
+		F426EB8AE67EF649E8B7B285 /* String+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA91B906FDD1A6F08683 /* String+Convert.swift */; };
 		F426EBBF38E95363ECFF8972 /* UINavigationController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5A87F25EDE8C6E3E887 /* UINavigationController+Style.swift */; };
 		F426EBD3C06776B83F176681 /* BaseFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE1D12DFDFC271D26642 /* BaseFlow.swift */; };
 		F426EC05484DCF782B76EB4C /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC3E6DCB31BF85B980F7 /* LaunchFlow.swift */; };
@@ -238,6 +240,7 @@
 		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		F426E837FBFDC52CAF4E9017 /* DefaultTheme+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultTheme+Font.swift"; sourceTree = "<group>"; };
 		F426E8623209F1FD22CB6FE8 /* ReviewsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsRepository.swift; sourceTree = "<group>"; };
+		F426E8635FF9B9E626825186 /* ReviewsEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsEntryViewModel.swift; sourceTree = "<group>"; };
 		F426E8D201E9D79D7DAE2744 /* LookupReadParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookupReadParameter.swift; sourceTree = "<group>"; };
 		F426E8D70FA591EECC54ED90 /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 		F426E8E3FD9EE2A483F64CF3 /* AppDetailDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailDIContainer.swift; sourceTree = "<group>"; };
@@ -254,6 +257,7 @@
 		F426EA2334CBF801451A764E /* TodayFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayFlow.swift; sourceTree = "<group>"; };
 		F426EA56C4D0791B6BBE2B7C /* PreviewScreenshotsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotsView.swift; sourceTree = "<group>"; };
 		F426EA8A86DC998F7DEF22D8 /* AppsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
+		F426EA91B906FDD1A6F08683 /* String+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convert.swift"; sourceTree = "<group>"; };
 		F426EACE9964CDC23285C0AA /* ServiceViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewModelMock.swift; sourceTree = "<group>"; };
 		F426EAD287F2CB546FCAA1E7 /* ReviewsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsEndpoint.swift; sourceTree = "<group>"; };
 		F426EB50B112BD0CC06F0587 /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
@@ -532,6 +536,7 @@
 				F426E8B91252ABDCC95CFDBE /* Reuseable */,
 				F426E90CF8FB6E654C59EEE6 /* Rx */,
 				F426E496352EA55EE9FF3BA6 /* RxFlow */,
+				F426E8524C92F973675D4E5C /* String */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -683,6 +688,7 @@
 			children = (
 				F426ECF4466C908866DEC93B /* LookupViewModel.swift */,
 				F426E9D8E73228A19DF0AB33 /* ScreenshotViewModel.swift */,
+				F426E8635FF9B9E626825186 /* ReviewsEntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -704,6 +710,14 @@
 				F426E907ED3C307558A31EA7 /* HorizontalSnappingLayout.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F426E8524C92F973675D4E5C /* String */ = {
+			isa = PBXGroup;
+			children = (
+				F426EA91B906FDD1A6F08683 /* String+Convert.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 		F426E8B91252ABDCC95CFDBE /* Reuseable */ = {
@@ -1180,6 +1194,8 @@
 				F426EA8E6CC8FCE298F2B8A7 /* ReviewsEndpoint.swift in Sources */,
 				F426E305321141CE6AB187DB /* ReviewsRepository.swift in Sources */,
 				F426E9A6C7EF23D741D7DE3B /* ReviewsReadParameter.swift in Sources */,
+				F426E86ADDE49A1098FBD61E /* ReviewsEntryViewModel.swift in Sources */,
+				F426EB8AE67EF649E8B7B285 /* String+Convert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
