@@ -57,7 +57,10 @@ class SearchViewModel: ServiceViewModel, SearchViewModelTypes {
 
   // MARK: - Private
 
-  private lazy var searchRepository = AnyRepository<AppResult>(base: SearchRepository(httpClient: self.service.httpClient))
+  private lazy var searchRepository = AnyRepository<AppResult>(
+    base: SearchRepository(
+      httpClient: self.service.httpClient
+    ))
 
   // MARK: - Protocol Variables
 

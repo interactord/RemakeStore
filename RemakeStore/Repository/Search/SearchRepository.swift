@@ -1,9 +1,6 @@
 //
-//  SearchRepository.swift
-//  RemakeStore
-//
-//  Created by Scott Moon on 09/05/2019.
-//  Copyright © 2019 Scott Moon. All rights reserved.
+// Created by Scott Moon on 2019-05-11.
+// Copyright (c) 2019 Scott Moon. All rights reserved.
 //
 
 import Foundation

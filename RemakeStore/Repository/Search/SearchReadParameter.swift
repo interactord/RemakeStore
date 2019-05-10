@@ -9,7 +9,7 @@ import SCServiceKit
 
 struct SearchReadParameter: RepositoryParameter {
 
-  // MARK: - Private
+  // MARK: Public
 
 	let query: [String: String]
 
