@@ -71,16 +71,6 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
 
   // MARK: - Private
 
-  private lazy var lookupRepository = AnyRepository<Lookup>(
-    base: LookupRepository(
-      httpClient: self.service.httpClient
-    ))
-
-  private lazy var reviewsRepository = AnyRepository<Reviews>(
-    base: ReviewsRepository(
-      httpClient: self.service.httpClient
-    ))
-
   private lazy var lookupData: Observable<Lookup.Information?> = appId.flatMapLatest { [unowned self] appId in
     self.lookupRepository.read(with: LookupReadParameter(withAppId: appId))
   }.map { result -> Lookup.Information? in
@@ -106,10 +96,15 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
   // MARK: - Protocol Variables
 
   let service: Service
+  let lookupRepository: AnyRepository<Lookup>
+  let reviewsRepository: AnyRepository<Reviews>
 
   // MARK: - Initializing
 
-  required init(with service: Service) {
+  init(with service: Service, lookupRepository: AnyRepository<Lookup>, reviewsRepository: AnyRepository<Reviews>) {
     self.service = service
+    self.lookupRepository = lookupRepository
+    self.reviewsRepository = reviewsRepository
   }
 }
+
