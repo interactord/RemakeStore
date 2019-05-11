@@ -12,7 +12,7 @@ class SearchResultView: BaseCollectionView {
 
   // MARK: Public
 
-  var searchViewModels: [LookupViewModeling]?
+  var lookupViewModels: [LookupViewModeling]?
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -30,12 +30,12 @@ class SearchResultView: BaseCollectionView {
 
 extension SearchResultView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return searchViewModels?.count ?? 0
+    return lookupViewModels?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: SearchResultCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    if let viewModel = searchViewModels?[indexPath.item] {
+    if let viewModel = lookupViewModels?[indexPath.item] {
       cell.bind(to: viewModel)
     }
     return cell
@@ -45,6 +45,7 @@ extension SearchResultView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension SearchResultView: UICollectionViewDelegateFlowLayout {
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = frame.width
     return .init(width: width, height: 350)
@@ -54,7 +55,7 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
 extension Reactive where Base: SearchResultView {
   internal var updateSearchViewModels: Binder<[LookupViewModeling]> {
     return Binder(self.base) { base, result in
-      base.searchViewModels = result
+      base.lookupViewModels = result
       base.reloadData()
     }
   }

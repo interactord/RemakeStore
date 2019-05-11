@@ -17,7 +17,7 @@ class SearchController: BaseController {
 
   // MARK: - Views
 
-  private lazy var searchResultView: SearchResultView = {
+  lazy var searchResultView: SearchResultView = {
     let searchResultView = SearchResultView()
     view.addSubview(searchResultView)
     return searchResultView
@@ -25,8 +25,8 @@ class SearchController: BaseController {
 
   private lazy var searchController = UISearchController(searchResultsController: nil)
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func setupViews() {
+    super.setupViews()
     view.backgroundColor = .white
   }
 
@@ -53,7 +53,8 @@ extension SearchController: ViewModelBased {
 
   func bindViewModel() {
     searchController.searchBar.rx
-      .text.orEmpty
+      .text
+      .orEmpty
       .throttle(.seconds(2), scheduler: MainScheduler.instance)
       .distinctUntilChanged()
       .bind(to: viewModel.inputs.searchText)
@@ -66,7 +67,7 @@ extension SearchController: ViewModelBased {
     searchResultView.rx
       .itemSelected
       .map { [unowned self] (indexPath: IndexPath) -> LookupViewModelOutput? in
-        return self.searchResultView.searchViewModels?[indexPath.item].outputs
+        return self.searchResultView.lookupViewModels?[indexPath.item].outputs
       }
       .ignoreNil()
       .map { AppStep.appDetailIsRequired(appId: $0.result.trackId) }
