@@ -14,7 +14,7 @@ enum SearchEndpointMock {
 
   // MARK: - Private
 
-  private enum Constent {
+  private enum Constant {
     static let baseUrl = "http://localhost:7000"
     static let path = "search"
   }
@@ -25,11 +25,11 @@ extension SearchEndpointMock: Endpoint {
   // MARK: - functions for protocol
 
   public var baseURL: String {
-    return Constent.baseUrl
+    return Constant.baseUrl
   }
 
   public var path: String {
-    return Constent.path
+    return Constant.path
   }
 
   public var httpMethod: HTTPMethod {
