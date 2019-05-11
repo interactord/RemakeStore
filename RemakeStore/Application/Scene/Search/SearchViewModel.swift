@@ -51,30 +51,28 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
 
   // MARK: - Private
 
-  private lazy var searchRepository = AnyRepository<AppResult>(
-    base: SearchRepository(
-      httpClient: self.service.httpClient
-    ))
-
-  private lazy var searchData = self.searchText.flatMapLatest { [unowned self] term in
-    self.searchRepository.read(with: SearchReadParameter(withTerm: term))
-  }.map { result -> AppResult? in
-
-    switch result {
-    case .noContent:
-      return nil
-    case .value(let appResult):
-      return appResult
+  private lazy var searchData = self.searchText
+    .ignoreEmpty()
+    .flatMapLatest { [unowned self] term in
+      self.searchRepository.read(with: SearchReadParameter(withTerm: term))
+    }.map { result -> AppResult? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let appResult):
+        return appResult
+      }
     }
-  }
 
   // MARK: - Protocol Variables
 
   let service: Service
+  let searchRepository: AnyRepository<AppResult>
 
   // MARK: - Initializing
 
-  required init(with service: Service) {
+  init(with service: Service, searchRepository: AnyRepository<AppResult>) {
     self.service = service
+    self.searchRepository = searchRepository
   }
 }

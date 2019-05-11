@@ -6,6 +6,7 @@
 import UIKit
 
 import Swinject
+import SCServiceKit
 
 struct SearchDIContainer: DIContainer {
 
@@ -17,10 +18,25 @@ struct SearchDIContainer: DIContainer {
 
   private let service: Service
 
+  private(set) lazy var repository: AnyRepository<AppResult> = {
+    let service = self.service
+    container.register(AnyRepository<AppResult>.self) { _ in
+      AnyRepository<AppResult>(base: SearchRepository(
+        httpClient: service.httpClient
+      ))
+    }.inObjectScope(.weak)
+
+    guard let repository = container.resolve(AnyRepository<AppResult>.self) else {
+      fatalError("Should be not nil")
+    }
+    return repository
+  }()
+
   private(set) lazy var viewModel: SearchViewModel = {
     let service = self.service
+    let repository = self.repository
     container.register(SearchViewModel.self) { _ in
-      SearchViewModel(with: service)
+      SearchViewModel(with: service, searchRepository: repository)
     }.inObjectScope(.weak)
 
     guard let viewModel = container.resolve(SearchViewModel.self) else {
