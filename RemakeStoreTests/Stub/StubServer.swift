@@ -34,10 +34,12 @@ extension StubServer {
   // MARK: - Private
 
   private func stubSetup() {
-    setSearchManyObject()
+    setSearcht()
+    setLookup()
+    setReviews()
   }
 
-  private func setSearchManyObject() {
+  private func setSearcht() {
     let urlPath = "search?term=facebook&entity=software"
     let response: ((HttpRequest) -> HttpResponse) = { _ in
 
@@ -46,6 +48,40 @@ extension StubServer {
         let data = try? Data(contentsOf: url)
         else {
           fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET[urlPath] = response
+  }
+
+  private func setLookup() {
+    let urlPath = "lookup?id=1209489068"
+    let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "lookupDummy", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET[urlPath] = response
+  }
+
+  private func setReviews() {
+    let urlPath = "rss/customerreviews/page=1/id=1209489068/sortby=mostrecent/json?l=en&cc=us"
+    let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "reviewsDummy", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
       }
 
       return HttpResponse.ok(.data(data))
