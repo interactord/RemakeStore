@@ -9,7 +9,7 @@ import RxSwift
 import SCServiceKit
 
 protocol AppDetailViewModelInput {
-  var appId: PublishSubject<Int> { get }
+  var appId: BehaviorSubject<Int?> { get }
 }
 
 protocol AppDetailViewModelOutput {
@@ -40,7 +40,7 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
 
   // MARK: - Inputs
 
-  let appId: PublishSubject<Int> = .init()
+  var appId: BehaviorSubject<Int?> = .init(value: nil)
 
   // MARK: - Outputs
 
@@ -55,43 +55,46 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     .map { $0.screenshotUrls }
     .ignoreNil()
     .map {
-      $0.map {
-        ScreenshotViewModel(withScreenshot: $0)
-      }
+      $0.map { ScreenshotViewModel(withScreenshot: $0) }
     }
 
   lazy var reviewsEntryModels: Observable<[ReviewsEntryViewModeling]> = reviewsData
     .ignoreNil()
     .map { $0.feed.entry }
     .map {
-      $0.map {
-        ReviewsEntryViewModel(withEntry: $0)
-      }
+      $0.map { ReviewsEntryViewModel(withEntry: $0) }
     }
 
   // MARK: - Private
 
-  private lazy var lookupData: Observable<Lookup.Information?> = appId.flatMapLatest { [unowned self] appId in
-    self.lookupRepository.read(with: LookupReadParameter(withAppId: appId))
-  }.map { result -> Lookup.Information? in
-    switch result {
-    case .noContent:
-      return nil
-    case .value(let appResult):
-      return appResult.results.first
+  private lazy var lookupData: Observable<Lookup.Information?> = appId
+    .asObservable()
+    .ignoreNil()
+    .flatMapLatest { [unowned self] appId in
+      self.lookupRepository.read(with: LookupReadParameter(withAppId: appId))
     }
-  }
+    .map { result -> Lookup.Information? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let appResult):
+        return appResult.results.first
+      }
+    }
 
-  private lazy var reviewsData: Observable<Reviews?> = appId.flatMapLatest { [unowned self] appId in
-    self.reviewsRepository.read(with: ReviewsReadParameter(withAppId: appId))
-  }.map { result -> Reviews? in
-    switch result {
-    case .noContent:
-      return nil
-    case .value(let reviews):
-      return reviews
+  private lazy var reviewsData: Observable<Reviews?> = appId
+    .asObservable()
+    .ignoreNil()
+    .flatMapLatest { [unowned self] appId in
+      self.reviewsRepository.read(with: ReviewsReadParameter(withAppId: appId))
+    }.map { result -> Reviews? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let reviews):
+        return reviews
+      }
     }
-  }
 
   // MARK: - Protocol Variables
 
@@ -107,4 +110,3 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     self.reviewsRepository = reviewsRepository
   }
 }
-
