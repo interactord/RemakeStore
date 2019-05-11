@@ -33,7 +33,7 @@ class LookupCellSpec: XCTestCase {
 
   func test_bind() {
 
-    let lookup = AppResult.Lookup(
+    let lookup = Lookup.Information(
       trackId: 123,
       trackName: "test",
       primaryGenreName: "test",

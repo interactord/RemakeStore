@@ -18,15 +18,15 @@ struct SearchDIContainer: DIContainer {
 
   private let service: Service
 
-  private(set) lazy var repository: AnyRepository<AppResult> = {
+  private(set) lazy var repository: AnyRepository<Lookup> = {
     let service = self.service
-    container.register(AnyRepository<AppResult>.self) { _ in
-      AnyRepository<AppResult>(base: SearchRepository(
+    container.register(AnyRepository<Lookup>.self) { _ in
+      AnyRepository<Lookup>(base: SearchRepository(
         httpClient: service.httpClient
       ))
     }.inObjectScope(.weak)
 
-    guard let repository = container.resolve(AnyRepository<AppResult>.self) else {
+    guard let repository = container.resolve(AnyRepository<Lookup>.self) else {
       fatalError("Should be not nil")
     }
     return repository

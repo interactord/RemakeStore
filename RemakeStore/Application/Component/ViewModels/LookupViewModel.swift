@@ -8,8 +8,8 @@ import Foundation
 import RxSwift
 
 protocol LookupViewModelOutput {
-  var appInformation: Observable<AppResult.Lookup> { get }
-  var result: AppResult.Lookup { get }
+  var appInformation: Observable<Lookup.Information> { get }
+  var result: Lookup.Information { get }
 }
 
 protocol LookupViewModeling {
@@ -33,10 +33,10 @@ class LookupViewModel: LookupViewModelType {
 
   // MARK: - Outputs
 
-  var appInformation: Observable<AppResult.Lookup>
-  var result: AppResult.Lookup
+  var appInformation: Observable<Lookup.Information>
+  var result: Lookup.Information
 
-  init(withResult result: AppResult.Lookup) {
+  init(withResult result: Lookup.Information) {
     self.appInformation = Observable.just(result).observeOn(MainScheduler.asyncInstance)
     self.result = result
   }

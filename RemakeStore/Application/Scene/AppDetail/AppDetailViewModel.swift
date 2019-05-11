@@ -71,7 +71,7 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
 
   // MARK: - Private
 
-  private lazy var lookupRepository = AnyRepository<AppResult>(
+  private lazy var lookupRepository = AnyRepository<Lookup>(
     base: LookupRepository(
       httpClient: self.service.httpClient
     ))
@@ -81,9 +81,9 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
       httpClient: self.service.httpClient
     ))
 
-  private lazy var lookupData: Observable<AppResult.Lookup?> = appId.flatMapLatest { [unowned self] appId in
+  private lazy var lookupData: Observable<Lookup.Information?> = appId.flatMapLatest { [unowned self] appId in
     self.lookupRepository.read(with: LookupReadParameter(withAppId: appId))
-  }.map { result -> AppResult.Lookup? in
+  }.map { result -> Lookup.Information? in
     switch result {
     case .noContent:
       return nil

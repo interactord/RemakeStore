@@ -55,7 +55,7 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
     .ignoreEmpty()
     .flatMapLatest { [unowned self] term in
       self.searchRepository.read(with: SearchReadParameter(withTerm: term))
-    }.map { result -> AppResult? in
+    }.map { result -> Lookup? in
       switch result {
       case .noContent:
         return nil
@@ -67,11 +67,11 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
   // MARK: - Protocol Variables
 
   let service: Service
-  let searchRepository: AnyRepository<AppResult>
+  let searchRepository: AnyRepository<Lookup>
 
   // MARK: - Initializing
 
-  init(with service: Service, searchRepository: AnyRepository<AppResult>) {
+  init(with service: Service, searchRepository: AnyRepository<Lookup>) {
     self.service = service
     self.searchRepository = searchRepository
   }

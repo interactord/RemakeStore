@@ -48,7 +48,7 @@ class SearchViewModelSpec: XCTestCase {
   func makeSUT() -> SearchViewModel {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service
-    let searchRepository = AnyRepository<AppResult>(
+    let searchRepository = AnyRepository<Lookup>(
       base: SearchRepositoryMock(
         httpClient: service.httpClient
       )
