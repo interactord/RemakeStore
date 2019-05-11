@@ -7,16 +7,12 @@ import Foundation
 
 import RxSwift
 
-protocol LookupViewModelInput {
-}
-
 protocol LookupViewModelOutput {
   var appInformation: Observable<AppResult.Lookup> { get }
   var result: AppResult.Lookup { get }
 }
 
 protocol LookupViewModeling {
-  var inputs: LookupViewModelInput { get }
   var outputs: LookupViewModelOutput { get }
 }
 
@@ -25,15 +21,12 @@ protocol LookupViewModelBindable {
 }
 
 typealias LookupViewModelType =
-  LookupViewModelInput & LookupViewModelOutput & LookupViewModeling
+  LookupViewModelOutput & LookupViewModeling
 
 class LookupViewModel: LookupViewModelType {
 
   // MARK: - Inputs & Outputs
 
-  var inputs: LookupViewModelInput {
-    return self
-  }
   var outputs: LookupViewModelOutput {
     return  self
   }
