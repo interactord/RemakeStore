@@ -12,7 +12,7 @@ class SearchResultView: BaseCollectionView {
 
   // MARK: Public
 
-  var items: [LookupViewModeling]?
+  var searchViewModels: [LookupViewModeling]?
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -30,12 +30,12 @@ class SearchResultView: BaseCollectionView {
 
 extension SearchResultView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return items?.count ?? 0
+    return searchViewModels?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: SearchResultCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    if let viewModel = items?[indexPath.item] {
+    if let viewModel = searchViewModels?[indexPath.item] {
       cell.bind(to: viewModel)
     }
     return cell
@@ -52,9 +52,9 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: SearchResultView {
-  internal var updateItems: Binder<[LookupViewModeling]> {
+  internal var updateSearchViewModels: Binder<[LookupViewModeling]> {
     return Binder(self.base) { base, result in
-      base.items = result
+      base.searchViewModels = result
       base.reloadData()
     }
   }

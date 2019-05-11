@@ -59,14 +59,14 @@ extension SearchController: ViewModelBased {
       .bind(to: viewModel.inputs.searchText)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.search
-      .bind(to: searchResultView.rx.updateItems)
+    viewModel.outputs.searchViewModels
+      .bind(to: searchResultView.rx.updateSearchViewModels)
       .disposed(by: disposeBag)
 
     searchResultView.rx
       .itemSelected
       .map { [unowned self] (indexPath: IndexPath) -> LookupViewModelOutput? in
-        return self.searchResultView.items?[indexPath.item].outputs
+        return self.searchResultView.searchViewModels?[indexPath.item].outputs
       }
       .ignoreNil()
       .map { AppStep.appDetailIsRequired(appId: $0.result.trackId) }

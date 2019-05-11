@@ -13,7 +13,7 @@ protocol SearchViewModelInput {
 }
 
 protocol SearchViewModelOutput {
-  var search: Observable<[LookupViewModeling]> { get }
+  var searchViewModels: Observable<[LookupViewModeling]> { get }
 }
 
 protocol SearchViewModeling {
@@ -32,7 +32,7 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
     return self
   }
   var outputs: SearchViewModelOutput {
-    return  self
+    return self
   }
 
   // MARK: - Input
@@ -40,20 +40,14 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
   var searchText: BehaviorSubject<String> = .init(value: "")
 
   // MARK: - Outputs
-
-  lazy var search = self.searchText.flatMapLatest { [unowned self] term in
-    self.searchRepository.read(with: SearchReadParameter(withTerm: term))
-  }.map { result -> [LookupViewModeling] in
-    switch result {
-    case .noContent:
-      return []
-    case .value(let searchResult):
-      return searchResult.results.map {
+  lazy var searchViewModels: Observable<[LookupViewModeling]> = searchData
+    .ignoreNil()
+    .map {
+      $0.results.map {
         LookupViewModel(withResult: $0)
       }
     }
-  }
-  .observeOn(MainScheduler.instance)
+    .observeOn(MainScheduler.instance)
 
   // MARK: - Private
 
@@ -61,6 +55,18 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
     base: SearchRepository(
       httpClient: self.service.httpClient
     ))
+
+  private lazy var searchData = self.searchText.flatMapLatest { [unowned self] term in
+    self.searchRepository.read(with: SearchReadParameter(withTerm: term))
+  }.map { result -> AppResult? in
+
+    switch result {
+    case .noContent:
+      return nil
+    case .value(let appResult):
+      return appResult
+    }
+  }
 
   // MARK: - Protocol Variables
 
