@@ -61,6 +61,7 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
   lazy var reviewsEntryModels: Observable<[ReviewsEntryViewModeling]> = reviewsData
     .ignoreNil()
     .map { $0.feed.entry }
+    .ignoreNil()
     .map {
       $0.map { ReviewsEntryViewModel(withEntry: $0) }
     }
