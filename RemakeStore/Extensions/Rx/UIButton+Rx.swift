@@ -10,7 +10,7 @@ import RxCocoa
 
 extension Reactive where Base: UIButton {
 
-  internal var updateNormalStateTitle: Binder<String> {
+  internal var updateNormalStateTitle: Binder<String?> {
     return Binder(self.base) { base, result in
       base.setTitle(result, for: .normal)
     }
