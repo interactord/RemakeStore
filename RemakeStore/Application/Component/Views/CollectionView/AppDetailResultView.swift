@@ -44,7 +44,6 @@ class AppDetailResultView: BaseCollectionView {
 
 extension AppDetailResultView: UICollectionViewDataSource {
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    print(cellItems.count)
     return cellItems.count
   }
 
