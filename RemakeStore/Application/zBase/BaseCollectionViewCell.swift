@@ -11,8 +11,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
 
   var disposeBag = DisposeBag()
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  convenience init() {
+    self.init(frame: .zero)
     setupSubView()
     setupConstant()
   }
@@ -21,10 +21,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
     super.prepareForReuse()
     reset()
     disposeBag = DisposeBag()
-  }
-
-  required convenience init?(coder aDecoder: NSCoder) {
-    self.init(frame: .zero)
   }
 
   func setupConstant() {
