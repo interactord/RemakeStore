@@ -29,7 +29,7 @@ class ReviewCellSpec: XCTestCase {
 	func test_bind() {
 
 		let testLabel = Label(label: "test")
-		let ratingLabel = Label(label: "1")
+		let ratingLabel = Label(label: "test")
 		let entry = Entry(
 			author: Author(name: testLabel), title: testLabel, content: testLabel, rating: ratingLabel
 		)
