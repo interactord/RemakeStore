@@ -9,26 +9,36 @@ import RxSwift
 
 class BaseCollectionReusableView: UICollectionReusableView {
 
-	var disposeBag = DisposeBag()
+  var disposeBag = DisposeBag()
 
-	convenience init() {
-		self.init(frame: .zero)
-		setupSubView()
-		setupConstant()
-	}
+  convenience init() {
+    self.init(frame: .zero)
+    setupSubView()
+    setupConstant()
+  }
 
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		disposeBag = DisposeBag()
-		reset()
-	}
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupSubView()
+    setupConstant()
+  }
 
-	func setupConstant() {
-	}
+  required convenience init?(coder aDecoder: NSCoder) {
+    self.init()
+  }
 
-	func setupSubView() {
-	}
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    disposeBag = DisposeBag()
+    reset()
+  }
 
-	func reset() {
-	}
+  func setupConstant() {
+  }
+
+  func setupSubView() {
+  }
+
+  func reset() {
+  }
 }

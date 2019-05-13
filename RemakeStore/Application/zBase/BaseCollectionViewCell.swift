@@ -17,6 +17,16 @@ class BaseCollectionViewCell: UICollectionViewCell {
     setupConstant()
   }
 
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupSubView()
+    setupConstant()
+  }
+
+  required convenience init?(coder aDecoder: NSCoder) {
+    self.init()
+  }
+
   override func prepareForReuse() {
     super.prepareForReuse()
     reset()
