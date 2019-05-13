@@ -24,7 +24,7 @@ class AppsPageListView: BaseCollectionView {
   override func registerCell() {
     super.registerCell()
 
-    register(cellType: AppGroupCell.self)
+    register(cellType: AppsGroupCell.self)
     register(kind: UICollectionView.elementKindSectionHeader, reusableViewType: AppsPageHeader.self)
   }
 }
@@ -37,8 +37,7 @@ extension AppsPageListView: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: AppGroupCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    cell.backgroundColor = .blue
+    let cell: AppsGroupCell = collectionView.dequeueReusableCell(indexPath: indexPath)
     return cell
   }
 

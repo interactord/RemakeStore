@@ -7,8 +7,9 @@ import UIKit
 
 class AppsHorizontalListView: BaseCollectionView {
 
-  private let topButtomPadding: CGFloat = 12
+  private let topBottomPadding: CGFloat = 12
   private let lineSpacing: CGFloat = 10
+  private let cellVerticalSpacing: CGFloat = 48
 
   override func setupView() {
     super.setupView()
@@ -33,12 +34,11 @@ class AppsHorizontalListView: BaseCollectionView {
 
 extension AppsHorizontalListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 3
+    return 10
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: AppRowCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    cell.backgroundColor = .cyan
     return cell
   }
 }
@@ -48,8 +48,8 @@ extension AppsHorizontalListView: UICollectionViewDataSource {
 extension AppsHorizontalListView: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = frame.height.divider(padding: topButtomPadding, lineSpacing: lineSpacing, divider: 3)
-    return .init(width: frame.width, height: height)
+    let height = frame.height.dividerHeight(padding: topBottomPadding, lineSpacing: lineSpacing, grid: 3)
+    return .init(width: frame.width - cellVerticalSpacing, height: height)
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -57,6 +57,6 @@ extension AppsHorizontalListView: UICollectionViewDelegateFlowLayout {
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    return .init(top: topButtomPadding, left: 0, bottom: topButtomPadding, right: 0)
+    return .init(top: topBottomPadding, left: 0, bottom: topBottomPadding, right: 0)
   }
 }

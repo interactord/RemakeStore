@@ -8,8 +8,8 @@ import UIKit
 import SCLayoutKit
 import SCUIBuildKit
 
-class AppGroupCell: BaseCollectionViewCell {
-  lazy var titleLable: UILabel = {
+class AppsGroupCell: BaseCollectionViewCell {
+  lazy var titleLabel: UILabel = {
     return LabelBuilder()
       .setText("APP SECTION")
       .setFont(DefaultTheme.Font.title1)
@@ -20,20 +20,20 @@ class AppGroupCell: BaseCollectionViewCell {
 
   override func setupSubView() {
     super.setupSubView()
-    addSubview(titleLable)
+    addSubview(titleLabel)
     addSubview(appsHorizontalListView)
   }
 
   override func setupConstant() {
     super.setupConstant()
 
-    titleLable
+    titleLabel
       .setTopAnchor(topAnchor)
       .setLeadingAnchor(leadingAnchor, padding: 16)
       .setTrailingAnchor(trailingAnchor)
 
     appsHorizontalListView
-      .setTopAnchor(titleLable.topAnchor)
+      .setTopAnchor(titleLabel.bottomAnchor)
       .setLeadingAnchor(leadingAnchor)
       .setBottomAnchor(bottomAnchor)
       .setTrailingAnchor(trailingAnchor)
@@ -41,5 +41,5 @@ class AppGroupCell: BaseCollectionViewCell {
 
 }
 
-extension AppGroupCell: CellContentClassIdentifiable {
+extension AppsGroupCell: CellContentClassIdentifiable {
 }

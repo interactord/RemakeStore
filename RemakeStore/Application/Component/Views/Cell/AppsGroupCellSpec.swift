@@ -7,8 +7,8 @@ import XCTest
 
 @testable import RemakeStore
 
-class AppGroupCellSpec: XCTestCase {
-  var sut: AppGroupCell?
+class AppsGroupCellSpec: XCTestCase {
+  var sut: AppsGroupCell?
 
   override func setUp() {
     super.setUp()
@@ -20,7 +20,7 @@ class AppGroupCellSpec: XCTestCase {
   }
 
   func test_init() {
-      sut = AppGroupCell()
+      sut = AppsGroupCell()
 
       XCTAssertNotNil(sut)
   }

@@ -6,11 +6,8 @@
 import UIKit
 
 extension CGFloat {
-  func divider(padding: CGFloat, lineSpacing: CGFloat, divider: Int) -> CGFloat {
-    let height = self - CGFloat(divider - 1)
-    let inner = padding - CGFloat(divider - 1)
-    let convertedHight = height * inner * lineSpacing
-
-    return convertedHight / CGFloat(divider)
+  func dividerHeight(padding: CGFloat, lineSpacing: CGFloat, grid: CGFloat) -> CGFloat {
+    let bounce = self - (grid - 1) * padding - 2 * lineSpacing
+    return  bounce / grid
   }
 }

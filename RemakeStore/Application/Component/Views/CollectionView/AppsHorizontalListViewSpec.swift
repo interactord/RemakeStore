@@ -33,7 +33,7 @@ class AppsHorizontalListViewSpec: XCTestCase {
   }
 
   func test_dataSource_numberOfItemsInSection() {
-    let expectedSectionCount = 3
+    let expectedSectionCount = 10
     sut = AppsHorizontalListView()
 
     guard
@@ -63,7 +63,7 @@ class AppsHorizontalListViewSpec: XCTestCase {
   }
 
   func test_delegate_sizeForItemAt() {
-
+    let expactedCellVerticalSpacing: CGFloat = 48
     sut = AppsHorizontalListView()
 
     guard
@@ -76,7 +76,7 @@ class AppsHorizontalListViewSpec: XCTestCase {
 
     let resultSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: [0, 0])
 
-    XCTAssertEqual(sut.frame.width, resultSize?.width)
+    XCTAssertEqual(sut.frame.width - expactedCellVerticalSpacing, resultSize?.width)
 
   }
 

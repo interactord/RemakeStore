@@ -51,7 +51,7 @@ class AppsPageListViewSpec: XCTestCase {
     }
 
     let resultCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
-    XCTAssertNotNil(resultCell as? AppGroupCell)
+    XCTAssertNotNil(resultCell as? AppsGroupCell)
   }
 
   func test_dataSource_viewForSupplementaryElementOfKind() {
