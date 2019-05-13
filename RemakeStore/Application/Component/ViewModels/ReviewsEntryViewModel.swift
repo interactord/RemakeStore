@@ -7,9 +7,6 @@ import Foundation
 
 import RxSwift
 
-protocol ReviewsEntryViewModelInput {
-}
-
 protocol ReviewsEntryViewModelOutput {
   var author: Observable<String> { get }
   var title: Observable<String> { get }
@@ -18,7 +15,6 @@ protocol ReviewsEntryViewModelOutput {
 }
 
 protocol ReviewsEntryViewModeling {
-  var inputs: ReviewsEntryViewModelInput { get }
   var outputs: ReviewsEntryViewModelOutput { get }
 }
 
@@ -27,15 +23,11 @@ protocol ReviewsEntryViewModelBindable {
 }
 
 typealias ReviewsEntryViewModelType =
-  ReviewsEntryViewModelInput & ReviewsEntryViewModelOutput & ReviewsEntryViewModeling
+  ReviewsEntryViewModelOutput & ReviewsEntryViewModeling
 
 class ReviewsEntryViewModel: ReviewsEntryViewModelType {
 
   // MARK: - Inputs & Outputs
-
-  var inputs: ReviewsEntryViewModelInput {
-    return self
-  }
 
   var outputs: ReviewsEntryViewModelOutput {
     return self

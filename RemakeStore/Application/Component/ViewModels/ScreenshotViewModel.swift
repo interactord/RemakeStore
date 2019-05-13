@@ -7,15 +7,11 @@ import Foundation
 
 import RxSwift
 
-protocol ScreenshotViewModelInput {
-}
-
 protocol ScreenshotViewModelOutput {
   var screenshot: Observable<String> { get }
 }
 
 protocol ScreenshotViewModeling {
-  var inputs: ScreenshotViewModelInput { get }
   var outputs: ScreenshotViewModelOutput { get }
 }
 
@@ -24,15 +20,11 @@ protocol ScreenshotViewModelBindable {
 }
 
 typealias ScreenshotViewModelType =
-  ScreenshotViewModelInput & ScreenshotViewModelOutput & ScreenshotViewModeling
+  ScreenshotViewModelOutput & ScreenshotViewModeling
 
 class ScreenshotViewModel: ScreenshotViewModelType {
 
-  // MARK: - Inputs & Outputs
-
-  var inputs: ScreenshotViewModelInput {
-    return self
-  }
+  // MARK: - Outputs
 
   var outputs: ScreenshotViewModelOutput {
     return self
