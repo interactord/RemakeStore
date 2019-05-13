@@ -26,7 +26,6 @@ extension ViewModelBased where Self: UIViewController {
 extension ViewModelBased where Self: UICollectionViewCell {
   func bind(to viewModel: Self.ViewModelType, before: (() -> Void)? = nil) {
     self.viewModel = viewModel
-
     if let closure = before {
       closure()
     }
