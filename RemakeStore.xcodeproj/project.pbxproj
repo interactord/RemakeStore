@@ -621,6 +621,7 @@
 		29E8A576227C268600E7A894 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				29EC1E472289DA090029BE06 /* UICollectionView */,
 				29428FBF227D746C00BD688D /* UINavigationController */,
 				F426E4EF30057EF10F804DA5 /* PropertyListDecoder */,
 				F426E8B91252ABDCC95CFDBE /* Reuseable */,
@@ -670,6 +671,13 @@
 				F426E8E3FD9EE2A483F64CF3 /* AppDetailDIContainer.swift */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		29EC1E472289DA090029BE06 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		74DA93D96DA30380D8FEF817 /* Pods */ = {

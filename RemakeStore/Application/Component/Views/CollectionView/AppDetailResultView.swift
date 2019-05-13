@@ -83,7 +83,14 @@ extension AppDetailResultView: UICollectionViewDelegateFlowLayout {
 
     switch cellType {
     case .lookupCell:
-      height = 280
+      let cell = LookupCell(frame: .init(x: 0, y: 0, width: width, height: 1_000))
+      if let viewModel = lookupViewModel {
+        cell.sizeViewModel = viewModel
+        cell.layoutIfNeeded()
+      }
+      let estimatedSize = cell.systemLayoutSizeFitting(.init(width: width, height: 1_000))
+      height = estimatedSize.height
+
     case .previewCell:
       height = 500
     case .reviewRowCell:

@@ -12,6 +12,15 @@ class LookupCell: BaseCollectionViewCell {
 
   // MARK: - Views
 
+  var sizeViewModel: LookupViewModeling? {
+    didSet {
+      guard let viewModel = sizeViewModel else {
+        return
+      }
+      releaseNotesLabel.text = viewModel.outputs.result.releaseNotes
+    }
+  }
+
   lazy var appIconImageView: UIImageView = {
     return ImageViewBuilder()
       .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
@@ -115,6 +124,7 @@ class LookupCell: BaseCollectionViewCell {
 
   override func reset() {
     super.reset()
+    sizeViewModel = nil
     nameLabel.text = ""
     releaseNotesLabel.text = ""
     appIconImageView.image = nil
