@@ -132,7 +132,7 @@ class AppDetailResultViewSpec: XCTestCase {
   }
 
   func test_dataSource_sizeForItemAt() {
-    let expectedLookupCellHeight: CGFloat = 280
+    let expectedLookupCellHeight: CGFloat = 256.5
     let expectedPreviewCellHeight: CGFloat = 500
     let expectedReviewRowCellHeight: CGFloat = 280
 
