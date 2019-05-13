@@ -7,12 +7,12 @@ import UIKit
 
 class AppsHeaderHorizontalListView: BaseCollectionView {
 
-  private let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
   private let cellSpacing: CGFloat = 48
 
   override func setupView() {
     super.setupView()
     backgroundColor = .white
+    self.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
   }
 
   override func setupDelegate() {
@@ -46,11 +46,6 @@ extension AppsHeaderHorizontalListView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension AppsHeaderHorizontalListView: UICollectionViewDelegateFlowLayout {
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    return padding
-  }
-
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return .init(width: frame.width - cellSpacing, height: frame.height)
   }

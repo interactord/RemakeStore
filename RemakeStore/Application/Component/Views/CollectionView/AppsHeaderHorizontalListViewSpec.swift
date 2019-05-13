@@ -25,6 +25,14 @@ class AppsHeaderHorizontalListViewSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
+  func test_contentInset() {
+    let expectedInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    sut = AppsHeaderHorizontalListView()
+
+    XCTAssertNotNil(sut)
+    XCTAssertEqual(expectedInset, sut?.contentInset)
+  }
+
   func test_dataSource_numberOfItemsInSection() {
     sut = AppsHeaderHorizontalListView()
     let expectedCount = 3
@@ -70,24 +78,6 @@ class AppsHeaderHorizontalListViewSpec: XCTestCase {
     let resultSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: [0, 0])
 
     XCTAssertEqual(sut.frame.width - expectedCellSpacing, resultSize?.width)
-  }
-
-  func test_delegate_insetForSectionAt() {
-    let expectedPadding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-
-    sut = AppsHeaderHorizontalListView()
-
-    guard
-      let sut = sut,
-      let delegate = sut.delegate as? UICollectionViewDelegateFlowLayout,
-      let layout = sut.collectionViewLayout as? UICollectionViewFlowLayout
-      else {
-        fatalError("Should be not nil")
-    }
-
-    let resultPadding = delegate.collectionView?(sut, layout: layout, insetForSectionAt: 1)
-
-    XCTAssertEqual(expectedPadding, resultPadding)
   }
 
 }
