@@ -24,8 +24,6 @@ class AppsController: BaseController {
       .setHidesWhenStopped()
       .startAnimating()
       .build()
-
-    self.addSubview(activityIndicatorView)
     return activityIndicatorView
   }()
 
@@ -39,7 +37,7 @@ class AppsController: BaseController {
     super.setupViews()
     view.backgroundColor = .white
 
-    self.view.addSubview(appGroupListView)
+    self.view.addSubview(activityIndicatorView)
     self.view.addSubview(appGroupListView)
   }
 
