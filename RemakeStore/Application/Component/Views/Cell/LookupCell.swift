@@ -129,24 +129,27 @@ extension LookupCell: LookupViewModelBindable {
   func bind(to viewModel: LookupViewModeling) {
 
     viewModel.outputs.appInformation
+      .asDriverJustComplete()
       .map { $0.trackName }
-      .bind(to: nameLabel.rx.text)
+      .drive(nameLabel.rx.text)
       .disposed(by: disposeBag)
 
     viewModel.outputs.appInformation
+      .asDriverJustComplete()
       .map { $0.releaseNotes }
-      .bind(to: releaseNotesLabel.rx.text)
+      .drive(releaseNotesLabel.rx.text)
       .disposed(by: disposeBag)
 
     viewModel.outputs.appInformation
+      .asDriverJustComplete()
       .map { $0.artworkUrl100 }
-      .bind(to: appIconImageView.rx.loadImage)
+      .drive(appIconImageView.rx.loadImage)
       .disposed(by: disposeBag)
 
     viewModel.outputs.appInformation
+      .asDriverJustComplete()
       .map { $0.formattedPrice }
-      .ignoreNil()
-      .bind(to: priceButton.rx.updateNormalStateTitle)
+      .drive(priceButton.rx.updateNormalStateTitle)
       .disposed(by: disposeBag)
   }
 
