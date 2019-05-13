@@ -7,9 +7,13 @@ import Foundation
 
 import SCServiceKit
 
-struct SearchResultReadParameter: RepositoryParameter {
+struct SearchReadParameter: RepositoryParameter {
+
+  // MARK: Public
 
 	let query: [String: String]
+
+  // MARK: - Initializing
 
   init(withTerm term: String) {
     query = [

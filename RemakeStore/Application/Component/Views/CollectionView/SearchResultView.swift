@@ -1,7 +1,4 @@
 //
-//  SearchRegultView.swift
-//  RemakeStore
-//
 //  Created by Scott Moon on 08/05/2019.
 //  Copyright © 2019 Scott Moon. All rights reserved.
 //
@@ -13,7 +10,9 @@ import RxSwift
 
 class SearchResultView: BaseCollectionView {
 
-  var items: [SearchResultCellViewModel]?
+  // MARK: Public
+
+  var lookupViewModels: [LookupViewModeling]?
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -31,12 +30,12 @@ class SearchResultView: BaseCollectionView {
 
 extension SearchResultView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return items?.count ?? 0
+    return lookupViewModels?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: SearchResultCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    if let viewModel = items?[indexPath.item] {
+    if let viewModel = lookupViewModels?[indexPath.item] {
       cell.bind(to: viewModel)
     }
     return cell
@@ -46,6 +45,7 @@ extension SearchResultView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension SearchResultView: UICollectionViewDelegateFlowLayout {
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = frame.width
     return .init(width: width, height: 350)
@@ -53,9 +53,9 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: SearchResultView {
-  internal var updateItems: Binder<[SearchResultCellViewModel]> {
+  internal var updateSearchViewModels: Binder<[LookupViewModeling]> {
     return Binder(self.base) { base, result in
-      base.items = result
+      base.lookupViewModels = result
       base.reloadData()
     }
   }

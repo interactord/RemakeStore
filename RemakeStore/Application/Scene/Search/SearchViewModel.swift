@@ -8,28 +8,71 @@ import Foundation
 import RxSwift
 import SCServiceKit
 
-class SearchViewModel: ServiceViewModel {
-  let service: Service
+protocol SearchViewModelInput {
+  var searchText: BehaviorSubject<String> { get }
+}
 
-  let searchText: BehaviorSubject<String> = .init(value: "")
+protocol SearchViewModelOutput {
+  var searchViewModels: Observable<[LookupViewModeling]> { get }
+}
 
-  lazy var searchRepository = AnyRepository<SearchResult>(base: SearchResultRepository(httpClient: self.service.httpClient))
+protocol SearchViewModeling {
+  var inputs: SearchViewModelInput { get }
+  var outputs: SearchViewModelOutput { get }
+}
 
-  lazy var searchResult = self.searchText.flatMapLatest { [unowned self] term in
-    self.searchRepository.read(with: SearchResultReadParameter(withTerm: term))
-  }.map { result -> [SearchResultCellViewModel] in
-    switch result {
-    case .noContent:
-      return []
-    case .value(let searchResult):
-      return searchResult.results.map {
-        SearchResultCellViewModel(withResult: $0)
+typealias SearchViewModelType =
+  SearchViewModelInput & SearchViewModelOutput & SearchViewModeling
+
+class SearchViewModel: ServiceViewModel, SearchViewModelType {
+
+  // MARK: - Inputs & Outputs
+
+  var inputs: SearchViewModelInput {
+    return self
+  }
+  var outputs: SearchViewModelOutput {
+    return self
+  }
+
+  // MARK: - Input
+
+  var searchText: BehaviorSubject<String> = .init(value: "")
+
+  // MARK: - Outputs
+  lazy var searchViewModels: Observable<[LookupViewModeling]> = searchData
+    .ignoreNil()
+    .map {
+      $0.results.map {
+        LookupViewModel(withResult: $0)
       }
     }
-  }
-  .observeOn(MainScheduler.instance)
+    .observeOn(MainScheduler.instance)
 
-  required init(with service: Service) {
+  // MARK: - Private
+
+  private lazy var searchData = self.searchText
+    .ignoreEmpty()
+    .flatMapLatest { [unowned self] term in
+      self.searchRepository.read(with: SearchReadParameter(withTerm: term))
+    }.map { result -> Lookup? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let appResult):
+        return appResult
+      }
+    }
+
+  // MARK: - Protocol Variables
+
+  let service: Service
+  let searchRepository: AnyRepository<Lookup>
+
+  // MARK: - Initializing
+
+  init(with service: Service, searchRepository: AnyRepository<Lookup>) {
     self.service = service
+    self.searchRepository = searchRepository
   }
 }

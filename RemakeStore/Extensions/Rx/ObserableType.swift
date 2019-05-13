@@ -12,4 +12,15 @@ extension ObservableType {
   func mapToVoid() -> Observable<Void> {
     return map { _ in }
   }
+
+  func mapToVoid() -> Driver<Void> {
+    return map { _ in }.asDriverJustComplete()
+  }
+
+  func asDriverJustComplete() -> Driver<Element> {
+    return asDriver { _ in
+      return Driver.empty()
+    }
+  }
+
 }

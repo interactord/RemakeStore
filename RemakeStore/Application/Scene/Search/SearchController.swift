@@ -13,11 +13,11 @@ class SearchController: BaseController {
 
   // MARK: - ViewModel
 
-  var viewModel: SearchViewModel!
+  var viewModel: SearchViewModeling!
 
-  // MARK: - Private
+  // MARK: - Views
 
-  private lazy var searchResultView: SearchResultView = {
+  lazy var searchResultView: SearchResultView = {
     let searchResultView = SearchResultView()
     view.addSubview(searchResultView)
     return searchResultView
@@ -25,8 +25,8 @@ class SearchController: BaseController {
 
   private lazy var searchController = UISearchController(searchResultsController: nil)
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func setupViews() {
+    super.setupViews()
     view.backgroundColor = .white
   }
 
@@ -39,6 +39,7 @@ class SearchController: BaseController {
     super.setupNavigation()
 
     definesPresentationContext = true
+    navigationItem.title = "Search"
     navigationItem.searchController = self.searchController
     navigationItem.hidesSearchBarWhenScrolling = false
     searchController.dimsBackgroundDuringPresentation = false
@@ -48,16 +49,31 @@ class SearchController: BaseController {
 
 extension SearchController: ViewModelBased {
 
+  // MARK: - functions for protocol
+
   func bindViewModel() {
     searchController.searchBar.rx
-      .text.orEmpty
+      .text
+      .orEmpty
       .throttle(.seconds(2), scheduler: MainScheduler.instance)
       .distinctUntilChanged()
-      .bind(to: viewModel.searchText)
+      .bind(to: viewModel.inputs.searchText)
       .disposed(by: disposeBag)
 
-    viewModel.searchResult
-      .bind(to: searchResultView.rx.updateItems)
+    viewModel.outputs.searchViewModels
+      .bind(to: searchResultView.rx.updateSearchViewModels)
       .disposed(by: disposeBag)
+
+    searchResultView.rx
+      .itemSelected
+      .map { [unowned self] (indexPath: IndexPath) -> LookupViewModelOutput? in
+        return self.searchResultView.lookupViewModels?[indexPath.item].outputs
+      }
+      .ignoreNil()
+      .map { AppStep.appDetailIsRequired(appId: $0.result.trackId) }
+      .subscribe(onNext: { step in
+        print("step \(step)")
+        self.steps.accept(step)
+      }).disposed(by: disposeBag)
   }
 }

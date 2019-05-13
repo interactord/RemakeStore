@@ -16,6 +16,7 @@ class LaunchStepper {
   let disposeBag = DisposeBag()
 
   // MARK: - Initializing
+
   init() {
   }
 }

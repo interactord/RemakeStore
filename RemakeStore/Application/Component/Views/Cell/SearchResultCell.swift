@@ -11,15 +11,13 @@ import SCUIBuildKit
 import SCLayoutKit
 import moa
 
-protocol SearchResultCellType {
-  func bind(to: SearchResultCellViewModel)
-}
-
 class SearchResultCell: BaseCollectionViewCell {
+
+  // MARK: - Views
 
   lazy var appIconImageView: UIImageView = {
     return ImageViewBuilder()
-      .setBackgroundColor(.red)
+      .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
       .setWidthAnchor(64)
       .setHeightAnchor(64)
       .setCornerRadius(12)
@@ -51,7 +49,7 @@ class SearchResultCell: BaseCollectionViewCell {
       .setFont(DefaultTheme.Font.body)
       .setWidthAnchor(80)
       .setHeightAnchor(32)
-      .setBackgroundColor(#colorLiteral(red: 0.9601849914, green: 0.9601849914, blue: 0.9601849914, alpha: 1))
+      .setBackgroundColor(DefaultTheme.Color.secondaryColor)
       .setCornerRadius(16)
       .build()
   }()
@@ -61,7 +59,7 @@ class SearchResultCell: BaseCollectionViewCell {
 
     for _ in 1...3 {
       let imageView = ImageViewBuilder()
-        .setBackgroundColor(.blue)
+        .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
         .setContentMode(.scaleAspectFill)
         .setCornerRadius(8)
         .setClipToBounds(true)
@@ -114,70 +112,60 @@ class SearchResultCell: BaseCollectionViewCell {
 
     addSubview(overallStackView)
     overallStackView.fillSuperView(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
-
   }
 
+  override func reset() {
+    super.reset()
+    appIconImageView.image = nil
+    nameLabel.text = ""
+    categoryLabel.text = ""
+    ratingsLabel.text = ""
+    screenShots.forEach {
+      $0.image = nil
+    }
+  }
 }
 
-extension SearchResultCell: SearchResultCellType {
-  // MARK: - Private
+extension SearchResultCell: LookupViewModelBindable {
 
-  func bind(to viewModel: SearchResultCellViewModel) {
+  // MARK: - functions for protocol
 
-    viewModel.appInfomation
+  func bind(to viewModel: LookupViewModeling) {
+
+    viewModel.outputs.appInformation
       .map { $0.trackName }
       .bind(to: nameLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { $0.primaryGenreName }
       .bind(to: categoryLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { "Rating: \($0.averageUserRating ?? 0)" }
       .bind(to: ratingsLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
       .map { $0.artworkUrl100 }
       .bind(to: appIconImageView.rx.loadImage)
       .disposed(by: disposeBag)
 
-    viewModel.appInfomation
-      .map { $0.screenshotUrls?[0] ?? "" }
-      .bind(to: screenShots[0].rx.loadImage)
-      .disposed(by: disposeBag)
+    let screenShots = self.screenShots
 
-    viewModel.appInfomation
+    viewModel.outputs.appInformation
+      .map { $0.screenshotUrls }
+      .ignoreNil()
       .map {
-        $0.screenshotUrls?.count ?? 0 > 1
-          ? $0.screenshotUrls?[1] ?? ""
-          : ""
-      }
-      .bind(to: screenShots[1].rx.loadImage)
+        zip(screenShots, $0).map {
+          $0.0.moa.url = $0.1
+        }
+      }.subscribe()
       .disposed(by: disposeBag)
-
-    viewModel.appInfomation
-      .map {
-        $0.screenshotUrls?.count ?? 0 > 2
-          ? $0.screenshotUrls?[2] ?? ""
-          : ""
-      }
-      .bind(to: screenShots[2].rx.loadImage)
-      .disposed(by: disposeBag)
-
   }
 
 }
 
 extension SearchResultCell: CellContentClassIdentifiable {
-}
-
-extension Reactive where Base: UIImageView {
-  internal var loadImage: Binder<String> {
-    return Binder(self.base) { base, result in
-      base.moa.url = result
-    }
-  }
 }

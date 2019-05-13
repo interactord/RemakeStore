@@ -48,12 +48,6 @@ identifier_name:
     warning: 40
     error: 60
 custom_rules:
-  disable:
-    name: "Disable Rule In Code"
-    regex: "(swiftlint:disable)"
-    message: "Please do not disable rule in code. "
-    severity: error
-    match_kinds: comment
   outlet_collection:
     name: "outlet_collection"
     regex: "(@IBOutletCollection)"

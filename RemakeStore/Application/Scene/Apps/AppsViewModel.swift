@@ -6,7 +6,12 @@
 import Foundation
 
 class AppsViewModel: ServiceViewModel {
+
+  // MARK: - Protocol Variables
+
   let service: Service
+
+  // MARK: - Initializing
 
   required init(with service: Service) {
     self.service = service

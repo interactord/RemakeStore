@@ -20,6 +20,8 @@ class AppsController: BaseController {
 
 extension AppsController: ViewModelBased {
 
+	// MARK: - functions for protocol
+
 	func bindViewModel() {
 		print("AppsController")
 	}

@@ -18,6 +18,7 @@ class RootFlow {
   private let service: Service
 
   // MARK: - Initializing
+
   init(with service: Service) {
     self.service = service
   }

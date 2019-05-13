@@ -20,6 +20,8 @@ class MusicController: BaseController {
 
 extension MusicController: ViewModelBased {
 
+	// MARK: - functions for protocol
+
 	func bindViewModel() {
 		print("MusicController")
 	}

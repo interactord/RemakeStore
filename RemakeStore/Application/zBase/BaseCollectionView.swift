@@ -9,27 +9,56 @@ import RxSwift
 
 class BaseCollectionView: UICollectionView {
 
-  lazy private(set) public var disposeBag = DisposeBag()
+	// MARK: Public
 
-  // MARK: - Initializing
+	enum LayoutStyle {
+		case horizontalSnapping
+		case `default`
+	}
 
-  convenience init() {
-    let layout = UICollectionViewFlowLayout()
-    self.init(frame: .zero, collectionViewLayout: layout)
-    setupView()
-    registerCell()
-    setupDelegate()
-  }
+	// MARK: - Private
 
-  deinit {
-    print("\(type(of: self)): \(#function)")
-  }
+	lazy private(set) public var disposeBag = DisposeBag()
 
-  func setupDelegate() { }
+	// MARK: - Initializing
 
-  func registerCell() { }
+	convenience init() {
+		let layout = UICollectionViewFlowLayout()
+		self.init(frame: .zero, collectionViewLayout: layout)
+		loadView()
+	}
 
-  func setupView() {
-    self.backgroundColor = .white
-  }
+	convenience init(withLayoutStyle style: LayoutStyle = .default) {
+		let layout: UICollectionViewFlowLayout
+
+		switch style {
+		case .default:
+			layout = UICollectionViewFlowLayout()
+		case .horizontalSnapping:
+      layout = HorizontalSnappingLayout()
+		}
+
+		self.init(frame: .zero, collectionViewLayout: layout)
+		loadView()
+	}
+
+	deinit {
+		print("\(type(of: self)): \(#function)")
+	}
+
+	private func loadView() {
+		setupView()
+		registerCell()
+		setupDelegate()
+	}
+
+	func setupDelegate() {
+	}
+
+	func registerCell() {
+	}
+
+	func setupView() {
+		self.backgroundColor = .white
+	}
 }

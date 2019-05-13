@@ -6,15 +6,37 @@
 import UIKit
 
 import Swinject
+import SCServiceKit
 
 struct SearchDIContainer: DIContainer {
-  let container: Container
-  let service: Service
 
-  private lazy var viewModel: SearchViewModel = {
+  // MARK: - Protocol Variables
+
+  let container: Container
+
+  // MARK: - Private
+
+  private let service: Service
+
+  private(set) lazy var repository: AnyRepository<Lookup> = {
     let service = self.service
+    container.register(AnyRepository<Lookup>.self) { _ in
+      AnyRepository<Lookup>(base: SearchRepository(
+        httpClient: service.httpClient
+      ))
+    }.inObjectScope(.weak)
+
+    guard let repository = container.resolve(AnyRepository<Lookup>.self) else {
+      fatalError("Should be not nil")
+    }
+    return repository
+  }()
+
+  private(set) lazy var viewModel: SearchViewModel = {
+    let service = self.service
+    let repository = self.repository
     container.register(SearchViewModel.self) { _ in
-      SearchViewModel(with: service)
+      SearchViewModel(with: service, searchRepository: repository)
     }.inObjectScope(.weak)
 
     guard let viewModel = container.resolve(SearchViewModel.self) else {
@@ -23,7 +45,7 @@ struct SearchDIContainer: DIContainer {
     return viewModel
   }()
 
-  private lazy var controller: SearchController = {
+  private(set) lazy var controller: SearchController = {
     container.register(SearchController.self) { _ in
       SearchController()
     }.inObjectScope(.weak)
@@ -37,10 +59,9 @@ struct SearchDIContainer: DIContainer {
     return controller
   }()
 
-  lazy var navigationController: UINavigationController = {
-    let controller = self.controller
+  private(set) lazy var navigationController: UINavigationController = {
     container.register(UINavigationController.self) { _ -> UINavigationController in
-      UINavigationController(rootViewController: controller)
+      UINavigationController()
     }.inObjectScope(.weak)
 
     guard let navController = container.resolve(UINavigationController.self) else {
@@ -52,8 +73,15 @@ struct SearchDIContainer: DIContainer {
   }()
 
   // MARK: - Initializing
+
   init(with service: Service) {
     self.service = service
     container = Container()
+  }
+
+  // MARK: Public
+
+  mutating func getController() -> SearchController {
+    return controller
   }
 }

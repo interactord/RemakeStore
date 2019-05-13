@@ -1,0 +1,2418 @@
+{
+  "feed": {
+    "author": {
+      "name": {
+        "label": "iTunes Store"
+      },
+      "uri": {
+        "label": "http://www.apple.com/itunes/"
+      }
+    },
+    "entry": [
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id199608750"
+          },
+          "name": {
+            "label": "Vhoskelian"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "4008463358"
+        },
+        "title": {
+          "label": "This game is perfect but..."
+        },
+        "content": {
+          "label": "Please fix the world map glitch where the map icon will not appear on the interface. It makes the game much less enjoyable, especially late in the game. This really needs to be fixed.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id34358124"
+          },
+          "name": {
+            "label": "Romanalucy"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3975077882"
+        },
+        "title": {
+          "label": "Great game, map glitch"
+        },
+        "content": {
+          "label": "This game is great, very challenging and fun. I would give it five starts if they fixed the glitch with the map (it doesn’t always appear and sometimes I have to restart the app a few times to get it to show up). The map is a pretty critical feature in this game.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id488682638"
+          },
+          "name": {
+            "label": "Giovanna17💕"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3952960540"
+        },
+        "title": {
+          "label": "I NEED HALP!!!"
+        },
+        "content": {
+          "label": "In one part, where you have to rotate the screen at the tower, I can’t seem to find the platforms where you get to the chest.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id367792800"
+          },
+          "name": {
+            "label": "Buddy67278"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3713979345"
+        },
+        "title": {
+          "label": "Very annoying glitch!"
+        },
+        "content": {
+          "label": "Every time I get to the purple level and collect one of the cubes, my game crashes and I have to start all over again",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id971595489"
+          },
+          "name": {
+            "label": "dFringe"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "3"
+        },
+        "id": {
+          "label": "3712070882"
+        },
+        "title": {
+          "label": "Too many bugs"
+        },
+        "content": {
+          "label": "Would love to leave 5 stars for a fantastically designed and imaginative game. In all other aspects this is a well executed game. However,I’m experiencing catastrophic app failures on iPhone 8+ after about 15 minutes of game play. At one point my phone was even locked up and had to be hard reset.\nI did give this game more than enough chances but it was nonetheless, for me, an apparent waste of $5.00.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id522764529"
+          },
+          "name": {
+            "label": "Cyberman0922"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3676523740"
+        },
+        "title": {
+          "label": "MIND BLOWING"
+        },
+        "content": {
+          "label": "This is possibly the best mobile game ever conceived. I think that it is pure perfection. The controls are tight, the concept is revolutionary. I just wish it wasn’t as good as it is because now there’s no possible way to make a sequel as amazing as the game we have now. Mario has competition.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id413672967"
+          },
+          "name": {
+            "label": "odonckers"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3654484875"
+        },
+        "title": {
+          "label": "This is the Pocket Edition?!"
+        },
+        "content": {
+          "label": "Do not be fooled by the words, “Pocket Edition.” This is exactly like the original game, visual, audio, and story are all the same. And the controls handle like a champ!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id85078360"
+          },
+          "name": {
+            "label": "dstober92"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3586026548"
+        },
+        "title": {
+          "label": "Fantastic game"
+        },
+        "content": {
+          "label": "I bought this game when it came out on the Xbox 360 years ago. I played it and LOVED it! Then to my surprise it came to iOS! I jumped on it looking forward to playing it trough again. The puzzle quality and depth is amazing. My only complaint is the virtual controls made Red room “time attack” slightly harder than it needed to be. Literally took me half an hour just to clear it. Haha. BUT that doesn’t take away from this amazing game. Highly recommend. \n\nThe only reason this game isn’t 5 stars is when it came out it was not optimized for the iPhone X screen and a bunch of people disliked it. But it supports the screen now so disregard all of em.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id532314736"
+          },
+          "name": {
+            "label": "Kent Walston"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3534923105"
+        },
+        "title": {
+          "label": "FIX THE JUMP BUTTON"
+        },
+        "content": {
+          "label": "Please I can’t enjoy this game anymore when I die 7-10 times in a row because my jump button is literally unresponsive.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "1"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id103962817"
+          },
+          "name": {
+            "label": "Unknown Hippy"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "3"
+        },
+        "id": {
+          "label": "3533094912"
+        },
+        "title": {
+          "label": "Love the game but one issue...."
+        },
+        "content": {
+          "label": "Love Fez, love everything about it and it plays amazingly on the iPhone XS Max. just two issues which the first should be very simple to fix. the map disappearing, You know it’s supposed to be at the top right in the middle of the other 2 icons. Yeah makes it very hard to determine if the area is completed when the map icon is not there. Also an issue where if you go right or left and jump at the same time it doesn’t register and you fall to your death. These should be easy fixes. I will rewrite my review and give the full five stars when this gets resolved.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id138919294"
+          },
+          "name": {
+            "label": "Urrrghhh!"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3530645103"
+        },
+        "title": {
+          "label": "Crashing"
+        },
+        "content": {
+          "label": "The game keeps crashing after 1 or 2 minutes of play. Seems like it’d be a great game if I could play it.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id108203676"
+          },
+          "name": {
+            "label": "Gcxhfvvbjgg"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3499409233"
+        },
+        "title": {
+          "label": "PLEASE UPDATE FOR NEW IPAD PRO 11in"
+        },
+        "content": {
+          "label": "THANKS, I love the game !!!!\nPLEASE",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id39576153"
+          },
+          "name": {
+            "label": "Mr. Agitated"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3452162603"
+        },
+        "title": {
+          "label": "Extremely fun, riddles with bugs"
+        },
+        "content": {
+          "label": "First of all, let me make something clear: this game is amazing. I’ve had fun playing it from start to finish, and the start to finish again to get the last collectibles. However, the iOS port is RIDDLED with weird bugs. The jump button is extremely unresponsive, there is a ladder in the rising lava puzzle that is almost impossible to climb, certain moving objects get stuck in one spot (like floating terrain) but their hit boxes continue to move, the map button has a 1 in 10 chance of appearing every time you load the game, etc, etc. If blitworks could make a last bug fix to the game, that would be great. Maybe then I’ll consider that fifth star you guys value so much.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id331718024"
+          },
+          "name": {
+            "label": "Sword of the occult"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3452162315"
+        },
+        "title": {
+          "label": "Wobbly controls"
+        },
+        "content": {
+          "label": "It’s a good old game but poorly imported into tablet/phone.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id29282615"
+          },
+          "name": {
+            "label": "candyveins"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3423368492"
+        },
+        "title": {
+          "label": "Game crashes at almost the beginning"
+        },
+        "content": {
+          "label": "I just discovered this port of Fez, and was excited to replay it on my phone. However, right after you get the ability to rotate, the game crashes. Happened 3 times already....",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id521487628"
+          },
+          "name": {
+            "label": "x24sonic"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3421325298"
+        },
+        "title": {
+          "label": "Great port with some slight control foibles"
+        },
+        "content": {
+          "label": "Almost everything about this port works flawlessly, and it’s really nice to finally have Fez on the go. I did have some issues with the touch controls, notably where the directional buttons actually seem to be more like an invisible control stick with buttons overlaid, since I ended up in a lot of situations where I’m pressing up or down and because it was not perfectly up or down on the buttons it ended up actually registering as pressing gently to the side. I feel like the controls would probably work better if they were actually limited to 8 directions instead of a full stick range.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id142244748"
+          },
+          "name": {
+            "label": "Obis11"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3417976474"
+        },
+        "title": {
+          "label": "Superb game"
+        },
+        "content": {
+          "label": "I love fez, as does my 3 yr old son. One of the best of the decade (at least). I would love to play it on my Apple TV (hint, hint). Tactile controls would make fez even better. Thank you",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id663046499"
+          },
+          "name": {
+            "label": "DavidCaster84"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "3"
+        },
+        "id": {
+          "label": "3355598879"
+        },
+        "title": {
+          "label": "Need to fix jump button."
+        },
+        "content": {
+          "label": "Like many other reviewers here I’m having the same issue. I’m about 20 minutes into the game and I’m loving it, but all the sudden I’m having an issue with the jump button, sometimes it just doesn’t register when your running, this results in many deaths and is also unfortunately VERY annoying and frustrating. Also, sometimes there’s just no map button, which is also crucial. Otherwise, great game, it just needs some fixing.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id23286185"
+          },
+          "name": {
+            "label": "Gottalotta"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3351311645"
+        },
+        "title": {
+          "label": "Can’t figure out"
+        },
+        "content": {
+          "label": "I enjoy this game but cannot figure out how to input or translate codes to solve the puzzles on the iPad. I checked online and most people reference inputting game controller buttons.  Is there a way to do right shift left shift etc so I can open doors and solve puzzles? I’ve gotten most things open just by going around]d the fez universe.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id735160933"
+          },
+          "name": {
+            "label": "dijeebozsmhxowmsnx"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3329151482"
+        },
+        "title": {
+          "label": "Overall good"
+        },
+        "content": {
+          "label": "I’ve always wanted to do a run through of this game, it’s an awesome concept mixed in with an appealing art style. However sometimes when I press the jump button it doesn’t jump and I fall to a earlier progression point and do it again just to fall back down. But overall I love it, and I know Phil fish quit due to criticism, but all creators get negative feedback, but it’s your job to either take it with a smiling face and say “ok I understand what you mean” and go through with it, or ignore the haters (I know they are tough to avoid, I’m being bullied at school) but some of us love this game a lot and are sad to hear that you quit. ⭐️⭐️⭐️⭐️⭐️ (p.s) I’m sorry I wrote a bible of a review)",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id41072746"
+          },
+          "name": {
+            "label": "simX"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3291502462"
+        },
+        "title": {
+          "label": "Great game, a few annoying glitches"
+        },
+        "content": {
+          "label": "I’ve been following Fez for a while, since it was originally shown in a video around the internets 5 or so years ago.  Really excited it’s come to iOS, and it’s a really immersive game!  I love the storyline, graphics, and gameplay, it’s all great!  I haven’t played it on iOS with a physical controller, though, so it’s still subject to those annoying times when your fingers drift off the virtual controls.  Luckily, though, Fez is very forgiving — you just return to where you were before you died!\n\nThere are a few things it would be good to see improved:\n\n- sometimes the map button just doesn’t appear.  There’s no rhyme or reason to why.  Force quitting the game and relaunching usually fixes it.\n- the iCloud save slot does allow porting saved games across devices, but it is woefully inconsistent.  Many times it doesn’t actually sync to other devices.  The best way to fix this is to copy your iCloud save slot to another slot, and then copy that back to the iCloud slot.  That seems to make the slot be saved to the cloud.\n- it would be really nice if we could see a history of dialog somewhere.  I got to a special room, and accidentally tapped through a line of someone saying something.  Did I miss anything important?  I don’t know! :(\n\nBut overall, really great port of the game to iOS!  Love trying to solve all the mysteries of the pixelverse!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "1"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id898581312"
+          },
+          "name": {
+            "label": "fishboy78"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3238919866"
+        },
+        "title": {
+          "label": "FEZ"
+        },
+        "content": {
+          "label": "This is a very good game, but as others have said, there is a problem with running and jumping.  With all the fixes the company has made to the game, why can’t they fix this?",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id241784524"
+          },
+          "name": {
+            "label": "HELPME1205"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3237528686"
+        },
+        "title": {
+          "label": "Ok - PC better"
+        },
+        "content": {
+          "label": "Hi - need help. I am stuck at the crying waterfall and for some reason can’t lower the water using tetromino. I know I have the code right cause it worked for the moon door. I am so frustrated - can someone help?",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id23528915"
+          },
+          "name": {
+            "label": "Repo2"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "3237131448"
+        },
+        "title": {
+          "label": "Controls are tough on iPhone XS Max"
+        },
+        "content": {
+          "label": "The movement and action buttons are too close to the edge and it's uncomfortable to try and hold and move thumbs. If they were scooted in half an inch or so (where they would be if the phone still had bezels) the problem would be alleviated",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id142294500"
+          },
+          "name": {
+            "label": "Sokjeff"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3178408870"
+        },
+        "title": {
+          "label": "MAP Still Dissappears"
+        },
+        "content": {
+          "label": "Help, the map continues to disappear even after several restarts. This is very frustrating. This appears to be happening to many others. When are we getting a fix? I will change my review when we do. It is unplayable until then... the map is a must.\nFix map!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id43641512"
+          },
+          "name": {
+            "label": "thenewplaid"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "2"
+        },
+        "id": {
+          "label": "3160483714"
+        },
+        "title": {
+          "label": "Great game. Poor controls."
+        },
+        "content": {
+          "label": "I really, really enjoy this game. Except for trying to jump from place to place. In the iOS version, my character often just falls off of a platform and dies, when I'm attempting to jump. This gets very frustrating. I'm considering just deleting the app, despite my enjoyment of it, otherwise. If they fixed that aspect, I'd give it 5 stars.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id422989326"
+          },
+          "name": {
+            "label": "Ninjastar218"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3138926319"
+        },
+        "title": {
+          "label": "Don’t be negative. Change your Perspective"
+        },
+        "content": {
+          "label": "Game was the most fun I’ve had on mobile since 2013 Minecraft PE. It’s a kind of game with story and it’s still fun. It’s not some sort of useless mindless game where you just tap the screen and hope to get a ball in a hoop. The game also makes you feel you need to think a little about how to open a secret door. 4.5/5 Would Recommend. Enjoy newbies!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id404014110"
+          },
+          "name": {
+            "label": "fhcfhhrrpufuifupf"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.3"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3123546231"
+        },
+        "title": {
+          "label": "If you have it then"
+        },
+        "content": {
+          "label": "So cool!!!!!!!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id435540521"
+          },
+          "name": {
+            "label": "Bjorn_the_peggle_master13"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "3"
+        },
+        "id": {
+          "label": "3052637777"
+        },
+        "title": {
+          "label": "Amazing game, but the controls are awful"
+        },
+        "content": {
+          "label": "I love this game, but the controls are so small and close to each other I end up pressing the wrong button 95% of the time. It’s really bad",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id505971966"
+          },
+          "name": {
+            "label": "DaPUGTATO"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "3020815543"
+        },
+        "title": {
+          "label": "Bootiful ( ͡° ͜ʖ ͡°)  (Misspelled on Purpose)"
+        },
+        "content": {
+          "label": "It was great for you to add this mobile version to everybody! ( with at least 5 bucks in there wallet) and I love it!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id129590845"
+          },
+          "name": {
+            "label": "APP : {)"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "3007701467"
+        },
+        "title": {
+          "label": "Glitches controls"
+        },
+        "content": {
+          "label": "The game is really pretty and seems like it has a solid story, but all the controls for maps don’t work making navigating the game almost impossible. When I say the controls for the maps not working I mean anything but the running and jumping don’t work well. Waste of money until controls get reworked.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id435749941"
+          },
+          "name": {
+            "label": "LogTheRock"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2979932705"
+        },
+        "title": {
+          "label": "Love FEZ, but there are issues."
+        },
+        "content": {
+          "label": "FEZ is literally the best game ever, but I want to point out some bugs and such so that they might get patched faster.\n\n1. Observatory telescope doesn’t show the stars when you interact with the eyepiece; It only shows black.\n\n2. Every now and then the Map button disappears. However, closing the app and reopening it is a fix.\n\nThat’s it!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id174586685"
+          },
+          "name": {
+            "label": "- Sam Crank"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "2978460595"
+        },
+        "title": {
+          "label": "Crashes and loses all progress"
+        },
+        "content": {
+          "label": "Game is crashing after first level and losing all progress (iPhone 7, latest iOS) - this is frustrating for a paid game",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id13604294"
+          },
+          "name": {
+            "label": "Flintacious"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "3"
+        },
+        "id": {
+          "label": "2969354269"
+        },
+        "title": {
+          "label": "Good game but fix map bug"
+        },
+        "content": {
+          "label": "Currently the game is great and played a good chunk but then the map.button disappeared and it sounds like a common bug on threads online. Please fix cause otherwise I'm very confused where I am and if I missed anything.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id42335547"
+          },
+          "name": {
+            "label": "deimos256"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "2940967450"
+        },
+        "title": {
+          "label": "Junk"
+        },
+        "content": {
+          "label": "Editors choice and it doesn’t even support the iPhone X.  Junk.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id36426759"
+          },
+          "name": {
+            "label": "johnny on the spot"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "2935728061"
+        },
+        "title": {
+          "label": "Timeless"
+        },
+        "content": {
+          "label": "Comforting, mysterious, jovial and haunting. Fez is a true Hero’s Journey. I have cleared this game to maximum completion on every platform it has been released on and every single time, it feels new. \n\nWhile this release may amplify the imprecision of the controls, it’s hardly a the most important piece of the full experience. If you have yet to play Fez, just understand: the deeper you go, the more the nature of the game and the challenge changes. \n\nThe music, the art, the puzzles and the world all take you somewhere no other game will. It’s the game I play to feel good.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "1"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "2"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id773677331"
+          },
+          "name": {
+            "label": "creeperman2506"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2888152171"
+        },
+        "title": {
+          "label": "Great game"
+        },
+        "content": {
+          "label": "The games good but Gomez (the main character) likes doors when your antsy so wait and he doesn’t always jump when pressing jump and you can fly won’t tell you how though\n\nAnd short game but a simple fix is a level/world editor and community levels",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id167736208"
+          },
+          "name": {
+            "label": "The47guy"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "1"
+        },
+        "id": {
+          "label": "2866994862"
+        },
+        "title": {
+          "label": "Jump button?"
+        },
+        "content": {
+          "label": "The jump button only works half the time? Where is the refund button at?",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id199375813"
+          },
+          "name": {
+            "label": "Rurlee"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2853804545"
+        },
+        "title": {
+          "label": "Please make the jump button bigger"
+        },
+        "content": {
+          "label": "I love this game but pleeeeeease make the controls bigger on screen.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id156704797"
+          },
+          "name": {
+            "label": "Relick-Dawnblade-Warlock"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2643547313"
+        },
+        "title": {
+          "label": "Great amazing game but..."
+        },
+        "content": {
+          "label": "Alright so this is one of the greatest games I have ever played. No joke. I really love but recently, there’s some kind of extremely annoying glitch that makes it so about 50% of the time you can’t jump with moving. I’m currently exploring the music room area and it’s making it almost impossible. Please look into this and try to fix it.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id35584375"
+          },
+          "name": {
+            "label": "Atamasco"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2565251784"
+        },
+        "title": {
+          "label": "Issue with running and jumping"
+        },
+        "content": {
+          "label": "This game is VERY beautiful and such a great addition to the iOS game library. Gameplay is intuitive and fun, especially with the swiping to rotate the world.\n\nMy only complaint is that there seems to be a bug with the jump button. I have on many, many occasions fallen to my death because the jump button just didn’t work when I was running. I can see that the button itself changes size to indicate that it’s being pressed, but the jump action does not occur. It’s a pretty annoying quirk to an otherwise great game.\n\nI am running it on an iPhone 7 with iOS 11.3.1.\n\nPlease fix!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "1"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "1"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id189627161"
+          },
+          "name": {
+            "label": "Nicolas 🎼"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2526293793"
+        },
+        "title": {
+          "label": "Great game, bad bug"
+        },
+        "content": {
+          "label": "This game is phenomenal. One of my favorites... however, in this port, there’s a horrible bug where sometimes the map icon just won’t show up, no matter what you do. Please fix :(",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id297769159"
+          },
+          "name": {
+            "label": "Ashlaender"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "2"
+        },
+        "id": {
+          "label": "2509893333"
+        },
+        "title": {
+          "label": "Telescope doesn’t work :C"
+        },
+        "content": {
+          "label": "This port is great! I’ve played through the PS3 version and the only issues I have with this version are that I often don’t hit jump when I intend to and the telescope level shows a black screen.\n\nMore than happy to give 5 stars when the telescope works!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id13372644"
+          },
+          "name": {
+            "label": "breckenedge"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "2497106770"
+        },
+        "title": {
+          "label": "Amazing port"
+        },
+        "content": {
+          "label": "This game is fantastic. I never finished it when I purchased it on the PC years ago. It’s an excellent mobile game.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id484687655"
+          },
+          "name": {
+            "label": "dig dug06"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "2403985068"
+        },
+        "title": {
+          "label": "Fez is amazing"
+        },
+        "content": {
+          "label": "It nothing like any game I’ve ever seen",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id548807976"
+          },
+          "name": {
+            "label": "Captain_Anarchy"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "5"
+        },
+        "id": {
+          "label": "2371842061"
+        },
+        "title": {
+          "label": "One of the best of all time. And that says a lot"
+        },
+        "content": {
+          "label": "First off let me say, you judge and artist by their work, not who they are. That said, let me say that this game is absolutely incredible. Game design at its finest. The puzzles, story, music, mechanics, atmosphere, gameplay...near perfect. This game is art. Worth way more than five stars. Not playing this game is doing a disservice to yourself!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id392641531"
+          },
+          "name": {
+            "label": "Treś Washington"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2363342879"
+        },
+        "title": {
+          "label": "Perfect game... BUT"
+        },
+        "content": {
+          "label": "This game was everything I wanted in an iOS adventure.\n\n I would say this game was perfect, but the jump button didn’t work in really critical times in the game which made the experience frustrating.\n\nOther than that, this game is one of the best that I have ever played on an iPhone!\n\nI’ve played through it twice with 209.4% completion.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id25822942"
+          },
+          "name": {
+            "label": "HardHatMack"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "3"
+        },
+        "id": {
+          "label": "2345800350"
+        },
+        "title": {
+          "label": "Jump Button"
+        },
+        "content": {
+          "label": "I like the game so far, but it’s nearly impossible to run and jump at the same time on my iPad Pro.",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id553102485"
+          },
+          "name": {
+            "label": "SSkitten"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "4"
+        },
+        "id": {
+          "label": "2318013797"
+        },
+        "title": {
+          "label": "Fantastic, but..."
+        },
+        "content": {
+          "label": "Overall, amazing game! I’ve never seen such fun puzzles and beautiful graphics. There are a couple issues though.\n\n1. The map button will periodically go missing \n\n2. It will often crash \n\n3. The jump button will sometimes not register\n\n4. There was one part in the green sewer place where there was a QR code, and the answer was a combination of RT and LT. Without a controller, I didn’t know what do do\n\n5. Nothing showed up in the Observatory \n\nAs I said, beautiful game. Just fix these few things and it will be perfect!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      },
+      {
+        "author": {
+          "uri": {
+            "label": "https://itunes.apple.com/us/reviews/id230294374"
+          },
+          "name": {
+            "label": "SpinalTapestry"
+          },
+          "label": ""
+        },
+        "im:version": {
+          "label": "1.0.2"
+        },
+        "im:rating": {
+          "label": "2"
+        },
+        "id": {
+          "label": "2267714473"
+        },
+        "title": {
+          "label": "Please Fix the Sound!"
+        },
+        "content": {
+          "label": "Fez is an amazing game, with amazing graphics, simple but challenging gameplay, and a unique manner of play I’ve never seen before, and it is an absolutely amazing game. That said, I haven’t gotten to play it much, as I listen to music while I play, and for whatever reason, it crashes the app. If this were fixed, I’d give this game a five star without question!",
+          "attributes": {
+            "type": "text"
+          }
+        },
+        "link": {
+          "attributes": {
+            "rel": "related",
+            "href": "https://itunes.apple.com/us/review?id=1209489068&type=Purple%20Software"
+          }
+        },
+        "im:voteSum": {
+          "label": "0"
+        },
+        "im:contentType": {
+          "attributes": {
+            "term": "Application",
+            "label": "Application"
+          }
+        },
+        "im:voteCount": {
+          "label": "0"
+        }
+      }
+    ],
+    "updated": {
+      "label": "2019-05-11T14:41:16-07:00"
+    },
+    "rights": {
+      "label": "Copyright 2008 Apple Inc."
+    },
+    "title": {
+      "label": "iTunes Store: Customer Reviews"
+    },
+    "icon": {
+      "label": "http://itunes.apple.com/favicon.ico"
+    },
+    "link": [
+      {
+        "attributes": {
+          "rel": "alternate",
+          "type": "text/html",
+          "href": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?cc=us&id=1"
+        }
+      },
+      {
+        "attributes": {
+          "rel": "self",
+          "href": "https://itunes.apple.com/rss/customerreviews/page=1/id=1209489068/sortby=mostrecent/json?l=en&cc=us"
+        }
+      },
+      {
+        "attributes": {
+          "rel": "first",
+          "href": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1209489068/sortby=mostrecent/xml?l=en&urlDesc=/customerreviews/page=1/id=1209489068/sortby=mostrecent/json"
+        }
+      },
+      {
+        "attributes": {
+          "rel": "last",
+          "href": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1209489068/sortby=mostrecent/xml?l=en&urlDesc=/customerreviews/page=1/id=1209489068/sortby=mostrecent/json"
+        }
+      },
+      {
+        "attributes": {
+          "rel": "previous",
+          "href": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1209489068/sortby=mostrecent/xml?l=en&urlDesc=/customerreviews/page=1/id=1209489068/sortby=mostrecent/json"
+        }
+      },
+      {
+        "attributes": {
+          "rel": "next",
+          "href": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1209489068/sortby=mostrecent/xml?l=en&urlDesc=/customerreviews/page=1/id=1209489068/sortby=mostrecent/json"
+        }
+      }
+    ],
+    "id": {
+      "label": "https://itunes.apple.com/rss/customerreviews/page=1/id=1209489068/sortby=mostrecent/json?l=en&cc=us"
+    }
+  }
+}

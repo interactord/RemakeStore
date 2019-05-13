@@ -1,24 +1,27 @@
 //
-// Created by Scott Moon on 2019-05-09.
+// Created by Scott Moon on 2019-05-12.
 // Copyright (c) 2019 Scott Moon. All rights reserved.
 //
 
 import Foundation
 
+@testable import RemakeStore
 import SCServiceKit
 
-enum SearchResultEndpoint {
+enum LookupEndpointMock {
 
-  case read(with: SearchResultReadParameter)
+  case read(with: LookupReadParameter)
+
+  // MARK: - Private
 
   private enum Constant {
-    static let baseUrl = "https://itunes.apple.com"
-    static let path = "search"
+    static let baseUrl = "http://localhost:7000"
+    static let path = "lookup"
   }
 
 }
 
-extension SearchResultEndpoint: Endpoint {
+extension LookupEndpointMock: Endpoint {
 
   // MARK: - functions for protocol
 
@@ -36,12 +39,10 @@ extension SearchResultEndpoint: Endpoint {
       return HTTPMethod.GET
     }
   }
-
   public var queryParameters: [String: String]? {
     switch self {
     case .read(let parameter):
       return parameter.query
     }
   }
-
 }

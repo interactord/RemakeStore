@@ -17,6 +17,10 @@ extension UIViewController {
 		return action(selector: #selector(self.viewWillDisappear(_:)))
 	}
 
+	var viewDidLoadAction: Observable<Void> {
+		return action(selector: #selector(self.viewDidLoad))
+	}
+
 	// MARK: - Private
 
 	private func action(selector: Selector) -> Observable<Void> {
