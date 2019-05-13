@@ -812,14 +812,14 @@
 			children = (
 				F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */,
 				F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */,
+				F426EDACC2A69F07BE5499AF /* AppsPageListView.swift */,
+				F426E4F38FC2F1C00790200E /* AppsPageListViewSpec.swift */,
 				F426EA56C4D0791B6BBE2B7C /* PreviewScreenshotsView.swift */,
 				F426E7BE6F61D2A66B194018 /* PreviewScreenshotsViewSpec.swift */,
 				F426E222E508A49332F48150 /* ReviewListView.swift */,
 				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
 				F426EEDD4FB709D5F719561F /* SearchResultView.swift */,
 				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
-				F426EDACC2A69F07BE5499AF /* AppsPageListView.swift */,
-				F426E4F38FC2F1C00790200E /* AppsPageListViewSpec.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
