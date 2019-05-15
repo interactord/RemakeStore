@@ -16,7 +16,7 @@ protocol FeedResultViewModeling {
 }
 
 protocol FeedResultViewModelBindable {
-  func bind(to viewMode: FeedResultViewModeling)
+  func bind(to viewModel: FeedResultViewModeling)
 }
 
 typealias FeedResultViewModelType =
