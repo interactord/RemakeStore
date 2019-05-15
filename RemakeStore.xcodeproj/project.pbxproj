@@ -166,6 +166,7 @@
 		F426EDE56EC184AD7572DDFE /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E4D038F940DA89285322 /* DefaultTheme.swift */; };
 		F426EE42D8F9BD8386205604 /* ReviewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E95CC21BCE405E8445C5 /* ReviewCellSpec.swift */; };
 		F426EE4F8804868379A171BF /* CellContentClassIdentifiable+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E378DF998F809450C613 /* CellContentClassIdentifiable+UICollectionView.swift */; };
+		F426EE7BA150B97AB3447F9B /* ReviewsEntryViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E25EC826F3EE30F9EC37 /* ReviewsEntryViewModelSpec.swift */; };
 		F426EE8ACEAFB0BB14F93513 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDA56EF2FD19773DAF01 /* UIButton+Rx.swift */; };
 		F426EEB8AABA379AF2B0D387 /* ReviewsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E4FBC5708644ACBB18E0 /* ReviewsRepositoryMock.swift */; };
 		F426EEBC30EFD509BBB1ADDD /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA07B7FE30016BECBBEB /* TodayViewModel.swift */; };
@@ -287,6 +288,7 @@
 		F426E2137DAECBA793E60EAA /* AppsGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsGroup.swift; sourceTree = "<group>"; };
 		F426E222E508A49332F48150 /* ReviewListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewListView.swift; sourceTree = "<group>"; };
 		F426E2340A83FA850CD15F38 /* FeedViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModelSpec.swift; sourceTree = "<group>"; };
+		F426E25EC826F3EE30F9EC37 /* ReviewsEntryViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsEntryViewModelSpec.swift; sourceTree = "<group>"; };
 		F426E28696FBD75101E119DC /* MusicViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		F426E2C7594A546E2665F81D /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		F426E2C99A45E414E59A0214 /* PreviewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCellSpec.swift; sourceTree = "<group>"; };
@@ -898,6 +900,7 @@
 				F426ECF4466C908866DEC93B /* LookupViewModel.swift */,
 				F426E0524C3F7D8325877787 /* LookupViewModelSpec.swift */,
 				F426E8635FF9B9E626825186 /* ReviewsEntryViewModel.swift */,
+				F426E25EC826F3EE30F9EC37 /* ReviewsEntryViewModelSpec.swift */,
 				F426E9D8E73228A19DF0AB33 /* ScreenshotViewModel.swift */,
 			);
 			path = ViewModels;
@@ -1514,6 +1517,7 @@
 				F426E24F697A0CDCD8F4FA5F /* FeedResultViewModelSpec.swift in Sources */,
 				F426EB2899D112C7B0A3BA72 /* FeedViewModelSpec.swift in Sources */,
 				F426EAD547F6E17131BEA0F1 /* LookupViewModelSpec.swift in Sources */,
+				F426EE7BA150B97AB3447F9B /* ReviewsEntryViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
