@@ -24,4 +24,29 @@ class AppsGroupCellSpec: XCTestCase {
 
       XCTAssertNotNil(sut)
   }
+
+  func test_prepareForReuse() {
+    sut = AppsGroupCell()
+    sut?.prepareForReuse()
+
+    XCTAssertNotNil(sut)
+  }
+
+  func test_bind() {
+    sut = AppsGroupCell()
+    sut?.bind(to: makeFeedViewModeling())
+
+    XCTAssertNotNil(sut)
+  }
+
+  func makeFeedViewModeling() -> FeedViewModeling {
+
+    let feed = Feed(title: "title", results: [
+      FeedResult(id: "test", name: "testApp", artistName: "test", artworkUrl100: "test.com"),
+      FeedResult(id: "test", name: "testApp", artistName: "test", artworkUrl100: "test.com"),
+      FeedResult(id: "test", name: "testApp", artistName: "test", artworkUrl100: "test.com")
+    ])
+
+    return FeedViewModel(withFeed: feed)
+  }
 }
