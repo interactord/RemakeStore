@@ -12,7 +12,7 @@ class AppsHorizontalListView: BaseCollectionView {
 
   // MARK: Public
 
-  var feedResults: [FeedResult]?
+  var feedResultViewModels: [FeedResultViewModel]?
 
   // MARK: - Private
 
@@ -43,7 +43,7 @@ class AppsHorizontalListView: BaseCollectionView {
 
 extension AppsHorizontalListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return feedResults?.count ?? 0
+    return feedResultViewModels?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -74,9 +74,9 @@ extension AppsHorizontalListView: UICollectionViewDelegateFlowLayout {
 
 extension Reactive where Base: AppsHorizontalListView {
 
-  internal var updateFeedResults: Binder<[FeedResult]> {
+  internal var updateFeedResults: Binder<[FeedResultViewModel]> {
     return Binder(self.base) { base, result in
-      base.feedResults = result
+      base.feedResultViewModels = result
       base.reloadData()
     }
   }

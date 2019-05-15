@@ -8,7 +8,8 @@ import Foundation
 import RxSwift
 
 protocol FeedViewModelOutput {
-  var feed: Observable<Feed> { get }
+  var title: Observable<String> { get }
+  var feedResultViewModel: Observable<[FeedResultViewModel]> { get }
 }
 
 protocol FeedViewModelModeling {
@@ -32,9 +33,14 @@ class FeedViewModel: FeedViewModelType {
 
   // MARK: - Outputs
 
-  var feed: Observable<Feed>
+  var title: Observable<String>
+  var feedResultViewModel: Observable<[FeedResultViewModel]>
 
   init(withFeed feed: Feed) {
-    self.feed = Observable.just(feed).observeOn(MainScheduler.asyncInstance)
+    self.title = Observable.just(feed.title).observeOn(MainScheduler.asyncInstance)
+
+    self.feedResultViewModel = Observable.just(feed.results).map {
+      $0.map { FeedResultViewModel(withFeedResult: $0) }
+    }
   }
 }
