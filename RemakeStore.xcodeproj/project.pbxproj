@@ -27,6 +27,7 @@
 		2942A178228A1AB700D35C6B /* AppsHorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED6E1DED8DDC3412EAE1 /* AppsHorizontalListView.swift */; };
 		2942A179228A1CBA00D35C6B /* AppRowCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB7DC808D574908F4007 /* AppRowCellSpec.swift */; };
 		2942A17C228A1FF600D35C6B /* CGFloat+Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A17B228A1FF600D35C6B /* CGFloat+Divider.swift */; };
+		29524255228C26FA0069159C /* AppsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7BF5DF2FA75623EA42A /* AppsViewModelSpec.swift */; };
 		2958077B227CD2FA00C0CE4D /* ObserableTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958077A227CD2FA00C0CE4D /* ObserableTypeSpec.swift */; };
 		2958077D227CD30B00C0CE4D /* UIViewControllerRxSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958077C227CD30B00C0CE4D /* UIViewControllerRxSpec.swift */; };
 		29602B752278D0EE00A3A4B8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29602B722278D0EE00A3A4B8 /* SwiftyBeaver.framework */; };
@@ -307,6 +308,7 @@
 		F426E78BE2038658FC3AC421 /* MusicDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDIContainer.swift; sourceTree = "<group>"; };
 		F426E78FE228C55AAA47206B /* BaseControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseControllerSpec.swift; sourceTree = "<group>"; };
 		F426E7BE6F61D2A66B194018 /* PreviewScreenshotsViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotsViewSpec.swift; sourceTree = "<group>"; };
+		F426E7BF5DF2FA75623EA42A /* AppsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsViewModelSpec.swift; sourceTree = "<group>"; };
 		F426E7DBF6E18E9942D6A4A4 /* StubServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubServer.swift; sourceTree = "<group>"; };
 		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		F426E837FBFDC52CAF4E9017 /* DefaultTheme+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultTheme+Font.swift"; sourceTree = "<group>"; };
@@ -501,12 +503,12 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		2942A17A228A1FDE00D35C6B /* CGFlot */ = {
+		2942A17A228A1FDE00D35C6B /* CGFloat */ = {
 			isa = PBXGroup;
 			children = (
 				2942A17B228A1FF600D35C6B /* CGFloat+Divider.swift */,
 			);
-			path = CGFlot;
+			path = CGFloat;
 			sourceTree = "<group>";
 		};
 		295933A1227CE82300B6D5CA /* Application */ = {
@@ -665,7 +667,7 @@
 		29E8A576227C268600E7A894 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2942A17A228A1FDE00D35C6B /* CGFlot */,
+				2942A17A228A1FDE00D35C6B /* CGFloat */,
 				29EC1E472289DA090029BE06 /* UICollectionView */,
 				29428FBF227D746C00BD688D /* UINavigationController */,
 				F426E4EF30057EF10F804DA5 /* PropertyListDecoder */,
@@ -871,6 +873,7 @@
 				F426E20016AB7016900E4215 /* AppsController.swift */,
 				F426E4CDFDC498C5421C6D9D /* AppsControllerSpec.swift */,
 				F426EA8A86DC998F7DEF22D8 /* AppsViewModel.swift */,
+				F426E7BF5DF2FA75623EA42A /* AppsViewModelSpec.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -1428,6 +1431,7 @@
 				2904CCB62287155A00D9E743 /* SearchViewModelSpec.swift in Sources */,
 				F426ECC4553C54864A1E2BAC /* TestViewModelMock.swift in Sources */,
 				F426E6865EDCB456BF005BA4 /* ViewModelBasedCRViewCellMock.swift in Sources */,
+				29524255228C26FA0069159C /* AppsViewModelSpec.swift in Sources */,
 				29B6162F22876A41008CD2A1 /* SearchResultCellSpec.swift in Sources */,
 				F426E21FAC5399583A05D724 /* ViewModelBasedCollectionViewCellMock.swift in Sources */,
 				F426E7EE21760A18F855A629 /* ViewModelBaseViewController.swift in Sources */,

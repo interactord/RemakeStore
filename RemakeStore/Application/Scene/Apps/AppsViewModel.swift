@@ -5,7 +5,32 @@
 
 import Foundation
 
-class AppsViewModel: ServiceViewModel {
+protocol AppsViewModelInput {
+  
+}
+
+protocol AppsViewModelOutput {
+}
+
+protocol AppsViewModeling {
+  var inputs: AppsViewModelInput { get }
+  var outputs: AppsViewModelOutput { get }
+}
+
+typealias AppsViewModelType =
+  AppsViewModelInput & AppsViewModelOutput & AppsViewModeling
+
+class AppsViewModel: ServiceViewModel, AppsViewModelType {
+
+  // MARK: - Inputs & Outputs
+
+  var inputs: AppsViewModelInput {
+    return self
+  }
+
+  var outputs: AppsViewModelOutput {
+    return self
+  }
 
   // MARK: - Protocol Variables
 
