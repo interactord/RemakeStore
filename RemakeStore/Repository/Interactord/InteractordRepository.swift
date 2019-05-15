@@ -26,7 +26,7 @@ final class InteractordRepository {
 
 extension InteractordRepository {
 
-  func socialApp() -> Observable<ResultContent<SocialApp>> {
+  func socialApp() -> Observable<ResultContent<[SocialApp]>> {
     let endpoint = InteractordEndpoint(baseUrl: baseUrl, router: .socialApps)
     return httpClient.request(endpoint: endpoint)
   }
