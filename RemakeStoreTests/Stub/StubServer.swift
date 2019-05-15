@@ -7,6 +7,8 @@ import Foundation
 
 import Swifter
 
+@testable import RemakeStore
+
 class StubServer {
 
   // MARK: - Private
@@ -37,6 +39,7 @@ extension StubServer {
     setSearcht()
     setLookup()
     setReviews()
+    setApps()
   }
 
   private func setSearcht() {
@@ -88,6 +91,24 @@ extension StubServer {
     }
 
     server.GET[urlPath] = response
+  }
+
+  private func setApps() {
+     let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "explicit", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET["api/v1/us/ios-apps/top-grossing/all/50/explicit.json"] = response
+    server.GET["api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json"] = response
+    server.GET["api/v1/us/ios-apps/top-free/all/50/explicit.json"] = response
   }
 
 }
