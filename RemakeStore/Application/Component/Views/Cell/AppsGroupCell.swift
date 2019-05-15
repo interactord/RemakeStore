@@ -42,7 +42,7 @@ class AppsGroupCell: BaseCollectionViewCell {
 }
 
 extension AppsGroupCell: FeedViewModelBindable {
-  func bind(to viewModel: FeedViewModelModeling) {
+  func bind(to viewModel: FeedViewModeling) {
     viewModel.outputs.title
       .asDriverJustComplete()
       .drive(titleLabel.rx.text)

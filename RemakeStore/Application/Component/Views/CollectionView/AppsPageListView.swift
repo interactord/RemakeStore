@@ -13,7 +13,7 @@ class AppsPageListView: BaseCollectionView {
   private let cellHeight: CGFloat = 300
   private let padding = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
 
-  var feedViewModels: [FeedViewModel]?
+  var feedViewModels: [FeedViewModeling]?
 
   override func setupView() {
     super.setupView()
@@ -74,7 +74,7 @@ extension AppsPageListView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: AppsPageListView {
-  internal var updateFeedViewModels: Binder<[FeedViewModel]> {
+  internal var updateFeedViewModels: Binder<[FeedViewModeling]> {
     return Binder(self.base) { base, result in
       base.feedViewModels = result
       base.reloadData()
