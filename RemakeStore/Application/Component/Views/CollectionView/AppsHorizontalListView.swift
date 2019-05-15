@@ -5,7 +5,16 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class AppsHorizontalListView: BaseCollectionView {
+
+  // MARK: Public
+
+  var feedResults: [FeedResult]?
+
+  // MARK: - Private
 
   private let topBottomPadding: CGFloat = 12
   private let lineSpacing: CGFloat = 10
@@ -34,7 +43,7 @@ class AppsHorizontalListView: BaseCollectionView {
 
 extension AppsHorizontalListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return feedResults?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,5 +67,17 @@ extension AppsHorizontalListView: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return .init(top: topBottomPadding, left: 0, bottom: topBottomPadding, right: 0)
+  }
+}
+
+// MARK: - Reactive Binder
+
+extension Reactive where Base: AppsHorizontalListView {
+
+  internal var updateFeedResults: Binder<[FeedResult]> {
+    return Binder(self.base) { base, result in
+      base.feedResults = result
+      base.reloadData()
+    }
   }
 }

@@ -38,11 +38,14 @@ class AppsPageListView: BaseCollectionView {
 
 extension AppsPageListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return appsGroups?.count ?? 0
+    return feedViewModels?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: AppsGroupCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+    if let viewModel = feedViewModels?[indexPath.item] {
+      cell.bind(to: viewModel)
+    }
     return cell
   }
 

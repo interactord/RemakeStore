@@ -41,5 +41,21 @@ class AppsGroupCell: BaseCollectionViewCell {
 
 }
 
+extension AppsGroupCell: FeedViewModelBindable {
+  func bind(to viewModel: FeedViewModelModeling) {
+    viewModel.outputs.feed
+      .asDriverJustComplete()
+      .map { $0.title }
+      .drive(titleLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.feed
+      .asDriverJustComplete()
+      .map { $0.results }
+      .drive(appsHorizontalListView.rx.updateFeedResults)
+      .disposed(by: disposeBag)
+ }
+}
+
 extension AppsGroupCell: CellContentClassIdentifiable {
 }
