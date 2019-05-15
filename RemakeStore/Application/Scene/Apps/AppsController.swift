@@ -9,6 +9,7 @@ import SCLayoutKit
 import SCUIBuildKit
 import RxSwift
 import RxCocoa
+import RxFlow
 
 class AppsController: BaseController {
 
@@ -41,6 +42,7 @@ class AppsController: BaseController {
 
     self.view.addSubview(activityIndicatorView)
     self.view.addSubview(appGroupListView)
+    appGroupListView.bind(to: steps)
   }
 
   override func setupConstraints() {
@@ -73,6 +75,5 @@ extension AppsController: ViewModelBased {
       .asDriverJustComplete()
       .drive(appGroupListView.rx.updateSocialAppViewModels)
       .disposed(by: disposeBag)
-
   }
 }

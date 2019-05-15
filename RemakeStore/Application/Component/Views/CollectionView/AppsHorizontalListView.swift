@@ -7,12 +7,14 @@ import UIKit
 
 import RxSwift
 import RxCocoa
+import RxFlow
 
 class AppsHorizontalListView: BaseCollectionView {
 
   // MARK: Public
 
   var feedResultViewModels: [FeedResultViewModeling]?
+  var rootStepper: PublishRelay<Step>?
 
   // MARK: - Private
 
@@ -70,6 +72,28 @@ extension AppsHorizontalListView: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return .init(top: topBottomPadding, left: 0, bottom: topBottomPadding, right: 0)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    guard
+      let viewModel = feedResultViewModels?[indexPath.item],
+      let rootStepper = rootStepper
+      else { return }
+
+    viewModel.outputs.id
+      .map {
+        AppStep.appDetailIsRequired(appId: Int($0) ?? 0)
+      }
+      .bind(to: rootStepper)
+      .disposed(by: disposeBag)
+  }
+}
+
+extension AppsHorizontalListView: RootStepperBindable {
+  func bind(to rootStepper: PublishRelay<Step>) {
+    self.rootStepper = rootStepper
+    reloadData()
   }
 }
 

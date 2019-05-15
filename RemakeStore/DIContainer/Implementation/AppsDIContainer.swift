@@ -86,9 +86,8 @@ struct AppsDIContainer: DIContainer {
   // MARK: - Public
 
   private(set) public lazy var navigationController: UINavigationController = {
-    let controller = self.controller
     container.register(UINavigationController.self) { _ -> UINavigationController in
-      UINavigationController(rootViewController: controller)
+      UINavigationController()
     }.inObjectScope(.weak)
 
     guard let navController = container.resolve(UINavigationController.self) else {
@@ -98,6 +97,10 @@ struct AppsDIContainer: DIContainer {
     navController.makeTabBarStyle(with: "Apps", imageName: "Apps")
     return navController
   }()
+
+  mutating func getController() -> AppsController {
+    return self.controller
+  }
 
   // MARK: - Initializing
 

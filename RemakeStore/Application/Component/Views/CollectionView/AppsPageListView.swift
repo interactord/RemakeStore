@@ -7,6 +7,7 @@ import UIKit
 
 import RxSwift
 import RxCocoa
+import RxFlow
 
 class AppsPageListView: BaseCollectionView {
 
@@ -19,6 +20,7 @@ class AppsPageListView: BaseCollectionView {
 
   var feedViewModels: [FeedViewModeling]?
   var socialAppViewModels: [SocialAppViewModeling]?
+  var rootStepper: PublishRelay<Step>?
 
   override func setupView() {
     super.setupView()
@@ -51,13 +53,16 @@ extension AppsPageListView: UICollectionViewDataSource {
     if let viewModel = feedViewModels?[indexPath.item] {
       cell.bind(to: viewModel)
     }
+    if let stepper = rootStepper {
+      cell.bind(to: stepper)
+    }
     return cell
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let header: AppsPageHeader = collectionView.dequeueReusableCell(kind: kind, indexPath: indexPath)
     if let viewModel = socialAppViewModels {
-        header.bind(to: viewModel)
+      header.bind(to: viewModel)
     }
     return header
   }
@@ -77,6 +82,13 @@ extension AppsPageListView: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return padding
+  }
+}
+
+extension AppsPageListView: RootStepperBindable {
+  func bind(to stepper: PublishRelay<Step>) {
+    self.rootStepper = stepper
+    reloadData()
   }
 }
 

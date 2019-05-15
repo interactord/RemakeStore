@@ -45,7 +45,9 @@ class SearchFlow: BaseFlow {
       return .none
     }
   }
+}
 
+extension SearchFlow {
   private func navigateToSearchScreen() -> FlowContributors {
     var container = SearchDIContainer(with: service)
     let controller = container.getController()

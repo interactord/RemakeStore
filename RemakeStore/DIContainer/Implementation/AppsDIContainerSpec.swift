@@ -22,6 +22,7 @@ class AppsDIContainerSpec: XCTestCase {
   func test_init() {
     sut = AppsDIContainer(with: makeService())
     XCTAssertNotNil(sut?.navigationController)
+    XCTAssertNotNil(sut?.getController())
   }
 
   func makeService() -> Service {

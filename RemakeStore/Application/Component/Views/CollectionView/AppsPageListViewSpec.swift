@@ -5,6 +5,9 @@
 
 import XCTest
 
+import RxCocoa
+import RxFlow
+
 @testable import RemakeStore
 
 class AppsPageListViewSpec: XCTestCase {
@@ -52,6 +55,42 @@ class AppsPageListViewSpec: XCTestCase {
 
     let resultCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
     XCTAssertNotNil(resultCell as? AppsGroupCell)
+  }
+
+  func test_dataSource_inject_viewModel_rootStepper_cellForItemAt() {
+    let rootStepper = PublishRelay<Step>()
+
+    sut = AppsPageListView()
+
+    guard
+      let sut = sut,
+      let dataSource = sut.dataSource
+      else {
+        fatalError("Should be not nil")
+    }
+
+    sut.bind(to: rootStepper)
+    sut.feedViewModels = makeFeedViewModels()
+
+    let resultAppGroupCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
+    XCTAssertNotNil(resultAppGroupCell as? AppsGroupCell)
+  }
+
+  func test_dataSource_inject_viewModel_viewForSupplementaryElementOfKind() {
+    sut = AppsPageListView()
+
+    guard
+      let sut = sut,
+      let dataSource = sut.dataSource
+      else {
+        fatalError("Should be not nil")
+    }
+
+    sut.socialAppViewModels = makeSocialAppViewModels()
+
+    dataSource.collectionView(sut, cellForItemAt: [1, 3])
+    let resultHeaderView = dataSource.collectionView?(sut, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: .init(row: 0, section: 0))
+    XCTAssertNotNil(resultHeaderView as? AppsPageHeader)
   }
 
   func test_dataSource_viewForSupplementaryElementOfKind() {
@@ -119,5 +158,22 @@ class AppsPageListViewSpec: XCTestCase {
 
     let resultPadding = delegate.collectionView?(sut, layout: layout, insetForSectionAt: 1)
     XCTAssertEqual(expectedPadding, resultPadding)
+  }
+
+  func makeFeedViewModels() -> [FeedViewModel] {
+    return [
+      FeedViewModel(withFeed: Feed(
+        title: "test Title",
+        results: [
+          FeedResult(id: "123", name: "test name", artistName: "test artistName", artworkUrl100: "test-image.com")
+        ]))
+    ]
+  }
+
+  func makeSocialAppViewModels() -> [SocialAppViewModel] {
+    return [
+      SocialAppViewModel(withSocialApp: SocialApp(
+        id: "123", name: "test name", imageUrl: "test-image.com", tagline: "test tag"))
+    ]
   }
 }

@@ -5,6 +5,9 @@
 
 import XCTest
 
+import RxCocoa
+import RxFlow
+
 @testable import RemakeStore
 
 class AppsGroupCellSpec: XCTestCase {
@@ -32,9 +35,17 @@ class AppsGroupCellSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
-  func test_bind() {
+  func test_bind_viewModel() {
     sut = AppsGroupCell()
     sut?.bind(to: makeFeedViewModeling())
+
+    XCTAssertNotNil(sut)
+  }
+
+  func test_bind_stepper() {
+    let stepper = PublishRelay<Step>()
+    sut = AppsGroupCell()
+    sut?.bind(to: stepper)
 
     XCTAssertNotNil(sut)
   }

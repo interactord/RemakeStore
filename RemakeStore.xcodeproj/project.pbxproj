@@ -52,6 +52,7 @@
 		296D18AC228CB3C1003FECB8 /* InteractordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE7FE7C5CA0FE5E6F8C1 /* InteractordRepository.swift */; };
 		296D18AD228CB495003FECB8 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E29FDDA6E67487E49E8E /* SocialApp.swift */; };
 		296D18AF228CBC58003FECB8 /* appHeadBannerDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 296D18AE228CBC58003FECB8 /* appHeadBannerDummy.json */; };
+		296D18B1228CD2E7003FECB8 /* RootStepperBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296D18B0228CD2E7003FECB8 /* RootStepperBindable.swift */; };
 		2972BD58227CC335007AFB9C /* TestCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */; };
 		2972BD5E227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */; };
 		29738CDF227DA4A1001D58FB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29738CDD227DA4A1001D58FB /* SearchController.swift */; };
@@ -244,6 +245,7 @@
 		29602B802278D1A200A3A4B8 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		296D18AE228CBC58003FECB8 /* appHeadBannerDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = appHeadBannerDummy.json; sourceTree = "<group>"; };
+		296D18B0228CD2E7003FECB8 /* RootStepperBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStepperBindable.swift; sourceTree = "<group>"; };
 		2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCellMock.swift; sourceTree = "<group>"; };
 		2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentClassIdentifiableUICViewSpec.swift; sourceTree = "<group>"; };
 		29738CDD227DA4A1001D58FB /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */,
+				296D18B0228CD2E7003FECB8 /* RootStepperBindable.swift */,
 			);
 			path = RxFlow;
 			sourceTree = "<group>";
@@ -1425,6 +1428,7 @@
 				F426E08F33D0D9443C46EF26 /* FeedViewModel.swift in Sources */,
 				F426E13704497EE014C7C454 /* FeedResultVIewModel.swift in Sources */,
 				F426E32C9520264AFF0A9177 /* ITunesEndpointRouter.swift in Sources */,
+				296D18B1228CD2E7003FECB8 /* RootStepperBindable.swift in Sources */,
 				F426E4DD6CF09D6A87E04698 /* ITunesEndpoint.swift in Sources */,
 				F426EF2100C68C3EF9E20E8A /* ITunesRepository.swift in Sources */,
 				F426E76A360CD71716DEE773 /* SocialAppViewModel.swift in Sources */,

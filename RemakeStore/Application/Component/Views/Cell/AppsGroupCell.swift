@@ -7,8 +7,11 @@ import UIKit
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxCocoa
+import RxFlow
 
 class AppsGroupCell: BaseCollectionViewCell {
+
   lazy var titleLabel: UILabel = {
     return LabelBuilder()
       .setText("APP SECTION")
@@ -52,7 +55,13 @@ extension AppsGroupCell: FeedViewModelBindable {
       .asDriverJustComplete()
       .drive(appsHorizontalListView.rx.updateFeedResults)
       .disposed(by: disposeBag)
- }
+  }
+}
+
+extension AppsGroupCell: RootStepperBindable {
+  func bind(to rootStepper: PublishRelay<Step>) {
+    appsHorizontalListView.bind(to: rootStepper)
+  }
 }
 
 extension AppsGroupCell: CellContentClassIdentifiable {
