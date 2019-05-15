@@ -5,6 +5,6 @@
 
 import Foundation
 
-enum InteractordEndpointRouter {
-  case socialApps
+enum InteractordEndpointRouter: String {
+  case socialApps = "apps-banner/appsHeadBanner.json"
 }

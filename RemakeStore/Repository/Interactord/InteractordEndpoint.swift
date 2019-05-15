@@ -30,10 +30,7 @@ extension InteractordEndpoint: Endpoint {
   }
 
   public var path: String {
-    switch router {
-    case .socialApps:
-      return "apps-banner/appsHeadBanner.json"
-    }
+    return router.rawValue
   }
 
   public var httpMethod: HTTPMethod {
