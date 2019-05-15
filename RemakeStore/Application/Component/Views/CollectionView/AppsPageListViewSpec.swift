@@ -25,7 +25,7 @@ class AppsPageListViewSpec: XCTestCase {
   }
 
   func test_dataSource_numberOfItemsInSection() {
-    let expectedSectionCount = 3
+    let expectedSectionCount = 0
     sut = AppsPageListView()
 
     guard
