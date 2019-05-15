@@ -66,7 +66,7 @@ extension AppsController: ViewModelBased {
 
     viewModel.outputs.appsGroups
       .asDriverJustComplete()
-      .drive(appGroupListView.rx.updateAppsGroups)
+      .drive(appGroupListView.rx.updateFeedViewModels)
       .disposed(by: disposeBag)
 
   }

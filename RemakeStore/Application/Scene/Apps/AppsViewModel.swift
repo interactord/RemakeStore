@@ -13,7 +13,7 @@ protocol AppsViewModelInput {
 }
 
 protocol AppsViewModelOutput {
-  var appsGroups: Observable<[AppsGroup]> { get }
+  var appsGroups: Observable<[FeedViewModel]> { get }
 }
 
 protocol AppsViewModeling {
@@ -60,7 +60,9 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
       case .value(let appGroup):
         return appGroup
       }
-    }.ignoreNil()
+    }
+    .ignoreNil()
+    .map { FeedViewModel(withFeed: $0.feed) }
 
   lazy var newGames = self.fetchApps
     .flatMapLatest { [unowned self] _ in
@@ -72,7 +74,9 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
       case .value(let appGroup):
         return appGroup
       }
-    }.ignoreNil()
+    }
+    .ignoreNil()
+    .map { FeedViewModel(withFeed: $0.feed) }
 
   lazy var topFree = self.fetchApps
     .flatMapLatest { [unowned self] _ in
@@ -84,7 +88,9 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
       case .value(let appGroup):
         return appGroup
       }
-    }.ignoreNil()
+    }
+    .ignoreNil()
+    .map { FeedViewModel(withFeed: $0.feed) }
 
   // MARK: - Protocol Variables
 
