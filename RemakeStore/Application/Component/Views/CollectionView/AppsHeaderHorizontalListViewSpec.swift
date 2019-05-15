@@ -35,7 +35,7 @@ class AppsHeaderHorizontalListViewSpec: XCTestCase {
 
   func test_dataSource_numberOfItemsInSection() {
     sut = AppsHeaderHorizontalListView()
-    let expectedCount = 3
+    let expectedCount = 0
 
     guard
       let sut = sut,
@@ -78,6 +78,29 @@ class AppsHeaderHorizontalListViewSpec: XCTestCase {
     let resultSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: [0, 0])
 
     XCTAssertEqual(sut.frame.width - expectedCellSpacing, resultSize?.width)
+  }
+
+  func test_dataSource_cellForItemAt_injectViewModel() {
+    sut = AppsHeaderHorizontalListView()
+
+    guard
+      let sut = sut,
+      let dataSource = sut.dataSource
+      else {
+        fatalError("Should be not nil")
+    }
+
+    sut.socialViewModels = makeViewModels()
+
+    let resultCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
+    XCTAssertNotNil(resultCell as? AppsHeaderCell)
+  }
+
+  func makeViewModels() -> [SocialAppViewModel] {
+    return [
+      SocialAppViewModel(withSocialApp: SocialApp(
+        id: "123", name: "test name", imageUrl: "test-image.com", tagline: "test tag"))
+    ]
   }
 
 }

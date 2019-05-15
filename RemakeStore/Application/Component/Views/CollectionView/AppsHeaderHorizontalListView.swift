@@ -46,7 +46,9 @@ extension AppsHeaderHorizontalListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: AppsHeaderCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    cell.backgroundColor = .yellow
+    if let viewModel = socialViewModels?[indexPath.item] {
+      cell.bind(to: viewModel)
+    }
     return cell
   }
 
