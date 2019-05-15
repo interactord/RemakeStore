@@ -99,21 +99,18 @@ class AppRowCell: BaseCollectionViewCell {
 
 extension AppRowCell: FeedResultViewModelBindable {
   func bind(to viewModel: FeedResultViewModeling) {
-    viewModel.outputs.feedResult
+    viewModel.outputs.name
       .asDriverJustComplete()
-      .map { $0.artworkUrl100 }
       .drive(imageView.rx.loadImage)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.feedResult
+    viewModel.outputs.companyName
       .asDriverJustComplete()
-      .map { $0.artistName }
       .drive(companyLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.feedResult
+    viewModel.outputs.iconImageUrlPath
       .asDriverJustComplete()
-      .map { $0.name }
       .drive(nameLabel.rx.text)
       .disposed(by: disposeBag)
   }

@@ -8,7 +8,9 @@ import Foundation
 import RxSwift
 
 protocol FeedResultViewModelOutput {
-  var feedResult: Observable<FeedResult> { get }
+  var name: Observable<String> { get }
+  var companyName: Observable<String> { get }
+  var iconImageUrlPath: Observable<String> { get }
 }
 
 protocol FeedResultViewModeling {
@@ -32,9 +34,15 @@ class FeedResultViewModel: FeedResultViewModelType {
 
   // MARK: - Outputs
 
-  var feedResult: Observable<FeedResult>
+  var name: Observable<String>
+  var companyName: Observable<String>
+  var iconImageUrlPath: Observable<String>
 
   init(withFeedResult feedResult: FeedResult) {
-    self.feedResult = Observable.just(feedResult).observeOn(MainScheduler.asyncInstance)
+    let feedResultAction = Observable.just(feedResult).observeOn(MainScheduler.asyncInstance)
+
+    name = feedResultAction.map { $0.name }
+    companyName = feedResultAction.map { $0.artistName }
+    iconImageUrlPath = feedResultAction.map { $0.artworkUrl100 }
   }
 }
