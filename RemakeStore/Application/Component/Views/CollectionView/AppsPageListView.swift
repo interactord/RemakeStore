@@ -10,10 +10,15 @@ import RxCocoa
 
 class AppsPageListView: BaseCollectionView {
 
+  // MARK: - Private
+
   private let cellHeight: CGFloat = 300
   private let padding = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
 
+  // MARK: Public
+
   var feedViewModels: [FeedViewModeling]?
+  var socialAppViewModels: [SocialAppViewModeling]?
 
   override func setupView() {
     super.setupView()
@@ -77,6 +82,13 @@ extension Reactive where Base: AppsPageListView {
   internal var updateFeedViewModels: Binder<[FeedViewModeling]> {
     return Binder(self.base) { base, result in
       base.feedViewModels = result
+      base.reloadData()
+    }
+  }
+
+  internal var updateSocialAppViewModels: Binder<[SocialAppViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.socialAppViewModels = result
       base.reloadData()
     }
   }
