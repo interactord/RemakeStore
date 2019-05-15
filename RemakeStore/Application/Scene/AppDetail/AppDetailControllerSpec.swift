@@ -43,21 +43,15 @@ class AppDetailControllerSpec: XCTestCase {
   func makeViewModel() -> AppDetailViewModel {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service
-
-    let lookupRepository = AnyRepository<Lookup>(base: LookupRepository(
-      httpClient: service.httpClient
-    ))
-
-    let reviewsRepository = AnyRepository<Reviews>(
-      base: ReviewsRepositoryMock(
-        httpClient: service.httpClient
-      )
+    let baseUrl = "http://localhost:7000"
+    let repository = ITunesRepository(
+      httpClient: service.httpClient,
+      baseUrl: baseUrl
     )
 
     return AppDetailViewModel(
       with: service,
-      lookupRepository: lookupRepository,
-      reviewsRepository: reviewsRepository
+      repository: repository
     )
   }
 

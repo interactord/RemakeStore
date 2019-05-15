@@ -17,7 +17,7 @@ PODS:
   - SCServiceKit (1.0.1):
     - RxSwift (>= 4.5.0)
     - SwiftyBeaver (>= 1.7.0)
-  - SCUIBuildKit (1.0.0)
+  - SCUIBuildKit (1.0.1)
   - Swifter (1.4.6)
   - SwiftyBeaver (1.7.0)
   - Swinject (2.6.0)
@@ -61,7 +61,7 @@ SPEC CHECKSUMS:
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   SCLayoutKit: 866df3eec20b5f38bb4afb52efde16447f242e68
   SCServiceKit: dc1bca393d7f49495f3a03138d906fff7688e3d6
-  SCUIBuildKit: 27448445521e9211314361ce22eec56e924511b1
+  SCUIBuildKit: eba68561be2eb70313934f0063518a017b9b6dac
   Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2

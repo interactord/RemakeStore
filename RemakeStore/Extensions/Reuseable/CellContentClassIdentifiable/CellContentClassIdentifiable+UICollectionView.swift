@@ -11,6 +11,10 @@ extension UICollectionView {
     register(cellType.self, forCellWithReuseIdentifier: cellType.reuseId)
   }
 
+  func register<V: UICollectionReusableView>(kind: String, reusableViewType: V.Type) where V: CellContentClassIdentifiable {
+    register(reusableViewType.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: reusableViewType.reuseId)
+  }
+
   func dequeueReusableCell<C: UICollectionViewCell>(
     with type: C.Type = C.self,
     indexPath: IndexPath
@@ -21,4 +25,14 @@ extension UICollectionView {
     return cell
   }
 
+  func dequeueReusableCell<V: UICollectionReusableView>(
+    with type: V.Type = V.self,
+    kind: String,
+    indexPath: IndexPath
+  ) -> V where V: CellContentClassIdentifiable {
+    guard let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: type.reuseId, for: indexPath) as? V else {
+      fatalError("Couldn't dequeue a UICollectionReusableView with identifier: \(type.reuseId)")
+    }
+    return view
+  }
 }

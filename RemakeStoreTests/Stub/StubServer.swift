@@ -7,6 +7,8 @@ import Foundation
 
 import Swifter
 
+@testable import RemakeStore
+
 class StubServer {
 
   // MARK: - Private
@@ -37,6 +39,8 @@ extension StubServer {
     setSearcht()
     setLookup()
     setReviews()
+    setApps()
+    setSocialApps()
   }
 
   private func setSearcht() {
@@ -88,6 +92,40 @@ extension StubServer {
     }
 
     server.GET[urlPath] = response
+  }
+
+  private func setApps() {
+     let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "explicitDummy", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET[RssEndpointRouter.newGames.rawValue] = response
+    server.GET[RssEndpointRouter.topGrossing.rawValue] = response
+    server.GET[RssEndpointRouter.topFree.rawValue] = response
+  }
+
+  private func setSocialApps() {
+     let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "appHeadBannerDummy", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET[InteractordEndpointRouter.socialApps.rawValue] = response
   }
 
 }

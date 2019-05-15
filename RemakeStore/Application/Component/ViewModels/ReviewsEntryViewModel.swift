@@ -39,11 +39,11 @@ class ReviewsEntryViewModel: ReviewsEntryViewModelType {
   var body: Observable<String>
 
   init(withEntry entry: Entry) {
-    let scheduler = MainScheduler.asyncInstance
-    self.author = Observable.just(entry.author.name.label).observeOn(scheduler)
-    self.title = Observable.just(entry.title.label).observeOn(scheduler)
-    self.body = Observable.just(entry.content.label).observeOn(scheduler)
-    self.rating = Observable.just(entry.rating.label.toInt() ?? 0).observeOn(scheduler)
-  }
 
+    let entryAction = Observable.just(entry)
+    author = entryAction.map { $0.author.name.label }
+    title = entryAction.map { $0.title.label }
+    body = entryAction.map { $0.content.label }
+    rating = entryAction.map { $0.rating.label.toInt() ?? 0 }
+  }
 }

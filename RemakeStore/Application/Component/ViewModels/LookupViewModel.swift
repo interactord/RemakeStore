@@ -8,7 +8,14 @@ import Foundation
 import RxSwift
 
 protocol LookupViewModelOutput {
-  var appInformation: Observable<Lookup.Information> { get }
+  var name: Observable<String> { get }
+  var releaseNote: Observable<String> { get }
+  var appIconImageUrlPath: Observable<String> { get }
+  var priceFormat: Observable<String> { get }
+  var category: Observable<String> { get }
+  var rating: Observable<String> { get }
+  var screenshotUrlPaths: Observable<[String]> { get }
+
   var result: Lookup.Information { get }
 }
 
@@ -28,16 +35,34 @@ class LookupViewModel: LookupViewModelType {
   // MARK: - Inputs & Outputs
 
   var outputs: LookupViewModelOutput {
-    return  self
+    return self
   }
+
+  // MARK: - Inputs
+
+  var screenshotImageView: BehaviorSubject<[UIImageView]?> = .init(value: nil)
 
   // MARK: - Outputs
 
-  var appInformation: Observable<Lookup.Information>
+  var name: Observable<String>
+  var releaseNote: Observable<String>
+  var appIconImageUrlPath: Observable<String>
+  var priceFormat: Observable<String>
+  var category: Observable<String>
+  var rating: Observable<String>
   var result: Lookup.Information
+  var screenshotUrlPaths: Observable<[String]>
 
   init(withResult result: Lookup.Information) {
-    self.appInformation = Observable.just(result).observeOn(MainScheduler.asyncInstance)
     self.result = result
+
+    let informationAction = Observable.just(result).observeOn(MainScheduler.asyncInstance)
+    name = informationAction.map { $0.trackName }
+    releaseNote = informationAction.map { $0.releaseNotes ?? "" }
+    appIconImageUrlPath = informationAction.map { $0.artworkUrl100 }
+    category = informationAction.map { $0.primaryGenreName }
+    rating = informationAction.map { "\($0.averageUserRating ?? 0)" }
+    priceFormat = informationAction.map { $0.formattedPrice ?? "" }
+    screenshotUrlPaths = informationAction.map { $0.screenshotUrls }.ignoreNil()
   }
 }

@@ -11,8 +11,11 @@ import SCServiceKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  lazy var serviceDIContainer = ServiceDIContainer()
-  lazy var rootFlow = RootFlow(with: serviceDIContainer.service)
+  var rootFlow: RootFlow?
+  var serviceDIContainer: ServiceDIContainer?
+  var isUnitTesting: Bool {
+    return ProcessInfo.processInfo.environment["UNITTEST"] == "1"
+  }
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -22,9 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return false
     }
 
-    rootFlow.onDebugNavigate()
-    rootFlow.start(with: window)
+    if false == isUnitTesting {
+      serviceDIContainer = ServiceDIContainer()
 
+      guard let service = serviceDIContainer?.service else {
+        fatalError("Should not be nil")
+      }
+
+      rootFlow = RootFlow(with: service)
+      rootFlow?.onDebugNavigate()
+      rootFlow?.start(with: window)
+    }
     return true
   }
 

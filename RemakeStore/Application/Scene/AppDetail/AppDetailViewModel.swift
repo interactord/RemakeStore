@@ -67,47 +67,43 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     }
 
   // MARK: - Private
-
-  private lazy var lookupData: Observable<Lookup.Information?> = appId
-    .asObservable()
-    .ignoreNil()
-    .flatMapLatest { [unowned self] appId in
-      self.lookupRepository.read(with: LookupReadParameter(withAppId: appId))
-    }
-    .map { result -> Lookup.Information? in
-      switch result {
-      case .noContent:
-        return nil
-      case .value(let appResult):
-        return appResult.results.first
+  private lazy var lookupData: Observable<Lookup.Information?> = {
+    let repository = self.repository
+    return appId.asObservable().ignoreNil()
+      .flatMapLatest { repository.lookup(appId: "\($0)") }
+      .map { result -> Lookup.Information? in
+        switch result {
+        case .noContent:
+          return nil
+        case .value(let appResult):
+          return appResult.results.first
+        }
       }
-    }
+  }()
 
-  private lazy var reviewsData: Observable<Reviews?> = appId
-    .asObservable()
-    .ignoreNil()
-    .flatMapLatest { [unowned self] appId in
-      self.reviewsRepository.read(with: ReviewsReadParameter(withAppId: appId))
-    }.map { result -> Reviews? in
-      switch result {
-      case .noContent:
-        return nil
-      case .value(let reviews):
-        return reviews
+  private lazy var reviewsData: Observable<Reviews?> = {
+    let repository = self.repository
+    return appId.asObservable().ignoreNil()
+      .flatMapLatest { repository.review(appId: "\($0)") }
+      .map { result -> Reviews? in
+        switch result {
+        case .noContent:
+          return nil
+        case .value(let reviews):
+          return reviews
+        }
       }
-    }
+  }()
 
   // MARK: - Protocol Variables
 
   let service: Service
-  let lookupRepository: AnyRepository<Lookup>
-  let reviewsRepository: AnyRepository<Reviews>
+  private let repository: ITunesRepository
 
   // MARK: - Initializing
 
-  init(with service: Service, lookupRepository: AnyRepository<Lookup>, reviewsRepository: AnyRepository<Reviews>) {
+  init(with service: Service, repository: ITunesRepository) {
     self.service = service
-    self.lookupRepository = lookupRepository
-    self.reviewsRepository = reviewsRepository
+    self.repository = repository
   }
 }

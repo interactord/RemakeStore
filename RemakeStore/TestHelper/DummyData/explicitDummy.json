@@ -1,0 +1,72 @@
+{
+  "feed": {
+    "title": "Top Free iPhone Apps",
+    "id": "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/50/explicit.json",
+    "author": {
+      "name": "iTunes Store",
+      "uri": "http://wwww.apple.com/us/itunes/"
+    },
+    "links": [
+      {
+        "self": "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/50/explicit.json"
+      },
+      {
+        "alternate": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?genreId=36&popId=27"
+      }
+    ],
+    "copyright": "Copyright © 2018 Apple Inc. All rights reserved.",
+    "country": "us",
+    "icon": "http://itunes.apple.com/favicon.ico",
+    "updated": "2019-05-14T01:49:30.000-07:00",
+    "results": [
+      {
+        "artistName": "Good Job Games",
+        "id": "1462762106",
+        "releaseDate": "2019-05-10",
+        "name": "Color Hole 3D",
+        "kind": "iosSoftware",
+        "copyright": "© Good Job Games",
+        "artistId": "1191495496",
+        "artistUrl": "https://itunes.apple.com/us/developer/good-job-games/id1191495496?mt=8",
+        "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/17/7d/69/177d6985-f9a5-d271-edfc-facdcc96b9cd/AppIcon-0-1x_U007emarketing-0-85-220-0-7.png/200x200bb.png",
+        "genres": [
+          {
+            "genreId": "6014",
+            "name": "Games",
+            "url": "https://itunes.apple.com/us/genre/id6014"
+          },
+          {
+            "genreId": "7003",
+            "name": "Arcade",
+            "url": "https://itunes.apple.com/us/genre/id7003"
+          }
+        ],
+        "url": "https://itunes.apple.com/us/app/color-hole-3d/id1462762106?mt=8"
+      },
+      {
+        "artistName": "Popshow, Inc.",
+        "id": "1462082664",
+        "releaseDate": "2019-05-03",
+        "name": "YOLO: Anonymous Questions",
+        "kind": "iosSoftware",
+        "copyright": "© Popshow Inc.",
+        "artistId": "1287077412",
+        "artistUrl": "https://itunes.apple.com/us/developer/popshow-inc/id1287077412?mt=8",
+        "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/e8/8c/e6/e88ce6e1-346f-47f5-5cd2-4c045e241900/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/200x200bb.png",
+        "genres": [
+          {
+            "genreId": "6005",
+            "name": "Social Networking",
+            "url": "https://itunes.apple.com/us/genre/id6005"
+          },
+          {
+            "genreId": "6016",
+            "name": "Entertainment",
+            "url": "https://itunes.apple.com/us/genre/id6016"
+          }
+        ],
+        "url": "https://itunes.apple.com/us/app/yolo-anonymous-questions/id1462082664?mt=8"
+      }
+    ]
+  }
+}

@@ -156,6 +156,39 @@ class AppDetailResultViewSpec: XCTestCase {
     XCTAssertEqual(expectedReviewRowCellHeight, resultReviewRowCellSize?.height)
   }
 
+  func test_dataSource_sizeForItemAt_dynamicSize() {
+    let expectedLookupCellHeight: CGFloat = 1_000
+    sut = AppDetailResultView()
+
+    let viewModel: LookupViewModeling = LookupViewModel(
+      withResult: .init(
+        trackId: 123,
+        trackName: "test",
+        primaryGenreName: "test",
+        averageUserRating: 1,
+        screenshotUrls: [],
+        artworkUrl100: "test",
+        formattedPrice: nil,
+        description: nil,
+        releaseNotes: nil,
+        artistName: nil,
+        collectionName: nil
+      ))
+
+    guard
+      let sut = sut,
+      let delegate = sut.delegate as? UICollectionViewDelegateFlowLayout,
+      let layout = sut.collectionViewLayout as? UICollectionViewFlowLayout
+      else {
+        fatalError("Should be not nil")
+    }
+
+    sut.lookupViewModel = viewModel
+    let resultLoookupCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 0, section: 0))
+    XCTAssertTrue(expectedLookupCellHeight >= resultLoookupCellSize?.height ?? 1_001)
+
+  }
+
   func test_dataSource_insetForSectionAt() {
     let expectedPadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 10, right: 0)
 
