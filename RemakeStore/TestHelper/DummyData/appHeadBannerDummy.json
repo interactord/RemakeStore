@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1435863215",
+    "name": "NEW APP",
+    "imageUrl": "https://astore.interactord.io/apps-banner/soundgym.png",
+    "tagline": "SOUNDGYM - 오디오 헬스 트레이닝",
+    "genre": "Health & Fitness"
+  },
+  {
+    "id": "1446660661",
+    "name": "NEW APP",
+    "imageUrl": "https://astore.interactord.io/apps-banner/airMapKorea.png",
+    "tagline": "AirMapKorea-에어맵코리아",
+    "genre": "Weather"
+  },
+  {
+    "id": "874425722",
+    "name": "FOR KIDS",
+    "imageUrl": "https://astore.interactord.io/apps-banner/sagoMiniWorld.png",
+    "tagline": "Sago Mini World",
+    "genre": "Home sweet gnomes"
+  },
+  {
+    "id": "897446215",
+    "name": "NEW UPDATE",
+    "imageUrl": "https://astore.interactord.io/apps-banner/canva.png",
+    "tagline": "Canva: Logo & invitaion maker",
+    "genre": "Anyone can be a graphic desinger"
+  },
+  {
+    "id": "1037778235",
+    "name": "BRAND NEW LOOK",
+    "imageUrl": "https://astore.interactord.io/apps-banner/zumo.png",
+    "tagline": "ZUMO : 주말에 뭐하지?",
+    "genre": "Lifestyle"
+  }
+]

@@ -40,6 +40,7 @@ extension StubServer {
     setLookup()
     setReviews()
     setApps()
+    setSocialApps()
   }
 
   private func setSearcht() {
@@ -97,7 +98,7 @@ extension StubServer {
      let response: ((HttpRequest) -> HttpResponse) = { _ in
 
       guard
-        let url = Bundle.main.url(forResource: "explicit", withExtension: "json"),
+        let url = Bundle.main.url(forResource: "explicitDummy", withExtension: "json"),
         let data = try? Data(contentsOf: url)
         else {
         fatalError("Should be not nil")
@@ -106,9 +107,25 @@ extension StubServer {
       return HttpResponse.ok(.data(data))
     }
 
-    server.GET["api/v1/us/ios-apps/top-grossing/all/50/explicit.json"] = response
-    server.GET["api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json"] = response
-    server.GET["api/v1/us/ios-apps/top-free/all/50/explicit.json"] = response
+    server.GET[RssEndpointRouter.newGames.rawValue] = response
+    server.GET[RssEndpointRouter.topGrossing.rawValue] = response
+    server.GET[RssEndpointRouter.topFree.rawValue] = response
+  }
+
+  private func setSocialApps() {
+     let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "appHeadBannerDummy", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET[InteractordEndpointRouter.socialApps.rawValue] = response
   }
 
 }
