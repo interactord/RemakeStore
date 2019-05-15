@@ -56,7 +56,9 @@ extension AppsPageListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let header: AppsPageHeader = collectionView.dequeueReusableCell(kind: kind, indexPath: indexPath)
-    header.backgroundColor = .red
+    if let viewModel = socialAppViewModels {
+        header.bind(to: viewModel)
+    }
     return header
   }
 }
@@ -77,6 +79,8 @@ extension AppsPageListView: UICollectionViewDelegateFlowLayout {
     return padding
   }
 }
+
+// MARK: - RX Binder
 
 extension Reactive where Base: AppsPageListView {
   internal var updateFeedViewModels: Binder<[FeedViewModeling]> {

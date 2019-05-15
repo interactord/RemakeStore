@@ -5,9 +5,18 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class AppsHeaderHorizontalListView: BaseCollectionView {
 
+  // MARK: - Private
+
   private let cellSpacing: CGFloat = 48
+
+  // MARK: Public
+
+  var socialViewModels: [SocialAppViewModeling]?
 
   override func setupView() {
     super.setupView()
@@ -32,7 +41,7 @@ class AppsHeaderHorizontalListView: BaseCollectionView {
 extension AppsHeaderHorizontalListView: UICollectionViewDataSource {
 
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 3
+    return socialViewModels?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,5 +57,16 @@ extension AppsHeaderHorizontalListView: UICollectionViewDataSource {
 extension AppsHeaderHorizontalListView: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return .init(width: frame.width - cellSpacing, height: frame.height)
+  }
+}
+
+// MARK: - RX Binder
+
+extension Reactive where Base: AppsHeaderHorizontalListView {
+  internal var updateSocialViewModels: Binder<[SocialAppViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.socialViewModels = result
+      base.reloadData()
+    }
   }
 }

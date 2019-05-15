@@ -6,6 +6,8 @@
 import UIKit
 
 import SCLayoutKit
+import RxSwift
+import RxCocoa
 
 class AppsPageHeader: BaseCollectionReusableView {
 
@@ -18,6 +20,15 @@ class AppsPageHeader: BaseCollectionReusableView {
   override func setupConstant() {
     super.setupConstant()
     appsHeaderHorizontalListView.fillSuperView()
+  }
+}
+
+extension AppsPageHeader {
+  func bind(to viewModels: [SocialAppViewModeling]) {
+    Observable.just(viewModels)
+      .asDriverJustComplete()
+      .drive(appsHeaderHorizontalListView.rx.updateSocialViewModels)
+      .disposed(by: disposeBag)
   }
 }
 
