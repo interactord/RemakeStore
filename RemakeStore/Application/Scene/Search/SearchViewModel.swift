@@ -54,7 +54,7 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
   private lazy var searchData = self.searchText
     .ignoreEmpty()
     .flatMapLatest { [unowned self] term in
-      self.searchRepository.read(with: SearchReadParameter(withTerm: term))
+      self.iTunesRepository.search(term: term)
     }.map { result -> Lookup? in
       switch result {
       case .noContent:
@@ -67,12 +67,12 @@ class SearchViewModel: ServiceViewModel, SearchViewModelType {
   // MARK: - Protocol Variables
 
   let service: Service
-  let searchRepository: AnyRepository<Lookup>
+  let iTunesRepository: ITunesRepository
 
   // MARK: - Initializing
 
-  init(with service: Service, searchRepository: AnyRepository<Lookup>) {
+  init(with service: Service, iTunesRepository: ITunesRepository) {
     self.service = service
-    self.searchRepository = searchRepository
+    self.iTunesRepository = iTunesRepository
   }
 }

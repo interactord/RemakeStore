@@ -19,29 +19,14 @@ struct AppDetailDIContainer: DIContainer {
   private let service: Service
   private let appId: Int
 
-  private lazy var lookupRepository: AnyRepository<Lookup> = {
+  private(set) lazy var repository: ITunesRepository = {
     let service = self.service
-    container.register(AnyRepository<Lookup>.self) { _ in
-      AnyRepository<Lookup>(base: LookupRepository(
-        httpClient: service.httpClient
-      ))
+    let baseUrl = "https://itunes.apple.com"
+    container.register(ITunesRepository.self) { _ in
+      ITunesRepository(httpClient: service.httpClient, baseUrl: baseUrl)
     }.inObjectScope(.weak)
 
-    guard let repository = container.resolve(AnyRepository<Lookup>.self) else {
-      fatalError("Should be not nil")
-    }
-    return repository
-  }()
-
-  private lazy var reviewsRepository: AnyRepository<Reviews> = {
-    let service = self.service
-    container.register(AnyRepository<Reviews>.self) { _ in
-      AnyRepository<Reviews>(base: ReviewsRepository(
-        httpClient: service.httpClient
-      ))
-    }.inObjectScope(.weak)
-
-    guard let repository = container.resolve(AnyRepository<Reviews>.self) else {
+    guard let repository = container.resolve(ITunesRepository.self) else {
       fatalError("Should be not nil")
     }
     return repository
@@ -49,13 +34,12 @@ struct AppDetailDIContainer: DIContainer {
 
   private lazy var viewModel: AppDetailViewModel = {
     let service = self.service
-    let lookupRepository = self.lookupRepository
-    let reviewsRepository = self.reviewsRepository
+    let repository = self.repository
+
     container.register(AppDetailViewModel.self) { _ in
       AppDetailViewModel(
         with: service,
-        lookupRepository: lookupRepository,
-        reviewsRepository: reviewsRepository
+        repository: repository
       )
     }.inObjectScope(.weak)
 

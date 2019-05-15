@@ -78,11 +78,10 @@ class SearchControllerSpec: XCTestCase {
   func makeViewModel() -> SearchViewModel {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service
-    let searchRepository = AnyRepository<Lookup>(
-      base: SearchRepositoryMock(
-        httpClient: service.httpClient
-      )
+    let baseUrl = "http://localhost:7000"
+    let repository = ITunesRepository(httpClient: service.httpClient, baseUrl: baseUrl)
+    return SearchViewModel(
+      with: service, iTunesRepository: repository
     )
-    return SearchViewModel(with: service, searchRepository: searchRepository)
   }
 }
