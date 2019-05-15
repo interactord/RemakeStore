@@ -39,8 +39,8 @@ class AppsHeaderCell: BaseCollectionViewCell {
   private lazy var stackView: UIStackView = {
     return StackViewBuilder(
       arrangedSubViews: [
-        titleLabel,
         companyLabel,
+        titleLabel,
         backgroundImageView
       ])
       .setAxis(.vertical)
