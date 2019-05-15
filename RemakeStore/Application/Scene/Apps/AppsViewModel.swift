@@ -13,7 +13,7 @@ protocol AppsViewModelInput {
 }
 
 protocol AppsViewModelOutput {
-  var appGroups: Observable<[AppGroup]> { get }
+  var appsGroups: Observable<[AppsGroup]> { get }
 }
 
 protocol AppsViewModeling {
@@ -42,7 +42,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
 
   // MARK: - Outputs
 
-  lazy var appGroups = Observable
+  lazy var appsGroups = Observable
     .zip(topGrossing, newGames, topFree)
     .map { [$0, $1, $2] }
 
@@ -53,7 +53,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
   lazy var topGrossing = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.topGrossing()
-    }.map { result -> AppGroup? in
+    }.map { result -> AppsGroup? in
       switch result {
       case .noContent:
         return nil
@@ -65,7 +65,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
   lazy var newGames = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.newGames()
-    }.map { result -> AppGroup? in
+    }.map { result -> AppsGroup? in
       switch result {
       case .noContent:
         return nil
@@ -77,7 +77,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
   lazy var topFree = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.topFree()
-    }.map { result -> AppGroup? in
+    }.map { result -> AppsGroup? in
       switch result {
       case .noContent:
         return nil

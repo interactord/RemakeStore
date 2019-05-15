@@ -39,7 +39,7 @@ class AppsViewModelSpec: XCTestCase {
     sut = makeSUT()
 
     sut.inputs.fetchApps.onNext(Void())
-    sut.outputs.appGroups
+    sut.outputs.appsGroups
       .subscribe(onNext: { apps in
         XCTAssertNotNil(apps)
         expectedCallEvent.fulfill()

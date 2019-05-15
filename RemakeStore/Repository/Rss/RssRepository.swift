@@ -25,17 +25,17 @@ final class RssRepository {
 
 extension RssRepository {
 
-	func topGrossing() -> Observable<ResultContent<AppGroup>> {
+	func topGrossing() -> Observable<ResultContent<AppsGroup>> {
 		let endpoint = RssEndpoint(baseUrl: baseUrl, route: .topFree)
 		return httpClient.request(endpoint: endpoint)
 	}
 
-	func newGames() -> Observable<ResultContent<AppGroup>> {
+	func newGames() -> Observable<ResultContent<AppsGroup>> {
 		let endpoint = RssEndpoint(baseUrl: baseUrl, route: .newGames)
 		return httpClient.request(endpoint: endpoint)
 	}
 
-	func topFree() -> Observable<ResultContent<AppGroup>> {
+	func topFree() -> Observable<ResultContent<AppsGroup>> {
 		let endpoint = RssEndpoint(baseUrl: baseUrl, route: .topFree)
 		return httpClient.request(endpoint: endpoint)
 	}

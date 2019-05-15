@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   var rootFlow: RootFlow?
+  var serviceDIContainer: ServiceDIContainer?
   var isUnitTesting: Bool {
     return ProcessInfo.processInfo.environment["UNITTEST"] == "1"
   }
@@ -25,9 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     if false == isUnitTesting {
-      var serviceDIContainer = ServiceDIContainer()
-      let servie = serviceDIContainer.service
-      rootFlow = RootFlow(with: servie)
+      serviceDIContainer = ServiceDIContainer()
+
+      guard let service = serviceDIContainer?.service else {
+        fatalError("Should not be nil")
+      }
+
+      rootFlow = RootFlow(with: service)
       rootFlow?.onDebugNavigate()
       rootFlow?.start(with: window)
     }

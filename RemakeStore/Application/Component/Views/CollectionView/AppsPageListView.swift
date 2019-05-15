@@ -13,7 +13,7 @@ class AppsPageListView: BaseCollectionView {
   private let cellHeight: CGFloat = 300
   private let padding = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
 
-  var appGroups: [AppGroup]?
+  var appsGroups: [AppsGroup]?
 
   override func setupView() {
     super.setupView()
@@ -38,7 +38,7 @@ class AppsPageListView: BaseCollectionView {
 
 extension AppsPageListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return appGroups?.count ?? 0
+    return appsGroups?.count ?? 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,9 +71,9 @@ extension AppsPageListView: UICollectionViewDelegateFlowLayout {
 }
 
 extension Reactive where Base: AppsPageListView {
-  internal var updateAppGroups: Binder<[AppGroup]> {
+  internal var updateAppsGroups: Binder<[AppsGroup]> {
     return Binder(self.base) { base, result in
-      base.appGroups = result
+      base.appsGroups = result
       base.reloadData()
     }
   }
