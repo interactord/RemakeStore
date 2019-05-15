@@ -33,7 +33,7 @@ class AppsHorizontalListViewSpec: XCTestCase {
   }
 
   func test_dataSource_numberOfItemsInSection() {
-    let expectedSectionCount = 10
+    let expectedSectionCount = 0
     sut = AppsHorizontalListView()
 
     guard
