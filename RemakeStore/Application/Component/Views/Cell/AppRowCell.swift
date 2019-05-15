@@ -99,7 +99,7 @@ class AppRowCell: BaseCollectionViewCell {
 
 extension AppRowCell: FeedResultViewModelBindable {
   func bind(to viewModel: FeedResultViewModeling) {
-    viewModel.outputs.name
+    viewModel.outputs.iconImageUrlPath
       .asDriverJustComplete()
       .drive(imageView.rx.loadImage)
       .disposed(by: disposeBag)
@@ -109,7 +109,7 @@ extension AppRowCell: FeedResultViewModelBindable {
       .drive(companyLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.iconImageUrlPath
+    viewModel.outputs.name
       .asDriverJustComplete()
       .drive(nameLabel.rx.text)
       .disposed(by: disposeBag)
