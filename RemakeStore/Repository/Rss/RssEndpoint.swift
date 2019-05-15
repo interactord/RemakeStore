@@ -12,14 +12,13 @@ struct RssEndpoint {
   // MARK: - Private
 
   private let baseUrl: String
-
-  private let route: RssEndpointRoute
+  private let router: RssEndpointRouter
 
   // MARK: - Initializing
 
-  init(baseUrl: String, route: RssEndpointRoute) {
+  init(baseUrl: String, router: RssEndpointRouter) {
     self.baseUrl = baseUrl
-    self.route = route
+    self.router = router
   }
 }
 
@@ -32,7 +31,7 @@ extension RssEndpoint: Endpoint {
   }
 
   public var path: String {
-    return route.rawValue
+    return router.rawValue
   }
 
   public var httpMethod: HTTPMethod {

@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum RssEndpointRoute: String {
+enum RssEndpointRouter: String {
   case topGrossing = "api/v1/us/ios-apps/top-grossing/all/50/explicit.json"
   case newGames = "api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json"
   case topFree = "api/v1/us/ios-apps/top-free/all/50/explicit.json"
