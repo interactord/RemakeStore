@@ -13,7 +13,7 @@ protocol AppsViewModelInput {
 }
 
 protocol AppsViewModelOutput {
-  var appsGroups: Observable<[FeedViewModel]> { get }
+  var appsGroups: Observable<[FeedViewModeling]> { get }
 }
 
 protocol AppsViewModeling {
@@ -42,15 +42,13 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
 
   // MARK: - Outputs
 
-  lazy var appsGroups = Observable
-    .zip(topGrossing, newGames, topFree)
-    .map { [$0, $1, $2] }
-
+  lazy var appsGroups: Observable<[FeedViewModeling]> = Observable
+    .zip([topGrossing, newGames, topFree])
   // MARK: - Private
 
   let rssRepository: RssRepository
 
-  lazy var topGrossing = self.fetchApps
+  lazy var topGrossing: Observable<FeedViewModeling> = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.topGrossing()
     }.map { result -> AppsGroup? in
@@ -64,7 +62,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
     .ignoreNil()
     .map { FeedViewModel(withFeed: $0.feed) }
 
-  lazy var newGames = self.fetchApps
+  lazy var newGames: Observable<FeedViewModeling> = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.newGames()
     }.map { result -> AppsGroup? in
@@ -78,7 +76,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
     .ignoreNil()
     .map { FeedViewModel(withFeed: $0.feed) }
 
-  lazy var topFree = self.fetchApps
+  lazy var topFree: Observable<FeedViewModeling> = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.topFree()
     }.map { result -> AppsGroup? in

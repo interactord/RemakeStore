@@ -9,19 +9,19 @@ import RxSwift
 
 protocol FeedViewModelOutput {
   var title: Observable<String> { get }
-  var feedResultViewModel: Observable<[FeedResultViewModel]> { get }
+  var feedResultViewModel: Observable<[FeedResultViewModeling]> { get }
 }
 
-protocol FeedViewModelModeling {
+protocol FeedViewModeling {
   var outputs: FeedViewModelOutput { get }
 }
 
 protocol FeedViewModelBindable {
-  func bind(to viewModel: FeedViewModelModeling)
+  func bind(to viewModel: FeedViewModeling)
 }
 
 typealias FeedViewModelType =
-  FeedViewModelOutput & FeedViewModelModeling
+  FeedViewModelOutput & FeedViewModeling
 
 class FeedViewModel: FeedViewModelType {
 
@@ -34,7 +34,7 @@ class FeedViewModel: FeedViewModelType {
   // MARK: - Outputs
 
   var title: Observable<String>
-  var feedResultViewModel: Observable<[FeedResultViewModel]>
+  var feedResultViewModel: Observable<[FeedResultViewModeling]>
 
   init(withFeed feed: Feed) {
     self.title = Observable.just(feed.title).observeOn(MainScheduler.asyncInstance)
