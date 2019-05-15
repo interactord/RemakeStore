@@ -9,49 +9,91 @@ import RxSwift
 import SCServiceKit
 
 protocol AppsViewModelInput {
-	var fetchApps: BehaviorSubject<Void?> { get }
+  var fetchApps: BehaviorSubject<Void?> { get }
 }
 
 protocol AppsViewModelOutput {
+  var appGroups: Observable<[AppGroup]> { get }
 }
 
 protocol AppsViewModeling {
-	var inputs: AppsViewModelInput { get }
-	var outputs: AppsViewModelOutput { get }
+  var inputs: AppsViewModelInput { get }
+  var outputs: AppsViewModelOutput { get }
 }
 
 typealias AppsViewModelType =
-	AppsViewModelInput & AppsViewModelOutput & AppsViewModeling
+  AppsViewModelInput & AppsViewModelOutput & AppsViewModeling
 
 class AppsViewModel: ServiceViewModel, AppsViewModelType {
 
-	// MARK: - Inputs & Outputs
+  // MARK: - Inputs & Outputs
 
-	var inputs: AppsViewModelInput {
-		return self
-	}
+  var inputs: AppsViewModelInput {
+    return self
+  }
 
-	var outputs: AppsViewModelOutput {
-		return self
-	}
+  var outputs: AppsViewModelOutput {
+    return self
+  }
 
-	// MARK: - Inputs
-	var fetchApps: BehaviorSubject<Void?> = .init(value: nil)
+  // MARK: - Inputs
 
-	// MARK: - Outputs
+  var fetchApps: BehaviorSubject<Void?> = .init(value: nil)
 
-	// MARK: - Private
+  // MARK: - Outputs
 
-	let rssRepository: RssRepository
+  lazy var appGroups = Observable
+    .zip(topGrossing, newGames, topFree)
+    .map { [$0, $1, $2] }
 
-	// MARK: - Protocol Variables
+  // MARK: - Private
 
-	let service: Service
+  let rssRepository: RssRepository
 
-	// MARK: - Initializing
+  lazy var topGrossing = self.fetchApps
+    .flatMapLatest { [unowned self] _ in
+      self.rssRepository.topGrossing()
+    }.map { result -> AppGroup? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let appGroup):
+        return appGroup
+      }
+    }.ignoreNil()
 
-	init(with service: Service, rssRepository: RssRepository) {
-		self.service = service
-		self.rssRepository = rssRepository
-	}
+  lazy var newGames = self.fetchApps
+    .flatMapLatest { [unowned self] _ in
+      self.rssRepository.newGames()
+    }.map { result -> AppGroup? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let appGroup):
+        return appGroup
+      }
+    }.ignoreNil()
+
+  lazy var topFree = self.fetchApps
+    .flatMapLatest { [unowned self] _ in
+      self.rssRepository.topFree()
+    }.map { result -> AppGroup? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let appGroup):
+        return appGroup
+      }
+    }.ignoreNil()
+
+  // MARK: - Protocol Variables
+
+  let service: Service
+
+  // MARK: - Initializing
+
+  init(with service: Service, rssRepository: RssRepository) {
+    self.service = service
+    self.rssRepository = rssRepository
+  }
 }
