@@ -13,7 +13,7 @@ class AppRowCell: BaseCollectionViewCell {
   lazy var imageView: UIImageView = {
     return ImageViewBuilder()
       .setClipToBounds(true)
-      .setBackgroundColor(.purple)
+      .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
       .setCornerRadius(8)
       .setHeightAnchor(64)
       .setWidthAnchor(64)
@@ -58,7 +58,7 @@ class AppRowCell: BaseCollectionViewCell {
         nameLabel,
         companyLabel
       ])
-      .setAxis(.horizontal)
+      .setAxis(.vertical)
       .setSpacing(4)
       .build()
 
@@ -87,6 +87,13 @@ class AppRowCell: BaseCollectionViewCell {
   override func setupConstant() {
     super.setupConstant()
     stackView.fillSuperView()
+  }
+
+  override func reset() {
+    super.reset()
+    imageView.image = nil
+    nameLabel.text = nil
+    companyLabel.text = nil
   }
 }
 
