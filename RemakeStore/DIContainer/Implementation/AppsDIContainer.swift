@@ -34,13 +34,32 @@ struct AppsDIContainer: DIContainer {
     return repository
   }()
 
+  private(set) lazy var interactordRepository: InteractordRepository = {
+    let baseUrl = "https://astore.interactord.io"
+    let service = self.service
+    container.register(InteractordRepository.self) { _ in
+      InteractordRepository(
+        httpClient: service.httpClient,
+        baseUrl: baseUrl
+      )
+    }.inObjectScope(.weak)
+
+    guard let repository = container.resolve(InteractordRepository.self) else {
+      fatalError("Should be not nil")
+    }
+
+    return repository
+  }()
+
   private(set) lazy var viewModel: AppsViewModel = {
     let service = self.service
     let rssRepository = self.rssRepository
+    let interactordRepository = self.interactordRepository
     container.register(AppsViewModel.self) { _ in
       AppsViewModel(
         with: service,
-        rssRepository: rssRepository
+        rssRepository: rssRepository,
+        interactordRepository: interactordRepository
       )
     }.inObjectScope(.weak)
 

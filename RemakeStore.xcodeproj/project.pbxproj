@@ -10,7 +10,7 @@
 		224128154EC1FDDA232D8680 /* Pods_RemakeStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA642B7F65A96A55E74E669 /* Pods_RemakeStoreTests.framework */; };
 		2904CCB62287155A00D9E743 /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904CCB52287155A00D9E743 /* SearchViewModelSpec.swift */; };
 		2904CCB822871FE500D9E743 /* searchDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2904CCB3228711CA00D9E743 /* searchDummy.json */; };
-		29071A2E228C504400F625C8 /* explicit.json in Resources */ = {isa = PBXBuildFile; fileRef = 29071A2D228C504400F625C8 /* explicit.json */; };
+		29071A2E228C504400F625C8 /* explicitDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 29071A2D228C504400F625C8 /* explicitDummy.json */; };
 		2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC332278B5E500EC7A77 /* AppDelegate.swift */; };
 		2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3A2278B5E600EC7A77 /* Assets.xcassets */; };
 		2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */; };
@@ -51,6 +51,7 @@
 		296D18AB228CB3C1003FECB8 /* InteractordEndpointRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EC350BECCC06F1E0FC7A /* InteractordEndpointRouter.swift */; };
 		296D18AC228CB3C1003FECB8 /* InteractordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE7FE7C5CA0FE5E6F8C1 /* InteractordRepository.swift */; };
 		296D18AD228CB495003FECB8 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E29FDDA6E67487E49E8E /* SocialApp.swift */; };
+		296D18AF228CBC58003FECB8 /* appHeadBannerDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 296D18AE228CBC58003FECB8 /* appHeadBannerDummy.json */; };
 		2972BD58227CC335007AFB9C /* TestCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */; };
 		2972BD5E227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */; };
 		29738CDF227DA4A1001D58FB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29738CDD227DA4A1001D58FB /* SearchController.swift */; };
@@ -212,7 +213,7 @@
 		12B93A2258B0454197B400C7 /* Pods-RemakeStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemakeStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-RemakeStoreTests/Pods-RemakeStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2904CCB3228711CA00D9E743 /* searchDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchDummy.json; sourceTree = "<group>"; };
 		2904CCB52287155A00D9E743 /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
-		29071A2D228C504400F625C8 /* explicit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explicit.json; sourceTree = "<group>"; };
+		29071A2D228C504400F625C8 /* explicitDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explicitDummy.json; sourceTree = "<group>"; };
 		290D7EC4227978370099A3C0 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
 		2910AC302278B5E500EC7A77 /* RemakeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemakeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2910AC332278B5E500EC7A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +243,7 @@
 		29602B7A2278D16300A3A4B8 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		29602B802278D1A200A3A4B8 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		29602B822278D1C900A3A4B8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		296D18AE228CBC58003FECB8 /* appHeadBannerDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = appHeadBannerDummy.json; sourceTree = "<group>"; };
 		2972BD56227CC32A007AFB9C /* TestCollectionViewCellMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCellMock.swift; sourceTree = "<group>"; };
 		2972BD5D227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentClassIdentifiableUICViewSpec.swift; sourceTree = "<group>"; };
 		29738CDD227DA4A1001D58FB /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -440,9 +442,10 @@
 			isa = PBXGroup;
 			children = (
 				2904CCB3228711CA00D9E743 /* searchDummy.json */,
+				296D18AE228CBC58003FECB8 /* appHeadBannerDummy.json */,
 				F426EA4C565581AB42010514 /* lookupDummy.json */,
 				F426E5B1C2B496661123018D /* reviewsDummy.json */,
-				29071A2D228C504400F625C8 /* explicit.json */,
+				29071A2D228C504400F625C8 /* explicitDummy.json */,
 			);
 			path = DummyData;
 			sourceTree = "<group>";
@@ -1147,7 +1150,8 @@
 				2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */,
 				2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */,
 				2904CCB822871FE500D9E743 /* searchDummy.json in Resources */,
-				29071A2E228C504400F625C8 /* explicit.json in Resources */,
+				296D18AF228CBC58003FECB8 /* appHeadBannerDummy.json in Resources */,
+				29071A2E228C504400F625C8 /* explicitDummy.json in Resources */,
 				29E00AB3227C07B3004A7A49 /* env.plist in Resources */,
 				F426ECFA9152D6FA8DC61242 /* lookupDummy.json in Resources */,
 			);

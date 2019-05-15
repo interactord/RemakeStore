@@ -34,18 +34,11 @@ class AppsViewModelSpec: XCTestCase {
   }
 
   func test_fetchApps() {
-    let expectedCallEvent = XCTestExpectation(description: "called event")
-
     sut = makeSUT()
-
     sut.inputs.fetchApps.onNext(Void())
-    sut.outputs.appsGroups
-      .subscribe(onNext: { apps in
-        XCTAssertNotNil(apps)
-        expectedCallEvent.fulfill()
-      }).disposed(by: disposbag)
 
-    wait(for: [expectedCallEvent], timeout: 10.0)
+    XCTAssertNoThrow(try sut.outputs.appsGroups.toBlocking().first())
+    XCTAssertNoThrow(try sut.outputs.socialAppViewModels.toBlocking().first())
 
   }
 
@@ -54,7 +47,10 @@ class AppsViewModelSpec: XCTestCase {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service
     let rssRepository = RssRepository(httpClient: service.httpClient, baseURL: "http://localhost:7000")
+    let interactordRepository = InteractordRepository(httpClient: service.httpClient, baseUrl: "http://localhost:7000")
 
-    return AppsViewModel(with: service, rssRepository: rssRepository)
+    return AppsViewModel(
+      with: service, rssRepository: rssRepository, interactordRepository: interactordRepository
+    )
   }
 }

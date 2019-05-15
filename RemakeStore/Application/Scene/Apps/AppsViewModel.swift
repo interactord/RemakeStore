@@ -14,6 +14,7 @@ protocol AppsViewModelInput {
 
 protocol AppsViewModelOutput {
   var appsGroups: Observable<[FeedViewModeling]> { get }
+  var socialAppViewModels: Observable<[SocialAppViewModeling]> { get }
 }
 
 protocol AppsViewModeling {
@@ -42,13 +43,23 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
 
   // MARK: - Outputs
 
-  lazy var appsGroups: Observable<[FeedViewModeling]> = Observable
+  private(set) lazy var appsGroups: Observable<[FeedViewModeling]> = Observable
     .zip([topGrossing, newGames, topFree])
+
+  private(set) lazy var socialAppViewModels: Observable<[SocialAppViewModeling]> = {
+    let socialApps = self.socialApps
+    return socialApps.map {
+      $0.map {
+        SocialAppViewModel(withSocialApp: $0)
+      }
+    }
+  }()
   // MARK: - Private
 
-  let rssRepository: RssRepository
+  private let rssRepository: RssRepository
+  private let interactordRepository: InteractordRepository
 
-  lazy var topGrossing: Observable<FeedViewModeling> = self.fetchApps
+  private lazy var topGrossing: Observable<FeedViewModeling> = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.topGrossing()
     }.map { result -> AppsGroup? in
@@ -62,7 +73,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
     .ignoreNil()
     .map { FeedViewModel(withFeed: $0.feed) }
 
-  lazy var newGames: Observable<FeedViewModeling> = self.fetchApps
+  private lazy var newGames: Observable<FeedViewModeling> = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.newGames()
     }.map { result -> AppsGroup? in
@@ -76,7 +87,7 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
     .ignoreNil()
     .map { FeedViewModel(withFeed: $0.feed) }
 
-  lazy var topFree: Observable<FeedViewModeling> = self.fetchApps
+  private lazy var topFree: Observable<FeedViewModeling> = self.fetchApps
     .flatMapLatest { [unowned self] _ in
       self.rssRepository.topFree()
     }.map { result -> AppsGroup? in
@@ -90,14 +101,30 @@ class AppsViewModel: ServiceViewModel, AppsViewModelType {
     .ignoreNil()
     .map { FeedViewModel(withFeed: $0.feed) }
 
+  private lazy var socialApps: Observable<[SocialApp]> = {
+    let fetchApps = self.fetchApps
+    let interactordRepository = self.interactordRepository
+
+    return fetchApps.flatMapLatest { _ in
+      interactordRepository.socialApp()
+    }.map { result -> [SocialApp]? in
+      switch result {
+      case .noContent:
+        return nil
+      case .value(let socialApps):
+        return socialApps
+      }
+    }.ignoreNil()
+  }()
   // MARK: - Protocol Variables
 
   let service: Service
 
   // MARK: - Initializing
 
-  init(with service: Service, rssRepository: RssRepository) {
+  init(with service: Service, rssRepository: RssRepository, interactordRepository: InteractordRepository) {
     self.service = service
     self.rssRepository = rssRepository
+    self.interactordRepository = interactordRepository
   }
 }
