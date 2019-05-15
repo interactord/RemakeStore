@@ -42,6 +42,6 @@ class SocialAppViewModel: SocialAppViewModelType {
 
     name = socialAppAction.map { $0.name }
     imageUrlPath = socialAppAction.map { $0.imageUrl }
-    tagLine = socialAppAction.map { $0.tagLine }
+    tagLine = socialAppAction.map { $0.tagline }
   }
 }

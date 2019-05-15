@@ -42,7 +42,7 @@ class SocialAppViewModelSpec: XCTestCase {
 
   func makeSocialAppData() -> SocialApp {
     return SocialApp(
-      id: "123", name: "test title", imageUrl: "test-image.com", tagLine: "test tag"
+      id: "123", name: "test title", imageUrl: "test-image.com", tagline: "test tag"
     )
   }
 }
