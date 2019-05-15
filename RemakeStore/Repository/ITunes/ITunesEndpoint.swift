@@ -25,6 +25,7 @@ struct ITunesEndpoint {
 extension ITunesEndpoint: Endpoint {
 
   // MARK: - functions for protocol
+
   public var baseURL: String {
     return baseUrl
   }
