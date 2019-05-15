@@ -7,6 +7,8 @@ import UIKit
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxSwift
+import RxCocoa
 
 class AppsController: BaseController {
 
@@ -44,7 +46,6 @@ class AppsController: BaseController {
   override func setupConstraints() {
     super.setupConstraints()
     appGroupListView.fillSuperView()
-    appGroupListView.fillSuperView()
   }
 
   override func setupNavigation() {
@@ -59,6 +60,14 @@ extension AppsController: ViewModelBased {
   // MARK: - functions for protocol
 
   func bindViewModel() {
-    print("AppsController")
+    viewWillAppearAction
+      .bind(to: viewModel.inputs.fetchApps)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.appGroups
+      .asDriverJustComplete()
+      .drive(appGroupListView.rx.updateAppGroups)
+      .disposed(by: disposeBag)
+
   }
 }
