@@ -9,6 +9,6 @@ class TodayListView: BaseCollectionView {
 
   override func setupView() {
     super.setupView()
-    backgroundColor = .white
+    backgroundColor = DefaultTheme.Color.secondaryColor
   }
 }
