@@ -12,7 +12,7 @@ class TodayHeader: BaseCollectionReusableView {
 
   private lazy var dateLebel: UILabel = {
     return LabelBuilder()
-      .setText("THURSDAY, APRIL 5")
+      .setText(Date().convertDateFormat("EEE, MMM d"))
       .setFont(DefaultTheme.Font.subhead)
       .build()
   }()

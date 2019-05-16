@@ -16,6 +16,7 @@
 		2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */; };
 		2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */; };
 		292030C5228DC85000CEC624 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE84B9CCE2768868F9D1 /* UIView+Animation.swift */; };
+		292030C9228DD4C100CEC624 /* Date+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292030C8228DD4C100CEC624 /* Date+Convert.swift */; };
 		29428FC2227D82AE00BD688D /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC1227D82AE00BD688D /* DashboardController.swift */; };
 		29428FC4227D833F00BD688D /* UINavigationControllerStyleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC3227D833F00BD688D /* UINavigationControllerStyleSpec.swift */; };
 		29428FC8227D854B00BD688D /* BaseFlowSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC7227D854B00BD688D /* BaseFlowSpec.swift */; };
@@ -237,6 +238,7 @@
 		2910AC442278B5E600EC7A77 /* RemakeStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemakeStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemakeStoreTests.swift; sourceTree = "<group>"; };
 		2910AC4A2278B5E600EC7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292030C8228DD4C100CEC624 /* Date+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Convert.swift"; sourceTree = "<group>"; };
 		29428FC1227D82AE00BD688D /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		29428FC3227D833F00BD688D /* UINavigationControllerStyleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerStyleSpec.swift; sourceTree = "<group>"; };
 		29428FC7227D854B00BD688D /* BaseFlowSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlowSpec.swift; sourceTree = "<group>"; };
@@ -535,6 +537,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		292030C6228DD2EC00CEC624 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				292030C8228DD4C100CEC624 /* Date+Convert.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		29428FBF227D746C00BD688D /* UINavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,9 +727,9 @@
 		29E8A576227C268600E7A894 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				292030C6228DD2EC00CEC624 /* Date */,
 				292030C4228DC7C700CEC624 /* UIView */,
 				2942A17A228A1FDE00D35C6B /* CGFloat */,
-				29EC1E472289DA090029BE06 /* UICollectionView */,
 				29428FBF227D746C00BD688D /* UINavigationController */,
 				F426E4EF30057EF10F804DA5 /* PropertyListDecoder */,
 				F426E8B91252ABDCC95CFDBE /* Reuseable */,
@@ -775,13 +785,6 @@
 				F426EBE830F1AF0E41F56885 /* TodayDIContainerSpec.swift */,
 			);
 			path = Implementation;
-			sourceTree = "<group>";
-		};
-		29EC1E472289DA090029BE06 /* UICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		74DA93D96DA30380D8FEF817 /* Pods */ = {
@@ -1437,6 +1440,7 @@
 				2942A173228A13A400D35C6B /* AppsHeaderHorizontalListView.swift in Sources */,
 				F426E38CDE646CD2D3CE8DE2 /* DefaultTheme+Font.swift in Sources */,
 				F426ED085E1ECC4C35B57943 /* AppDetailDIContainer.swift in Sources */,
+				292030C9228DD4C100CEC624 /* Date+Convert.swift in Sources */,
 				F426EC76E75469218E9BA62A /* Lookup.swift in Sources */,
 				F426E0829D5EDFE77106D866 /* ServiceViewModel.swift in Sources */,
 				F426E92CE77C334D41F54574 /* ViewModelBase.swift in Sources */,
