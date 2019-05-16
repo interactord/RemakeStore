@@ -8,7 +8,7 @@ import UIKit
 extension DefaultTheme {
 	struct Font {
 		static var largeTitle: UIFont {
-      return .systemFont(ofSize: 34, weight: .regular)
+      return .systemFont(ofSize: 34, weight: .bold)
     }
 
     static var title1: UIFont {
