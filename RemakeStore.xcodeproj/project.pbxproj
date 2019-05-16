@@ -17,6 +17,7 @@
 		2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */; };
 		292030C5228DC85000CEC624 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE84B9CCE2768868F9D1 /* UIView+Animation.swift */; };
 		292030C9228DD4C100CEC624 /* Date+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292030C8228DD4C100CEC624 /* Date+Convert.swift */; };
+		292030CC228DE16F00CEC624 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292030CB228DE16F00CEC624 /* UIColor+Hex.swift */; };
 		29428FC2227D82AE00BD688D /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC1227D82AE00BD688D /* DashboardController.swift */; };
 		29428FC4227D833F00BD688D /* UINavigationControllerStyleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC3227D833F00BD688D /* UINavigationControllerStyleSpec.swift */; };
 		29428FC8227D854B00BD688D /* BaseFlowSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FC7227D854B00BD688D /* BaseFlowSpec.swift */; };
@@ -239,6 +240,7 @@
 		2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemakeStoreTests.swift; sourceTree = "<group>"; };
 		2910AC4A2278B5E600EC7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		292030C8228DD4C100CEC624 /* Date+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Convert.swift"; sourceTree = "<group>"; };
+		292030CB228DE16F00CEC624 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		29428FC1227D82AE00BD688D /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		29428FC3227D833F00BD688D /* UINavigationControllerStyleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerStyleSpec.swift; sourceTree = "<group>"; };
 		29428FC7227D854B00BD688D /* BaseFlowSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlowSpec.swift; sourceTree = "<group>"; };
@@ -545,6 +547,14 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		292030CD228DE26600CEC624 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				292030CB228DE16F00CEC624 /* UIColor+Hex.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		29428FBF227D746C00BD688D /* UINavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +737,7 @@
 		29E8A576227C268600E7A894 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				292030CD228DE26600CEC624 /* UIColor */,
 				292030C6228DD2EC00CEC624 /* Date */,
 				292030C4228DC7C700CEC624 /* UIView */,
 				2942A17A228A1FDE00D35C6B /* CGFloat */,
@@ -1435,6 +1446,7 @@
 				F426E2CA1A882C63D3B1E165 /* Theme.swift in Sources */,
 				F426EDE56EC184AD7572DDFE /* DefaultTheme.swift in Sources */,
 				296D18AC228CB3C1003FECB8 /* InteractordRepository.swift in Sources */,
+				292030CC228DE16F00CEC624 /* UIColor+Hex.swift in Sources */,
 				2942A16F228A031F00D35C6B /* BaseCollectionReusableView.swift in Sources */,
 				F426E651C955FA717E0F0BB6 /* DefaultTheme+Color.swift in Sources */,
 				2942A173228A13A400D35C6B /* AppsHeaderHorizontalListView.swift in Sources */,
