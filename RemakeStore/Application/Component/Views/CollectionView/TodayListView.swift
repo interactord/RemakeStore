@@ -49,7 +49,6 @@ extension TodayListView: UICollectionViewDataSource {
 
 	public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		let header: TodayHeader = collectionView.dequeueReusableCell(kind: kind, indexPath: indexPath)
-		header.backgroundColor = .yellow
 		return header
 	}
 }
