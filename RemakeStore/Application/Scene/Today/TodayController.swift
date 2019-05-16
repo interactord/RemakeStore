@@ -6,6 +6,7 @@
 import UIKit
 
 import SCLayoutKit
+import SCUIBuildKit
 
 class TodayController: BaseController {
 
@@ -13,10 +14,22 @@ class TodayController: BaseController {
 
   var viewModel: TodayViewModel!
 
-  lazy var todayListView: TodayListView = {
+  // MARK: - Private
+
+  private lazy var todayListView: TodayListView = {
     let listView = TodayListView()
     view.addSubview(listView)
     return listView
+  }()
+
+  private lazy var capView: UIView = {
+    let capView = ViewBuilder()
+      .setBackgroundColor(DefaultTheme.Color.secondaryColor)
+      .setHeightAnchor(UIApplication.shared.statusBarFrame.height)
+      .build()
+
+    view.addSubview(capView)
+    return capView
   }()
 
   override func viewDidLoad() {
@@ -26,7 +39,17 @@ class TodayController: BaseController {
 
   override func setupConstraints() {
     super.setupConstraints()
-    todayListView.fillSuperView()
+
+    capView
+      .setTopAnchor(view.topAnchor)
+      .setLeadingAnchor(view.leadingAnchor)
+      .setTrailingAnchor(view.trailingAnchor)
+
+    todayListView
+      .setTopAnchor(capView.bottomAnchor)
+      .setLeadingAnchor(view.leadingAnchor)
+      .setBottomAnchor(view.bottomAnchor)
+      .setTrailingAnchor(view.trailingAnchor)
   }
 
 }
