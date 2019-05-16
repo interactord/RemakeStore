@@ -141,6 +141,7 @@
 		F426E977F1F27E9BFDAB8492 /* FlowContributor+AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */; };
 		F426E97BBEA519C6115765B3 /* AppDetailResultViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
+		F426EA13C41B303C333E312A /* TodayControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E877488A69AF12346700 /* TodayControllerSpec.swift */; };
 		F426EA47088D319BB0B235CA /* PropertyListDecoder+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5D5DAF942F15B29F8F0 /* PropertyListDecoder+Decodable.swift */; };
 		F426EA706614B94DDDF231EB /* MusicFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE011039147A4A77BB8B /* MusicFlow.swift */; };
 		F426EAAA3E695B11ED156E00 /* AppsHorizontalListViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB086B4C4C73E892F823 /* AppsHorizontalListViewSpec.swift */; };
@@ -177,6 +178,7 @@
 		F426EEBC30EFD509BBB1ADDD /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA07B7FE30016BECBBEB /* TodayViewModel.swift */; };
 		F426EECC2FCF75C89A0350D5 /* CellContentClassIdentifiable+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7837EE8B7B1E88D452B /* CellContentClassIdentifiable+UITableView.swift */; };
 		F426EF2100C68C3EF9E20E8A /* ITunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E514EFBA96FD2BCF230A /* ITunesRepository.swift */; };
+		F426EF3176AB8303AE4B8036 /* TodayViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E92FCFEFA8526D6690CF /* TodayViewModelSpec.swift */; };
 		F426EF32B8148F412E37CB89 /* ViewModelBaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDEEF408AF355C375669 /* ViewModelBaseSpec.swift */; };
 		F426EF3D8D2AAF11B18FB790 /* RxUIImageView+moa.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ECD783034BE29ED4C9BD /* RxUIImageView+moa.swift */; };
 		F426EF51D46E77CDFD731E8D /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E6DB7DEBCA49942079FD /* SearchResultCell.swift */; };
@@ -337,12 +339,14 @@
 		F426E80E6DB9428149B9B55D /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		F426E837FBFDC52CAF4E9017 /* DefaultTheme+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultTheme+Font.swift"; sourceTree = "<group>"; };
 		F426E8635FF9B9E626825186 /* ReviewsEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsEntryViewModel.swift; sourceTree = "<group>"; };
+		F426E877488A69AF12346700 /* TodayControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayControllerSpec.swift; sourceTree = "<group>"; };
 		F426E8C9D74C7E0F81ADBF87 /* AppDetailDIContainerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailDIContainerSpec.swift; sourceTree = "<group>"; };
 		F426E8D70FA591EECC54ED90 /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 		F426E8E3FD9EE2A483F64CF3 /* AppDetailDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailDIContainer.swift; sourceTree = "<group>"; };
 		F426E8F514E5DD15DB5B8D89 /* ViewModelBasedTableViewCellMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBasedTableViewCellMock.swift; sourceTree = "<group>"; };
 		F426E907ED3C307558A31EA7 /* HorizontalSnappingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingLayout.swift; sourceTree = "<group>"; };
 		F426E91A58E5D003781B6A7C /* ITunesEndpointRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesEndpointRouter.swift; sourceTree = "<group>"; };
+		F426E92FCFEFA8526D6690CF /* TodayViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModelSpec.swift; sourceTree = "<group>"; };
 		F426E938497457A4244A65FC /* BaseCollectionViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewSpec.swift; sourceTree = "<group>"; };
 		F426E95CC21BCE405E8445C5 /* ReviewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCellSpec.swift; sourceTree = "<group>"; };
 		F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowContributor+AppStep.swift"; sourceTree = "<group>"; };
@@ -797,7 +801,9 @@
 			isa = PBXGroup;
 			children = (
 				F426ED048BA6149140C83A59 /* TodayController.swift */,
+				F426E877488A69AF12346700 /* TodayControllerSpec.swift */,
 				F426EA07B7FE30016BECBBEB /* TodayViewModel.swift */,
+				F426E92FCFEFA8526D6690CF /* TodayViewModelSpec.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -1502,6 +1508,8 @@
 				F426E2CF3657F5B5C63F5898 /* RootFlowSpec.swift in Sources */,
 				F426EE861DACF730B33FF4B6 /* LaunchFlowSpec.swift in Sources */,
 				F426E63E80466C9A479B33B4 /* SocialAppViewModelSpec.swift in Sources */,
+				F426EA13C41B303C333E312A /* TodayControllerSpec.swift in Sources */,
+				F426EF3176AB8303AE4B8036 /* TodayViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
