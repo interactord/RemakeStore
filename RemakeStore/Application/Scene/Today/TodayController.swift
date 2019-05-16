@@ -13,7 +13,13 @@ class TodayController: BaseController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .green
+    view.backgroundColor = .white
+  }
+
+  override func setupNavigation() {
+    super.setupNavigation()
+
+    navigationItem.title = "Today"
   }
 
 }

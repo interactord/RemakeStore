@@ -33,6 +33,27 @@ class TodayFlow: BaseFlow {
 	// MARK: - functions for protocol
 
 	internal func navigate(to step: AppStep) -> FlowContributors {
-		return .none
+		switch step {
+		case .dashboardIsComplete:
+			return navigateToTodayScreen()
+		default:
+			return .none
+		}
+	}
+}
+
+extension TodayFlow {
+
+	private func navigateToTodayScreen() -> FlowContributors {
+		var container = TodayDIContainer(with: service)
+		let controller = container.getController()
+		rootViewController.setViewControllers([controller], animated: false)
+
+		let contributor = FlowContributor.contribute(
+			withNextPresentable: controller,
+			withNextStepper: controller
+		)
+
+		return .one(flowContributor: contributor)
 	}
 }

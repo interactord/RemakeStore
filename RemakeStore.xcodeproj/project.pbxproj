@@ -112,6 +112,7 @@
 		F426E4FA707BDDFD7C821DAD /* TodayDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EEED0DD47BD52266F147 /* TodayDIContainer.swift */; };
 		F426E50D6DCF9031D1C6C4F8 /* PreviewScreenshotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA56C4D0791B6BBE2B7C /* PreviewScreenshotsView.swift */; };
 		F426E519AB2C066645E5444B /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED048BA6149140C83A59 /* TodayController.swift */; };
+		F426E578C1083504DE4AAD29 /* TodayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E471C3710024AEA566DD /* TodayListView.swift */; };
 		F426E58B605E7B372CBC59F9 /* AppsGroupCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E68FF28458E476C9E6B7 /* AppsGroupCellSpec.swift */; };
 		F426E5BD3000DF98382F1770 /* AppDetailResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */; };
 		F426E5FAE2D41B21650EC751 /* ReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E222E508A49332F48150 /* ReviewListView.swift */; };
@@ -141,6 +142,7 @@
 		F426E977F1F27E9BFDAB8492 /* FlowContributor+AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */; };
 		F426E97BBEA519C6115765B3 /* AppDetailResultViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */; };
 		F426E98400CE2377738F6D39 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E80E6DB9428149B9B55D /* AppStep.swift */; };
+		F426E9C10133163B21C8D541 /* TodayListViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */; };
 		F426EA13C41B303C333E312A /* TodayControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E877488A69AF12346700 /* TodayControllerSpec.swift */; };
 		F426EA47088D319BB0B235CA /* PropertyListDecoder+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5D5DAF942F15B29F8F0 /* PropertyListDecoder+Decodable.swift */; };
 		F426EA706614B94DDDF231EB /* MusicFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE011039147A4A77BB8B /* MusicFlow.swift */; };
@@ -310,6 +312,7 @@
 		F426E41FDF99415E5008F5E7 /* TestViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModelMock.swift; sourceTree = "<group>"; };
 		F426E440DCBF8BDB60A28573 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F426E45D37734DAA3D653DDA /* CellContentClassIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellContentClassIdentifiable.swift; sourceTree = "<group>"; };
+		F426E471C3710024AEA566DD /* TodayListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayListView.swift; sourceTree = "<group>"; };
 		F426E4CDFDC498C5421C6D9D /* AppsControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsControllerSpec.swift; sourceTree = "<group>"; };
 		F426E4D038F940DA89285322 /* DefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		F426E4D4907FC2A213BEAC57 /* AppDetailControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailControllerSpec.swift; sourceTree = "<group>"; };
@@ -383,6 +386,7 @@
 		F426ECD783034BE29ED4C9BD /* RxUIImageView+moa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxUIImageView+moa.swift"; sourceTree = "<group>"; };
 		F426ECF4466C908866DEC93B /* LookupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookupViewModel.swift; sourceTree = "<group>"; };
 		F426ED048BA6149140C83A59 /* TodayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
+		F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayListViewSpec.swift; sourceTree = "<group>"; };
 		F426ED6E1DED8DDC3412EAE1 /* AppsHorizontalListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsHorizontalListView.swift; sourceTree = "<group>"; };
 		F426EDA56EF2FD19773DAF01 /* UIButton+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		F426EDACC2A69F07BE5499AF /* AppsPageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsPageListView.swift; sourceTree = "<group>"; };
@@ -861,6 +865,8 @@
 				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
 				F426EEDD4FB709D5F719561F /* SearchResultView.swift */,
 				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
+				F426E471C3710024AEA566DD /* TodayListView.swift */,
+				F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1438,6 +1444,7 @@
 				F426E4DD6CF09D6A87E04698 /* ITunesEndpoint.swift in Sources */,
 				F426EF2100C68C3EF9E20E8A /* ITunesRepository.swift in Sources */,
 				F426E76A360CD71716DEE773 /* SocialAppViewModel.swift in Sources */,
+				F426E578C1083504DE4AAD29 /* TodayListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,6 +1517,7 @@
 				F426E63E80466C9A479B33B4 /* SocialAppViewModelSpec.swift in Sources */,
 				F426EA13C41B303C333E312A /* TodayControllerSpec.swift in Sources */,
 				F426EF3176AB8303AE4B8036 /* TodayViewModelSpec.swift in Sources */,
+				F426E9C10133163B21C8D541 /* TodayListViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

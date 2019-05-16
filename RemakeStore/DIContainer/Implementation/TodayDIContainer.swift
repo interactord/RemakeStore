@@ -17,7 +17,7 @@ struct TodayDIContainer: DIContainer {
 
 	private let service: Service
 
-	private lazy var viewModel: TodayViewModel = {
+	private(set) lazy var viewModel: TodayViewModel = {
 		let service = self.service
 		container.register(TodayViewModel.self) { _ in
 			TodayViewModel(with: service)
@@ -29,7 +29,7 @@ struct TodayDIContainer: DIContainer {
 		return viewModel
 	}()
 
-	private lazy var controller: TodayController = {
+	private(set) lazy var controller: TodayController = {
 		container.register(TodayController.self) { _ in
 			TodayController()
 		}.inObjectScope(.weak)
@@ -43,10 +43,9 @@ struct TodayDIContainer: DIContainer {
 		return controller
 	}()
 
-	lazy var navigationController: UINavigationController = {
-		let controller = self.controller
+	private(set) public lazy var navigationController: UINavigationController = {
 		container.register(UINavigationController.self) { _ -> UINavigationController in
-			UINavigationController(rootViewController: controller)
+			UINavigationController()
 		}.inObjectScope(.weak)
 
 		guard let navController = container.resolve(UINavigationController.self) else {
@@ -63,4 +62,11 @@ struct TodayDIContainer: DIContainer {
 		self.service = service
 		container = Container()
 	}
+
+	// MARK: Public
+
+ mutating func getController() -> TodayController {
+	 return self.controller
+ }
+
 }
