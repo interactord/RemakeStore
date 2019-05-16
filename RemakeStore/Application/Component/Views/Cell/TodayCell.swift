@@ -5,7 +5,7 @@
 
 import UIKit
 
-class TodayCell: BaseCollectionViewCell {
+class TodayCell: BaseTodayCell {
 }
 
 extension TodayCell: CellContentClassIdentifiable {

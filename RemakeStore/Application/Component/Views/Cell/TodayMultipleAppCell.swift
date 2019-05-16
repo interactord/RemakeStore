@@ -5,7 +5,7 @@
 
 import UIKit
 
-class TodayMultipleAppCell: BaseCollectionViewCell {
+class TodayMultipleAppCell: BaseTodayCell {
 }
 
 extension TodayMultipleAppCell: CellContentClassIdentifiable {

@@ -44,7 +44,6 @@ extension TodayListView: UICollectionViewDataSource {
 
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell: TodayCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-		cell.backgroundColor = .red
 		return cell
 	}
 
