@@ -10,7 +10,7 @@ import SCUIBuildKit
 
 class TodayHeader: BaseCollectionReusableView {
 
-  private lazy var dateLebel: UILabel = {
+  private lazy var dateLabel: UILabel = {
     return LabelBuilder()
       .setText(Date().convertDateFormat("EEE, MMM d"))
       .setFont(DefaultTheme.Font.subhead)
@@ -37,7 +37,7 @@ class TodayHeader: BaseCollectionReusableView {
   private lazy var stackView: UIStackView = {
     let verticalStackView = StackViewBuilder(
       arrangedSubViews: [
-        self.dateLebel,
+        self.dateLabel,
         self.todayLabel
       ])
       .setAxis(.vertical)
