@@ -8,7 +8,7 @@ import UIKit
 import SCUIBuildKit
 import SCLayoutKit
 
-class TodayCell: BaseTodayCell {
+class TodayFullBackgroundCell: BaseTodayCell {
 
   // MARK: Public
 
@@ -64,5 +64,5 @@ class TodayCell: BaseTodayCell {
   }
 }
 
-extension TodayCell: CellContentClassIdentifiable {
+extension TodayFullBackgroundCell: CellContentClassIdentifiable {
 }

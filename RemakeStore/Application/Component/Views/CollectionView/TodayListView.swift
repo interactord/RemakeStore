@@ -17,7 +17,7 @@ class TodayListView: BaseCollectionView {
 
 	override func registerCell() {
 		super.registerCell()
-		register(cellType: TodayCell.self)
+		register(cellType: TodayFullBackgroundCell.self)
 		register(cellType: TodayMultipleAppCell.self)
 		register(kind: UICollectionView.elementKindSectionHeader, reusableViewType: TodayHeader.self)
 	}
@@ -43,7 +43,7 @@ extension TodayListView: UICollectionViewDataSource {
 	}
 
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell: TodayCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+		let cell: TodayFullBackgroundCell = collectionView.dequeueReusableCell(indexPath: indexPath)
 		return cell
 	}
 

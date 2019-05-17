@@ -55,7 +55,7 @@ class TodayListViewSpec: XCTestCase {
 
     let resultCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
 
-    XCTAssertNotNil(resultCell as? TodayCell)
+    XCTAssertNotNil(resultCell as? TodayFullBackgroundCell)
   }
 
   func test_dataSource_viewForSupplementaryElementOfKind() {
