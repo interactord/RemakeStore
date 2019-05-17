@@ -16,19 +16,12 @@ class TodayCell: BaseTodayCell {
 
   // MARK: - Private
 
-  private lazy var imageView: UIImageView = {
+  private lazy var backgroundImageView: UIImageView = {
     return ImageViewBuilder()
-      .setImage(#imageLiteral(resourceName: "Garden"))
+      .setImage(#imageLiteral(resourceName: "2019-05-18-cinema-bacground-v01"))
       .setContentMode(.scaleAspectFill)
       .setClipToBounds(true)
       .build()
-  }()
-
-  private lazy var imageContainerView: UIView = {
-    let view = UIView()
-    view.addSubview(imageView)
-    imageView.centerInSuperview(size: .init(width: 240, height: 240))
-    return view
   }()
 
   private lazy var descriptionLabel: UILabel = {
@@ -44,7 +37,7 @@ class TodayCell: BaseTodayCell {
       arrangedSubViews: [
         categoryLabel,
         titleLabel,
-        imageContainerView,
+        UIView(),
         descriptionLabel
       ])
       .setAxis(.vertical)
@@ -54,11 +47,13 @@ class TodayCell: BaseTodayCell {
 
   override func setupSubView() {
     super.setupSubView()
+    addSubview(backgroundImageView)
     addSubview(stackView)
   }
 
   override func setupConstant() {
     super.setupConstant()
+    backgroundImageView.fillSuperView()
     stackView
       .setLeadingAnchor(leadingAnchor, padding: 24)
       .setBottomAnchor(bottomAnchor, padding: 24)
