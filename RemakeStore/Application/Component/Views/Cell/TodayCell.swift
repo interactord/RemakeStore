@@ -16,20 +16,6 @@ class TodayCell: BaseTodayCell {
 
   // MARK: - Private
 
-  private lazy var categoryLabel: UILabel = {
-    return LabelBuilder()
-      .setText("CATEGORY LABEL")
-      .setFont(DefaultTheme.Font.title3)
-      .build()
-  }()
-
-  private lazy var titleLabel: UILabel = {
-    return LabelBuilder()
-      .setText("TITLE LABEL")
-      .setFont(DefaultTheme.Font.title1)
-      .build()
-  }()
-
   private lazy var imageView: UIImageView = {
     return ImageViewBuilder()
       .setImage(#imageLiteral(resourceName: "Garden"))

@@ -11,6 +11,22 @@ import SCLayoutKit
 
 class BaseTodayCell: BaseCollectionViewCell {
 
+  lazy var categoryLabel: UILabel = {
+    return LabelBuilder()
+      .setText("CATEGORY LABEL")
+      .setFont(DefaultTheme.Font.title3)
+      .build()
+  }()
+
+  lazy var titleLabel: UILabel = {
+    return LabelBuilder()
+      .setText("TITLE LABEL")
+      .setFont(DefaultTheme.Font.title1)
+      .build()
+  }()
+
+  // MARK: - Private
+
   private let scaleRatio: CGFloat = 0.9
 
   private lazy var replacedBackgroundView: UIView? = {
