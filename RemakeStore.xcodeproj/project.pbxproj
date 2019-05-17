@@ -12,8 +12,8 @@
 		2904CCB822871FE500D9E743 /* searchDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2904CCB3228711CA00D9E743 /* searchDummy.json */; };
 		29071A2E228C504400F625C8 /* explicitDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 29071A2D228C504400F625C8 /* explicitDummy.json */; };
 		290C9344228EF6C400AE5D41 /* TodayMultipleAppListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E010751CFF01183BE391 /* TodayMultipleAppListView.swift */; };
+		290C9348228F1ED100AE5D41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290C9347228F1ED100AE5D41 /* Assets.xcassets */; };
 		2910AC342278B5E500EC7A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC332278B5E500EC7A77 /* AppDelegate.swift */; };
-		2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3A2278B5E600EC7A77 /* Assets.xcassets */; };
 		2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */; };
 		2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910AC482278B5E600EC7A77 /* RemakeStoreTests.swift */; };
 		292030C5228DC85000CEC624 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EE84B9CCE2768868F9D1 /* UIView+Animation.swift */; };
@@ -236,10 +236,10 @@
 		2904CCB3228711CA00D9E743 /* searchDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchDummy.json; sourceTree = "<group>"; };
 		2904CCB52287155A00D9E743 /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
 		29071A2D228C504400F625C8 /* explicitDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explicitDummy.json; sourceTree = "<group>"; };
+		290C9347228F1ED100AE5D41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		290D7EC4227978370099A3C0 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
 		2910AC302278B5E500EC7A77 /* RemakeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemakeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2910AC332278B5E500EC7A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2910AC3A2278B5E600EC7A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2910AC3D2278B5E600EC7A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2910AC3F2278B5E600EC7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2910AC442278B5E600EC7A77 /* RemakeStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemakeStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -691,7 +691,7 @@
 		29602B862278D26900A3A4B8 /* zResource */ = {
 			isa = PBXGroup;
 			children = (
-				2910AC3A2278B5E600EC7A77 /* Assets.xcassets */,
+				290C9347228F1ED100AE5D41 /* Assets.xcassets */,
 				2910AC3C2278B5E600EC7A77 /* LaunchScreen.storyboard */,
 				2910AC3F2278B5E600EC7A77 /* Info.plist */,
 				29E00AB2227C07B3004A7A49 /* env.plist */,
@@ -1238,11 +1238,11 @@
 			files = (
 				29B61634228783F2008CD2A1 /* reviewsDummy.json in Resources */,
 				2910AC3E2278B5E600EC7A77 /* LaunchScreen.storyboard in Resources */,
-				2910AC3B2278B5E600EC7A77 /* Assets.xcassets in Resources */,
 				2904CCB822871FE500D9E743 /* searchDummy.json in Resources */,
 				296D18AF228CBC58003FECB8 /* appHeadBannerDummy.json in Resources */,
 				29071A2E228C504400F625C8 /* explicitDummy.json in Resources */,
 				29E00AB3227C07B3004A7A49 /* env.plist in Resources */,
+				290C9348228F1ED100AE5D41 /* Assets.xcassets in Resources */,
 				F426ECFA9152D6FA8DC61242 /* lookupDummy.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

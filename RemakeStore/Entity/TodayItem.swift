@@ -5,12 +5,14 @@
 
 import UIKit
 
-struct TodayItem {
+struct TodayItem: Decodable {
   let category: String
-  let imageUrl: String?
+  let title: String
+  let imageUrl: String
   let description: String
-  let backgroundColor: String
+  let theme: String
   let cellType: String
-  let rssUrl: String?
+  let rssUrl: String
+  let lookupUrl: String
   let appGroup: AppsGroup?
 }
