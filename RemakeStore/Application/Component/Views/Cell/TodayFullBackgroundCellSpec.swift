@@ -8,19 +8,19 @@ import XCTest
 @testable import RemakeStore
 
 class TodayFullBackgroundCellSpec: XCTestCase {
-	var sut: TodayFullBackgroundCell?
+  var sut: TodayFullBackgroundCell?
 
-	override func setUp() {
-		super.setUp()
-	}
+  override func setUp() {
+    super.setUp()
+  }
 
-	override func tearDown() {
-		super.tearDown()
-		sut = nil
-	}
+  override func tearDown() {
+    super.tearDown()
+    sut = nil
+  }
 
-	func test_init() {
-		sut = TodayFullBackgroundCell()
-		XCTAssertNotNil(sut)
-	}
+  func test_init() {
+    sut = TodayFullBackgroundCell()
+    XCTAssertNotNil(sut)
+  }
 }

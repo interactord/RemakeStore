@@ -8,19 +8,19 @@ import XCTest
 @testable import RemakeStore
 
 class TodayMultipleAppCellSpec: XCTestCase {
-	var sut: TodayMultipleAppCell?
+  var sut: TodayMultipleAppCell?
 
-	override func setUp() {
-		super.setUp()
-	}
+  override func setUp() {
+    super.setUp()
+  }
 
-	override func tearDown() {
-		super.tearDown()
-		sut = nil
-	}
+  override func tearDown() {
+    super.tearDown()
+    sut = nil
+  }
 
-	func test_init() {
-		sut = TodayMultipleAppCell()
-		XCTAssertNotNil(sut)
-	}
+  func test_init() {
+    sut = TodayMultipleAppCell()
+    XCTAssertNotNil(sut)
+  }
 }
