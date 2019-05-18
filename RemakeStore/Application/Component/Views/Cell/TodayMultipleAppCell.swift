@@ -16,15 +16,21 @@ class TodayMultipleAppCell: BaseTodayCell {
     return listView
   }()
 
+  private let spacingView: UIView = {
+    return ViewBuilder()
+      .setHeightAnchor(30)
+      .build()
+  }()
+
   private lazy var stackView: UIStackView = {
     return StackViewBuilder(
       arrangedSubViews: [
         categoryLabel,
         titleLabel,
+        spacingView,
         todayMultipleAppListView
       ])
       .setAxis(.vertical)
-      .setSpacing(12)
       .build()
   }()
 
@@ -39,14 +45,33 @@ class TodayMultipleAppCell: BaseTodayCell {
       padding: .init(top: 24, left: 24, bottom: 24, right: 24)
     )
   }
+
+  override func reset() {
+    super.reset()
+    categoryLabel.text = nil
+    titleLabel.text = nil
+    todayMultipleAppListView.feedResultViewModels = nil
+  }
 }
 
 extension TodayMultipleAppCell: TodayItemViewModelBindable {
   func bind(to viewModel: TodayItemViewModeling) {
-    print("TodayMultipleAppCell")
+    viewModel.outputs.category
+      .asDriverJustComplete()
+      .drive(categoryLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.title
+      .asDriverJustComplete()
+      .drive(titleLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.feedResultViewModels
+      .asDriverJustComplete()
+      .drive(todayMultipleAppListView.rx.updateFeedResultViewModels)
+      .disposed(by: disposeBag)
   }
 }
-
 
 extension TodayMultipleAppCell: CellContentClassIdentifiable {
 }

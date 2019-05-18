@@ -20,7 +20,8 @@ class TodayListView: BaseCollectionView {
 
   // MARK: - Private
 
-  private let contentCellHeight: CGFloat = 466
+  private let todayFullBackgroundCellHeight: CGFloat = 466
+  private let todayMultipleAppCellHeight: CGFloat = 436
   private let contentCellPadding: CGFloat = 48
   private let contentCellMargin: UIEdgeInsets = .init(top: 10, left: 0, bottom: 32, right: 0)
   private let cellLineSpacing: CGFloat = 32
@@ -84,7 +85,10 @@ extension TodayListView: UICollectionViewDelegateFlowLayout {
   }
 
   public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return .init(width: frame.width - contentCellPadding, height: contentCellHeight)
+    guard let viewModel = todayItemViewModels?[indexPath.item] else {
+      fatalError("Should be not nil")
+    }
+    return calculatedCellSize(cellType: viewModel.outputs.cellType)
   }
 
   public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -93,6 +97,16 @@ extension TodayListView: UICollectionViewDelegateFlowLayout {
 
   public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return contentCellMargin
+  }
+
+  private func calculatedCellSize(cellType: TodayListViewCellType) -> CGSize {
+    let width = frame.width - contentCellPadding
+    switch cellType {
+    case .todayFullBackgroundCell:
+      return .init(width: width, height: todayFullBackgroundCellHeight)
+    case .todayMultipleAppCell:
+      return .init(width: width, height: todayMultipleAppCellHeight)
+    }
   }
 
 }

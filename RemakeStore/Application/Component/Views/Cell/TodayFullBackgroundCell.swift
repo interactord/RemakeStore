@@ -41,7 +41,6 @@ class TodayFullBackgroundCell: BaseTodayCell {
         descriptionLabel
       ])
       .setAxis(.vertical)
-      .setSpacing(8)
       .build()
   }()
 
