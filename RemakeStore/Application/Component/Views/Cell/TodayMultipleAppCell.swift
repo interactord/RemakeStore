@@ -12,7 +12,6 @@ class TodayMultipleAppCell: BaseTodayCell {
 
   private lazy var todayMultipleAppListView: TodayMultipleAppListView = {
     let listView = TodayMultipleAppListView()
-    listView.viewMode(to: .small)
     return listView
   }()
 
