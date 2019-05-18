@@ -5,7 +5,14 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class TodayListView: BaseCollectionView {
+
+	// MARK: Public
+
+	var todayItemViewModels: [TodayItemViewModeling]?
 
 	// MARK: - Private
 
@@ -73,4 +80,15 @@ extension TodayListView: UICollectionViewDelegateFlowLayout {
 		return contentCellMargin
 	}
 
+}
+
+// MARK: - RX Binder
+
+extension Reactive where Base: TodayListView {
+  internal var updateTodayItemViewModels: Binder<[TodayItemViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.todayItemViewModels = result
+      base.reloadData()
+    }
+  }
 }

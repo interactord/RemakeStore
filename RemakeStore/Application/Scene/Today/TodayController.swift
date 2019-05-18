@@ -7,6 +7,8 @@ import UIKit
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxSwift
+import RxCocoa
 
 class TodayController: BaseController {
 
@@ -59,6 +61,14 @@ extension TodayController: ViewModelBased {
   // MARK: - functions for protocol
 
   func bindViewModel() {
-    print("TodayController")
+    viewWillAppearAction
+      .asDriverJustComplete()
+      .drive(viewModel.inputs.fetchToday)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.todayItemViewModels
+      .asDriverJustComplete()
+      .drive(todayListView.rx.updateTodayItemViewModels)
+      .disposed(by: disposeBag)
   }
 }
