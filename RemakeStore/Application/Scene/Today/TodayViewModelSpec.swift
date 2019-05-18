@@ -5,19 +5,24 @@
 
 import XCTest
 
+import RxBlocking
+
 @testable import RemakeStore
 
 class TodayViewModelSpec: XCTestCase {
 
   var sut: TodayViewModel?
+  let server = StubServer()
 
   override func setUp() {
     super.setUp()
+    server.setup()
   }
 
   override func tearDown() {
     super.tearDown()
     sut = nil
+    server.tearDown()
   }
 
   func test_init() {
@@ -25,10 +30,11 @@ class TodayViewModelSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
-  func test_inputs_outputs() {
+  func test_fetchToday() {
     sut = makeSUT()
-    _ = sut?.inputs
-    _ = sut?.outputs
+    sut?.inputs.fetchToday.onNext(Void())
+
+    XCTAssertNoThrow(try sut?.outputs.todayItemViewModels.toBlocking().first())
   }
 
   func makeSUT() -> TodayViewModel {
