@@ -58,6 +58,7 @@ extension TodayListView: UICollectionViewDataSource {
     guard let viewModel = todayItemViewModels?[indexPath.item] else {
       fatalError("Should be not nil")
     }
+
     switch viewModel.outputs.cellType {
     case .todayFullBackgroundCell:
       let cell: TodayFullBackgroundCell = collectionView.dequeueReusableCell(indexPath: indexPath)
@@ -91,7 +92,7 @@ extension TodayListView: UICollectionViewDelegateFlowLayout {
     return calculatedCellSize(cellType: viewModel.outputs.cellType)
   }
 
-  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return cellLineSpacing
   }
 

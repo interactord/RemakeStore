@@ -140,7 +140,7 @@ class TodayListViewSpec: XCTestCase {
     XCTAssertEqual(expectedTodayMultipleAppCellSize, resultTodayMultipleCellSize)
   }
 
-  func test_delegate_minimumInteritemSpacingForSectionAt() {
+  func test_delegate_minimumLineSpacingForSectionAt() {
 
     let expectedLineSpacing: CGFloat = 32
 
@@ -153,7 +153,7 @@ class TodayListViewSpec: XCTestCase {
         fatalError("Should be not nil")
     }
 
-    let resultLineSpacing = delegate.collectionView?(sut, layout: layout, minimumInteritemSpacingForSectionAt: 0)
+    let resultLineSpacing = delegate.collectionView?(sut, layout: layout, minimumLineSpacingForSectionAt: 0)
 
     XCTAssertEqual(expectedLineSpacing, resultLineSpacing)
   }
