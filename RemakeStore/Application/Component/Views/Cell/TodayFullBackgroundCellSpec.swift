@@ -24,6 +24,12 @@ class TodayFullBackgroundCellSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
+  func test_prepareForReuse() {
+    sut = TodayFullBackgroundCell()
+    sut?.prepareForReuse()
+    XCTAssertNotNil(sut)
+  }
+
   func test_bindToViewModel() {
     sut = TodayFullBackgroundCell()
     sut?.bind(to: makeViewModel())

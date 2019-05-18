@@ -49,6 +49,7 @@ class TodayMultipleAppListViewSpec: XCTestCase {
       let dataSource = sut.dataSource
       else { fatalError("Should be not nil") }
 
+    sut.feedResultViewModels = makeFeedResultViewModels()
     sut.viewMode(to: .fullScreen)
     let fullScreenResultCount = dataSource.collectionView(sut, numberOfItemsInSection: 0)
     XCTAssertEqual(expectedFullScreenCount, fullScreenResultCount)
@@ -119,6 +120,25 @@ class TodayMultipleAppListViewSpec: XCTestCase {
 
     sut = TodayMultipleAppListView()
     sut?.bind(to: expectedRootStepper)
+  }
+
+  func makeFeedResultViewModels() -> [FeedResultViewModeling] {
+    let bundleUrl = Bundle.main.url(forResource: "todayItemsDummy", withExtension: "json")
+    guard let url = bundleUrl else {
+      fatalError("Should be not nil")
+    }
+    let todayItems = try? JSONDecoder().decode([TodayItem].self, from: Data(contentsOf: url))
+
+    guard
+      let item = todayItems?[safe: 1],
+      let feedResult = item.rss?.feed.results
+      else {
+        fatalError("Should be not nil")
+    }
+
+    return feedResult.map {
+      FeedResultViewModel(withFeedResult: $0)
+    }
   }
 
 }

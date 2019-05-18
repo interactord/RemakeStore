@@ -24,6 +24,12 @@ class TodayMultipleAppCellSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
+  func test_prepareForReuse() {
+    sut = TodayMultipleAppCell()
+    sut?.prepareForReuse()
+    XCTAssertNotNil(sut)
+  }
+
   func test_bindToViewModel() {
     sut = TodayMultipleAppCell()
     sut?.bind(to: makeViewModel())

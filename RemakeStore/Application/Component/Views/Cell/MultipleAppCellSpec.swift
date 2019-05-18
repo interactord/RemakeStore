@@ -25,4 +25,10 @@ class MultipleAppCellSpec: XCTestCase {
 
 		XCTAssertNotNil(sut)
 	}
+
+ func test_prepareForReuse() {
+    sut = MultipleAppCell()
+    sut?.prepareForReuse()
+    XCTAssertNotNil(sut)
+  }
 }

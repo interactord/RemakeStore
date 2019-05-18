@@ -118,7 +118,9 @@ class TodayListViewSpec: XCTestCase {
   }
 
   func test_delegate_sizeForItemAt() {
-    let expectedHeight: CGFloat = 466
+
+    let expectedTodayFullBackgroundCellSize: CGSize = .init(width: -48, height: 466)
+    let expectedTodayMultipleAppCellSize: CGSize = .init(width: -48, height: 436)
 
     sut = TodayListView()
     guard
@@ -129,9 +131,13 @@ class TodayListViewSpec: XCTestCase {
         fatalError("Should be not nil")
     }
 
-    let resultSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: [0, 0])
+    sut.todayItemViewModels = makeViewModels()
 
-    XCTAssertEqual(expectedHeight, resultSize?.height)
+    let resultTodayFullBackgroundCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: [0, 0])
+    XCTAssertEqual(expectedTodayFullBackgroundCellSize, resultTodayFullBackgroundCellSize)
+
+    let resultTodayMultipleCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: [0, 1])
+    XCTAssertEqual(expectedTodayMultipleAppCellSize, resultTodayMultipleCellSize)
   }
 
   func test_delegate_minimumInteritemSpacingForSectionAt() {
