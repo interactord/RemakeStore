@@ -16,7 +16,7 @@ protocol TodayItemViewModeling {
 }
 
 protocol TodayItemViewModelBindable {
-	func bind(to viewModel: TodayViewModeling)
+	func bind(to viewModel: TodayItemViewModeling)
 }
 
 typealias TodayItemViewModelType =
