@@ -25,28 +25,46 @@ class TodayItemViewModelSpec: XCTestCase {
   }
 
   func test_init() {
-    sut = TodayItemViewModel(withTodayItem: makeTodayItem())
+    guard let item = makeTodayItems().first else {
+      fatalError("Should be not nil")
+    }
+    sut = TodayItemViewModel(withTodayItem: item)
     XCTAssertNotNil(sut)
   }
 
-  func test_outputs() {
-    sut = TodayItemViewModel(withTodayItem: makeTodayItem())
+  func test_inject_firstItem_outputs_cellType() {
+    guard let item = makeTodayItems().first else {
+      fatalError("Should be not nil")
+    }
+    let expectedCellType = TodayListViewCellType.todayFullBackgroundCell
+    sut = TodayItemViewModel(withTodayItem: item)
     XCTAssertNotNil(sut)
 
-    let output = sut?.outputs
-    XCTAssertNotNil(output)
+    XCTAssertEqual(expectedCellType, sut?.outputs.cellType)
   }
 
-  func makeTodayItem() -> TodayItem {
+  func test_inject_secondItem_outputs_cellType() {
+    let items = makeTodayItems()
+    guard let item = items[safe: 1] else {
+      fatalError("Should be not nil")
+    }
+    let expectedCellType = TodayListViewCellType.todayMultipleAppCell
+    sut = TodayItemViewModel(withTodayItem: item)
+    XCTAssertNotNil(sut)
+
+    XCTAssertEqual(expectedCellType, sut?.outputs.cellType)
+  }
+
+  func makeTodayItems() -> [TodayItem] {
     let bundleUrl = Bundle.main.url(forResource: "todayItemsDummy", withExtension: "json")
     guard let url = bundleUrl else {
       fatalError("Should be not nil")
     }
     let todayItems = try? JSONDecoder().decode([TodayItem].self, from: Data(contentsOf: url))
 
-    guard let item = todayItems?.first else {
+    guard let items = todayItems else {
       fatalError("Should be not nil")
     }
-    return item
+    return items
   }
 }
