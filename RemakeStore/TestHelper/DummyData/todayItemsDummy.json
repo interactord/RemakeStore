@@ -1,0 +1,388 @@
+[
+  {
+    "category": "NEW SEASON",
+    "title": "여행을 떠나요",
+    "imageUrl": "https://astore.interactord.io/today/image/cover/2019-05-18-travel-bacground-v01.jpeg",
+    "description": "여행을 위한 맞춤 앱 9가지",
+    "theme": "white",
+    "cellType": "TodayFullBackgroundCell"
+  },
+  {
+    "category": "OUR FAVOURITES",
+    "title": "Do more with Apple Watch",
+    "cellType": "TodayMultipleAppCell",
+    "rss": {
+      "feed": {
+        "title": "새롭게 추천하는 앱",
+        "id": "https://rss.itunes.apple.com/api/v1/kr/ios-apps/new-apps-we-love/all/10/explicit.json",
+        "author": {
+          "name": "iTunes Store",
+          "uri": "http://wwww.apple.com/kr/itunes/"
+        },
+        "links": [
+          {
+            "self": "https://rss.itunes.apple.com/api/v1/kr/ios-apps/new-apps-we-love/all/10/explicit.json"
+          },
+          {
+            "alternate": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewRoom?fcId=1153657151"
+          }
+        ],
+        "copyright": "Copyright © 2018 Apple Inc. All rights reserved.",
+        "country": "kr",
+        "icon": "http://itunes.apple.com/favicon.ico",
+        "updated": "2019-03-28T01:20:38.000-07:00",
+        "results": [
+          {
+            "artistName": "Ying Liu",
+            "id": "1415459503",
+            "releaseDate": "2018-08-05",
+            "name": "neon-camera",
+            "kind": "iosSoftware",
+            "copyright": "© liu ying",
+            "artistId": "1415459502",
+            "artistUrl": "https://itunes.apple.com/kr/developer/ying-liu/id1415459502?mt=8",
+            "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/df/54/70/df5470f1-7661-8f41-6853-1809204fbf47/AppIcon-1x_U007emarketing-sRGB-85-220-6.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6008",
+                "name": "사진 및 비디오",
+                "url": "https://itunes.apple.com/kr/genre/id6008"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/neon-camera/id1415459503?mt=8"
+          },
+          {
+            "artistName": "Netflix, Inc.",
+            "id": "363590051",
+            "releaseDate": "2016-01-06",
+            "name": "Netflix",
+            "kind": "iosSoftware",
+            "copyright": "© 2016 Netflix, Inc.",
+            "artistId": "363590054",
+            "artistUrl": "https://itunes.apple.com/kr/developer/netflix-inc/id363590054?mt=8",
+            "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/22/19/e4/2219e4ac-e8ee-9a7f-a4cb-5a9ff5c74a86/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6016",
+                "name": "엔터테인먼트",
+                "url": "https://itunes.apple.com/kr/genre/id6016"
+              },
+              {
+                "genreId": "6012",
+                "name": "라이프 스타일",
+                "url": "https://itunes.apple.com/kr/genre/id6012"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/netflix/id363590051?mt=8"
+          },
+          {
+            "artistName": "SOVS Co., Ltd",
+            "id": "1326747827",
+            "releaseDate": "2017-12-23",
+            "name": "SOVS 소브스 - 구도 카메라",
+            "kind": "iosSoftware",
+            "copyright": "© SOVS Co.,Ltd, 2017",
+            "artistId": "1297831438",
+            "artistUrl": "https://itunes.apple.com/kr/developer/sovs-co-ltd/id1297831438?mt=8",
+            "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/64/f2/e7/64f2e78f-67fc-6bc0-78f4-e825940b7537/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6008",
+                "name": "사진 및 비디오",
+                "url": "https://itunes.apple.com/kr/genre/id6008"
+              },
+              {
+                "genreId": "6016",
+                "name": "엔터테인먼트",
+                "url": "https://itunes.apple.com/kr/genre/id6016"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/sovs-%EC%86%8C%EB%B8%8C%EC%8A%A4-%EA%B5%AC%EB%8F%84-%EC%B9%B4%EB%A9%94%EB%9D%BC/id1326747827?mt=8"
+          },
+          {
+            "artistName": "Andres Canella",
+            "id": "1242116567",
+            "releaseDate": "2017-07-26",
+            "name": "Wakeout!",
+            "kind": "iosSoftware",
+            "copyright": "© Andres Canella 2019",
+            "artistId": "461785826",
+            "artistUrl": "https://itunes.apple.com/kr/developer/andres-canella/id461785826?mt=8",
+            "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/60/65/38/606538f6-3893-4401-4120-e7b7e4072745/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-4.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6013",
+                "name": "건강 및 피트니스",
+                "url": "https://itunes.apple.com/kr/genre/id6013"
+              },
+              {
+                "genreId": "6012",
+                "name": "라이프 스타일",
+                "url": "https://itunes.apple.com/kr/genre/id6012"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/wakeout/id1242116567?mt=8"
+          },
+          {
+            "artistName": "Adam Adelman",
+            "id": "1342707191",
+            "releaseDate": "2018-08-16",
+            "name": "WunTwun - Acapella Maker",
+            "kind": "iosSoftware",
+            "copyright": "© WunTwun 2018",
+            "artistId": "1342706800",
+            "artistUrl": "https://itunes.apple.com/kr/developer/adam-adelman/id1342706800?mt=8",
+            "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/05/49/09/0549099a-3d76-0822-efee-4eddac1db5d8/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-5.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6011",
+                "name": "음악",
+                "url": "https://itunes.apple.com/kr/genre/id6011"
+              },
+              {
+                "genreId": "6005",
+                "name": "소셜 네트워킹",
+                "url": "https://itunes.apple.com/kr/genre/id6005"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/wuntwun-acapella-maker/id1342707191?mt=8"
+          },
+          {
+            "artistName": "Pavel Repkin",
+            "id": "799653744",
+            "releaseDate": "2014-02-16",
+            "name": "정확한 날씨 YoWindow",
+            "kind": "iosSoftware",
+            "copyright": "© 2014 -2018 RepkaSoft",
+            "artistId": "415100913",
+            "artistUrl": "https://itunes.apple.com/kr/developer/pavel-repkin/id415100913?mt=8",
+            "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/7c/ff/fd/7cfffdde-415b-59fc-76fe-8e74354d28e2/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6001",
+                "name": "날씨",
+                "url": "https://itunes.apple.com/kr/genre/id6001"
+              },
+              {
+                "genreId": "6012",
+                "name": "라이프 스타일",
+                "url": "https://itunes.apple.com/kr/genre/id6012"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/%EC%A0%95%ED%99%95%ED%95%9C-%EB%82%A0%EC%94%A8-yowindow/id799653744?mt=8"
+          },
+          {
+            "artistName": "Propellerhead Software AB",
+            "id": "1253419004",
+            "releaseDate": "2018-08-28",
+            "name": "Reason Compact - Make Music",
+            "kind": "iosSoftware",
+            "copyright": "© 2019 Propellerhead Software AB",
+            "artistId": "368199128",
+            "artistUrl": "https://itunes.apple.com/kr/developer/propellerhead-software-ab/id368199128?mt=8",
+            "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/03/48/56/034856ff-c852-8516-b0c6-03aeae1b4b02/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6011",
+                "name": "음악",
+                "url": "https://itunes.apple.com/kr/genre/id6011"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/reason-compact-make-music/id1253419004?mt=8"
+          },
+          {
+            "artistName": "Dynamic App Design LLC",
+            "id": "434136233",
+            "releaseDate": "2011-04-30",
+            "name": "메트로놈+",
+            "kind": "iosSoftware",
+            "copyright": "© 2011 Dynamic App Design",
+            "artistId": "434136236",
+            "artistUrl": "https://itunes.apple.com/kr/developer/dynamic-app-design-llc/id434136236?mt=8",
+            "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/e1/06/13/e10613fc-0ff7-242c-da72-d89c7bcf9ad3/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6011",
+                "name": "음악",
+                "url": "https://itunes.apple.com/kr/genre/id6011"
+              },
+              {
+                "genreId": "6002",
+                "name": "유틸리티",
+                "url": "https://itunes.apple.com/kr/genre/id6002"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/%EB%A9%94%ED%8A%B8%EB%A1%9C%EB%86%88/id434136233?mt=8"
+          },
+          {
+            "artistName": "Haven Barnes",
+            "id": "1409302730",
+            "releaseDate": "2018-08-02",
+            "name": "Cinder - Clean Your Contacts",
+            "kind": "iosSoftware",
+            "copyright": "© Azing - Cinder",
+            "artistId": "1078147519",
+            "artistUrl": "https://itunes.apple.com/kr/developer/haven-barnes/id1078147519?mt=8",
+            "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ef/bc/6b/efbc6b55-88ff-e3d5-1ab0-90398af5756f/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-5.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6002",
+                "name": "유틸리티",
+                "url": "https://itunes.apple.com/kr/genre/id6002"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/cinder-clean-your-contacts/id1409302730?mt=8"
+          },
+          {
+            "artistName": "Good Mood Zone",
+            "id": "1353303895",
+            "releaseDate": "2018-03-07",
+            "name": "십자수 작품",
+            "kind": "iosSoftware",
+            "copyright": "© Good Mood Zone",
+            "artistId": "1327213508",
+            "artistUrl": "https://itunes.apple.com/kr/developer/good-mood-zone/id1327213508?mt=8",
+            "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/40/b1/ce/40b1ce9a-4718-f229-899e-05fa27d73751/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/200x200bb.png",
+            "genres": [
+              {
+                "genreId": "6012",
+                "name": "라이프 스타일",
+                "url": "https://itunes.apple.com/kr/genre/id6012"
+              },
+              {
+                "genreId": "6002",
+                "name": "유틸리티",
+                "url": "https://itunes.apple.com/kr/genre/id6002"
+              }
+            ],
+            "url": "https://itunes.apple.com/kr/app/%EC%8B%AD%EC%9E%90%EC%88%98-%EC%9E%91%ED%92%88/id1353303895?mt=8"
+          }
+        ]
+      }
+    },
+    "lookup": {
+      "resultCount": 1,
+      "results": [
+        {
+          "isGameCenterEnabled": true,
+          "screenshotUrls": [
+            "https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/4c/06/2c/4c062c79-a098-bfae-ea81-07acb1ceaccb/source/406x228bb.jpg",
+            "https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/68/43/db/6843db19-25f9-90ba-270d-44ff04f4ab9f/source/406x228bb.jpg",
+            "https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/95/0f/e4/950fe41b-d4b1-a9bc-eed6-5c2faf614c7d/source/406x228bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/e1/ae/60/e1ae6083-4940-e307-874c-77c14dbe4443/source/406x228bb.jpg",
+            "https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/05/40/66/054066b0-ec1d-4cae-5ed7-a4f7b462e648/source/406x228bb.jpg"
+          ],
+          "ipadScreenshotUrls": [
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/6a/3c/6e/6a3c6e71-3287-c264-3513-00f0b3683d96/source/552x414bb.jpg",
+            "https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/44/f4/1e/44f41e09-772a-02c5-b7fa-83fd63376969/source/552x414bb.jpg",
+            "https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/94/52/0b/94520bf3-570e-8473-b91e-536ed5a38e69/source/552x414bb.jpg",
+            "https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/0d/15/d5/0d15d522-813a-2481-36c7-acdaa9ab9b1e/source/552x414bb.jpg",
+            "https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/aa/a8/46/aaa846da-5e2e-32c6-c82f-aa1c393cc509/source/552x414bb.jpg"
+          ],
+          "appletvScreenshotUrls": [],
+          "artworkUrl60": "https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/f2/f6/64/f2f66484-aa8a-c0b1-d735-b07a4ea24c29/source/60x60bb.jpg",
+          "artworkUrl512": "https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/f2/f6/64/f2f66484-aa8a-c0b1-d735-b07a4ea24c29/source/512x512bb.jpg",
+          "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/f2/f6/64/f2f66484-aa8a-c0b1-d735-b07a4ea24c29/source/100x100bb.jpg",
+          "artistViewUrl": "https://itunes.apple.com/us/developer/polytron-inc/id1209489067?mt=8&uo=4",
+          "advisories": [
+            "Infrequent/Mild Cartoon or Fantasy Violence"
+          ],
+          "supportedDevices": [
+            "iPhone5s-iPhone5s",
+            "iPadAir-iPadAir",
+            "iPadAirCellular-iPadAirCellular",
+            "iPadMiniRetina-iPadMiniRetina",
+            "iPadMiniRetinaCellular-iPadMiniRetinaCellular",
+            "iPhone6-iPhone6",
+            "iPhone6Plus-iPhone6Plus",
+            "iPadAir2-iPadAir2",
+            "iPadAir2Cellular-iPadAir2Cellular",
+            "iPadMini3-iPadMini3",
+            "iPadMini3Cellular-iPadMini3Cellular",
+            "iPodTouchSixthGen-iPodTouchSixthGen",
+            "iPhone6s-iPhone6s",
+            "iPhone6sPlus-iPhone6sPlus",
+            "iPadMini4-iPadMini4",
+            "iPadMini4Cellular-iPadMini4Cellular",
+            "iPadPro-iPadPro",
+            "iPadProCellular-iPadProCellular",
+            "iPadPro97-iPadPro97",
+            "iPadPro97Cellular-iPadPro97Cellular",
+            "iPhoneSE-iPhoneSE",
+            "iPhone7-iPhone7",
+            "iPhone7Plus-iPhone7Plus",
+            "iPad611-iPad611",
+            "iPad612-iPad612",
+            "iPad71-iPad71",
+            "iPad72-iPad72",
+            "iPad73-iPad73",
+            "iPad74-iPad74",
+            "iPhone8-iPhone8",
+            "iPhone8Plus-iPhone8Plus",
+            "iPhoneX-iPhoneX",
+            "iPad75-iPad75",
+            "iPad76-iPad76",
+            "iPhoneXS-iPhoneXS",
+            "iPhoneXSMax-iPhoneXSMax",
+            "iPhoneXR-iPhoneXR",
+            "iPad812-iPad812",
+            "iPad834-iPad834",
+            "iPad856-iPad856",
+            "iPad878-iPad878",
+            "iPadMini5-iPadMini5",
+            "iPadMini5Cellular-iPadMini5Cellular",
+            "iPadAir3-iPadAir3",
+            "iPadAir3Cellular-iPadAir3Cellular"
+          ],
+          "kind": "software",
+          "features": [
+            "gameCenter",
+            "iosUniversal"
+          ],
+          "averageUserRatingForCurrentVersion": 4.5,
+          "trackCensoredName": "FEZ Pocket Edition",
+          "languageCodesISO2A": [
+            "EN"
+          ],
+          "fileSizeBytes": "173860864",
+          "sellerUrl": "http://fezgame.com/",
+          "contentAdvisoryRating": "9+",
+          "trackViewUrl": "https://itunes.apple.com/us/app/fez-pocket-edition/id1209489068?mt=8&uo=4",
+          "trackContentRating": "9+",
+          "userRatingCountForCurrentVersion": 81,
+          "isVppDeviceBasedLicensingEnabled": true,
+          "formattedPrice": "$4.99",
+          "minimumOsVersion": "8.0",
+          "sellerName": "Corporation Polytron Inc.",
+          "genreIds": [
+            "6014",
+            "7012",
+            "7002"
+          ],
+          "trackId": 1209489068,
+          "trackName": "FEZ Pocket Edition",
+          "currency": "USD",
+          "wrapperType": "software",
+          "version": "1.0.3",
+          "description": "Gomez is a 2D creature living in a 2D world. Or is he? When the existence of a mysterious 3rd dimension is revealed to him, Gomez is sent out on a journey that will take him to the very end of time and space. Use your ability to navigate 3D structures from 4 distinct classic 2D perspectives. Explore a serene and beautiful open-ended world full of secrets, puzzles and hidden treasures. Unearth the mysteries of the past and discover the truth about reality and perception. Change your perspective and look at the world in a different way.",
+          "artistId": 1209489067,
+          "artistName": "Polytron Inc.",
+          "genres": [
+            "Games",
+            "Puzzle",
+            "Adventure"
+          ],
+          "price": 4.99,
+          "releaseDate": "2017-12-13T09:14:04Z",
+          "primaryGenreName": "Games",
+          "primaryGenreId": 6014,
+          "bundleId": "com.polytron.fez",
+          "currentVersionReleaseDate": "2018-08-16T17:25:18Z",
+          "releaseNotes": "- Fix for the telescope, now you can actually see the stars\n- UI transparency setting\n- iPhone X fullscreen support",
+          "averageUserRating": 4,
+          "userRatingCount": 387
+        }
+      ]
+    }
+  }
+]
