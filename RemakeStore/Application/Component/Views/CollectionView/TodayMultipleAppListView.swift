@@ -104,6 +104,9 @@ extension TodayMultipleAppListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: MultipleAppCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+    if let viewModel = feedResultViewModels?[indexPath.item] {
+      cell.bind(to: viewModel)
+    }
     return cell
   }
 }

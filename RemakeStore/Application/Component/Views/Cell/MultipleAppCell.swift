@@ -28,6 +28,7 @@ class MultipleAppCell: BaseCollectionViewCell {
     return ImageViewBuilder()
       .setCornerRadius(8)
       .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
+      .setClipToBounds(true)
       .setContentMode(.scaleAspectFill)
       .setWidthAnchor(64)
       .setHeightAnchor(64)
@@ -105,6 +106,32 @@ class MultipleAppCell: BaseCollectionViewCell {
     stackView.fillSuperView()
   }
 
+  override func reset() {
+    super.reset()
+    iconImageView.image = nil
+    nameLabel.text = nil
+    companyLabel.text = nil
+  }
+
+}
+
+extension MultipleAppCell: FeedResultViewModelBindable {
+  func bind(to viewModel: FeedResultViewModeling) {
+    viewModel.outputs.iconImageUrlPath
+      .asDriverJustComplete()
+      .drive(iconImageView.rx.loadImage)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.name
+      .asDriverJustComplete()
+      .drive(nameLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.companyName
+      .asDriverJustComplete()
+      .drive(companyLabel.rx.text)
+      .disposed(by: disposeBag)
+  }
 }
 
 extension MultipleAppCell: CellContentClassIdentifiable {
