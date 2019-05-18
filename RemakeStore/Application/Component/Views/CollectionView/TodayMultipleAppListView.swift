@@ -17,6 +17,9 @@ protocol TodayMultipleAppListViewBinadle {
 
 class TodayMultipleAppListView: BaseCollectionView {
 
+  // MARK: - Public
+  var feedResultViewModels: [FeedResultViewModeling]?
+
   enum Mode {
     case small, fullScreen
   }
@@ -90,11 +93,12 @@ extension TodayMultipleAppListView: TodayMultipleAppListViewBinadle {
 extension TodayMultipleAppListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    let count = feedResultViewModels?.count ?? 0
     switch mode {
     case .small:
-      return min(4, 6)
+      return min(4, count)
     default:
-      return 10
+      return count
     }
   }
 
@@ -121,6 +125,17 @@ extension TodayMultipleAppListView: UICollectionViewDelegateFlowLayout {
       return fullScreenContentPadding
     default:
       return .zero
+    }
+  }
+}
+
+// MARK: - RX Binder
+
+extension Reactive where Base: TodayMultipleAppListView {
+  internal var updateFeedResultViewModels: Binder<[FeedResultViewModeling]> {
+    return Binder(self.base) { base, result in
+      base.feedResultViewModels = result
+      base.reloadData()
     }
   }
 }

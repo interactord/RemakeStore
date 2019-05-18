@@ -61,11 +61,39 @@ class TodayFullBackgroundCell: BaseTodayCell {
     topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24)
     topConstraint.isActive = true
   }
+
+  override func reset() {
+    super.reset()
+    backgroundImageView.image = nil
+    titleLabel.text = nil
+    categoryLabel.text = nil
+    descriptionLabel.text = nil
+  }
 }
 
 extension TodayFullBackgroundCell: TodayItemViewModelBindable {
   func bind(to viewModel: TodayItemViewModeling) {
-    print("TodayFullBackgroundCell")
+
+    viewModel.outputs.category
+    .asDriverJustComplete()
+    .drive(categoryLabel.rx.text)
+    .disposed(by: disposeBag)
+
+    viewModel.outputs.title
+      .asDriverJustComplete()
+      .drive(titleLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.description
+      .asDriverJustComplete()
+      .drive(descriptionLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.backgroundImageURL
+      .asDriverJustComplete()
+      .drive(backgroundImageView.rx.loadImage)
+      .disposed(by: disposeBag)
+
   }
 }
 

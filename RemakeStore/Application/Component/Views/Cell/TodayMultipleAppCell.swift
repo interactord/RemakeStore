@@ -18,7 +18,7 @@ class TodayMultipleAppCell: BaseTodayCell {
 
   private let spacingView: UIView = {
     return ViewBuilder()
-      .setHeightAnchor(30)
+      .setHeightAnchor(20)
       .build()
   }()
 
