@@ -8,6 +8,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+enum TodayListViewCellType: Int {
+	case todayFullBackgroundCell, todayMultipleAppCell
+}
+
 class TodayListView: BaseCollectionView {
 
 	// MARK: Public
@@ -46,12 +50,22 @@ class TodayListView: BaseCollectionView {
 
 extension TodayListView: UICollectionViewDataSource {
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 10
+		return todayItemViewModels?.count ?? 0
 	}
 
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell: TodayFullBackgroundCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-		return cell
+		guard let viewModel = todayItemViewModels?[indexPath.item] else {
+			fatalError("Should be not nil")
+		}
+
+		switch viewModel.outputs.cellType {
+		case .todayFullBackgroundCell:
+			let cell: TodayFullBackgroundCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+			return cell
+		case .todayMultipleAppCell:
+			let cell: TodayMultipleAppCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+			return cell
+		}
 	}
 
 	public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -27,8 +27,8 @@ class TodayListViewSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
-  func test_dataSource_numberOfItemsInSection() {
-    let expectedCount = 10
+  func test_noInject_dataSource_numberOfItemsInSection() {
+    let expectedCount = 0
 
     sut = TodayListView()
 
@@ -44,7 +44,28 @@ class TodayListViewSpec: XCTestCase {
     XCTAssertEqual(expectedCount, resultCount)
   }
 
+  func test_inject_viewModels_dataSource_numberOfItemsInSection() {
+    let viewModels = makeViewModels()
+    let expectedCount = viewModels?.count
+
+    sut = TodayListView()
+
+    guard
+      let sut = sut,
+      let dataSource = sut.dataSource
+      else {
+        fatalError("Should be not nil")
+    }
+
+    sut.todayItemViewModels = viewModels
+    let resultCount = dataSource.collectionView(sut, numberOfItemsInSection: 0)
+
+    XCTAssertEqual(expectedCount, resultCount)
+  }
+
   func test_dataSource_cellForItemAt() {
+    let viewModels = makeViewModels()
+
     sut = TodayListView()
     guard
       let sut = sut,
@@ -53,12 +74,16 @@ class TodayListViewSpec: XCTestCase {
         fatalError("Should be not nil")
     }
 
-    let resultCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
+    sut.todayItemViewModels = viewModels
+    let resultBackgroundFullScreenCell = dataSource.collectionView(sut, cellForItemAt: [0, 0])
+    let resultTodayMultipleAppCell = dataSource.collectionView(sut, cellForItemAt: [0, 1])
 
-    XCTAssertNotNil(resultCell as? TodayFullBackgroundCell)
+    XCTAssertNotNil(resultBackgroundFullScreenCell as? TodayFullBackgroundCell)
+    XCTAssertNotNil(resultTodayMultipleAppCell as? TodayMultipleAppCell)
   }
 
   func test_dataSource_viewForSupplementaryElementOfKind() {
+    let viewModels = makeViewModels()
 
     sut = TodayListView()
     guard
@@ -68,7 +93,8 @@ class TodayListViewSpec: XCTestCase {
         fatalError("Should be not nil")
     }
 
-    _ = dataSource.collectionView(sut, cellForItemAt: [0, 3])
+    sut.todayItemViewModels = viewModels
+    _ = dataSource.collectionView(sut, cellForItemAt: [0, 0])
     let resultHeader = dataSource.collectionView?(sut, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: [0, 3])
 
     XCTAssertNotNil(resultHeader as? TodayHeader)
@@ -141,5 +167,21 @@ class TodayListViewSpec: XCTestCase {
     let resultMargin = delegate.collectionView?(sut, layout: layout, insetForSectionAt: 0)
 
     XCTAssertEqual(expectedMargin, resultMargin)
+  }
+
+  private func makeViewModels() -> [TodayItemViewModeling]? {
+    let bundleUrl = Bundle.main.url(forResource: "todayItemsDummy", withExtension: "json")
+    guard let url = bundleUrl else {
+      fatalError("Should be not nil")
+    }
+    let todayItems = try? JSONDecoder().decode([TodayItem].self, from: Data(contentsOf: url))
+
+    guard let items = todayItems else {
+      fatalError("Should be not nil")
+    }
+
+    return items.map {
+      TodayItemViewModel(withTodayItem: $0)
+    }
   }
 }
