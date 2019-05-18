@@ -8,6 +8,7 @@ import Foundation
 import RxSwift
 
 protocol TodayItemViewModelOutput {
+	var cellType: TodayListViewCellType { get }
 }
 
 protocol TodayItemViewModeling {
@@ -29,7 +30,25 @@ class TodayItemViewModel: TodayItemViewModelType {
 		return self
 	}
 
+	// MARK: - Outputs
+
+	private(set) lazy var cellType: TodayListViewCellType = {
+		let todayItem = self.todayItem
+		switch todayItem.cellType {
+		case "TodayFullBackgroundCell":
+			return .todayFullBackgroundCell
+		case "TodayMultipleAppCell":
+			return .todayMultipleAppCell
+		default:
+			return .todayFullBackgroundCell
+		}
+	}()
+
+	// MARK: - Private
+
+	private let todayItem: TodayItem
+
 	init(withTodayItem todayItem: TodayItem) {
-		print(todayItem)
+		self.todayItem = todayItem
 	}
 }
