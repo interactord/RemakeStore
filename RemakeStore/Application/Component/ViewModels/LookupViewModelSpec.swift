@@ -54,8 +54,8 @@ class LookupViewModelSpec: XCTestCase {
     XCTAssertEqual(expectedPriceFormat, try sut?.outputs.priceFormat.toBlocking().first())
   }
 
-  func makeInformation() -> Lookup.Information {
-    return Lookup.Information(
+  func makeInformation() -> LookupInformation {
+    return LookupInformation(
       trackId: 123,
       trackName: "testTrack",
       primaryGenreName: "testcategory",
@@ -69,8 +69,8 @@ class LookupViewModelSpec: XCTestCase {
       collectionName: "testCollection")
   }
 
-  func makeOptionalInformation() -> Lookup.Information {
-    return Lookup.Information(
+  func makeOptionalInformation() -> LookupInformation {
+    return LookupInformation(
     trackId: 123,
     trackName: "testTrack",
     primaryGenreName: "testcategory",

@@ -67,11 +67,11 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     }
 
   // MARK: - Private
-  private lazy var lookupData: Observable<Lookup.Information?> = {
+  private lazy var lookupData: Observable<LookupInformation?> = {
     let repository = self.repository
     return appId.asObservable().ignoreNil()
       .flatMapLatest { repository.lookup(appId: "\($0)") }
-      .map { result -> Lookup.Information? in
+      .map { result -> LookupInformation? in
         switch result {
         case .noContent:
           return nil

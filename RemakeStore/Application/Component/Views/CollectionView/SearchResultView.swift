@@ -52,6 +52,8 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
   }
 }
 
+// MARK: - RX Binder
+
 extension Reactive where Base: SearchResultView {
   internal var updateSearchViewModels: Binder<[LookupViewModeling]> {
     return Binder(self.base) { base, result in

@@ -13,9 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   var rootFlow: RootFlow?
   var serviceDIContainer: ServiceDIContainer?
-  var isUnitTesting: Bool {
-    return ProcessInfo.processInfo.environment["UNITTEST"] == "1"
-  }
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -25,17 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return false
     }
 
-    if false == isUnitTesting {
-      serviceDIContainer = ServiceDIContainer()
-
-      guard let service = serviceDIContainer?.service else {
-        fatalError("Should not be nil")
-      }
-
-      rootFlow = RootFlow(with: service)
-      rootFlow?.onDebugNavigate()
-      rootFlow?.start(with: window)
+    serviceDIContainer = ServiceDIContainer()
+    guard let service = serviceDIContainer?.service else {
+      fatalError("Should not be nil")
     }
+
+    rootFlow = RootFlow(with: service)
+    rootFlow?.onDebugNavigate()
+    rootFlow?.start(with: window)
+
     return true
   }
 

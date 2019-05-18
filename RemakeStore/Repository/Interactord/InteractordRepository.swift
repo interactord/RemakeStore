@@ -30,4 +30,9 @@ extension InteractordRepository {
     let endpoint = InteractordEndpoint(baseUrl: baseUrl, router: .socialApps)
     return httpClient.request(endpoint: endpoint)
   }
+
+  func today() -> Observable<ResultContent<[TodayItem]>> {
+    let endpoint = InteractordEndpoint(baseUrl: baseUrl, router: .today)
+    return httpClient.request(endpoint: endpoint)
+  }
 }
