@@ -41,6 +41,12 @@ class TodayMultipleAppCell: BaseTodayCell {
   }
 }
 
+extension TodayMultipleAppCell: TodayItemViewModelBindable {
+  func bind(to viewModel: TodayItemViewModeling) {
+    print("TodayMultipleAppCell")
+  }
+}
+
 
 extension TodayMultipleAppCell: CellContentClassIdentifiable {
 }

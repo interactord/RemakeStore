@@ -64,5 +64,11 @@ class TodayFullBackgroundCell: BaseTodayCell {
   }
 }
 
+extension TodayFullBackgroundCell: TodayItemViewModelBindable {
+  func bind(to viewModel: TodayItemViewModeling) {
+    print("TodayFullBackgroundCell")
+  }
+}
+
 extension TodayFullBackgroundCell: CellContentClassIdentifiable {
 }
