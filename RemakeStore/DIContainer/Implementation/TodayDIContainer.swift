@@ -17,10 +17,51 @@ struct TodayDIContainer: DIContainer {
 
 	private let service: Service
 
+	private(set) lazy var rssRepository: RssRepository = {
+		let baseUrl = "https://rss.itunes.apple.com"
+		let service = self.service
+		container.register(RssRepository.self) { _ in
+			RssRepository(
+				httpClient: service.httpClient,
+				baseURL: baseUrl
+			)
+		}.inObjectScope(.weak)
+
+		guard let repository = container.resolve(RssRepository.self) else {
+			fatalError("Should be not nil")
+		}
+
+		return repository
+	}()
+
+	private(set) lazy var interactordRepository: InteractordRepository = {
+		let baseUrl = "https://astore.interactord.io"
+		let service = self.service
+		container.register(InteractordRepository.self) { _ in
+			InteractordRepository(
+				httpClient: service.httpClient,
+				baseUrl: baseUrl
+			)
+		}.inObjectScope(.weak)
+
+		guard let repository = container.resolve(InteractordRepository.self) else {
+			fatalError("Should be not nil")
+		}
+
+		return repository
+	}()
+
 	private(set) lazy var viewModel: TodayViewModel = {
 		let service = self.service
+		let rssRepository = self.rssRepository
+		let interactordRepository = self.interactordRepository
+
 		container.register(TodayViewModel.self) { _ in
-			TodayViewModel(with: service)
+			TodayViewModel(
+				with: service,
+				interactordRepository: interactordRepository,
+				rssRepository: rssRepository
+			)
 		}.inObjectScope(.weak)
 
 		guard let viewModel = container.resolve(TodayViewModel.self) else {
@@ -65,8 +106,8 @@ struct TodayDIContainer: DIContainer {
 
 	// MARK: Public
 
- mutating func getController() -> TodayController {
-	 return self.controller
- }
+	mutating func getController() -> TodayController {
+		return self.controller
+	}
 
 }

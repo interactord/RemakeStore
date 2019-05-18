@@ -36,4 +36,24 @@ class TodayControllerSpec: XCTestCase {
     sut?.setupConstraints()
     XCTAssertNotNil(sut)
   }
+
+  func test_bind() {
+    let viewModel = makeViewModel()
+    sut = TodayController()
+    sut?.viewModel = viewModel
+    sut?.bind(to: viewModel)
+  }
+
+  func makeViewModel() -> TodayViewModel {
+    var serviceDIContainer = ServiceDIContainer()
+    let service = serviceDIContainer.service
+    let rssRepository = RssRepository(httpClient: service.httpClient, baseURL: "http://localhost:7000")
+    let interactordRepository = InteractordRepository(httpClient: service.httpClient, baseUrl: "http://localhost:7000")
+
+    return TodayViewModel(
+      with: service,
+      interactordRepository: interactordRepository,
+      rssRepository: rssRepository
+    )
+  }
 }

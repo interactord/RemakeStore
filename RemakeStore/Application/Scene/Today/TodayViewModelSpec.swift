@@ -9,26 +9,38 @@ import XCTest
 
 class TodayViewModelSpec: XCTestCase {
 
-	var sut: TodayViewModel?
+  var sut: TodayViewModel?
 
-	override func setUp() {
-		super.setUp()
-	}
+  override func setUp() {
+    super.setUp()
+  }
 
-	override func tearDown() {
-		super.tearDown()
-		sut = nil
-	}
+  override func tearDown() {
+    super.tearDown()
+    sut = nil
+  }
 
-	func test_init() {
-		sut = makeSUT()
-		XCTAssertNotNil(sut)
-	}
+  func test_init() {
+    sut = makeSUT()
+    XCTAssertNotNil(sut)
+  }
 
-	func makeSUT() -> TodayViewModel {
-		var serviceDIContainer = ServiceDIContainer()
-		let service = serviceDIContainer.service
+  func test_inputs_outputs() {
+    sut = makeSUT()
+    _ = sut?.inputs
+    _ = sut?.outputs
+  }
 
-		return TodayViewModel(with: service)
-	}
+  func makeSUT() -> TodayViewModel {
+    var serviceDIContainer = ServiceDIContainer()
+    let service = serviceDIContainer.service
+    let rssRepository = RssRepository(httpClient: service.httpClient, baseURL: "http://localhost:7000")
+    let interactordRepository = InteractordRepository(httpClient: service.httpClient, baseUrl: "http://localhost:7000")
+
+    return TodayViewModel(
+      with: service,
+      interactordRepository: interactordRepository,
+      rssRepository: rssRepository
+    )
+  }
 }
