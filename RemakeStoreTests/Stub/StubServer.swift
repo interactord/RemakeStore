@@ -36,14 +36,15 @@ extension StubServer {
   // MARK: - Private
 
   private func stubSetup() {
-    setSearcht()
+    setSearch()
     setLookup()
     setReviews()
     setApps()
     setSocialApps()
+    setToday()
   }
 
-  private func setSearcht() {
+  private func setSearch() {
     let urlPath = "search?term=facebook&entity=software"
     let response: ((HttpRequest) -> HttpResponse) = { _ in
 
@@ -126,6 +127,22 @@ extension StubServer {
     }
 
     server.GET[InteractordEndpointRouter.socialApps.rawValue] = response
+  }
+
+  private func setToday() {
+    let response: ((HttpRequest) -> HttpResponse) = { _ in
+
+      guard
+        let url = Bundle.main.url(forResource: "todayItemsDummy", withExtension: "json"),
+        let data = try? Data(contentsOf: url)
+        else {
+        fatalError("Should be not nil")
+      }
+
+      return HttpResponse.ok(.data(data))
+    }
+
+    server.GET[InteractordEndpointRouter.today.rawValue] = response
   }
 
 }
