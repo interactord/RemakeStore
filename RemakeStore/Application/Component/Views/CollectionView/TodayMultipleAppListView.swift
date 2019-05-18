@@ -92,15 +92,14 @@ extension TodayMultipleAppListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     switch mode {
     case .small:
-      return 10
-    default:
       return min(4, 6)
+    default:
+      return 10
     }
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: MultipleAppCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-    cell.backgroundColor = .red
     return cell
   }
 }

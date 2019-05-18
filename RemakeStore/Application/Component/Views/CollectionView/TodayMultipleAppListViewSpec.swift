@@ -39,8 +39,8 @@ class TodayMultipleAppListViewSpec: XCTestCase {
   }
 
   func test_dataSource_numberOfItemsInSection() {
-    let expectedSmallCount = 10
-    let expectedFullScreenCount = 4
+    let expectedSmallCount = 4
+    let expectedFullScreenCount = 10
 
     sut = TodayMultipleAppListView()
 
