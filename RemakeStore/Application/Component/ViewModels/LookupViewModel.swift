@@ -16,7 +16,7 @@ protocol LookupViewModelOutput {
   var rating: Observable<String> { get }
   var screenshotUrlPaths: Observable<[String]> { get }
 
-  var result: Lookup.Information { get }
+  var result: LookupInformation { get }
 }
 
 protocol LookupViewModeling {
@@ -50,10 +50,10 @@ class LookupViewModel: LookupViewModelType {
   var priceFormat: Observable<String>
   var category: Observable<String>
   var rating: Observable<String>
-  var result: Lookup.Information
+  var result: LookupInformation
   var screenshotUrlPaths: Observable<[String]>
 
-  init(withResult result: Lookup.Information) {
+  init(withResult result: LookupInformation) {
     self.result = result
 
     let informationAction = Observable.just(result).observeOn(MainScheduler.asyncInstance)
