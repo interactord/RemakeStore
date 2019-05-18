@@ -61,6 +61,8 @@ extension PreviewScreenshotsView: UICollectionViewDelegateFlowLayout {
 	}
 }
 
+// MARK: - RX Binder
+
 extension Reactive where Base: PreviewScreenshotsView {
   internal var updateViewModels: Binder<[ScreenshotViewModeling]> {
     return Binder(self.base) { base, result in

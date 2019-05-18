@@ -97,7 +97,7 @@ extension AppsHorizontalListView: RootStepperBindable {
   }
 }
 
-// MARK: - Reactive Binder
+// MARK: - RX Binder
 
 extension Reactive where Base: AppsHorizontalListView {
 
