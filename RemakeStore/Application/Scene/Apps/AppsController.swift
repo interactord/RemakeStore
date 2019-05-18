@@ -15,7 +15,7 @@ class AppsController: BaseController {
 
   // MARK: - ViewModel
 
-  var viewModel: AppsViewModel!
+  var viewModel: AppsViewModeling!
 
   lazy var appGroupListView = AppsPageListView()
 
