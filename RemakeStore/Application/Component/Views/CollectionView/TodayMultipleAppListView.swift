@@ -44,7 +44,7 @@ class TodayMultipleAppListView: BaseCollectionView {
 
   override func setupView() {
     super.setupView()
-
+    self.isUserInteractionEnabled = false
     addSubview(dismissButton)
     dismissButton
       .setTopAnchor(topAnchor, padding: 28)
