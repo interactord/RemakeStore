@@ -10,43 +10,43 @@ import SCUIBuildKit
 
 class TodayDetailController: BaseController {
 
-	// MARK: Public
-	var viewModel: TodayDetailViewModel!
+  // MARK: Public
+  var viewModel: TodayDetailViewModel!
 
-	lazy var dismissButton: UIButton = {
-		return ButtonBuilder(type: .custom)
-			.setImage(#imageLiteral(resourceName: "Close-button"))
-			.setImage(#imageLiteral(resourceName: "Close-button").transformedAlpha(0.5), state: .highlighted)
-			.setWidthAnchor(44)
-			.setHeightAnchor(44)
-			.build()
-	}()
+  lazy var dismissButton: UIButton = {
+    return ButtonBuilder(type: .custom)
+      .setImage(#imageLiteral(resourceName: "Close-button"))
+      .setImage(#imageLiteral(resourceName: "Close-button").transformedAlpha(0.5), state: .highlighted)
+      .setWidthAnchor(44)
+      .setHeightAnchor(44)
+      .build()
+  }()
 
-	// MARK: - Private
+  // MARK: - Private
 
   private lazy var detailContentView = TodayDetailContentsView()
 
-	override func setupViews() {
-		super.setupViews()
-		view.addSubview(detailContentView)
-		view.addSubview(dismissButton)
-	}
+  override func setupViews() {
+    super.setupViews()
+    view.addSubview(detailContentView)
+    view.addSubview(dismissButton)
+  }
 
-	override func setupConstraints() {
-		super.setupConstraints()
-		detailContentView.fillSuperView()
-		dismissButton
-			.setTopAnchor(view.topAnchor, padding: 30)
-			.setLeadingAnchor(view.leadingAnchor, padding: 30)
-	}
+  override func setupConstraints() {
+    super.setupConstraints()
+    detailContentView.fillSuperView()
+    dismissButton
+      .setTopAnchor(view.topAnchor, padding: 30)
+      .setLeadingAnchor(view.leadingAnchor, padding: 30)
+  }
 
 }
 
 extension TodayDetailController: ViewModelBased {
 
-	// MARK: - functions for protocol
+  // MARK: - functions for protocol
 
-	func bindViewModel() {
-		print("TodayDetailController")
-	}
+  func bindViewModel() {
+    print("TodayDetailController")
+  }
 }
