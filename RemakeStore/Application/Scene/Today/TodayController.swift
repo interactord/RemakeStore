@@ -16,6 +16,7 @@ class TodayController: BaseController {
 
   var viewModel: TodayViewModel!
   var todayDetailController: TodayDetailController?
+  var todayDetailControllerViewLayout: AnchoredConstraints?
 
   // MARK: - Private
 
@@ -54,7 +55,33 @@ class TodayController: BaseController {
       .setBottomAnchor(view.bottomAnchor)
       .setTrailingAnchor(view.trailingAnchor)
   }
+}
 
+extension TodayController {
+  func setupTodayDetailController(withTodayDetailInfo info: TodayDetailViewInfo) {
+    let controller = TodayDetailController()
+    todayDetailController = controller
+    guard let todayDetailController = todayDetailController else {
+      return
+    }
+
+    todayDetailController.todayItemViewModel = info.todayItemVIewModel
+    todayDetailController.view.backgroundColor = .red
+    todayDetailController.viewWillAnimated()
+    view.addSubview(todayDetailController.view)
+    addChild(todayDetailController)
+
+    todayDetailControllerViewLayout = todayDetailController.view.anchor(
+      top: view.topAnchor,
+      leading: view.leadingAnchor,
+      bottom: nil,
+      trailing: nil,
+      padding: .init(top: info.startingFrame.origin.y, left: info.startingFrame.origin.x, bottom: 0, right: 0),
+      size: info.startingFrame.size
+    )
+
+    self.view.layoutIfNeeded()
+  }
 }
 
 extension TodayController: ViewModelBased {
@@ -73,12 +100,26 @@ extension TodayController: ViewModelBased {
       .disposed(by: disposeBag)
 
     todayListView.rx.itemSelected
-      .asDriverJustComplete()
-      .map { $0.item }
-      .drive(viewModel.inputs.startTodayDetail)
-      .disposed(by: disposeBag)
+      .asObservable()
+      .map { [unowned self] indexPath -> TodayDetailViewInfo? in
 
-    viewModel.outputs.todayItemViewModel
+        guard
+          let viewModel = self.todayListView.todayItemViewModels?[safe: indexPath.item],
+          let selectedCell = self.todayListView.cellForItem(at: indexPath),
+          let staringFrame = selectedCell.superview?.convert(selectedCell.frame, to: nil)
+          else { return nil }
+
+        return TodayDetailViewInfo(
+          indexItem: indexPath.item,
+          todayItemVIewModel: viewModel,
+          startingFrame: staringFrame
+        )
+      }
+      .ignoreNil()
+      .map { item in
+        print(item)
+        return item
+      }
       .asDriverJustComplete()
       .drive(self.rx.setupTodayDetailController)
       .disposed(by: disposeBag)
@@ -86,16 +127,9 @@ extension TodayController: ViewModelBased {
 }
 
 extension Reactive where Base: TodayController {
-  internal var setupTodayDetailController: Binder<TodayItemViewModeling> {
+  internal var setupTodayDetailController: Binder<TodayDetailViewInfo> {
     return Binder(self.base) { base, result in
-      base.todayDetailController = TodayDetailController()
-      if let controller = base.todayDetailController {
-        controller.view.backgroundColor = .red
-        controller.todayItemViewModel = result
-        controller.viewWillAnimated()
-        base.view.addSubview(controller.view)
-        base.addChild(controller)
-      }
+      base.setupTodayDetailController(withTodayDetailInfo: result)
     }
   }
 }
