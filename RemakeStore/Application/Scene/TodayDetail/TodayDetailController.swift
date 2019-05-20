@@ -13,6 +13,15 @@ class TodayDetailController: BaseController {
   // MARK: Public
   var viewModel: TodayDetailViewModel!
   var todayItemViewModel: TodayItemViewModeling?
+  var beginningAnimateConstraints: AnchoredConstraints?
+  var finishedAnimatedConstraints: AnchoredConstraints?
+
+  lazy var baseView: UIView = {
+    guard let view = self.view else {
+      return UIView()
+    }
+    return self.view
+  }()
 
   lazy var dismissButton: UIButton = {
     return ButtonBuilder(type: .custom)
@@ -41,11 +50,33 @@ class TodayDetailController: BaseController {
       .setTopAnchor(view.topAnchor, padding: 25)
       .setTrailingAnchor(view.trailingAnchor, padding: 25)
   }
+}
 
-  func viewWillAnimated() {
-    self.view.layer.cornerRadius = 16
+extension TodayDetailController: BaseFullScreenAnimatable {
+  func setupFullScreenLayout(startingFrame: CGRect) {
+    self.beginningAnimateConstraints = baseView.anchor(
+      top: view.superview?.topAnchor,
+      leading: view.superview?.leadingAnchor,
+      bottom: nil,
+      trailing: nil,
+      padding: .init(top: startingFrame.origin.y, left: startingFrame.origin.x, bottom: 0, right: 0),
+      size: startingFrame.size
+    )
+    self.baseView.layoutIfNeeded()
   }
 
+  func startFullScreenAnimation() {
+    self.view.layer.cornerRadius = 16
+
+    view?.defaultAnimated(
+      animations: {
+        self.beginningAnimateConstraints?.top?.constant = 0
+        self.beginningAnimateConstraints?.leading?.constant = 0
+        self.beginningAnimateConstraints?.width?.constant = self.view.superview?.frame.width ?? 0
+        self.beginningAnimateConstraints?.height?.constant = self.view.superview?.frame.height ?? 0
+        self.view.layoutIfNeeded()
+      })
+  }
 }
 
 extension TodayDetailController: ViewModelBased {

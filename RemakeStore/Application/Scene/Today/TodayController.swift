@@ -15,8 +15,8 @@ class TodayController: BaseController {
   // MARK: - ViewModel
 
   var viewModel: TodayViewModel!
-  var todayDetailController: TodayDetailController?
-  var todayDetailControllerViewLayout: AnchoredConstraints?
+  var targetFullScreenController: BaseFullScreenAnimatable?
+  var fullScreenStatus: ScreenStatus = .thumbnail
 
   // MARK: - Private
 
@@ -55,32 +55,50 @@ class TodayController: BaseController {
       .setBottomAnchor(view.bottomAnchor)
       .setTrailingAnchor(view.trailingAnchor)
   }
+
+  override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+    return .slide
+  }
+
+  override var prefersStatusBarHidden: Bool {
+    switch fullScreenStatus {
+    case .thumbnail:
+      return false
+    default:
+      return true
+    }
+  }
 }
 
-extension TodayController {
-  func setupTodayDetailController(withTodayDetailInfo info: TodayDetailViewInfo) {
-    let controller = TodayDetailController()
-    todayDetailController = controller
-    guard let todayDetailController = todayDetailController else {
-      return
+extension TodayController: FullScreenAnimatable {
+
+  func setupFullscreenView(withTodayDetailInfo info: FullScreenAnimatedInfo) -> BaseFullScreenAnimatable? {
+    if nil != targetFullScreenController { return nil }
+    targetFullScreenController = TodayDetailController()
+    guard let fullScreenController = self.targetFullScreenController else {
+      return nil
     }
 
-    todayDetailController.todayItemViewModel = info.todayItemVIewModel
-    todayDetailController.view.backgroundColor = .red
-    todayDetailController.viewWillAnimated()
-    view.addSubview(todayDetailController.view)
-    addChild(todayDetailController)
+    let fullScreenView = fullScreenController.baseView
+    view.addSubview(fullScreenView)
+    addChild(fullScreenController)
+    fullScreenController.setupFullScreenLayout(startingFrame: info.startingFrame)
+    return fullScreenController
+  }
 
-    todayDetailControllerViewLayout = todayDetailController.view.anchor(
-      top: view.topAnchor,
-      leading: view.leadingAnchor,
-      bottom: nil,
-      trailing: nil,
-      padding: .init(top: info.startingFrame.origin.y, left: info.startingFrame.origin.x, bottom: 0, right: 0),
-      size: info.startingFrame.size
-    )
-
-    self.view.layoutIfNeeded()
+  func startFullScreenAnimation() {
+    targetFullScreenController?.startFullScreenAnimation()
+    view?.defaultAnimated(
+      animations: {
+        self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+        self.view.layoutIfNeeded()
+      }, completion: { result in
+        if !result { return }
+        self.fullScreenStatus = .fullScreen
+        UIView.animate(withDuration: 0.2) {
+          self.setNeedsStatusBarAppearanceUpdate()
+        }
+      })
   }
 }
 
@@ -101,25 +119,18 @@ extension TodayController: ViewModelBased {
 
     todayListView.rx.itemSelected
       .asObservable()
-      .map { [unowned self] indexPath -> TodayDetailViewInfo? in
-
+      .map { [unowned self] indexPath -> FullScreenAnimatedInfo? in
         guard
           let viewModel = self.todayListView.todayItemViewModels?[safe: indexPath.item],
           let selectedCell = self.todayListView.cellForItem(at: indexPath),
           let staringFrame = selectedCell.superview?.convert(selectedCell.frame, to: nil)
           else { return nil }
-
-        return TodayDetailViewInfo(
-          indexItem: indexPath.item,
-          todayItemVIewModel: viewModel,
+        return FullScreenAnimatedInfo(
+          todayItemViewModel: viewModel,
           startingFrame: staringFrame
         )
       }
       .ignoreNil()
-      .map { item in
-        print(item)
-        return item
-      }
       .asDriverJustComplete()
       .drive(self.rx.setupTodayDetailController)
       .disposed(by: disposeBag)
@@ -127,9 +138,10 @@ extension TodayController: ViewModelBased {
 }
 
 extension Reactive where Base: TodayController {
-  internal var setupTodayDetailController: Binder<TodayDetailViewInfo> {
+  internal var setupTodayDetailController: Binder<FullScreenAnimatedInfo> {
     return Binder(self.base) { base, result in
-      base.setupTodayDetailController(withTodayDetailInfo: result)
+      base.targetFullScreenController = base.setupFullscreenView(withTodayDetailInfo: result)
+      base.startFullScreenAnimation()
     }
   }
 }
