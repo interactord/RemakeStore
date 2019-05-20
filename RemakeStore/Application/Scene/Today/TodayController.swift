@@ -74,15 +74,13 @@ extension TodayController: FullScreenAnimatable {
 
   func setupFullscreenView(_ targetFullSceenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo) {
     if nil != targetFullScreenController { return }
-    targetFullScreenController = targetFullSceenController
-    guard let fullScreenController = self.targetFullScreenController else {
-      return
-    }
 
-    let fullScreenView = fullScreenController.baseView
+    let fullScreenView = targetFullSceenController.baseView
     view.addSubview(fullScreenView)
-    addChild(fullScreenController)
-    fullScreenController.setupFullScreenLayout(startingFrame: info.startingFrame)
+    addChild(targetFullSceenController)
+    targetFullSceenController.setupFullScreenLayout(startingFrame: info.startingFrame)
+
+    targetFullScreenController = targetFullSceenController
   }
 
   func startFullScreenAnimation() {
@@ -130,9 +128,7 @@ extension TodayController: ViewModelBased {
         )
       }
       .ignoreNil()
-      .map {
-        AppStep.todayDetailIsRequired(fullScreenAnimatedInfo: $0)
-      }
+      .map { AppStep.todayDetailIsRequired(fullScreenAnimatedInfo: $0) }
       .bind(to: steps)
       .disposed(by: disposeBag)
   }

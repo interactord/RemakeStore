@@ -11,7 +11,7 @@ class TodayFlow: BaseFlow {
 
   // MARK: - Private
 
-  private lazy var rootViewController: UINavigationController = {
+  private(set) lazy var rootViewController: UINavigationController = {
     var container = TodayDIContainer(with: service)
     return container.navigationController
   }()

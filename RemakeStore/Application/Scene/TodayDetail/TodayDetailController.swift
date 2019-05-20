@@ -66,14 +66,18 @@ extension TodayDetailController: BaseFullScreenAnimatable {
   }
 
   func startFullScreenAnimation() {
-    self.view.layer.cornerRadius = 16
 
+    guard let superView = self.view.superview else {
+      return
+    }
+
+    self.view.layer.cornerRadius = 16
     view?.defaultAnimated(
       animations: {
         self.beginningAnimateConstraints?.top?.constant = 0
         self.beginningAnimateConstraints?.leading?.constant = 0
-        self.beginningAnimateConstraints?.width?.constant = self.view.superview?.frame.width ?? 0
-        self.beginningAnimateConstraints?.height?.constant = self.view.superview?.frame.height ?? 0
+        self.beginningAnimateConstraints?.width?.constant = superView.frame.width
+        self.beginningAnimateConstraints?.height?.constant = superView.frame.height
         self.view.layoutIfNeeded()
       })
   }
