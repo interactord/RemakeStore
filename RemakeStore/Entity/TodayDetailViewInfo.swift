@@ -8,8 +8,9 @@
 
 import UIKit
 
-struct TodayDetailViewInfo {
-  let indexItem: Int
-  var todayItemVIewModel: TodayItemViewModeling
+import SCLayoutKit
+
+struct FullScreenAnimatedInfo {
+  var todayItemViewModel: TodayItemViewModeling
   var startingFrame: CGRect
 }
