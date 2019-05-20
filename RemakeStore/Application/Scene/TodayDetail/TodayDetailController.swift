@@ -29,6 +29,7 @@ class TodayDetailController: BaseController {
 
   override func setupViews() {
     super.setupViews()
+    view.clipsToBounds = true
     view.addSubview(detailContentView)
     view.addSubview(dismissButton)
   }
@@ -37,12 +38,12 @@ class TodayDetailController: BaseController {
     super.setupConstraints()
     detailContentView.fillSuperView()
     dismissButton
-      .setTopAnchor(view.topAnchor, padding: 30)
-      .setLeadingAnchor(view.leadingAnchor, padding: 30)
+      .setTopAnchor(view.topAnchor, padding: 25)
+      .setTrailingAnchor(view.trailingAnchor, padding: 25)
   }
 
   func viewWillAnimated() {
-    view.layer.cornerRadius = 16
+    self.view.layer.cornerRadius = 16
   }
 
 }
