@@ -22,4 +22,9 @@ enum AppStep: Step {
 
   case appDetailIsRequired(appId: Int)
   case appDetailIsComplete
+
+  /// Today
+
+  case todayDetailIsRequired(fullScreenAnimatedInfo: FullScreenAnimatedInfo)
+  case todayDetailIsComplete
 }

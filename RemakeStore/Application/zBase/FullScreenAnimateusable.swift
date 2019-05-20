@@ -17,7 +17,7 @@ enum ScreenStatus {
 protocol FullScreenAnimatable where Self: UIViewController {
   var targetFullScreenController: BaseFullScreenAnimatable? { get }
   var fullScreenStatus: ScreenStatus { get }
-  func setupFullscreenView(withTodayDetailInfo info: FullScreenAnimatedInfo) -> BaseFullScreenAnimatable?
+  func setupFullscreenView(_ targetFullSceenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo)
   func startFullScreenAnimation()
 }
 

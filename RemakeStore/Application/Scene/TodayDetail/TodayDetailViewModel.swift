@@ -7,13 +7,15 @@ import Foundation
 
 class TodayDetailViewModel: ServiceViewModel {
 
-	// MARK: - Protocol Variables
+  // MARK: - Protocol Variables
 
-	let service: Service
+  let service: Service
+  let todayItemViewModel: TodayItemViewModeling
 
-	// MARK: - Initializing
+  // MARK: - Initializing
 
-	required init(with service: Service) {
-		self.service = service
-	}
+  required init(with service: Service, todayItemViewModel: TodayItemViewModeling) {
+    self.service = service
+    self.todayItemViewModel = todayItemViewModel
+  }
 }

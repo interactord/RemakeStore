@@ -72,18 +72,17 @@ class TodayController: BaseController {
 
 extension TodayController: FullScreenAnimatable {
 
-  func setupFullscreenView(withTodayDetailInfo info: FullScreenAnimatedInfo) -> BaseFullScreenAnimatable? {
-    if nil != targetFullScreenController { return nil }
-    targetFullScreenController = TodayDetailController()
+  func setupFullscreenView(_ targetFullSceenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo) {
+    if nil != targetFullScreenController { return }
+    targetFullScreenController = targetFullSceenController
     guard let fullScreenController = self.targetFullScreenController else {
-      return nil
+      return
     }
 
     let fullScreenView = fullScreenController.baseView
     view.addSubview(fullScreenView)
     addChild(fullScreenController)
     fullScreenController.setupFullScreenLayout(startingFrame: info.startingFrame)
-    return fullScreenController
   }
 
   func startFullScreenAnimation() {
@@ -131,17 +130,10 @@ extension TodayController: ViewModelBased {
         )
       }
       .ignoreNil()
-      .asDriverJustComplete()
-      .drive(self.rx.setupTodayDetailController)
+      .map {
+        AppStep.todayDetailIsRequired(fullScreenAnimatedInfo: $0)
+      }
+      .bind(to: steps)
       .disposed(by: disposeBag)
-  }
-}
-
-extension Reactive where Base: TodayController {
-  internal var setupTodayDetailController: Binder<FullScreenAnimatedInfo> {
-    return Binder(self.base) { base, result in
-      base.targetFullScreenController = base.setupFullscreenView(withTodayDetailInfo: result)
-      base.startFullScreenAnimation()
-    }
   }
 }
