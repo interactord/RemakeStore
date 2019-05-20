@@ -15,6 +15,7 @@ class TodayController: BaseController {
   // MARK: - ViewModel
 
   var viewModel: TodayViewModel!
+  var todayDetailController: TodayDetailController?
 
   // MARK: - Private
 
@@ -70,5 +71,31 @@ extension TodayController: ViewModelBased {
       .asDriverJustComplete()
       .drive(todayListView.rx.updateTodayItemViewModels)
       .disposed(by: disposeBag)
+
+    todayListView.rx.itemSelected
+      .asDriverJustComplete()
+      .map { $0.item }
+      .drive(viewModel.inputs.startTodayDetail)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.todayItemViewModel
+      .asDriverJustComplete()
+      .drive(self.rx.setupTodayDetailController)
+      .disposed(by: disposeBag)
+  }
+}
+
+extension Reactive where Base: TodayController {
+  internal var setupTodayDetailController: Binder<TodayItemViewModeling> {
+    return Binder(self.base) { base, result in
+      base.todayDetailController = TodayDetailController()
+      if let controller = base.todayDetailController {
+        controller.view.backgroundColor = .red
+        controller.todayItemViewModel = result
+        controller.viewWillAnimated()
+        base.view.addSubview(controller.view)
+        base.addChild(controller)
+      }
+    }
   }
 }

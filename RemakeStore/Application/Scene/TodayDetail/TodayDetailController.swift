@@ -12,6 +12,7 @@ class TodayDetailController: BaseController {
 
   // MARK: Public
   var viewModel: TodayDetailViewModel!
+  var todayItemViewModel: TodayItemViewModeling?
 
   lazy var dismissButton: UIButton = {
     return ButtonBuilder(type: .custom)
@@ -38,6 +39,10 @@ class TodayDetailController: BaseController {
     dismissButton
       .setTopAnchor(view.topAnchor, padding: 30)
       .setLeadingAnchor(view.leadingAnchor, padding: 30)
+  }
+
+  func viewWillAnimated() {
+    view.layer.cornerRadius = 16
   }
 
 }

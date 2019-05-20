@@ -10,10 +10,12 @@ import SCServiceKit
 
 protocol TodayViewModelInput {
   var fetchToday: BehaviorSubject<Void?> { get }
+  var startTodayDetail: BehaviorSubject<Int?> { get }
 }
 
 protocol TodayViewModelOutput {
   var todayItemViewModels: Observable<[TodayItemViewModeling]> { get }
+  var todayItemViewModel: Observable<TodayItemViewModeling> { get }
 }
 
 protocol TodayViewModeling {
@@ -39,6 +41,7 @@ class TodayViewModel: ServiceViewModel, TodayViewModelType {
   // MARK: - Inputs
 
   private(set) var fetchToday: BehaviorSubject<Void?> = .init(value: nil)
+  private(set) var startTodayDetail: BehaviorSubject<Int?> = .init(value: nil)
 
   // MARK: - Outputs
   private(set) lazy var todayItemViewModels: Observable<[TodayItemViewModeling]> = {
@@ -49,6 +52,14 @@ class TodayViewModel: ServiceViewModel, TodayViewModelType {
         TodayItemViewModel(withTodayItem: $0)
       }
     }
+  }()
+
+  private(set) lazy var todayItemViewModel: Observable<TodayItemViewModeling> = {
+    let startTodayDetail = self.startTodayDetail
+    let todayItemViewModels = self.todayItemViewModels
+    return startTodayDetail.asObservable().ignoreNil().flatMapLatest { index in
+      todayItemViewModels.map { $0[safe: index] }
+    }.ignoreNil()
   }()
 
   // MARK: - Private
