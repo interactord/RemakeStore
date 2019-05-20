@@ -8,23 +8,23 @@ import XCTest
 @testable import RemakeStore
 
 class TodayDIContainerSpec: XCTestCase {
-	var sut: TodayDIContainer?
+  var sut: TodayDIContainer?
 
-	override func setUp() {
-		super.setUp()
-	}
+  override func setUp() {
+    super.setUp()
+  }
 
-	override func tearDown() {
-		super.tearDown()
-		sut = nil
-	}
+  override func tearDown() {
+    super.tearDown()
+    sut = nil
+  }
 
-	func test_init() {
-		sut = TodayDIContainer(with: makeService())
+  func test_init() {
+    sut = TodayDIContainer(with: makeService())
     XCTAssertNotNil(sut?.navigationController)
-	}
+  }
 
- func makeService() -> Service {
+  func makeService() -> Service {
     var serviceDIContainer = ServiceDIContainer()
     return serviceDIContainer.service
   }

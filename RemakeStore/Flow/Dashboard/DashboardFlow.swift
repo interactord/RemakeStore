@@ -33,7 +33,7 @@ class DashboardFlow: BaseFlow {
 
   // MARK: - functions for protocol
 
-  public func navigate(to step: AppStep) -> FlowContributors {
+  internal func navigate(to step: AppStep) -> FlowContributors {
     switch step {
     case .dashboardIsRequired:
       return navigateToDashboard()
