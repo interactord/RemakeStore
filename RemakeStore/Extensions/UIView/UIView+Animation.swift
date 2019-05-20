@@ -6,6 +6,24 @@
 import UIKit
 
 extension UIView {
+	func animated(
+		duration: TimeInterval = 0.7,
+		delay: TimeInterval = 0.7,
+		usingSpringWithDamping: CGFloat = 0.7,
+		initialSpringVelocity: CGFloat = 0.7,
+		options: AnimationOptions,
+		animations: @escaping () -> Void
+	) {
+		UIView.animate(
+			withDuration: duration,
+			delay: delay,
+			usingSpringWithDamping: usingSpringWithDamping,
+			initialSpringVelocity: initialSpringVelocity,
+			options: options,
+			animations: animations
+		)
+	}
+
 	func animated(transform: CGAffineTransform) {
 		UIView.animate(
 			withDuration: 0.5,
