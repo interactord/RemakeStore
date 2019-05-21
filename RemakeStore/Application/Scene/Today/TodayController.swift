@@ -85,7 +85,7 @@ extension TodayController: FullScreenAnimatable {
 
   func startFullScreenAnimation() {
     targetFullScreenController?.startFullScreenAnimation()
-    view?.defaultAnimated(
+    UIView.defaultAnimated(
       animations: {
         self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
         self.view.layoutIfNeeded()

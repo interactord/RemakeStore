@@ -6,7 +6,7 @@
 import UIKit
 
 extension UIView {
-  func defaultAnimated(
+  static func defaultAnimated(
     duration: TimeInterval = 0.7,
     delay: TimeInterval = 0.0,
     usingSpringWithDamping: CGFloat = 0.7,
@@ -26,7 +26,7 @@ extension UIView {
     )
   }
 
-  func defaultAnimated(
+  static func defaultAnimated(
     duration: TimeInterval = 0.7,
     delay: TimeInterval = 0.0,
     usingSpringWithDamping: CGFloat = 0.7,
@@ -44,16 +44,14 @@ extension UIView {
     )
   }
 
-  func animated(transform: CGAffineTransform) {
+  static func animated(transform: CGAffineTransform, animations: @escaping () -> Void) {
     UIView.animate(
       withDuration: 0.5,
       delay: 0,
       usingSpringWithDamping: 1,
       initialSpringVelocity: 1,
       options: .curveEaseOut,
-      animations: {
-        self.transform = transform
-      }
+      animations: animations
     )
   }
 }

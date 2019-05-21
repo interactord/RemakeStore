@@ -49,7 +49,9 @@ class BaseTodayCell: BaseCollectionViewCell {
         transform = .init(scaleX: scaleRatio, y: scaleRatio)
       }
 
-      animated(transform: transform)
+      UIView.animated(transform: transform) {
+        self.transform = transform
+      }
     }
   }
 
