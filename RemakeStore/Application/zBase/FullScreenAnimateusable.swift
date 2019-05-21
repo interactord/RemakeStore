@@ -30,3 +30,8 @@ protocol BaseFullScreenAnimatable where Self: UIViewController {
   func startFullScreenAnimation()
   func dismissFullScreenAnimation()
 }
+
+protocol BaseFullScreenDragAnimateable where Self: BaseFullScreenAnimatable {
+  var dragGesture: DragGesture { get }
+  func startDragGesture()
+}
