@@ -114,8 +114,7 @@ extension TodayController: FullScreenAnimatable {
         UIView.animate(withDuration: 0) {
           self.setNeedsStatusBarAppearanceUpdate()
         }
-      }
-    )
+      })
   }
 }
 

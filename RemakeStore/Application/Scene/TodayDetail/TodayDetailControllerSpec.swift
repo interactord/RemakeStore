@@ -49,7 +49,7 @@ class TodayDetailControllerSpec: XCTestCase {
   }
 
   func test_inject_startFullScreenAnimation() {
-    let expectedCornerRadius: CGFloat = 16
+
     let viewController = UIViewController()
     sut = TodayDetailController()
 
@@ -57,7 +57,29 @@ class TodayDetailControllerSpec: XCTestCase {
     sut?.startFullScreenAnimation()
 
     XCTAssertNotNil(sut?.view.superview)
-    XCTAssertEqual(expectedCornerRadius, sut?.view.layer.cornerRadius)
+  }
+
+  func test_noInject_dismissFullScreenAnimation() {
+    sut = TodayDetailController()
+    sut?.dismissFullScreenAnimation()
+
+    XCTAssertNotNil(sut)
+  }
+
+  func test_inject_startingFrame_dismissFullScreenAnimation() {
+    let startingFrame: CGRect = .zero
+
+    sut = TodayDetailController()
+    sut?.startingFrame = startingFrame
+
+    sut?.dismissFullScreenAnimation()
+    XCTAssertNotNil(sut)
+  }
+
+  func test_startDragGesture() {
+    sut = TodayDetailController()
+    sut?.startDragGesture()
+    XCTAssertNotNil(sut)
   }
 
   func makeViewModel() -> TodayDetailViewModel {

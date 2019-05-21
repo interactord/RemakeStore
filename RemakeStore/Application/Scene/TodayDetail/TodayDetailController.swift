@@ -7,6 +7,9 @@ import UIKit
 
 import SCLayoutKit
 import SCUIBuildKit
+import RxGesture
+import RxSwift
+import RxCocoa
 
 class TodayDetailController: BaseController {
 
@@ -14,6 +17,7 @@ class TodayDetailController: BaseController {
   var viewModel: TodayDetailViewModel!
   var startingFrame: CGRect?
   var beginningAnimateConstraints: AnchoredConstraints?
+  var beginningOffset: CGFloat = 0
 
   lazy var baseView: UIView = {
     guard let view = self.view else {
@@ -31,13 +35,18 @@ class TodayDetailController: BaseController {
       .build()
   }()
 
+  lazy var dragGesture: DragGesture = {
+    let baseView = self.baseView
+    return DragGesture(withBaseView: baseView)
+  }()
+
   deinit {
     print("\(type(of: self)): \(#function)")
-}
+  }
 
   // MARK: - Private
 
-  private lazy var detailContentView = TodayDetailContentsView()
+  private(set) lazy var detailContentView = TodayDetailContentsView()
 
   override func setupViews() {
     super.setupViews()
@@ -85,6 +94,10 @@ extension TodayDetailController: BaseFullScreenAnimatable {
         self.beginningAnimateConstraints?.width?.constant = superView.frame.width
         self.beginningAnimateConstraints?.height?.constant = superView.frame.height
         self.view.layoutIfNeeded()
+      },
+      completion: {
+        if !$0 { return }
+        self.startDragGesture()
       })
   }
 
@@ -96,15 +109,39 @@ extension TodayDetailController: BaseFullScreenAnimatable {
     UIView.defaultAnimated(
       animations: {
         self.view.layer.cornerRadius = 16
+        self.baseView.transform = .identity
         self.beginningAnimateConstraints?.top?.constant = startingFrame.origin.y
         self.beginningAnimateConstraints?.leading?.constant = startingFrame.origin.x
         self.beginningAnimateConstraints?.width?.constant = startingFrame.width
         self.beginningAnimateConstraints?.height?.constant = startingFrame.height
         self.dismissButton.alpha = 0
         self.view.layoutIfNeeded()
-
       })
+  }
+}
 
+extension TodayDetailController: BaseFullScreenDragAnimateable {
+  func startDragGesture() {
+    var dragGesture = self.dragGesture
+    let baseView = self.baseView
+    let contentOffsetY = self.detailContentView.contentOffset.y
+
+    dragGesture.began
+      .map { _ in
+        dragGesture.insertOffset(offset: contentOffsetY)
+      }.subscribe().disposed(by: disposeBag)
+
+    dragGesture.moved
+      .map { $0.translation(in: baseView).y.convertDragScaleTranform(withOffset: dragGesture.getOffset()) }
+      .ignoreNil()
+      .map { baseView.transform = $0 }
+      .subscribe().disposed(by: disposeBag)
+
+    dragGesture.ended
+      .filter { $0.translation(in: baseView).y > 0 }
+      .map { _ in AppStep.todayDetailIsComplete }
+      .bind(to: steps)
+      .disposed(by: disposeBag)
   }
 }
 

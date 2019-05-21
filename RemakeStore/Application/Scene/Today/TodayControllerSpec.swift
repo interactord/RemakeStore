@@ -69,6 +69,13 @@ class TodayControllerSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
+  func test_dismissFullScreenAnimation() {
+    sut = TodayController()
+    sut?.dismissFullScreenAnimation()
+//
+    XCTAssertNotNil(sut)
+  }
+
   func test_prefersStatusBarHidden() {
     sut = TodayController()
 
