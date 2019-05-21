@@ -23,8 +23,8 @@ protocol FullScreenAnimatable where Self: UIViewController {
 
 protocol BaseFullScreenAnimatable where Self: UIViewController {
   var baseView: UIView { get }
+  var startingFrame: CGRect? { get set }
   var beginningAnimateConstraints: AnchoredConstraints? { get set }
-  var finishedAnimatedConstraints: AnchoredConstraints? { get }
   func setupFullScreenLayout(startingFrame: CGRect)
   func startFullScreenAnimation()
 }
