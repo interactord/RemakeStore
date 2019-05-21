@@ -97,6 +97,26 @@ extension TodayController: FullScreenAnimatable {
         }
       })
   }
+
+  func dismissFullScreenAnimation() {
+    targetFullScreenController?.dismissFullScreenAnimation()
+    UIView.defaultAnimated(
+      animations: {
+        self.tabBarController?.tabBar.transform = .identity
+        self.view.layoutIfNeeded()
+      },
+      completion: { result in
+        if !result { return }
+        self.fullScreenStatus = .thumbnail
+        self.targetFullScreenController?.view.removeFromSuperview()
+        self.targetFullScreenController?.removeFromParent()
+        self.targetFullScreenController = nil
+        UIView.animate(withDuration: 0) {
+          self.setNeedsStatusBarAppearanceUpdate()
+        }
+      }
+    )
+  }
 }
 
 extension TodayController: ViewModelBased {

@@ -12,9 +12,8 @@ class TodayDetailController: BaseController {
 
   // MARK: Public
   var viewModel: TodayDetailViewModel!
-  var todayItemViewModel: TodayItemViewModeling?
+  var startingFrame: CGRect?
   var beginningAnimateConstraints: AnchoredConstraints?
-  var finishedAnimatedConstraints: AnchoredConstraints?
 
   lazy var baseView: UIView = {
     guard let view = self.view else {
@@ -31,6 +30,10 @@ class TodayDetailController: BaseController {
       .setHeightAnchor(44)
       .build()
   }()
+
+  deinit {
+    print("\(type(of: self)): \(#function)")
+}
 
   // MARK: - Private
 
@@ -53,7 +56,9 @@ class TodayDetailController: BaseController {
 }
 
 extension TodayDetailController: BaseFullScreenAnimatable {
+
   func setupFullScreenLayout(startingFrame: CGRect) {
+    self.startingFrame = startingFrame
     self.beginningAnimateConstraints = baseView.anchor(
       top: view.superview?.topAnchor,
       leading: view.superview?.leadingAnchor,
@@ -63,6 +68,7 @@ extension TodayDetailController: BaseFullScreenAnimatable {
       size: startingFrame.size
     )
     self.baseView.layoutIfNeeded()
+
   }
 
   func startFullScreenAnimation() {
@@ -70,16 +76,35 @@ extension TodayDetailController: BaseFullScreenAnimatable {
     guard let superView = self.view.superview else {
       return
     }
-
     self.view.layer.cornerRadius = 16
-    view?.defaultAnimated(
+    UIView.defaultAnimated(
       animations: {
+        self.view.layer.cornerRadius = 0
         self.beginningAnimateConstraints?.top?.constant = 0
         self.beginningAnimateConstraints?.leading?.constant = 0
         self.beginningAnimateConstraints?.width?.constant = superView.frame.width
         self.beginningAnimateConstraints?.height?.constant = superView.frame.height
         self.view.layoutIfNeeded()
       })
+  }
+
+  func dismissFullScreenAnimation() {
+    guard let startingFrame = self.startingFrame else {
+      return
+    }
+
+    UIView.defaultAnimated(
+      animations: {
+        self.view.layer.cornerRadius = 16
+        self.beginningAnimateConstraints?.top?.constant = startingFrame.origin.y
+        self.beginningAnimateConstraints?.leading?.constant = startingFrame.origin.x
+        self.beginningAnimateConstraints?.width?.constant = startingFrame.width
+        self.beginningAnimateConstraints?.height?.constant = startingFrame.height
+        self.dismissButton.alpha = 0
+        self.view.layoutIfNeeded()
+
+      })
+
   }
 }
 
@@ -88,6 +113,9 @@ extension TodayDetailController: ViewModelBased {
   // MARK: - functions for protocol
 
   func bindViewModel() {
-    print("TodayDetailController")
+    dismissButton.rx.tap
+      .map { AppStep.todayDetailIsComplete }
+      .bind(to: steps)
+      .disposed(by: disposeBag)
   }
 }

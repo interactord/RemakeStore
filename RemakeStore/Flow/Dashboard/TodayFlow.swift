@@ -38,6 +38,8 @@ class TodayFlow: BaseFlow {
       return navigateToTodayScreen()
     case .todayDetailIsRequired(let fullScreenAnimatedInfo):
       return navigateToTodayDetailScreen(fullScreenAnimatedInfo)
+    case .todayDetailIsComplete:
+      return dismissNavigateToTodayDetailScreen()
     default:
       return .none
     }
@@ -79,5 +81,14 @@ extension TodayFlow {
     )
 
     return .one(flowContributor: contributor)
+  }
+
+  private func dismissNavigateToTodayDetailScreen() -> FlowContributors {
+    guard
+      let todayController = rootViewController.viewControllers.first as? FullScreenAnimatable
+      else { return .none }
+
+    todayController.dismissFullScreenAnimation()
+    return .none
   }
 }

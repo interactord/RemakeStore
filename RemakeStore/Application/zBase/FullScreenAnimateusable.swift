@@ -19,6 +19,7 @@ protocol FullScreenAnimatable where Self: UIViewController {
   var fullScreenStatus: ScreenStatus { get }
   func setupFullscreenView(_ targetFullScreenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo)
   func startFullScreenAnimation()
+  func dismissFullScreenAnimation()
 }
 
 protocol BaseFullScreenAnimatable where Self: UIViewController {
@@ -27,4 +28,5 @@ protocol BaseFullScreenAnimatable where Self: UIViewController {
   var beginningAnimateConstraints: AnchoredConstraints? { get set }
   func setupFullScreenLayout(startingFrame: CGRect)
   func startFullScreenAnimation()
+  func dismissFullScreenAnimation()
 }
