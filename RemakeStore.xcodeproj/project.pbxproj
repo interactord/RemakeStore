@@ -27,7 +27,6 @@
 		29428FCC227D85A100BD688D /* BaseFlowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FCA227D859D00BD688D /* BaseFlowMock.swift */; };
 		29428FD0227D861900BD688D /* TestStepMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FCE227D861600BD688D /* TestStepMock.swift */; };
 		29428FD3227D86CC00BD688D /* TestControllerStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29428FD1227D86C800BD688D /* TestControllerStepper.swift */; };
-		2942A16F228A031F00D35C6B /* BaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E32FD8FB94BAC3EBE491 /* BaseCollectionReusableView.swift */; };
 		2942A173228A13A400D35C6B /* AppsHeaderHorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A172228A13A400D35C6B /* AppsHeaderHorizontalListView.swift */; };
 		2942A175228A140800D35C6B /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A174228A140800D35C6B /* AppsHeaderCell.swift */; };
 		2942A177228A141000D35C6B /* AppsHeaderCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A176228A141000D35C6B /* AppsHeaderCellSpec.swift */; };
@@ -223,7 +222,6 @@
 		F426EF6D95C5A44513D23686 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB5D6693C705F336268F /* BaseController.swift */; };
 		F426EFCE5A7EB2039377DC00 /* AppsHeaderHorizontalListViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E652DB3A34B138BEFA24 /* AppsHeaderHorizontalListViewSpec.swift */; };
 		F426EFD70569C0BBDE429237 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB50B112BD0CC06F0587 /* MusicController.swift */; };
-		F426EFF0B6ECC25C0368C933 /* BaseCollectionReusableViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E98DE07C1C81652AF40D /* BaseCollectionReusableViewSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,7 +361,6 @@
 		F426E2E6995DF074FBDC65C8 /* ServiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
 		F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailResultViewSpec.swift; sourceTree = "<group>"; };
 		F426E3090A736B778937415E /* TodayDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDetailViewModel.swift; sourceTree = "<group>"; };
-		F426E32FD8FB94BAC3EBE491 /* BaseCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableView.swift; sourceTree = "<group>"; };
 		F426E378DF998F809450C613 /* CellContentClassIdentifiable+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellContentClassIdentifiable+UICollectionView.swift"; sourceTree = "<group>"; };
 		F426E39D97D070862697231C /* DefaultTheme+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultTheme+Color.swift"; sourceTree = "<group>"; };
 		F426E400CA6FFAD3D7F15363 /* AppsGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
@@ -421,7 +418,6 @@
 		F426E95CC21BCE405E8445C5 /* ReviewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCellSpec.swift; sourceTree = "<group>"; };
 		F426E96A2DFF80C49F38C592 /* FlowContributor+AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowContributor+AppStep.swift"; sourceTree = "<group>"; };
 		F426E98B13FD64316E62EC01 /* RootFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
-		F426E98DE07C1C81652AF40D /* BaseCollectionReusableViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableViewSpec.swift; sourceTree = "<group>"; };
 		F426E99136DBB074D0F04501 /* InteractordEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractordEndpoint.swift; sourceTree = "<group>"; };
 		F426E99BBBFA0B4DAE5A1E95 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		F426E9C0C717E4EEBE3825BA /* AppRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
@@ -972,14 +968,14 @@
 				F426E7BE6F61D2A66B194018 /* PreviewScreenshotsViewSpec.swift */,
 				F426E222E508A49332F48150 /* ReviewListView.swift */,
 				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
-				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
 				F426EEDD4FB709D5F719561F /* SearchResultView.swift */,
+				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
+				F426E713311CEAC84C36EA4E /* TodayDertailContentsView.swift */,
+				F426E12012FC84BA64791CE9 /* TodayDetailContentsViewSpec.swift */,
 				F426E471C3710024AEA566DD /* TodayListView.swift */,
 				F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */,
 				F426E010751CFF01183BE391 /* TodayMultipleAppListView.swift */,
 				F426E8B3CA96969B3A2A4753 /* TodayMultipleAppListViewSpec.swift */,
-				F426E713311CEAC84C36EA4E /* TodayDertailContentsView.swift */,
-				F426E12012FC84BA64791CE9 /* TodayDetailContentsViewSpec.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1142,8 +1138,6 @@
 				F426E6A28DDE15B97BA3212D /* BaseCollectionView.swift */,
 				F426E938497457A4244A65FC /* BaseCollectionViewSpec.swift */,
 				F426ECA4692F5FA9533E3C88 /* BaseCollectionViewCell.swift */,
-				F426E32FD8FB94BAC3EBE491 /* BaseCollectionReusableView.swift */,
-				F426E98DE07C1C81652AF40D /* BaseCollectionReusableViewSpec.swift */,
 				29B626782293016F00F442D5 /* FullScreenAnimateusable.swift */,
 			);
 			path = zBase;
@@ -1551,7 +1545,6 @@
 				F426EDE56EC184AD7572DDFE /* DefaultTheme.swift in Sources */,
 				296D18AC228CB3C1003FECB8 /* InteractordRepository.swift in Sources */,
 				292030CC228DE16F00CEC624 /* UIColor+Hex.swift in Sources */,
-				2942A16F228A031F00D35C6B /* BaseCollectionReusableView.swift in Sources */,
 				F426E651C955FA717E0F0BB6 /* DefaultTheme+Color.swift in Sources */,
 				2942A173228A13A400D35C6B /* AppsHeaderHorizontalListView.swift in Sources */,
 				F426E38CDE646CD2D3CE8DE2 /* DefaultTheme+Font.swift in Sources */,
@@ -1682,7 +1675,6 @@
 				F426E093F6F7583BB2C05C38 /* AppsPageHeaderSpec.swift in Sources */,
 				F426EC706C81007FAB55BFC6 /* AppsControllerSpec.swift in Sources */,
 				2942A177228A141000D35C6B /* AppsHeaderCellSpec.swift in Sources */,
-				F426EFF0B6ECC25C0368C933 /* BaseCollectionReusableViewSpec.swift in Sources */,
 				F426EFCE5A7EB2039377DC00 /* AppsHeaderHorizontalListViewSpec.swift in Sources */,
 				F426EAAA3E695B11ED156E00 /* AppsHorizontalListViewSpec.swift in Sources */,
 				F426E24F697A0CDCD8F4FA5F /* FeedResultViewModelSpec.swift in Sources */,

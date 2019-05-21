@@ -31,7 +31,7 @@ class TodayListView: BaseCollectionView {
     super.registerCell()
     register(cellType: TodayFullBackgroundCell.self)
     register(cellType: TodayMultipleAppCell.self)
-    register(kind: UICollectionView.elementKindSectionHeader, reusableViewType: TodayHeader.self)
+    register(kind: UICollectionView.elementKindSectionHeader, cellType: TodayHeader.self)
   }
 
   override func setupDelegate() {
