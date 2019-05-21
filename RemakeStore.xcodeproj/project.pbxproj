@@ -72,6 +72,7 @@
 		298E4092229031E30005731A /* Collection+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298E4091229031E30005731A /* Collection+Subscript.swift */; };
 		298E409622909F560005731A /* TodayDetailControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298E409522909F560005731A /* TodayDetailControllerSpec.swift */; };
 		298E409822909F620005731A /* TodayDetailViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298E409722909F620005731A /* TodayDetailViewModelSpec.swift */; };
+		299D3ACD22945C0E00D94914 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D3ACC22945C0E00D94914 /* BaseTableView.swift */; };
 		29B6162B228760BC008CD2A1 /* Obserable+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6162A228760BC008CD2A1 /* Obserable+String.swift */; };
 		29B6162F22876A41008CD2A1 /* SearchResultCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6162E22876A41008CD2A1 /* SearchResultCellSpec.swift */; };
 		29B6163222876DF5008CD2A1 /* LookupCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6163022876DEC008CD2A1 /* LookupCellSpec.swift */; };
@@ -214,7 +215,7 @@
 		F426EEBC30EFD509BBB1ADDD /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EA07B7FE30016BECBBEB /* TodayViewModel.swift */; };
 		F426EECC2FCF75C89A0350D5 /* CellContentClassIdentifiable+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7837EE8B7B1E88D452B /* CellContentClassIdentifiable+UITableView.swift */; };
 		F426EF2100C68C3EF9E20E8A /* ITunesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E514EFBA96FD2BCF230A /* ITunesRepository.swift */; };
-		F426EF2AE06E277BBC8EB691 /* TodayDertailContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E713311CEAC84C36EA4E /* TodayDertailContentsView.swift */; };
+		F426EF2AE06E277BBC8EB691 /* TodayDetailContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E713311CEAC84C36EA4E /* TodayDetailContentsView.swift */; };
 		F426EF3176AB8303AE4B8036 /* TodayViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E92FCFEFA8526D6690CF /* TodayViewModelSpec.swift */; };
 		F426EF32B8148F412E37CB89 /* ViewModelBaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EDEEF408AF355C375669 /* ViewModelBaseSpec.swift */; };
 		F426EF3D8D2AAF11B18FB790 /* RxUIImageView+moa.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ECD783034BE29ED4C9BD /* RxUIImageView+moa.swift */; };
@@ -302,6 +303,7 @@
 		298E4091229031E30005731A /* Collection+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Subscript.swift"; sourceTree = "<group>"; };
 		298E409522909F560005731A /* TodayDetailControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailControllerSpec.swift; sourceTree = "<group>"; };
 		298E409722909F620005731A /* TodayDetailViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewModelSpec.swift; sourceTree = "<group>"; };
+		299D3ACC22945C0E00D94914 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		29B6162A228760BC008CD2A1 /* Obserable+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Obserable+String.swift"; sourceTree = "<group>"; };
 		29B6162E22876A41008CD2A1 /* SearchResultCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellSpec.swift; sourceTree = "<group>"; };
 		29B6163022876DEC008CD2A1 /* LookupCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupCellSpec.swift; sourceTree = "<group>"; };
@@ -393,7 +395,7 @@
 		F426E6AE2950B1E92E299706 /* UIImage+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Transform.swift"; sourceTree = "<group>"; };
 		F426E6DB7DEBCA49942079FD /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		F426E6EF1C671F81D70047ED /* AppsDIContainerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDIContainerSpec.swift; sourceTree = "<group>"; };
-		F426E713311CEAC84C36EA4E /* TodayDertailContentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDertailContentsView.swift; sourceTree = "<group>"; };
+		F426E713311CEAC84C36EA4E /* TodayDetailContentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDetailContentsView.swift; sourceTree = "<group>"; };
 		F426E72D44CA36FC70B55E81 /* MultipleAppCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleAppCellSpec.swift; sourceTree = "<group>"; };
 		F426E7837EE8B7B1E88D452B /* CellContentClassIdentifiable+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellContentClassIdentifiable+UITableView.swift"; sourceTree = "<group>"; };
 		F426E78BE2038658FC3AC421 /* MusicDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDIContainer.swift; sourceTree = "<group>"; };
@@ -767,6 +769,15 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		299D3ACB22945BEC00D94914 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F426E713311CEAC84C36EA4E /* TodayDetailContentsView.swift */,
+				F426E12012FC84BA64791CE9 /* TodayDetailContentsViewSpec.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		29CEA6FC2284804F00EE07E3 /* AppDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,8 +981,6 @@
 				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
 				F426EEDD4FB709D5F719561F /* SearchResultView.swift */,
 				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
-				F426E713311CEAC84C36EA4E /* TodayDertailContentsView.swift */,
-				F426E12012FC84BA64791CE9 /* TodayDetailContentsViewSpec.swift */,
 				F426E471C3710024AEA566DD /* TodayListView.swift */,
 				F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */,
 				F426E010751CFF01183BE391 /* TodayMultipleAppListView.swift */,
@@ -1014,6 +1023,7 @@
 		F426E7FBE311669B47F748B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				299D3ACB22945BEC00D94914 /* TableView */,
 				F426EDEB0B97CD3330F1157D /* Cell */,
 				F426E72EA4066B9E7BABA3C3 /* CollectionView */,
 				F426E907ED3C307558A31EA7 /* HorizontalSnappingLayout.swift */,
@@ -1136,6 +1146,7 @@
 				F426EB5D6693C705F336268F /* BaseController.swift */,
 				F426E78FE228C55AAA47206B /* BaseControllerSpec.swift */,
 				F426E6A28DDE15B97BA3212D /* BaseCollectionView.swift */,
+				299D3ACC22945C0E00D94914 /* BaseTableView.swift */,
 				F426E938497457A4244A65FC /* BaseCollectionViewSpec.swift */,
 				F426ECA4692F5FA9533E3C88 /* BaseCollectionViewCell.swift */,
 				29B626782293016F00F442D5 /* FullScreenAnimateusable.swift */,
@@ -1526,6 +1537,7 @@
 				29738CE0227DA4A1001D58FB /* SearchViewModel.swift in Sources */,
 				F426EBD3C06776B83F176681 /* BaseFlow.swift in Sources */,
 				F426E519AB2C066645E5444B /* TodayController.swift in Sources */,
+				299D3ACD22945C0E00D94914 /* BaseTableView.swift in Sources */,
 				F426EEBC30EFD509BBB1ADDD /* TodayViewModel.swift in Sources */,
 				F426E05E41424F7041613D9D /* MusicViewModel.swift in Sources */,
 				296D18AD228CB495003FECB8 /* SocialApp.swift in Sources */,
@@ -1606,7 +1618,7 @@
 				F426E5E19A05058BC735D2B3 /* UIImage+Transform.swift in Sources */,
 				F426E48EDF4DB6041B5D3464 /* MultipleAppCell.swift in Sources */,
 				F426E9CFF4C0B56FADF94FB0 /* TodayItemViewModel.swift in Sources */,
-				F426EF2AE06E277BBC8EB691 /* TodayDertailContentsView.swift in Sources */,
+				F426EF2AE06E277BBC8EB691 /* TodayDetailContentsView.swift in Sources */,
 				F426EC2437A40B1CA3FA3620 /* TodayDetailController.swift in Sources */,
 				F426E5A184405598DFAA4BB7 /* TodayDetailViewModel.swift in Sources */,
 			);
