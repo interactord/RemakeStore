@@ -37,6 +37,7 @@ class TodayMultipleAppListView: BaseCollectionView {
 
   override func setupView() {
     super.setupView()
+    showsVerticalScrollIndicator = false
   }
 
   override func setupDelegate() {
