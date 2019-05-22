@@ -40,27 +40,28 @@ class TodayDetailController: BaseController {
     return DragGesture(withBaseView: baseView)
   }()
 
-  deinit {
-    print("\(type(of: self)): \(#function)")
-  }
-
   // MARK: - Private
 
-  private(set) lazy var detailContentView = TodayDetailContentsView()
+  private(set) lazy var detailListView = TodayDetailListView()
 
   override func setupViews() {
     super.setupViews()
     view.clipsToBounds = true
-    view.addSubview(detailContentView)
+    view.addSubview(detailListView)
     view.addSubview(dismissButton)
   }
 
   override func setupConstraints() {
     super.setupConstraints()
-    detailContentView.fillSuperView()
+
+    detailListView.fillSuperView()
     dismissButton
       .setTopAnchor(view.topAnchor, padding: 25)
       .setTrailingAnchor(view.trailingAnchor, padding: 25)
+  }
+
+  deinit {
+    print("\(type(of: self)): \(#function)")
   }
 }
 
@@ -124,7 +125,7 @@ extension TodayDetailController: BaseFullScreenDragAnimateable {
   func startDragGesture() {
     var dragGesture = self.dragGesture
     let baseView = self.baseView
-    let contentOffsetY = self.detailContentView.contentOffset.y
+    let contentOffsetY = self.detailListView.contentOffset.y
 
     dragGesture.began
       .map { _ in
