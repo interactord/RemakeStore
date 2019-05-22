@@ -147,5 +147,10 @@ extension TodayDetailController: ViewModelBased {
       .map { AppStep.todayDetailIsComplete }
       .bind(to: steps)
       .disposed(by: disposeBag)
+
+    viewModel.outputs.todayItemViewModel
+      .asDriverJustComplete()
+      .drive(detailListView.rx.updateHeaderViewModel)
+      .disposed(by: disposeBag)
   }
 }
