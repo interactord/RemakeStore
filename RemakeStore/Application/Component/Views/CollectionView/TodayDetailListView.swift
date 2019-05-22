@@ -36,7 +36,15 @@ class TodayDetailListView: BaseCollectionView {
 
 extension TodayDetailListView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 6
+    guard let headerViewModel = headerViewModel else {
+      return 0
+    }
+    switch headerViewModel.outputs.cellType {
+    case .todayFullBackgroundCell:
+      return 6
+    case .todayMultipleAppCell:
+      return 1
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,6 +62,7 @@ extension TodayDetailListView: UICollectionViewDataSource {
         return cell
       case .todayMultipleAppCell:
         let cell: TodayMultipleAppCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+        cell.todayMultipleAppListView.changed(to: .fullScreen)
         cell.bind(to: headerViewModel)
         return cell
       }

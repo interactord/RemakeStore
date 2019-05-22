@@ -12,7 +12,7 @@ class TodayMultipleAppCell: BaseTodayCell {
 
   var topConstraint: NSLayoutConstraint!
 
-  private lazy var todayMultipleAppListView: TodayMultipleAppListView = {
+  private(set) lazy var todayMultipleAppListView: TodayMultipleAppListView = {
     let listView = TodayMultipleAppListView()
     return listView
   }()
@@ -58,6 +58,7 @@ class TodayMultipleAppCell: BaseTodayCell {
     titleLabel.text = nil
     todayMultipleAppListView.feedResultViewModels = nil
   }
+
 }
 
 extension TodayMultipleAppCell: TodayItemViewModelBindable {
