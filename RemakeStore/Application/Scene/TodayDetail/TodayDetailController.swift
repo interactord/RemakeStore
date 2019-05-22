@@ -19,13 +19,6 @@ class TodayDetailController: BaseController {
   var beginningAnimateConstraints: AnchoredConstraints?
   var beginningOffset: CGFloat = 0
 
-  lazy var baseView: UIView = {
-    guard let view = self.view else {
-      return UIView()
-    }
-    return self.view
-  }()
-
   lazy var dismissButton: UIButton = {
     return ButtonBuilder(type: .custom)
       .setImage(#imageLiteral(resourceName: "Close-button"))
@@ -36,8 +29,7 @@ class TodayDetailController: BaseController {
   }()
 
   lazy var dragGesture: DragGesture = {
-    let baseView = self.baseView
-    return DragGesture(withBaseView: baseView)
+    return DragGesture(withBaseView: self.view)
   }()
 
   // MARK: - Private
@@ -69,7 +61,7 @@ extension TodayDetailController: BaseFullScreenAnimatable {
 
   func setupFullScreenLayout(startingFrame: CGRect) {
     self.startingFrame = startingFrame
-    self.beginningAnimateConstraints = baseView.anchor(
+    self.beginningAnimateConstraints = view.anchor(
       top: view.superview?.topAnchor,
       leading: view.superview?.leadingAnchor,
       bottom: nil,
@@ -77,7 +69,7 @@ extension TodayDetailController: BaseFullScreenAnimatable {
       padding: .init(top: startingFrame.origin.y, left: startingFrame.origin.x, bottom: 0, right: 0),
       size: startingFrame.size
     )
-    self.baseView.layoutIfNeeded()
+    self.view.layoutIfNeeded()
 
   }
 
@@ -110,7 +102,7 @@ extension TodayDetailController: BaseFullScreenAnimatable {
     UIView.defaultAnimated(
       animations: {
         self.view.layer.cornerRadius = 16
-        self.baseView.transform = .identity
+        self.view.transform = .identity
         self.beginningAnimateConstraints?.top?.constant = startingFrame.origin.y
         self.beginningAnimateConstraints?.leading?.constant = startingFrame.origin.x
         self.beginningAnimateConstraints?.width?.constant = startingFrame.width
@@ -124,7 +116,7 @@ extension TodayDetailController: BaseFullScreenAnimatable {
 extension TodayDetailController: BaseFullScreenDragAnimateable {
   func startDragGesture() {
     var dragGesture = self.dragGesture
-    let baseView = self.baseView
+    let baseView = self.view
     let contentOffsetY = self.detailListView.contentOffset.y
 
     dragGesture.began
@@ -135,7 +127,7 @@ extension TodayDetailController: BaseFullScreenDragAnimateable {
     dragGesture.moved
       .map { $0.translation(in: baseView).y.convertDragScaleTranform(withOffset: dragGesture.getOffset()) }
       .ignoreNil()
-      .map { baseView.transform = $0 }
+      .map { baseView?.transform = $0 }
       .subscribe().disposed(by: disposeBag)
 
     dragGesture.ended

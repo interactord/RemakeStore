@@ -75,9 +75,10 @@ extension TodayController: FullScreenAnimatable {
   func setupFullscreenView(_ targetFullSceenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo) {
     if nil != targetFullScreenController { return }
 
-    let fullScreenView = targetFullSceenController.baseView
-    view.addSubview(fullScreenView)
-    addChild(targetFullSceenController)
+    if let fullScreenView = targetFullSceenController.view {
+      view.addSubview(fullScreenView)
+      addChild(targetFullSceenController)
+    }
     targetFullSceenController.setupFullScreenLayout(startingFrame: info.startingFrame)
 
     targetFullScreenController = targetFullSceenController
