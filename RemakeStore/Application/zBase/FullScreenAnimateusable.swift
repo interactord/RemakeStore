@@ -35,3 +35,8 @@ protocol BaseFullScreenDragAnimateable where Self: BaseFullScreenAnimatable {
   var dragGesture: DragGesture { get }
   func startDragGesture()
 }
+
+protocol BaseFullScreenLayoutAnimatedable where Self: UICollectionViewCell {
+  var thumbnailHeight: CGFloat { get }
+  var fullScreenHeight: CGFloat { get }
+}

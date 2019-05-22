@@ -20,8 +20,6 @@ class TodayListView: BaseCollectionView {
 
   // MARK: - Private
 
-  private let todayFullBackgroundCellHeight: CGFloat = 466
-  private let todayMultipleAppCellHeight: CGFloat = 436
   private let contentCellPadding: CGFloat = 48
   private let contentCellMargin: UIEdgeInsets = .init(top: 10, left: 0, bottom: 32, right: 0)
   private let cellLineSpacing: CGFloat = 32
@@ -104,9 +102,11 @@ extension TodayListView: UICollectionViewDelegateFlowLayout {
     let width = frame.width - contentCellPadding
     switch cellType {
     case .todayFullBackgroundCell:
-      return .init(width: width, height: todayFullBackgroundCellHeight)
+      let cell = TodayFullBackgroundCell()
+      return .init(width: width, height: cell.thumbnailHeight)
     case .todayMultipleAppCell:
-      return .init(width: width, height: todayMultipleAppCellHeight)
+      let cell = TodayMultipleAppCell()
+      return .init(width: width, height: cell.thumbnailHeight)
     }
   }
 

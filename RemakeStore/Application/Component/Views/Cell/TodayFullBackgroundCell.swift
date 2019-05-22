@@ -110,5 +110,17 @@ extension TodayFullBackgroundCell: TodayItemViewModelBindable {
   }
 }
 
+extension TodayFullBackgroundCell: BaseFullScreenLayoutAnimatedable {
+
+  var thumbnailHeight: CGFloat {
+    return 466
+  }
+
+  var fullScreenHeight: CGFloat {
+    return 500
+  }
+
+}
+
 extension TodayFullBackgroundCell: CellContentClassIdentifiable {
 }

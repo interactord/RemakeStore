@@ -67,7 +67,27 @@ extension TodayDetailListView: UICollectionViewDataSource {
 
 extension TodayDetailListView: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    guard let headerViewModel = headerViewModel else {
+      return .zero
+    }
+
+    if indexPath.item == 0 {
+      return calculatedCellSize(cellType: headerViewModel.outputs.cellType)
+    }
+
     return .init(width: frame.width, height: 438)
+  }
+
+  private func calculatedCellSize(cellType: TodayListViewCellType) -> CGSize {
+    let width = frame.width
+    switch cellType {
+    case .todayFullBackgroundCell:
+      let cell = TodayFullBackgroundCell()
+      return .init(width: width, height: cell.fullScreenHeight)
+    case .todayMultipleAppCell:
+      let cell = TodayMultipleAppCell()
+      return .init(width: width, height: cell.fullScreenHeight)
+    }
   }
 }
 

@@ -72,5 +72,16 @@ extension TodayMultipleAppCell: TodayItemViewModelBindable {
   }
 }
 
+extension TodayMultipleAppCell: BaseFullScreenLayoutAnimatedable {
+  var thumbnailHeight: CGFloat {
+    return 436
+  }
+
+  var fullScreenHeight: CGFloat {
+    return UIScreen.main.bounds.height
+  }
+
+}
+
 extension TodayMultipleAppCell: CellContentClassIdentifiable {
 }
