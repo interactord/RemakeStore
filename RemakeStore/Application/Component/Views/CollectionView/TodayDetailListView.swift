@@ -5,7 +5,7 @@
 
 import UIKit
 
-class TodayDetailContentsView: BaseCollectionView {
+class TodayDetailListView: BaseCollectionView {
 	override func setupView() {
 		super.setupView()
 		backgroundColor = .red
