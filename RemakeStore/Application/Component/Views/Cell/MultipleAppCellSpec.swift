@@ -32,13 +32,6 @@ class MultipleAppCellSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
-  func test_inject_image_bindToViewModel() {
-    sut = MultipleAppCell()
-    sut?.iconImageView.image = UIImage()
-    sut?.bind(to: makeViewModel())
-    XCTAssertNotNil(sut)
-  }
-
   func test_prepareForReuse() {
     sut = MultipleAppCell()
     sut?.prepareForReuse()
