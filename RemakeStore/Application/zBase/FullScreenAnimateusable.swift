@@ -14,15 +14,15 @@ enum ScreenStatus {
   case fullScreen
 }
 
-protocol FullScreenAnimatable where Self: UIViewController {
-  var targetFullScreenController: BaseFullScreenAnimatable? { get }
+protocol FullScreenAnimatable {
+  var targetFullScreenController: FullScreenViewControllerAnimatable? { get }
   var fullScreenStatus: ScreenStatus { get }
-  func setupFullscreenView(_ targetFullScreenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo)
+  func setupFullscreenView(_ targetFullScreenController: FullScreenViewControllerAnimatable, info: FullScreenAnimatedInfo)
   func startFullScreenAnimation()
   func dismissFullScreenAnimation()
 }
 
-protocol BaseFullScreenAnimatable where Self: UIViewController {
+protocol FullScreenViewControllerAnimatable where Self: UIViewController {
   var view: UIView! { get }
   var startingFrame: CGRect? { get set }
   var beginningAnimateConstraints: AnchoredConstraints? { get set }
@@ -31,12 +31,20 @@ protocol BaseFullScreenAnimatable where Self: UIViewController {
   func dismissFullScreenAnimation()
 }
 
-protocol BaseFullScreenDragAnimateable where Self: BaseFullScreenAnimatable {
+protocol FullScreenDragAnimateable where Self: FullScreenViewControllerAnimatable {
   var dragGesture: DragGesture { get }
   func startDragGesture()
 }
 
-protocol BaseFullScreenLayoutAnimatedable where Self: UICollectionViewCell {
+protocol FullScreenLayoutCellAnimatedable where Self: UICollectionViewCell {
   var thumbnailHeight: CGFloat { get }
   var fullScreenHeight: CGFloat { get }
+  var topConstraint: NSLayoutConstraint! { get }
+  var thumbnailPaddingTop: CGFloat { get }
+  var fullScreenPaddingTop: CGFloat { get }
+}
+
+protocol FullScreenLayoutCollectionViewAnimatedable where Self: UICollectionView {
+  func startAnimation(cell: FullScreenLayoutCellAnimatedable)
+  func dismissAnimation(cell: FullScreenLayoutCellAnimatedable, startingFrame: CGRect)
 }

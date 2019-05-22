@@ -55,11 +55,11 @@ class TodayFullBackgroundCell: BaseTodayCell {
     super.setupConstant()
     backgroundImageView.fillSuperView()
     stackView
-      .setLeadingAnchor(leadingAnchor, padding: 24)
-      .setBottomAnchor(bottomAnchor, padding: 24)
-      .setTrailingAnchor(trailingAnchor, padding: 24)
+      .setLeadingAnchor(leadingAnchor, padding: thumbnailPaddingTop)
+      .setBottomAnchor(bottomAnchor, padding: thumbnailPaddingTop)
+      .setTrailingAnchor(trailingAnchor, padding: thumbnailPaddingTop)
 
-    topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24)
+    topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: thumbnailPaddingTop)
     topConstraint.isActive = true
   }
 
@@ -98,7 +98,7 @@ extension TodayFullBackgroundCell: TodayItemViewModelBindable {
   }
 }
 
-extension TodayFullBackgroundCell: BaseFullScreenLayoutAnimatedable {
+extension TodayFullBackgroundCell: FullScreenLayoutCellAnimatedable {
 
   var thumbnailHeight: CGFloat {
     return 466
@@ -106,6 +106,14 @@ extension TodayFullBackgroundCell: BaseFullScreenLayoutAnimatedable {
 
   var fullScreenHeight: CGFloat {
     return 500
+  }
+
+  var thumbnailPaddingTop: CGFloat {
+    return 24
+  }
+
+  var fullScreenPaddingTop: CGFloat {
+    return 48
   }
 
 }

@@ -63,6 +63,26 @@ extension TodayDetailListView: UICollectionViewDataSource {
   }
 }
 
+// MARK: - FullScreenLayoutCollectionViewAnimatedable
+extension TodayDetailListView: FullScreenLayoutCollectionViewAnimatedable {
+  func startAnimation(cell: FullScreenLayoutCellAnimatedable) {
+    UIView.defaultAnimated(animations: {
+      cell.topConstraint.constant = cell.fullScreenPaddingTop
+      self.layoutIfNeeded()
+    })
+  }
+
+  func dismissAnimation(cell: FullScreenLayoutCellAnimatedable, startingFrame: CGRect) {
+    UIView.defaultAnimated(animations: {
+      cell.topConstraint.constant = cell.thumbnailPaddingTop
+      cell
+        .setWithAnchor(startingFrame.width)
+        .setHeightAnchor(cell.thumbnailHeight)
+      self.layoutIfNeeded()
+    })
+  }
+}
+
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension TodayDetailListView: UICollectionViewDelegateFlowLayout {

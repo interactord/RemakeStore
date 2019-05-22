@@ -48,8 +48,8 @@ class TodayDetailController: BaseController {
 
     detailListView.fillSuperView()
     dismissButton
-      .setTopAnchor(view.topAnchor, padding: 25)
-      .setTrailingAnchor(view.trailingAnchor, padding: 25)
+      .setTopAnchor(view.topAnchor, padding: 15)
+      .setTrailingAnchor(view.trailingAnchor, padding: 15)
   }
 
   deinit {
@@ -57,7 +57,7 @@ class TodayDetailController: BaseController {
   }
 }
 
-extension TodayDetailController: BaseFullScreenAnimatable {
+extension TodayDetailController: FullScreenViewControllerAnimatable {
 
   func setupFullScreenLayout(startingFrame: CGRect) {
     self.startingFrame = startingFrame
@@ -79,6 +79,11 @@ extension TodayDetailController: BaseFullScreenAnimatable {
       return
     }
     self.view.layer.cornerRadius = 16
+
+    if let fullScreenHeaderCell = self.detailListView.cellForItem(at: [0, 0]) as? FullScreenLayoutCellAnimatedable {
+      self.detailListView.startAnimation(cell: fullScreenHeaderCell)
+    }
+
     UIView.defaultAnimated(
       animations: {
         self.view.layer.cornerRadius = 0
@@ -99,6 +104,10 @@ extension TodayDetailController: BaseFullScreenAnimatable {
       return
     }
 
+    if let fullScreenHeaderCell = self.detailListView.cellForItem(at: [0, 0]) as? FullScreenLayoutCellAnimatedable {
+      self.detailListView.dismissAnimation(cell: fullScreenHeaderCell, startingFrame: startingFrame)
+    }
+
     UIView.defaultAnimated(
       animations: {
         self.view.layer.cornerRadius = 16
@@ -113,7 +122,7 @@ extension TodayDetailController: BaseFullScreenAnimatable {
   }
 }
 
-extension TodayDetailController: BaseFullScreenDragAnimateable {
+extension TodayDetailController: FullScreenDragAnimateable {
   func startDragGesture() {
     var dragGesture = self.dragGesture
     let baseView = self.view

@@ -46,7 +46,7 @@ class TodayControllerSpec: XCTestCase {
 
   func test_setupFullscreenView() {
 
-    let tagetFullScreenController: BaseFullScreenAnimatable = TodayDetailController()
+    let tagetFullScreenController: FullScreenViewControllerAnimatable = TodayDetailController()
     let info = FullScreenAnimatedInfo(
       todayItemViewModel: makeTodayItemViewModel(),
       startingFrame: .init(x: 0, y: 0, width: 0, height: 0)

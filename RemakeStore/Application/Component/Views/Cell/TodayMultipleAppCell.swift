@@ -10,6 +10,8 @@ import SCUIBuildKit
 
 class TodayMultipleAppCell: BaseTodayCell {
 
+  var topConstraint: NSLayoutConstraint!
+
   private lazy var todayMultipleAppListView: TodayMultipleAppListView = {
     let listView = TodayMultipleAppListView()
     return listView
@@ -40,9 +42,14 @@ class TodayMultipleAppCell: BaseTodayCell {
 
   override func setupConstant() {
     super.setupConstant()
-    stackView.fillSuperView(
-      padding: .init(top: 24, left: 24, bottom: 24, right: 24)
-    )
+    stackView
+      .setLeadingAnchor(leadingAnchor, padding: thumbnailPaddingTop)
+      .setBottomAnchor(bottomAnchor, padding: thumbnailPaddingTop)
+      .setTrailingAnchor(trailingAnchor, padding: thumbnailPaddingTop)
+
+    topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: thumbnailPaddingTop)
+    topConstraint.isActive = true
+
   }
 
   override func reset() {
@@ -72,13 +79,21 @@ extension TodayMultipleAppCell: TodayItemViewModelBindable {
   }
 }
 
-extension TodayMultipleAppCell: BaseFullScreenLayoutAnimatedable {
+extension TodayMultipleAppCell: FullScreenLayoutCellAnimatedable {
   var thumbnailHeight: CGFloat {
     return 436
   }
 
   var fullScreenHeight: CGFloat {
     return UIScreen.main.bounds.height
+  }
+
+  var thumbnailPaddingTop: CGFloat {
+    return 24
+  }
+
+  var fullScreenPaddingTop: CGFloat {
+    return 48
   }
 
 }

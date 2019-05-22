@@ -15,7 +15,7 @@ class TodayController: BaseController {
   // MARK: - ViewModel
 
   var viewModel: TodayViewModel!
-  var targetFullScreenController: BaseFullScreenAnimatable?
+  var targetFullScreenController: FullScreenViewControllerAnimatable?
   var fullScreenStatus: ScreenStatus = .thumbnail
 
   // MARK: - Private
@@ -72,7 +72,7 @@ class TodayController: BaseController {
 
 extension TodayController: FullScreenAnimatable {
 
-  func setupFullscreenView(_ targetFullSceenController: BaseFullScreenAnimatable, info: FullScreenAnimatedInfo) {
+  func setupFullscreenView(_ targetFullSceenController: FullScreenViewControllerAnimatable, info: FullScreenAnimatedInfo) {
     if nil != targetFullScreenController { return }
 
     if let fullScreenView = targetFullSceenController.view {
@@ -89,13 +89,11 @@ extension TodayController: FullScreenAnimatable {
     UIView.defaultAnimated(
       animations: {
         self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
-        self.view.layoutIfNeeded()
-      }, completion: { result in
-        if !result { return }
         self.fullScreenStatus = .fullScreen
         UIView.animate(withDuration: 0.2) {
           self.setNeedsStatusBarAppearanceUpdate()
         }
+        self.view.layoutIfNeeded()
       })
   }
 
@@ -104,17 +102,17 @@ extension TodayController: FullScreenAnimatable {
     UIView.defaultAnimated(
       animations: {
         self.tabBarController?.tabBar.transform = .identity
+        self.fullScreenStatus = .thumbnail
+        UIView.animate(withDuration: 0.2) {
+          self.setNeedsStatusBarAppearanceUpdate()
+        }
         self.view.layoutIfNeeded()
       },
       completion: { result in
         if !result { return }
-        self.fullScreenStatus = .thumbnail
         self.targetFullScreenController?.view.removeFromSuperview()
         self.targetFullScreenController?.removeFromParent()
         self.targetFullScreenController = nil
-        UIView.animate(withDuration: 0) {
-          self.setNeedsStatusBarAppearanceUpdate()
-        }
       })
   }
 }
