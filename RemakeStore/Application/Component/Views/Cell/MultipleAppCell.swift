@@ -24,7 +24,7 @@ class MultipleAppCell: BaseCollectionViewCell {
       .build()
   }()
 
-  private lazy var iconImageView: UIImageView = {
+  private(set) lazy var iconImageView: UIImageView = {
     return ImageViewBuilder()
       .setCornerRadius(8)
       .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
@@ -117,10 +117,12 @@ class MultipleAppCell: BaseCollectionViewCell {
 
 extension MultipleAppCell: FeedResultViewModelBindable {
   func bind(to viewModel: FeedResultViewModeling) {
-    viewModel.outputs.iconImageUrlPath
-      .asDriverJustComplete()
-      .drive(iconImageView.rx.loadImage)
-      .disposed(by: disposeBag)
+
+    iconImageView.moa.onSuccess = { img in
+      let image = img as UIImage
+      viewModel.inputs.fetchAppIconImage.onNext(image)
+      return img
+    }
 
     viewModel.outputs.name
       .asDriverJustComplete()
@@ -131,6 +133,18 @@ extension MultipleAppCell: FeedResultViewModelBindable {
       .asDriverJustComplete()
       .drive(companyLabel.rx.text)
       .disposed(by: disposeBag)
+
+    if nil == iconImageView.image {
+      viewModel.outputs.iconImageUrlPath
+        .asDriverJustComplete()
+        .drive(iconImageView.rx.loadImage)
+        .disposed(by: disposeBag)
+    } else {
+      viewModel.outputs.iconImage
+        .asDriverJustComplete()
+        .drive(iconImageView.rx.image)
+        .disposed(by: disposeBag)
+    }
   }
 }
 

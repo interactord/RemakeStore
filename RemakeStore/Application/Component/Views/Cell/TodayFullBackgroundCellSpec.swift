@@ -37,6 +37,15 @@ class TodayFullBackgroundCellSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
+  func test_inject_image_bindToViewModel() {
+
+    sut = TodayFullBackgroundCell()
+    sut?.backgroundImageView.image = UIImage()
+
+    sut?.bind(to: makeViewModel())
+    XCTAssertNotNil(sut)
+  }
+
   func makeViewModel() -> TodayItemViewModeling {
     let items = makeTodayItems()
     guard let item = items.first else {

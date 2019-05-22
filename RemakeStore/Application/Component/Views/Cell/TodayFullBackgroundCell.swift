@@ -16,16 +16,15 @@ class TodayFullBackgroundCell: BaseTodayCell {
 
   // MARK: - Private
 
-  private lazy var backgroundImageView: UIImageView = {
+  private(set) lazy var backgroundImageView: UIImageView = {
     return ImageViewBuilder()
-      .setImage(#imageLiteral(resourceName: "2019-05-18-cinema-bacground-v01"))
       .setCornerRadius(self.backgroundView?.layer.cornerRadius ?? 0)
       .setContentMode(.scaleAspectFill)
       .setClipToBounds(true)
       .build()
   }()
 
-  private lazy var descriptionLabel: UILabel = {
+  private(set) lazy var descriptionLabel: UILabel = {
     return LabelBuilder()
       .setText("All the tools and apps your need to intelligently organize your life the right way.")
       .setFont(DefaultTheme.Font.callout)
@@ -33,7 +32,7 @@ class TodayFullBackgroundCell: BaseTodayCell {
       .build()
   }()
 
-  private lazy var stackView: UIStackView = {
+  private(set) lazy var stackView: UIStackView = {
     return StackViewBuilder(
       arrangedSubViews: [
         categoryLabel,
@@ -75,10 +74,16 @@ class TodayFullBackgroundCell: BaseTodayCell {
 extension TodayFullBackgroundCell: TodayItemViewModelBindable {
   func bind(to viewModel: TodayItemViewModeling) {
 
+    backgroundImageView.moa.onSuccess = { img in
+      let image = img as UIImage
+      viewModel.inputs.fetchImage.onNext(image)
+      return img
+    }
+
     viewModel.outputs.category
-    .asDriverJustComplete()
-    .drive(categoryLabel.rx.text)
-    .disposed(by: disposeBag)
+      .asDriverJustComplete()
+      .drive(categoryLabel.rx.text)
+      .disposed(by: disposeBag)
 
     viewModel.outputs.title
       .asDriverJustComplete()
@@ -90,10 +95,17 @@ extension TodayFullBackgroundCell: TodayItemViewModelBindable {
       .drive(descriptionLabel.rx.text)
       .disposed(by: disposeBag)
 
-    viewModel.outputs.backgroundImageURL
-      .asDriverJustComplete()
-      .drive(backgroundImageView.rx.loadImage)
-      .disposed(by: disposeBag)
+    if nil == backgroundImageView.image {
+      viewModel.outputs.backgroundImageURL
+        .asDriverJustComplete()
+        .drive(backgroundImageView.rx.loadImage)
+        .disposed(by: disposeBag)
+    } else {
+      viewModel.outputs.backgroundImage
+        .asDriverJustComplete()
+        .drive(backgroundImageView.rx.image)
+        .disposed(by: disposeBag)
+    }
 
   }
 }
