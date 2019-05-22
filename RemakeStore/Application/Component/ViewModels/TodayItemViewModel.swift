@@ -7,16 +7,22 @@ import Foundation
 
 import RxSwift
 
+protocol TodayItemViewModelInput {
+  var fetchImage: BehaviorSubject<UIImage?> { get }
+}
+
 protocol TodayItemViewModelOutput {
   var cellType: TodayListViewCellType { get }
   var title: Observable<String> { get }
   var category: Observable<String> { get }
   var description: Observable<String> { get }
   var backgroundImageURL: Observable<String> { get }
+  var backgroundImage: Observable<UIImage> { get }
   var feedResultViewModels: Observable<[FeedResultViewModeling]> { get }
 }
 
 protocol TodayItemViewModeling {
+  var inputs: TodayItemViewModelInput { get }
   var outputs: TodayItemViewModelOutput { get }
 }
 
@@ -25,15 +31,23 @@ protocol TodayItemViewModelBindable {
 }
 
 typealias TodayItemViewModelType =
-  TodayItemViewModelOutput & TodayItemViewModeling
+  TodayItemViewModelInput & TodayItemViewModelOutput & TodayItemViewModeling
 
 class TodayItemViewModel: TodayItemViewModelType {
 
   // MARK: - Inputs & Outputs
 
+  var inputs: TodayItemViewModelInput {
+    return self
+  }
+
   var outputs: TodayItemViewModelOutput {
     return self
   }
+
+  // MARK: - Inputs
+
+  var fetchImage: BehaviorSubject<UIImage?> = .init(value: nil)
 
   // MARK: - Outputs
 
@@ -65,6 +79,11 @@ class TodayItemViewModel: TodayItemViewModelType {
       .map { $0.imageUrl }
       .ignoreNil()
       .observeOn(MainScheduler.instance)
+  }()
+
+  private(set) lazy var backgroundImage: Observable<UIImage> = {
+    let fetchImage = self.fetchImage
+    return fetchImage.asObservable().ignoreNil()
   }()
 
   private(set) lazy var feedResultViewModels: Observable<[FeedResultViewModeling]> = {
