@@ -14,29 +14,27 @@ import RxGesture
 
 struct DragGesture {
 
+  // MARK: - Public
+
   let began: Observable<UIPanGestureRecognizer>
   let moved: Observable<UIPanGestureRecognizer>
   let ended: Observable<UIPanGestureRecognizer>
+  var offset: CGFloat
 
-  private var offset: CGFloat
+  // MARK: - Private
+
   private let gesture: Observable<UIPanGestureRecognizer>
+
+  // MARK: - Initializing
 
   init(withBaseView view: UIView) {
     self.gesture = view.rx.panGesture {
-      $1.simultaneousRecognitionPolicy = .never
+      $1.simultaneousRecognitionPolicy = .always
     }.asObservable()
 
     self.began = gesture.when(.began)
     self.moved = gesture.when(.changed)
     self.ended = gesture.when(.ended)
     self.offset = 0
-  }
-
-  mutating func insertOffset(offset: CGFloat) {
-    self.offset = offset
-  }
-
-  func getOffset() -> CGFloat {
-    return self.offset
   }
 }

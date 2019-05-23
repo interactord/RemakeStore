@@ -15,6 +15,7 @@ class TodayDetailListView: BaseCollectionView {
   override func setupView() {
     super.setupView()
     contentInsetAdjustmentBehavior = .never
+    layer.masksToBounds = true
   }
 
   override func setupDelegate() {
@@ -49,7 +50,7 @@ extension TodayDetailListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let fatalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "fatalCell", for: indexPath)
-
+    fatalCell.backgroundColor = .red
     guard let headerViewModel = headerViewModel else {
       return fatalCell
     }

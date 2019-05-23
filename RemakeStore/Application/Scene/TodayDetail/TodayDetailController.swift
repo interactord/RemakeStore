@@ -29,7 +29,7 @@ class TodayDetailController: BaseController {
   }()
 
   lazy var dragGesture: DragGesture = {
-    return DragGesture(withBaseView: self.view)
+    return DragGesture(withBaseView: self.detailListView)
   }()
 
   // MARK: - Private
@@ -45,7 +45,6 @@ class TodayDetailController: BaseController {
 
   override func setupConstraints() {
     super.setupConstraints()
-
     detailListView.fillSuperView()
     dismissButton
       .setTopAnchor(view.topAnchor, padding: 15)
@@ -78,7 +77,6 @@ extension TodayDetailController: FullScreenViewControllerAnimatable {
     guard let superView = self.view.superview else {
       return
     }
-    self.view.layer.cornerRadius = 16
 
     if let fullScreenHeaderCell = self.detailListView.cellForItem(at: [0, 0]) as? FullScreenLayoutCellAnimatedable {
       self.detailListView.startAnimation(cell: fullScreenHeaderCell)
@@ -87,6 +85,7 @@ extension TodayDetailController: FullScreenViewControllerAnimatable {
     UIView.defaultAnimated(
       animations: {
         self.view.layer.cornerRadius = 0
+        self.detailListView.layer.cornerRadius = 0
         self.beginningAnimateConstraints?.top?.constant = 0
         self.beginningAnimateConstraints?.leading?.constant = 0
         self.beginningAnimateConstraints?.width?.constant = superView.frame.width
@@ -111,6 +110,7 @@ extension TodayDetailController: FullScreenViewControllerAnimatable {
     UIView.defaultAnimated(
       animations: {
         self.view.layer.cornerRadius = 16
+        self.detailListView.layer.cornerRadius = 16
         self.view.transform = .identity
         self.beginningAnimateConstraints?.top?.constant = startingFrame.origin.y
         self.beginningAnimateConstraints?.leading?.constant = startingFrame.origin.x
@@ -126,21 +126,27 @@ extension TodayDetailController: FullScreenDragAnimateable {
   func startDragGesture() {
     var dragGesture = self.dragGesture
     let baseView = self.view
-    let contentOffsetY = self.detailListView.contentOffset.y
+    let detailListView = self.detailListView
 
     dragGesture.began
       .map { _ in
-        dragGesture.insertOffset(offset: contentOffsetY)
-      }.subscribe().disposed(by: disposeBag)
+        dragGesture.offset = detailListView.contentOffset.y
+      }
+      .subscribe().disposed(by: disposeBag)
 
     dragGesture.moved
-      .map { $0.translation(in: baseView).y.convertDragScaleTranform(withOffset: dragGesture.getOffset()) }
-      .ignoreNil()
-      .map { baseView?.transform = $0 }
+      .filter {
+        detailListView.contentOffset.y <= 0 && $0.translation(in: detailListView).y > 0
+      }.map {
+        $0.translation(in: detailListView).y.convertDragScaleTranform(withOffset: dragGesture.offset)
+      }.map {
+        baseView?.layer.cornerRadius = 16
+        baseView?.transform = $0
+      }
       .subscribe().disposed(by: disposeBag)
 
     dragGesture.ended
-      .filter { $0.translation(in: baseView).y > 0 }
+      .filter { detailListView.contentOffset.y <= 0 && $0.translation(in: detailListView).y > 0 }
       .map { _ in AppStep.todayDetailIsComplete }
       .bind(to: steps)
       .disposed(by: disposeBag)
