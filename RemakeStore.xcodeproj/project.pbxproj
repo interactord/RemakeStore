@@ -794,6 +794,123 @@
 			path = UIScrollView;
 			sourceTree = "<group>";
 		};
+		29DACC99229640CD00184E59 /* AppDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */,
+				F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */,
+				F426EA56C4D0791B6BBE2B7C /* PreviewScreenshotsView.swift */,
+				F426E7BE6F61D2A66B194018 /* PreviewScreenshotsViewSpec.swift */,
+				F426E222E508A49332F48150 /* ReviewListView.swift */,
+				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
+				29DACC9A229640E000184E59 /* Cell */,
+			);
+			path = AppDetail;
+			sourceTree = "<group>";
+		};
+		29DACC9A229640E000184E59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F426EEBB5398854754484078 /* LookupCell.swift */,
+				29B6163022876DEC008CD2A1 /* LookupCellSpec.swift */,
+				F426EC0764D5A86BE940A3E2 /* PreviewCell.swift */,
+				F426E2C99A45E414E59A0214 /* PreviewCellSpec.swift */,
+				F426EDB7E1C88C975DE994FD /* ReviewCell.swift */,
+				F426E95CC21BCE405E8445C5 /* ReviewCellSpec.swift */,
+				F426E16A541D56003DA93915 /* ReviewRowCell.swift */,
+				F426EC132C5CB2CE63503A61 /* ReviewRowCellSpec.swift */,
+				F426E8D70FA591EECC54ED90 /* ScreenshotCell.swift */,
+				F426E117C9745F12E8F929ED /* ScreenshotCellSpec.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		29DACC9B2296415B00184E59 /* AppSearch */ = {
+			isa = PBXGroup;
+			children = (
+				F426EEDD4FB709D5F719561F /* SearchResultView.swift */,
+				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
+				29DACC9C2296418B00184E59 /* Cell */,
+			);
+			path = AppSearch;
+			sourceTree = "<group>";
+		};
+		29DACC9C2296418B00184E59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F426E6DB7DEBCA49942079FD /* SearchResultCell.swift */,
+				29B6162E22876A41008CD2A1 /* SearchResultCellSpec.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		29DACC9D2296422300184E59 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				F426E471C3710024AEA566DD /* TodayListView.swift */,
+				F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */,
+				F426E010751CFF01183BE391 /* TodayMultipleAppListView.swift */,
+				F426E8B3CA96969B3A2A4753 /* TodayMultipleAppListViewSpec.swift */,
+				29DACC9E2296426E00184E59 /* Cell */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		29DACC9E2296426E00184E59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F426E48F1C3BBEE8C8535533 /* BaseTodayCell.swift */,
+				F426E0ACE153779C4D2CE221 /* BaseTodayCellSpec.swift */,
+				F426E4176C81BBAD7C8DC9D4 /* MultipleAppCell.swift */,
+				F426E72D44CA36FC70B55E81 /* MultipleAppCellSpec.swift */,
+				2972B507228D57B7009198C3 /* TodayFullBackgroundCell.swift */,
+				F426EF0AA875773D6C10C553 /* TodayFullBackgroundCellSpec.swift */,
+				2972B508228D57B7009198C3 /* TodayHeader.swift */,
+				F426E41816EBCDE0FD183AAC /* TodayHeaderSpec.swift */,
+				2972B506228D57B6009198C3 /* TodayMultipleAppCell.swift */,
+				F426ECA47D4ED03296DBE0FF /* TodayMultipleAppCellSpec.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		29DACC9F2296431A00184E59 /* TodayDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F426E713311CEAC84C36EA4E /* TodayDetailListView.swift */,
+				F426E12012FC84BA64791CE9 /* TodayDetailListViewSpec.swift */,
+			);
+			path = TodayDetail;
+			sourceTree = "<group>";
+		};
+		29DACCA02296433F00184E59 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				2942A172228A13A400D35C6B /* AppsHeaderHorizontalListView.swift */,
+				F426E652DB3A34B138BEFA24 /* AppsHeaderHorizontalListViewSpec.swift */,
+				F426ED6E1DED8DDC3412EAE1 /* AppsHorizontalListView.swift */,
+				F426EB086B4C4C73E892F823 /* AppsHorizontalListViewSpec.swift */,
+				F426EDACC2A69F07BE5499AF /* AppsPageListView.swift */,
+				F426E4F38FC2F1C00790200E /* AppsPageListViewSpec.swift */,
+				29DACCA12296435400184E59 /* Cell */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		29DACCA12296435400184E59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F426E9C0C717E4EEBE3825BA /* AppRowCell.swift */,
+				F426EB7DC808D574908F4007 /* AppRowCellSpec.swift */,
+				F426E400CA6FFAD3D7F15363 /* AppsGroupCell.swift */,
+				F426E68FF28458E476C9E6B7 /* AppsGroupCellSpec.swift */,
+				2942A174228A140800D35C6B /* AppsHeaderCell.swift */,
+				2942A176228A141000D35C6B /* AppsHeaderCellSpec.swift */,
+				F426EBBF933C7843FE1D0E86 /* AppsPageHeader.swift */,
+				F426E50F8E6E4099289FF978 /* AppsPageHeaderSpec.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		29E8A565227C229600E7A894 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,33 +1087,6 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
-		F426E72EA4066B9E7BABA3C3 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */,
-				F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */,
-				2942A172228A13A400D35C6B /* AppsHeaderHorizontalListView.swift */,
-				F426E652DB3A34B138BEFA24 /* AppsHeaderHorizontalListViewSpec.swift */,
-				F426ED6E1DED8DDC3412EAE1 /* AppsHorizontalListView.swift */,
-				F426EB086B4C4C73E892F823 /* AppsHorizontalListViewSpec.swift */,
-				F426EDACC2A69F07BE5499AF /* AppsPageListView.swift */,
-				F426E4F38FC2F1C00790200E /* AppsPageListViewSpec.swift */,
-				F426EA56C4D0791B6BBE2B7C /* PreviewScreenshotsView.swift */,
-				F426E7BE6F61D2A66B194018 /* PreviewScreenshotsViewSpec.swift */,
-				F426E222E508A49332F48150 /* ReviewListView.swift */,
-				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
-				F426EEDD4FB709D5F719561F /* SearchResultView.swift */,
-				F426E629BE7C38E2E8E92BB6 /* SearchResultViewSpec.swift */,
-				F426E713311CEAC84C36EA4E /* TodayDetailListView.swift */,
-				F426E12012FC84BA64791CE9 /* TodayDetailListViewSpec.swift */,
-				F426E471C3710024AEA566DD /* TodayListView.swift */,
-				F426ED5BB0074A564540EAE5 /* TodayListViewSpec.swift */,
-				F426E010751CFF01183BE391 /* TodayMultipleAppListView.swift */,
-				F426E8B3CA96969B3A2A4753 /* TodayMultipleAppListViewSpec.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
 		F426E7592F7CC4D73D061E4E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,8 +1121,11 @@
 		F426E7FBE311669B47F748B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F426EDEB0B97CD3330F1157D /* Cell */,
-				F426E72EA4066B9E7BABA3C3 /* CollectionView */,
+				29DACCA02296433F00184E59 /* Apps */,
+				29DACC9F2296431A00184E59 /* TodayDetail */,
+				29DACC9D2296422300184E59 /* Today */,
+				29DACC9B2296415B00184E59 /* AppSearch */,
+				29DACC99229640CD00184E59 /* AppDetail */,
 				F426E907ED3C307558A31EA7 /* HorizontalSnappingLayout.swift */,
 			);
 			path = Views;
@@ -1158,43 +1251,6 @@
 				F426EC548928BBC77548A8E7 /* Mock */,
 			);
 			path = zBase;
-			sourceTree = "<group>";
-		};
-		F426EDEB0B97CD3330F1157D /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F426E9C0C717E4EEBE3825BA /* AppRowCell.swift */,
-				F426EB7DC808D574908F4007 /* AppRowCellSpec.swift */,
-				F426E400CA6FFAD3D7F15363 /* AppsGroupCell.swift */,
-				F426E68FF28458E476C9E6B7 /* AppsGroupCellSpec.swift */,
-				2942A174228A140800D35C6B /* AppsHeaderCell.swift */,
-				2942A176228A141000D35C6B /* AppsHeaderCellSpec.swift */,
-				F426EBBF933C7843FE1D0E86 /* AppsPageHeader.swift */,
-				F426E50F8E6E4099289FF978 /* AppsPageHeaderSpec.swift */,
-				F426E48F1C3BBEE8C8535533 /* BaseTodayCell.swift */,
-				F426E0ACE153779C4D2CE221 /* BaseTodayCellSpec.swift */,
-				F426EEBB5398854754484078 /* LookupCell.swift */,
-				29B6163022876DEC008CD2A1 /* LookupCellSpec.swift */,
-				F426EC0764D5A86BE940A3E2 /* PreviewCell.swift */,
-				F426E2C99A45E414E59A0214 /* PreviewCellSpec.swift */,
-				F426EDB7E1C88C975DE994FD /* ReviewCell.swift */,
-				F426E95CC21BCE405E8445C5 /* ReviewCellSpec.swift */,
-				F426E16A541D56003DA93915 /* ReviewRowCell.swift */,
-				F426EC132C5CB2CE63503A61 /* ReviewRowCellSpec.swift */,
-				F426E8D70FA591EECC54ED90 /* ScreenshotCell.swift */,
-				F426E117C9745F12E8F929ED /* ScreenshotCellSpec.swift */,
-				F426E6DB7DEBCA49942079FD /* SearchResultCell.swift */,
-				29B6162E22876A41008CD2A1 /* SearchResultCellSpec.swift */,
-				2972B507228D57B7009198C3 /* TodayFullBackgroundCell.swift */,
-				F426EF0AA875773D6C10C553 /* TodayFullBackgroundCellSpec.swift */,
-				2972B508228D57B7009198C3 /* TodayHeader.swift */,
-				F426E41816EBCDE0FD183AAC /* TodayHeaderSpec.swift */,
-				2972B506228D57B6009198C3 /* TodayMultipleAppCell.swift */,
-				F426ECA47D4ED03296DBE0FF /* TodayMultipleAppCellSpec.swift */,
-				F426E4176C81BBAD7C8DC9D4 /* MultipleAppCell.swift */,
-				F426E72D44CA36FC70B55E81 /* MultipleAppCellSpec.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		F426EF729C2C809759502963 /* Repository */ = {
