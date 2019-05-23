@@ -39,6 +39,7 @@ class TodayViewModel: ServiceViewModel, TodayViewModelType {
   // MARK: - Inputs
 
   private(set) var fetchToday: BehaviorSubject<Void?> = .init(value: nil)
+  private(set) var selectedItem: BehaviorSubject<FullScreenAnimatedInfo?> = .init(value: nil)
 
   // MARK: - Outputs
   private(set) lazy var todayItemViewModels: Observable<[TodayItemViewModeling]> = {

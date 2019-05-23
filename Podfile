@@ -5,6 +5,7 @@ target 'RemakeStore' do
   use_frameworks!
   pod 'RxSwift', :inhibit_warnings => true
   pod 'RxCocoa', :inhibit_warnings => true
+  pod 'RxGesture', :inhibit_warnings => true
   pod 'Swinject', :inhibit_warnings => true 
   pod 'RxFlow', :inhibit_warnings => true
 
@@ -12,6 +13,7 @@ target 'RemakeStore' do
   pod 'SCServiceKit'
   pod 'SCLayoutKit'
   pod 'moa'
+
 
   target 'RemakeStoreTests' do
     inherit! :search_paths

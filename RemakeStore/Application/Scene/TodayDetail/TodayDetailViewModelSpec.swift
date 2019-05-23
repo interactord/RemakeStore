@@ -29,8 +29,25 @@ class TodayDetailViewModelSpec: XCTestCase {
   func makeSUT() -> TodayDetailViewModel {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service
+    guard let todayItemViewModel = makeTodayItemViewModels()?.first else {
+      fatalError("Should be not nil")
+    }
 
-    return TodayDetailViewModel(with: service)
+    return TodayDetailViewModel(with: service, todayItemViewModel: todayItemViewModel)
+  }
+
+  private func makeTodayItemViewModels() -> [TodayItemViewModeling]? {
+    let bundleUrl = Bundle.main.url(forResource: "todayItemsDummy", withExtension: "json")
+    guard
+      let url = bundleUrl,
+      let todayItems = try? JSONDecoder().decode([TodayItem].self, from: Data(contentsOf: url))
+      else {
+        fatalError("Should be not nil")
+    }
+
+    return todayItems.map {
+      TodayItemViewModel(withTodayItem: $0)
+    }
   }
 
 }

@@ -8,7 +8,7 @@ import UIKit
 import SCLayoutKit
 import SCUIBuildKit
 
-class TodayHeader: BaseCollectionReusableView {
+class TodayHeader: BaseCollectionViewCell {
 
   private lazy var dateLabel: UILabel = {
     return LabelBuilder()

@@ -5,15 +5,37 @@
 
 import Foundation
 
-class TodayDetailViewModel: ServiceViewModel {
+import RxSwift
 
-	// MARK: - Protocol Variables
+protocol TodayDetailViewModelOutput {
+  var todayItemViewModel: Observable<TodayItemViewModeling> { get }
+}
 
-	let service: Service
+protocol TodayDetailViewModeling {
+  var outputs: TodayDetailViewModelOutput { get }
+}
 
-	// MARK: - Initializing
+typealias TodayDetailViewModelType =
+  TodayDetailViewModelOutput & TodayDetailViewModeling
 
-	required init(with service: Service) {
-		self.service = service
-	}
+class TodayDetailViewModel: ServiceViewModel, TodayDetailViewModelType {
+
+  // MARK: - Protocol Variables
+
+  var outputs: TodayDetailViewModelOutput {
+    return self
+  }
+
+  // MARK: - Outputs
+
+  var todayItemViewModel: Observable<TodayItemViewModeling>
+
+  let service: Service
+
+  // MARK: - Initializing
+
+  required init(with service: Service, todayItemViewModel: TodayItemViewModeling) {
+    self.service = service
+    self.todayItemViewModel = Observable.just(todayItemViewModel)
+  }
 }

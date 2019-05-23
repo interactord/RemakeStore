@@ -7,5 +7,5 @@ import Foundation
 
 enum InteractordEndpointRouter: String {
   case socialApps = "apps-banner/appsHeadBanner.json"
-  case today = "today/json/today-test-v08.json"
+  case today = "today/json/today-test-v09.json"
 }

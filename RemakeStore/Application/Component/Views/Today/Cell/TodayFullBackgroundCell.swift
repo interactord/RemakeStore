@@ -18,7 +18,6 @@ class TodayFullBackgroundCell: BaseTodayCell {
 
   private lazy var backgroundImageView: UIImageView = {
     return ImageViewBuilder()
-      .setImage(#imageLiteral(resourceName: "2019-05-18-cinema-bacground-v01"))
       .setCornerRadius(self.backgroundView?.layer.cornerRadius ?? 0)
       .setContentMode(.scaleAspectFill)
       .setClipToBounds(true)
@@ -55,11 +54,11 @@ class TodayFullBackgroundCell: BaseTodayCell {
     super.setupConstant()
     backgroundImageView.fillSuperView()
     stackView
-      .setLeadingAnchor(leadingAnchor, padding: 24)
-      .setBottomAnchor(bottomAnchor, padding: 24)
-      .setTrailingAnchor(trailingAnchor, padding: 24)
+      .setLeadingAnchor(leadingAnchor, padding: thumbnailPaddingTop)
+      .setBottomAnchor(bottomAnchor, padding: thumbnailPaddingTop)
+      .setTrailingAnchor(trailingAnchor, padding: thumbnailPaddingTop)
 
-    topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24)
+    topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: thumbnailPaddingTop)
     topConstraint.isActive = true
   }
 
@@ -76,9 +75,9 @@ extension TodayFullBackgroundCell: TodayItemViewModelBindable {
   func bind(to viewModel: TodayItemViewModeling) {
 
     viewModel.outputs.category
-    .asDriverJustComplete()
-    .drive(categoryLabel.rx.text)
-    .disposed(by: disposeBag)
+      .asDriverJustComplete()
+      .drive(categoryLabel.rx.text)
+      .disposed(by: disposeBag)
 
     viewModel.outputs.title
       .asDriverJustComplete()
@@ -96,6 +95,26 @@ extension TodayFullBackgroundCell: TodayItemViewModelBindable {
       .disposed(by: disposeBag)
 
   }
+}
+
+extension TodayFullBackgroundCell: FullScreenLayoutCellAnimatedable {
+
+  var thumbnailHeight: CGFloat {
+    return 466
+  }
+
+  var fullScreenHeight: CGFloat {
+    return 500
+  }
+
+  var thumbnailPaddingTop: CGFloat {
+    return 24
+  }
+
+  var fullScreenPaddingTop: CGFloat {
+    return 48
+  }
+
 }
 
 extension TodayFullBackgroundCell: CellContentClassIdentifiable {

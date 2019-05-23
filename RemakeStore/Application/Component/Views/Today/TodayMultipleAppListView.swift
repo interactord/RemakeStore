@@ -18,6 +18,13 @@ protocol TodayMultipleAppListViewBinadle {
 class TodayMultipleAppListView: BaseCollectionView {
 
   // MARK: - Public
+
+  enum Mode {
+    case thumbnail
+    case fullScreen
+  }
+
+  var mode: Mode = .thumbnail
   var feedResultViewModels: [FeedResultViewModeling]?
 
   // MARK: - Private
@@ -30,7 +37,7 @@ class TodayMultipleAppListView: BaseCollectionView {
 
   override func setupView() {
     super.setupView()
-    self.isUserInteractionEnabled = false
+    showsVerticalScrollIndicator = false
   }
 
   override func setupDelegate() {
@@ -42,6 +49,17 @@ class TodayMultipleAppListView: BaseCollectionView {
   override func registerCell() {
     super.registerCell()
     register(cellType: MultipleAppCell.self)
+  }
+
+  func changed(to mode: Mode) {
+    self.mode = mode
+    switch mode {
+    case .thumbnail:
+      isUserInteractionEnabled = false
+    case .fullScreen:
+      isUserInteractionEnabled = true
+    }
+    reloadData()
   }
 }
 
@@ -58,7 +76,12 @@ extension TodayMultipleAppListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     let count = feedResultViewModels?.count ?? 0
-    return min(4, count)
+    switch mode {
+    case .thumbnail:
+      return min(4, count)
+    case .fullScreen:
+      return count
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

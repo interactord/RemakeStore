@@ -44,6 +44,48 @@ class TodayControllerSpec: XCTestCase {
     sut?.bind(to: viewModel)
   }
 
+  func test_setupFullscreenView() {
+
+    let tagetFullScreenController: FullScreenViewControllerAnimatable = TodayDetailController()
+    let info = FullScreenAnimatedInfo(
+      todayItemViewModel: makeTodayItemViewModel(),
+      startingFrame: .init(x: 0, y: 0, width: 0, height: 0)
+    )
+    sut = TodayController()
+    sut?.setupFullscreenView(tagetFullScreenController, info: info)
+
+    sut?.targetFullScreenController = tagetFullScreenController
+    sut?.setupFullscreenView(tagetFullScreenController, info: info)
+
+    XCTAssertNotNil(sut)
+  }
+
+  func test_startFullScreenAnimation() {
+    sut = TodayController()
+    sut?.targetFullScreenController = TodayDetailController()
+
+    sut?.startFullScreenAnimation()
+
+    XCTAssertNotNil(sut)
+  }
+
+  func test_dismissFullScreenAnimation() {
+    sut = TodayController()
+    sut?.dismissFullScreenAnimation()
+//
+    XCTAssertNotNil(sut)
+  }
+
+  func test_prefersStatusBarHidden() {
+    sut = TodayController()
+
+    sut?.fullScreenStatus = .fullScreen
+    XCTAssertTrue(sut?.prefersStatusBarHidden ?? false)
+
+    sut?.fullScreenStatus = .thumbnail
+    XCTAssertFalse(sut?.prefersStatusBarHidden ?? true)
+  }
+
   func makeViewModel() -> TodayViewModel {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service
@@ -56,4 +98,16 @@ class TodayControllerSpec: XCTestCase {
       rssRepository: rssRepository
     )
   }
+
+  private func makeTodayItemViewModel() -> TodayItemViewModeling {
+    let bundleUrl = Bundle.main.url(forResource: "todayItemsDummy", withExtension: "json")
+    guard
+      let url = bundleUrl,
+      let todayItems = try? JSONDecoder().decode([TodayItem].self, from: Data(contentsOf: url)),
+      let item = todayItems.first
+      else {
+        fatalError("Should be not nil")
+    }
+
+    return TodayItemViewModel(withTodayItem: item) }
 }

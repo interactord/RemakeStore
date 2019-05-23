@@ -37,7 +37,7 @@ class AppsPageListView: BaseCollectionView {
     super.registerCell()
 
     register(cellType: AppsGroupCell.self)
-    register(kind: UICollectionView.elementKindSectionHeader, reusableViewType: AppsPageHeader.self)
+    register(kind: UICollectionView.elementKindSectionHeader, cellType: AppsPageHeader.self)
   }
 }
 

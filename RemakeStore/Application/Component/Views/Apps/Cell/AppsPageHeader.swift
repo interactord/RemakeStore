@@ -9,7 +9,7 @@ import SCLayoutKit
 import RxSwift
 import RxCocoa
 
-class AppsPageHeader: BaseCollectionReusableView {
+class AppsPageHeader: BaseCollectionViewCell {
 
   lazy var appsHeaderHorizontalListView: AppsHeaderHorizontalListView = {
     let horizontalView = AppsHeaderHorizontalListView(withLayoutStyle: .horizontalSnapping)

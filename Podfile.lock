@@ -8,12 +8,15 @@ PODS:
   - RxFlow (2.3.0):
     - RxCocoa (>= 5.0.0)
     - RxSwift (>= 5.0.0)
+  - RxGesture (3.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
   - RxTest (5.0.0):
     - RxSwift (~> 5)
-  - SCLayoutKit (1.0.0)
+  - SCLayoutKit (1.0.1)
   - SCServiceKit (1.0.1):
     - RxSwift (>= 4.5.0)
     - SwiftyBeaver (>= 1.7.0)
@@ -27,6 +30,7 @@ DEPENDENCIES:
   - RxBlocking
   - RxCocoa
   - RxFlow
+  - RxGesture
   - RxSwift
   - RxTest
   - SCLayoutKit
@@ -41,6 +45,7 @@ SPEC REPOS:
     - RxBlocking
     - RxCocoa
     - RxFlow
+    - RxGesture
     - RxRelay
     - RxSwift
     - RxTest
@@ -56,16 +61,17 @@ SPEC CHECKSUMS:
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxFlow: ee6f1fdbacfa4ca8926122e466dfba32e3edf73f
+  RxGesture: 0cd8e37ff9a266e1c31f46bcaed6de1c536bc81e
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
-  SCLayoutKit: 866df3eec20b5f38bb4afb52efde16447f242e68
+  SCLayoutKit: 6bf7eb9f75e6fbe5e80e5e3c813f957f7d24c009
   SCServiceKit: dc1bca393d7f49495f3a03138d906fff7688e3d6
   SCUIBuildKit: c25594a8a05e96cb1531f0a9a62362847c73b38f
   Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 3a297343f5575f6b30bbb2be4a17c3b8269790aa
+PODFILE CHECKSUM: 43129b5951cdcd29e7bad948b1c501b4b4e27cbb
 
 COCOAPODS: 1.6.1
