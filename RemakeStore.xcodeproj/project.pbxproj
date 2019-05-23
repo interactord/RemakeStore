@@ -32,7 +32,7 @@
 		2942A177228A141000D35C6B /* AppsHeaderCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A176228A141000D35C6B /* AppsHeaderCellSpec.swift */; };
 		2942A178228A1AB700D35C6B /* AppsHorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426ED6E1DED8DDC3412EAE1 /* AppsHorizontalListView.swift */; };
 		2942A179228A1CBA00D35C6B /* AppRowCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EB7DC808D574908F4007 /* AppRowCellSpec.swift */; };
-		2942A17C228A1FF600D35C6B /* CGFloat+Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A17B228A1FF600D35C6B /* CGFloat+Divider.swift */; };
+		2942A17C228A1FF600D35C6B /* CGFloat+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A17B228A1FF600D35C6B /* CGFloat+Convert.swift */; };
 		29524255228C26FA0069159C /* AppsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7BF5DF2FA75623EA42A /* AppsViewModelSpec.swift */; };
 		2958077B227CD2FA00C0CE4D /* ObserableTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958077A227CD2FA00C0CE4D /* ObserableTypeSpec.swift */; };
 		2958077D227CD30B00C0CE4D /* UIViewControllerRxSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958077C227CD30B00C0CE4D /* UIViewControllerRxSpec.swift */; };
@@ -87,6 +87,7 @@
 		29B6268722936E8A00F442D5 /* DashboardFlowSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6268622936E8900F442D5 /* DashboardFlowSpec.swift */; };
 		29CEA6FE2284806C00EE07E3 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEA6FD2284806C00EE07E3 /* AppDetailController.swift */; };
 		29CEA7002284807700EE07E3 /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEA6FF2284807700EE07E3 /* AppDetailViewModel.swift */; };
+		29DACC902296254A00184E59 /* CGFloatConvertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DACC8E2296254500184E59 /* CGFloatConvertSpec.swift */; };
 		29E00AB3227C07B3004A7A49 /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E00AB2227C07B3004A7A49 /* env.plist */; };
 		29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A568227C229600E7A894 /* EnvConfigModel.swift */; };
 		29E8A583227C2F8800E7A894 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A57E227C2F8800E7A894 /* Service.swift */; };
@@ -275,7 +276,7 @@
 		2942A172228A13A400D35C6B /* AppsHeaderHorizontalListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalListView.swift; sourceTree = "<group>"; };
 		2942A174228A140800D35C6B /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		2942A176228A141000D35C6B /* AppsHeaderCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCellSpec.swift; sourceTree = "<group>"; };
-		2942A17B228A1FF600D35C6B /* CGFloat+Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Divider.swift"; sourceTree = "<group>"; };
+		2942A17B228A1FF600D35C6B /* CGFloat+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Convert.swift"; sourceTree = "<group>"; };
 		2958077A227CD2FA00C0CE4D /* ObserableTypeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserableTypeSpec.swift; sourceTree = "<group>"; };
 		2958077C227CD30B00C0CE4D /* UIViewControllerRxSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRxSpec.swift; sourceTree = "<group>"; };
 		295AD314228CABD000D5C646 /* SearchDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDIContainer.swift; sourceTree = "<group>"; };
@@ -315,6 +316,7 @@
 		29B6268622936E8900F442D5 /* DashboardFlowSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFlowSpec.swift; sourceTree = "<group>"; };
 		29CEA6FD2284806C00EE07E3 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		29CEA6FF2284807700EE07E3 /* AppDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
+		29DACC8E2296254500184E59 /* CGFloatConvertSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatConvertSpec.swift; sourceTree = "<group>"; };
 		29E009F7227BCD04004A7A49 /* SCServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SCServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E00AB2227C07B3004A7A49 /* env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
 		29E8A568227C229600E7A894 /* EnvConfigModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvConfigModel.swift; sourceTree = "<group>"; };
@@ -639,7 +641,8 @@
 		2942A17A228A1FDE00D35C6B /* CGFloat */ = {
 			isa = PBXGroup;
 			children = (
-				2942A17B228A1FF600D35C6B /* CGFloat+Divider.swift */,
+				2942A17B228A1FF600D35C6B /* CGFloat+Convert.swift */,
+				29DACC8E2296254500184E59 /* CGFloatConvertSpec.swift */,
 			);
 			path = CGFloat;
 			sourceTree = "<group>";
@@ -1569,7 +1572,7 @@
 				F426E5FAE2D41B21650EC751 /* ReviewListView.swift in Sources */,
 				292030C5228DC85000CEC624 /* UIView+Animation.swift in Sources */,
 				F426EC294912A790E834A808 /* ReviewRowCell.swift in Sources */,
-				2942A17C228A1FF600D35C6B /* CGFloat+Divider.swift in Sources */,
+				2942A17C228A1FF600D35C6B /* CGFloat+Convert.swift in Sources */,
 				292030D0228DE59500CEC624 /* TodayItem.swift in Sources */,
 				2972B50A228D57B7009198C3 /* TodayFullBackgroundCell.swift in Sources */,
 				F426ED4149576EF7ADAA0C5A /* PreviewCell.swift in Sources */,
@@ -1621,6 +1624,7 @@
 				2910AC492278B5E600EC7A77 /* RemakeStoreTests.swift in Sources */,
 				2972BD5E227CC8CC007AFB9C /* CellContentClassIdentifiableUICViewSpec.swift in Sources */,
 				29428FC8227D854B00BD688D /* BaseFlowSpec.swift in Sources */,
+				29DACC902296254A00184E59 /* CGFloatConvertSpec.swift in Sources */,
 				295AD311228CAAA600D5C646 /* SearchDIContainerSpec.swift in Sources */,
 				29428FD0227D861900BD688D /* TestStepMock.swift in Sources */,
 				29428FD3227D86CC00BD688D /* TestControllerStepper.swift in Sources */,
