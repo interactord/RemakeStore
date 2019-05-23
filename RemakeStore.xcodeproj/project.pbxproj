@@ -88,6 +88,8 @@
 		29CEA6FE2284806C00EE07E3 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEA6FD2284806C00EE07E3 /* AppDetailController.swift */; };
 		29CEA7002284807700EE07E3 /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CEA6FF2284807700EE07E3 /* AppDetailViewModel.swift */; };
 		29DACC902296254A00184E59 /* CGFloatConvertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DACC8E2296254500184E59 /* CGFloatConvertSpec.swift */; };
+		29DACC96229635C400184E59 /* UIScrollViewConvertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DACC95229635C400184E59 /* UIScrollViewConvertSpec.swift */; };
+		29DACC982296374B00184E59 /* UIScrollView+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DACC972296374B00184E59 /* UIScrollView+Convert.swift */; };
 		29E00AB3227C07B3004A7A49 /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E00AB2227C07B3004A7A49 /* env.plist */; };
 		29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A568227C229600E7A894 /* EnvConfigModel.swift */; };
 		29E8A583227C2F8800E7A894 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A57E227C2F8800E7A894 /* Service.swift */; };
@@ -317,6 +319,8 @@
 		29CEA6FD2284806C00EE07E3 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		29CEA6FF2284807700EE07E3 /* AppDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
 		29DACC8E2296254500184E59 /* CGFloatConvertSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatConvertSpec.swift; sourceTree = "<group>"; };
+		29DACC95229635C400184E59 /* UIScrollViewConvertSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewConvertSpec.swift; sourceTree = "<group>"; };
+		29DACC972296374B00184E59 /* UIScrollView+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Convert.swift"; sourceTree = "<group>"; };
 		29E009F7227BCD04004A7A49 /* SCServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SCServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E00AB2227C07B3004A7A49 /* env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
 		29E8A568227C229600E7A894 /* EnvConfigModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvConfigModel.swift; sourceTree = "<group>"; };
@@ -781,6 +785,15 @@
 			path = AppDetail;
 			sourceTree = "<group>";
 		};
+		29DACC92229635A000184E59 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				29DACC972296374B00184E59 /* UIScrollView+Convert.swift */,
+				29DACC95229635C400184E59 /* UIScrollViewConvertSpec.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
 		29E8A565227C229600E7A894 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +813,7 @@
 		29E8A576227C268600E7A894 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				29DACC92229635A000184E59 /* UIScrollView */,
 				298E4090229031C90005731A /* Collection */,
 				292030CD228DE26600CEC624 /* UIColor */,
 				292030C6228DD2EC00CEC624 /* Date */,
@@ -1132,16 +1146,16 @@
 		F426ED6C0EB800DD79697C69 /* zBase */ = {
 			isa = PBXGroup;
 			children = (
+				F426E6A28DDE15B97BA3212D /* BaseCollectionView.swift */,
+				F426ECA4692F5FA9533E3C88 /* BaseCollectionViewCell.swift */,
+				F426E938497457A4244A65FC /* BaseCollectionViewSpec.swift */,
+				F426EB5D6693C705F336268F /* BaseController.swift */,
+				F426E78FE228C55AAA47206B /* BaseControllerSpec.swift */,
+				29B626782293016F00F442D5 /* FullScreenAnimateusable.swift */,
 				F426E2E6995DF074FBDC65C8 /* ServiceViewModel.swift */,
 				F426E99BBBFA0B4DAE5A1E95 /* ViewModelBase.swift */,
 				F426EDEEF408AF355C375669 /* ViewModelBaseSpec.swift */,
 				F426EC548928BBC77548A8E7 /* Mock */,
-				F426EB5D6693C705F336268F /* BaseController.swift */,
-				F426E78FE228C55AAA47206B /* BaseControllerSpec.swift */,
-				F426E6A28DDE15B97BA3212D /* BaseCollectionView.swift */,
-				F426E938497457A4244A65FC /* BaseCollectionViewSpec.swift */,
-				F426ECA4692F5FA9533E3C88 /* BaseCollectionViewCell.swift */,
-				29B626782293016F00F442D5 /* FullScreenAnimateusable.swift */,
 			);
 			path = zBase;
 			sourceTree = "<group>";
@@ -1565,6 +1579,7 @@
 				F426EE8ACEAFB0BB14F93513 /* UIButton+Rx.swift in Sources */,
 				29B626752292CF4700F442D5 /* TodayDetailViewInfo.swift in Sources */,
 				F426EF51D46E77CDFD731E8D /* SearchResultCell.swift in Sources */,
+				29DACC982296374B00184E59 /* UIScrollView+Convert.swift in Sources */,
 				F426E4D6A156FB59B54C5B5F /* LookupCell.swift in Sources */,
 				F426E32F98A2A6AC1B14BA2C /* LookupViewModel.swift in Sources */,
 				F426E5BD3000DF98382F1770 /* AppDetailResultView.swift in Sources */,
@@ -1642,6 +1657,7 @@
 				2958077D227CD30B00C0CE4D /* UIViewControllerRxSpec.swift in Sources */,
 				F426EF32B8148F412E37CB89 /* ViewModelBaseSpec.swift in Sources */,
 				F426EDA5CFCD42FA71EF2CC2 /* ViewModelBasedTableViewCellMock.swift in Sources */,
+				29DACC96229635C400184E59 /* UIScrollViewConvertSpec.swift in Sources */,
 				295AD30E228CAAA600D5C646 /* AppDetailDIContainerSpec.swift in Sources */,
 				2904CCB62287155A00D9E743 /* SearchViewModelSpec.swift in Sources */,
 				F426ECC4553C54864A1E2BAC /* TestViewModelMock.swift in Sources */,

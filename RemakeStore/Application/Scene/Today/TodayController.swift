@@ -22,7 +22,6 @@ class TodayController: BaseController {
 
   private lazy var todayListView: TodayListView = {
     let listView = TodayListView()
-    view.addSubview(listView)
     return listView
   }()
 
@@ -32,13 +31,20 @@ class TodayController: BaseController {
       .setHeightAnchor(UIApplication.shared.statusBarFrame.height)
       .build()
 
-    view.addSubview(capView)
     return capView
   }()
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = .white
+  private(set) lazy var blurVisualEffectView: UIVisualEffectView = {
+    let view = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+    view.alpha = 0
+    return view
+  }()
+
+  override func setupViews() {
+    super.setupViews()
+    view.addSubview(capView)
+    view.addSubview(todayListView)
+    view.addSubview(blurVisualEffectView)
   }
 
   override func setupConstraints() {
@@ -54,6 +60,8 @@ class TodayController: BaseController {
       .setLeadingAnchor(view.leadingAnchor)
       .setBottomAnchor(view.bottomAnchor)
       .setTrailingAnchor(view.trailingAnchor)
+
+    blurVisualEffectView.fillSuperView()
   }
 
   override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
@@ -88,6 +96,7 @@ extension TodayController: FullScreenAnimatable {
     targetFullScreenController?.startFullScreenAnimation()
     UIView.defaultAnimated(
       animations: {
+        self.blurVisualEffectView.alpha = 1
         self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
         self.fullScreenStatus = .fullScreen
         UIView.animate(withDuration: 0.2) {
@@ -101,6 +110,7 @@ extension TodayController: FullScreenAnimatable {
     targetFullScreenController?.dismissFullScreenAnimation()
     UIView.defaultAnimated(
       animations: {
+        self.blurVisualEffectView.alpha = 0
         self.tabBarController?.tabBar.transform = .identity
         self.fullScreenStatus = .thumbnail
         UIView.animate(withDuration: 0.2) {

@@ -130,4 +130,10 @@ extension Reactive where Base: TodayDetailListView {
       base.reloadData()
     }
   }
+
+  internal var clankingScrollEffect: Binder<Void> {
+    return Binder(self.base) { base, _ in
+      base.clankingScrollEffect(to: 0)
+    }
+  }
 }

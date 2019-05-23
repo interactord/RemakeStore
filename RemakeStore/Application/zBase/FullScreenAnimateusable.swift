@@ -15,6 +15,7 @@ enum ScreenStatus {
 }
 
 protocol FullScreenAnimatable {
+  var blurVisualEffectView: UIVisualEffectView { get }
   var targetFullScreenController: FullScreenViewControllerAnimatable? { get }
   var fullScreenStatus: ScreenStatus { get }
   func setupFullscreenView(_ targetFullScreenController: FullScreenViewControllerAnimatable, info: FullScreenAnimatedInfo)

@@ -167,5 +167,10 @@ extension TodayDetailController: ViewModelBased {
       .asDriverJustComplete()
       .drive(detailListView.rx.updateHeaderViewModel)
       .disposed(by: disposeBag)
+
+    detailListView.rx.didScroll
+      .asDriverJustComplete()
+      .drive(detailListView.rx.clankingScrollEffect)
+      .disposed(by: disposeBag)
   }
 }
