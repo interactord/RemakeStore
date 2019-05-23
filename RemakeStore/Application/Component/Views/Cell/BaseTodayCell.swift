@@ -11,6 +11,8 @@ import SCLayoutKit
 
 class BaseTodayCell: BaseCollectionViewCell {
 
+  private var unabledTouchAnimation = true
+
   lazy var categoryLabel: UILabel = {
     return LabelBuilder()
       .setText("CATEGORY LABEL")
@@ -42,15 +44,14 @@ class BaseTodayCell: BaseCollectionViewCell {
 
   override var isHighlighted: Bool {
     didSet {
-
-      var transform: CGAffineTransform = .identity
-
-      if isHighlighted {
-        transform = .init(scaleX: scaleRatio, y: scaleRatio)
-      }
-
-      UIView.animated(transform: transform) {
-        self.transform = transform
+      if unabledTouchAnimation {
+        var transform: CGAffineTransform = .identity
+        if isHighlighted {
+          transform = .init(scaleX: scaleRatio, y: scaleRatio)
+        }
+        UIView.animated(transform: transform) {
+          self.transform = transform
+        }
       }
     }
   }
@@ -63,5 +64,11 @@ class BaseTodayCell: BaseCollectionViewCell {
       addSubview(backgroundView)
     }
     self.backgroundView?.fillSuperView()
+  }
+
+  func clearBackgroundEffectView() {
+    backgroundView = UIView()
+    backgroundView?.backgroundColor = .white
+    unabledTouchAnimation = false
   }
 }

@@ -18,7 +18,6 @@ class TodayFullBackgroundCell: BaseTodayCell {
 
   private lazy var backgroundImageView: UIImageView = {
     return ImageViewBuilder()
-      .setImage(#imageLiteral(resourceName: "2019-05-18-cinema-bacground-v01"))
       .setCornerRadius(self.backgroundView?.layer.cornerRadius ?? 0)
       .setContentMode(.scaleAspectFill)
       .setClipToBounds(true)

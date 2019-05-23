@@ -50,7 +50,7 @@ extension TodayDetailListView: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let fatalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "fatalCell", for: indexPath)
-    fatalCell.backgroundColor = .red
+    fatalCell.backgroundColor = .clear
     guard let headerViewModel = headerViewModel else {
       return fatalCell
     }
@@ -59,11 +59,13 @@ extension TodayDetailListView: UICollectionViewDataSource {
       switch headerViewModel.outputs.cellType {
       case .todayFullBackgroundCell:
         let cell: TodayFullBackgroundCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+        cell.clearBackgroundEffectView()
         cell.bind(to: headerViewModel)
         return cell
       case .todayMultipleAppCell:
         let cell: TodayMultipleAppCell = collectionView.dequeueReusableCell(indexPath: indexPath)
         cell.todayMultipleAppListView.changed(to: .fullScreen)
+        cell.clearBackgroundEffectView()
         cell.bind(to: headerViewModel)
         return cell
       }
