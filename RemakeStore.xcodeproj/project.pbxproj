@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224128154EC1FDDA232D8680 /* Pods_RemakeStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA642B7F65A96A55E74E669 /* Pods_RemakeStoreTests.framework */; };
+		2904A0E12297731A00F4956B /* UIStackview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904A0E02297731A00F4956B /* UIStackview+Extension.swift */; };
 		2904CCB62287155A00D9E743 /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904CCB52287155A00D9E743 /* SearchViewModelSpec.swift */; };
 		2904CCB822871FE500D9E743 /* searchDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2904CCB3228711CA00D9E743 /* searchDummy.json */; };
 		29071A2E228C504400F625C8 /* explicitDummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 29071A2D228C504400F625C8 /* explicitDummy.json */; };
@@ -253,6 +254,7 @@
 /* Begin PBXFileReference section */
 		00F17B09FB33BFB70FF6346E /* Pods_RemakeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemakeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B93A2258B0454197B400C7 /* Pods-RemakeStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemakeStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-RemakeStoreTests/Pods-RemakeStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2904A0E02297731A00F4956B /* UIStackview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackview+Extension.swift"; sourceTree = "<group>"; };
 		2904CCB3228711CA00D9E743 /* searchDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchDummy.json; sourceTree = "<group>"; };
 		2904CCB52287155A00D9E743 /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
 		29071A2D228C504400F625C8 /* explicitDummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explicitDummy.json; sourceTree = "<group>"; };
@@ -514,6 +516,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2904A0DF229772FF00F4956B /* UIStackView */ = {
+			isa = PBXGroup;
+			children = (
+				2904A0E02297731A00F4956B /* UIStackview+Extension.swift */,
+			);
+			path = UIStackView;
+			sourceTree = "<group>";
+		};
 		2904CCB1228711A000D9E743 /* TestHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +940,7 @@
 		29E8A576227C268600E7A894 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2904A0DF229772FF00F4956B /* UIStackView */,
 				29DACC92229635A000184E59 /* UIScrollView */,
 				298E4090229031C90005731A /* Collection */,
 				292030CD228DE26600CEC624 /* UIColor */,
@@ -1643,6 +1654,7 @@
 				F426E5FAE2D41B21650EC751 /* ReviewListView.swift in Sources */,
 				292030C5228DC85000CEC624 /* UIView+Animation.swift in Sources */,
 				F426EC294912A790E834A808 /* ReviewRowCell.swift in Sources */,
+				2904A0E12297731A00F4956B /* UIStackview+Extension.swift in Sources */,
 				2942A17C228A1FF600D35C6B /* CGFloat+Convert.swift in Sources */,
 				292030D0228DE59500CEC624 /* TodayItem.swift in Sources */,
 				2972B50A228D57B7009198C3 /* TodayFullBackgroundCell.swift in Sources */,

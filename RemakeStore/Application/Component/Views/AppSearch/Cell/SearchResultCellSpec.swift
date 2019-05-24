@@ -59,4 +59,10 @@ class SearchResultCellSpec: XCTestCase {
     XCTAssertNotNil(sut)
 
   }
+
+  func test_makeScreenShotImageView() {
+    sut = SearchResultCell(frame: .zero)
+    _ = sut?.makeScreenShotImageView()
+    XCTAssertNotNil(sut)
+  }
 }

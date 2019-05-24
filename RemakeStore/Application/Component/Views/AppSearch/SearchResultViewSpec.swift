@@ -96,7 +96,7 @@ class SearchResultViewSpec: XCTestCase {
   }
 
   func test_delegate_sizeForItemAt() {
-    let expectedHeight: CGFloat = 350
+    let expectedHeight: CGFloat = 300
 
     sut = SearchResultView()
 
@@ -111,5 +111,23 @@ class SearchResultViewSpec: XCTestCase {
     let size = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 0, section: 0))
 
     XCTAssertEqual(expectedHeight, size?.height)
+  }
+
+  func test_delegate_minimumLineSpacingForSectionAt() {
+    let expectedCellHeightSpacing: CGFloat = 30
+
+    sut = SearchResultView()
+
+    guard
+      let sut = sut,
+      let delegate = sut.delegate as? UICollectionViewDelegateFlowLayout,
+      let layout = sut.collectionViewLayout as? UICollectionViewFlowLayout
+      else {
+        fatalError("Should be not nil")
+    }
+
+    let resultCellHeightSpacing = delegate.collectionView?(sut, layout: layout, minimumLineSpacingForSectionAt: 0)
+
+    XCTAssertEqual(expectedCellHeightSpacing, resultCellHeightSpacing)
   }
 }

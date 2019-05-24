@@ -132,7 +132,7 @@ class AppDetailResultViewSpec: XCTestCase {
   }
 
   func test_dataSource_sizeForItemAt() {
-    let expectedLookupCellHeight: CGFloat = 256.5
+    let expectedLookupCellHeight: CGFloat = 256
     let expectedPreviewCellHeight: CGFloat = 500
     let expectedReviewRowCellHeight: CGFloat = 280
 
@@ -146,14 +146,14 @@ class AppDetailResultViewSpec: XCTestCase {
         fatalError("Should be not nil")
     }
 
-    let resultLoookupCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 0, section: 0))
-    XCTAssertEqual(expectedLookupCellHeight, resultLoookupCellSize?.height)
+    let resultLoookupCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 0, section: 0)) ?? .zero
+    XCTAssertLessThanOrEqual(expectedLookupCellHeight, resultLoookupCellSize.height)
 
-    let resultPreviewCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 1, section: 0))
-    XCTAssertEqual(expectedPreviewCellHeight, resultPreviewCellSize?.height)
+    let resultPreviewCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 1, section: 0)) ?? .zero
+    XCTAssertLessThanOrEqual(expectedPreviewCellHeight, resultPreviewCellSize.height)
 
-    let resultReviewRowCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 2, section: 0))
-    XCTAssertEqual(expectedReviewRowCellHeight, resultReviewRowCellSize?.height)
+    let resultReviewRowCellSize = delegate.collectionView?(sut, layout: layout, sizeForItemAt: .init(row: 2, section: 0)) ?? .zero
+    XCTAssertLessThanOrEqual(expectedReviewRowCellHeight, resultReviewRowCellSize.height)
   }
 
   func test_dataSource_sizeForItemAt_dynamicSize() {

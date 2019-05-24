@@ -13,6 +13,7 @@ class SearchResultView: BaseCollectionView {
   // MARK: Public
 
   var lookupViewModels: [LookupViewModeling]?
+  let cellHeightSpacing: CGFloat = 30
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -48,8 +49,13 @@ extension SearchResultView: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = frame.width
-    return .init(width: width, height: 350)
+    return .init(width: width, height: 300)
   }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return cellHeightSpacing
+  }
+
 }
 
 // MARK: - RX Binder

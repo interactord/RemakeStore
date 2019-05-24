@@ -32,6 +32,7 @@ class AppsHeaderCell: BaseCollectionViewCell {
     return ImageViewBuilder()
       .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
       .setContentMode(.scaleAspectFill)
+      .setClipToBounds(true)
       .setCornerRadius(8)
       .build()
   }()
@@ -44,7 +45,7 @@ class AppsHeaderCell: BaseCollectionViewCell {
         backgroundImageView
       ])
       .setAxis(.vertical)
-      .setSpacing(12)
+      .setSpacing(4)
       .build()
   }()
 
