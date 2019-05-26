@@ -88,7 +88,7 @@ extension TodayDetailListView: FullScreenLayoutCollectionViewAnimatedable {
     UIView.defaultAnimated(animations: {
       cell.topConstraint.constant = cell.thumbnailPaddingTop
       cell
-        .setWithAnchor(startingFrame.width)
+        .setWidthAnchor(startingFrame.width)
         .setHeightAnchor(cell.thumbnailHeight)
       self.layoutIfNeeded()
     })

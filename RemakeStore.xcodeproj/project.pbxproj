@@ -92,6 +92,7 @@
 		29DACC96229635C400184E59 /* UIScrollViewConvertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DACC95229635C400184E59 /* UIScrollViewConvertSpec.swift */; };
 		29DACC982296374B00184E59 /* UIScrollView+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DACC972296374B00184E59 /* UIScrollView+Convert.swift */; };
 		29E00AB3227C07B3004A7A49 /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E00AB2227C07B3004A7A49 /* env.plist */; };
+		29E30FF9229AB6C20060804A /* AppDetailNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E30FF8229AB6C20060804A /* AppDetailNavigationItem.swift */; };
 		29E8A56D227C229600E7A894 /* EnvConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A568227C229600E7A894 /* EnvConfigModel.swift */; };
 		29E8A583227C2F8800E7A894 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A57E227C2F8800E7A894 /* Service.swift */; };
 		29E8A584227C2F8800E7A894 /* AppHTTPErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8A580227C2F8800E7A894 /* AppHTTPErrorHandler.swift */; };
@@ -325,6 +326,7 @@
 		29DACC972296374B00184E59 /* UIScrollView+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Convert.swift"; sourceTree = "<group>"; };
 		29E009F7227BCD04004A7A49 /* SCServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SCServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E00AB2227C07B3004A7A49 /* env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
+		29E30FF8229AB6C20060804A /* AppDetailNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailNavigationItem.swift; sourceTree = "<group>"; };
 		29E8A568227C229600E7A894 /* EnvConfigModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvConfigModel.swift; sourceTree = "<group>"; };
 		29E8A57E227C2F8800E7A894 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		29E8A580227C2F8800E7A894 /* AppHTTPErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHTTPErrorHandler.swift; sourceTree = "<group>"; };
@@ -814,6 +816,7 @@
 				F426E222E508A49332F48150 /* ReviewListView.swift */,
 				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
 				29DACC9A229640E000184E59 /* Cell */,
+				29E30FF8229AB6C20060804A /* AppDetailNavigationItem.swift */,
 			);
 			path = AppDetail;
 			sourceTree = "<group>";
@@ -1601,6 +1604,7 @@
 				F426E05FB71D3E681C84F1E8 /* CellContentClassIdentifiable.swift in Sources */,
 				F426EE4F8804868379A171BF /* CellContentClassIdentifiable+UICollectionView.swift in Sources */,
 				F426EECC2FCF75C89A0350D5 /* CellContentClassIdentifiable+UITableView.swift in Sources */,
+				29E30FF9229AB6C20060804A /* AppDetailNavigationItem.swift in Sources */,
 				296D18AB228CB3C1003FECB8 /* InteractordEndpointRouter.swift in Sources */,
 				F426E485E6308350B4388387 /* OptionalType.swift in Sources */,
 				296D18AA228CB3C1003FECB8 /* InteractordEndpoint.swift in Sources */,

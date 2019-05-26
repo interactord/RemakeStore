@@ -40,6 +40,24 @@ class AppDetailControllerSpec: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
+  func test_viewWillAppear() {
+    sut = AppDetailController()
+
+    guard let sut = sut else {
+      fatalError("Should be not nil")
+    }
+
+    sut.viewWillAppear(true)
+    sut.viewWillDisappear(true)
+
+    _ = UINavigationController(rootViewController: sut)
+
+    sut.viewWillAppear(true)
+    sut.viewWillAppear(true)
+    sut.viewWillDisappear(true)
+    XCTAssertNotNil(sut)
+  }
+
   func makeViewModel() -> AppDetailViewModel {
     var serviceDIContainer = ServiceDIContainer()
     let service = serviceDIContainer.service

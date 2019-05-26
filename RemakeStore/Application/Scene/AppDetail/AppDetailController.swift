@@ -6,6 +6,7 @@
 import UIKit
 
 import RxSwift
+import RxCocoa
 import SCLayoutKit
 
 class AppDetailController: BaseController {
@@ -18,6 +19,8 @@ class AppDetailController: BaseController {
 
   var appId: Int!
 
+  private(set) lazy var appDetailNavigationItem = AppDetailNavigationItem()
+
   private lazy var appDetailResultView: AppDetailResultView = {
     let resultView = AppDetailResultView()
     view.addSubview(resultView)
@@ -26,12 +29,24 @@ class AppDetailController: BaseController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
   }
 
   override func setupConstraints() {
     super.setupConstraints()
 
     appDetailResultView.fillSuperView()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    appDetailNavigationItem.insertRIghtBarItem(from: navigationController)
+    appDetailNavigationItem.showItem(show: false)
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    appDetailNavigationItem.remoteRIghtBarItem(form: navigationController)
   }
 
   override func setupNavigation() {
@@ -63,6 +78,15 @@ extension AppDetailController: ViewModelBased {
 
     viewModel.outputs.reviewsEntryModels
       .bind(to: appDetailResultView.rx.updateReviewsEntryViewModels)
+      .disposed(by: disposeBag)
+
+    appDetailResultView.rx.didScroll
+      .map { [weak self] _ in
+        return self?.appDetailResultView.contentOffset.y
+      }
+      .ignoreNil()
+      .asDriverJustComplete()
+      .drive(appDetailNavigationItem.rx.updateAlphaAnimation)
       .disposed(by: disposeBag)
   }
 }
