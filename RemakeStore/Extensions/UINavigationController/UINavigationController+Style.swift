@@ -12,4 +12,12 @@ extension UINavigationController {
     self.tabBarItem.title = title
     self.tabBarItem.image = UIImage(named: imageName)
   }
+
+  func cleanStyleTheme() {
+    let image = UIImage()
+    self.navigationBar.shadowImage = image
+    self.navigationBar.isTranslucent = false
+    self.navigationBar.backgroundColor = .white
+    self.navigationBar.barTintColor = .white
+  }
 }
