@@ -16,6 +16,8 @@ protocol AppDetailViewModelOutput {
   var lookupViewModel: Observable<LookupViewModeling> { get }
   var screenshotViewModels: Observable<[ScreenshotViewModeling]> { get }
   var reviewsEntryModels: Observable<[ReviewsEntryViewModeling]> { get }
+  var appIconPath: Observable<String> { get }
+  var appPrice: Observable<String> { get }
 }
 
 protocol AppDetailViewModeling {
@@ -65,6 +67,15 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     .map {
       $0.map { ReviewsEntryViewModel(withEntry: $0) }
     }
+
+  lazy var appIconPath: Observable<String> = lookupData
+    .ignoreNil()
+    .map { $0.artworkUrl100 }
+
+  lazy var appPrice: Observable<String> = lookupData
+    .ignoreNil()
+    .map { $0.formattedPrice }
+    .ignoreNil()
 
   // MARK: - Private
   private lazy var lookupData: Observable<LookupInformation?> = {

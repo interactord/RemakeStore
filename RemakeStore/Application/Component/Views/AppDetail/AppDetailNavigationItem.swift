@@ -17,7 +17,7 @@ class AppDetailNavigationItem: NSObject {
 
   let itemTag: Int = 1_000
 
-  fileprivate lazy var titleView: UIImageView = {
+  private(set) lazy var titleView: UIImageView = {
     return ImageViewBuilder()
       .setContentMode(.scaleAspectFit)
       .setClipToBounds(true)
@@ -32,7 +32,7 @@ class AppDetailNavigationItem: NSObject {
       .build()
   }()
 
-  fileprivate lazy var getButton: UIButton = {
+  private(set) lazy var getButton: UIButton = {
     let button = ButtonBuilder()
       .setTitle("GET")
       .setTitleColor(.white)

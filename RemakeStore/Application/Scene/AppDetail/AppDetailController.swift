@@ -80,6 +80,14 @@ extension AppDetailController: ViewModelBased {
       .bind(to: appDetailResultView.rx.updateReviewsEntryViewModels)
       .disposed(by: disposeBag)
 
+    viewModel.outputs.appIconPath
+      .bind(to: appDetailNavigationItem.titleView.rx.loadImage)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.appPrice
+      .bind(to: appDetailNavigationItem.getButton.rx.updateNormalStateTitle)
+      .disposed(by: disposeBag)
+
     appDetailResultView.rx.didScroll
       .map { [weak self] _ in
         return self?.appDetailResultView.contentOffset.y
