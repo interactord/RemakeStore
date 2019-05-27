@@ -130,6 +130,14 @@ class LookupCell: BaseCollectionViewCell {
     appIconImageView.image = nil
     priceButton.setTitle("", for: .normal)
   }
+
+  func showItem(_ show: Bool) {
+    UIView.animate(withDuration: 0.2) {
+      self.nameLabel.alpha = show ? 1.0 : 0.0
+      self.appIconImageView.alpha = show ? 1.0 : 0.0
+      self.priceButton.alpha = show ? 1.0 : 0.0
+    }
+  }
 }
 
 extension LookupCell: LookupViewModelBindable {

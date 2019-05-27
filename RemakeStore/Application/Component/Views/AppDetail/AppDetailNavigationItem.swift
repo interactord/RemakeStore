@@ -96,14 +96,9 @@ class AppDetailNavigationItem: NSObject {
 }
 
 extension Reactive where Base: AppDetailNavigationItem {
-  internal var updateAlphaAnimation: Binder<CGFloat> {
+  internal var updateAlphaAnimation: Binder<Bool> {
     return Binder(self.base) { base, result in
-      let rangeOfHideOffsetY: CGFloat = 110
-      if result > rangeOfHideOffsetY {
-        base.showItem(show: true)
-      } else {
-        base.showItem(show: false)
-      }
+      base.showItem(show: result)
     }
   }
 }

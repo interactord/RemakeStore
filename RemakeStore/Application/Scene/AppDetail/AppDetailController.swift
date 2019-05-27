@@ -68,6 +68,13 @@ extension AppDetailController: ViewModelBased {
       .bind(to: viewModel.inputs.appId)
       .disposed(by: disposeBag)
 
+    appDetailResultView.rx.didScroll
+      .map { [weak self] _ -> CGFloat? in
+        self?.appDetailResultView.contentOffset.y
+      }
+      .bind(to: viewModel.inputs.contentOffsetY)
+      .disposed(by: disposeBag)
+
     viewModel.outputs.lookupViewModel
       .bind(to: appDetailResultView.rx.updateLookupViewModel)
       .disposed(by: disposeBag)
@@ -88,13 +95,12 @@ extension AppDetailController: ViewModelBased {
       .bind(to: appDetailNavigationItem.getButton.rx.updateNormalStateTitle)
       .disposed(by: disposeBag)
 
-    appDetailResultView.rx.didScroll
-      .map { [weak self] _ in
-        return self?.appDetailResultView.contentOffset.y
-      }
-      .ignoreNil()
-      .asDriverJustComplete()
-      .drive(appDetailNavigationItem.rx.updateAlphaAnimation)
+    viewModel.outputs.visibility
+      .bind(to: appDetailNavigationItem.rx.updateAlphaAnimation)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.visibility
+      .bind(to: appDetailResultView.rx.showLookupCell)
       .disposed(by: disposeBag)
   }
 }

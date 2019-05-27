@@ -10,6 +10,7 @@ import SCServiceKit
 
 protocol AppDetailViewModelInput {
   var appId: BehaviorSubject<Int?> { get }
+  var contentOffsetY: BehaviorSubject<CGFloat?> { get }
 }
 
 protocol AppDetailViewModelOutput {
@@ -18,6 +19,7 @@ protocol AppDetailViewModelOutput {
   var reviewsEntryModels: Observable<[ReviewsEntryViewModeling]> { get }
   var appIconPath: Observable<String> { get }
   var appPrice: Observable<String> { get }
+  var visibility: Observable<Bool> { get }
 }
 
 protocol AppDetailViewModeling {
@@ -43,6 +45,7 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
   // MARK: - Inputs
 
   var appId: BehaviorSubject<Int?> = .init(value: nil)
+  var contentOffsetY: BehaviorSubject<CGFloat?> = .init(value: nil)
 
   // MARK: - Outputs
 
@@ -77,7 +80,13 @@ class AppDetailViewModel: ServiceViewModel, AppDetailViewModelType {
     .map { $0.formattedPrice }
     .ignoreNil()
 
+  lazy var visibility: Observable<Bool> = contentOffsetY
+    .asObservable()
+    .ignoreNil()
+    .map { $0 > 110 }
+
   // MARK: - Private
+
   private lazy var lookupData: Observable<LookupInformation?> = {
     let repository = self.repository
     return appId.asObservable().ignoreNil()
