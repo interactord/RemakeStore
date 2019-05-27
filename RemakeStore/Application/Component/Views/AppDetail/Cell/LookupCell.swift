@@ -32,10 +32,18 @@ class LookupCell: BaseCollectionViewCell {
       .build()
   }()
 
-  lazy var nameLabel: UILabel = { return LabelBuilder()
+  lazy var nameLabel: UILabel = {
+    return LabelBuilder()
       .setText("APP NAME")
       .setFont(DefaultTheme.Font.title3)
       .setNumberOfLines(2)
+      .build()
+  }()
+
+  lazy var companyLabel: UILabel = {
+    return LabelBuilder()
+      .setText("COMPANY")
+      .setFont(DefaultTheme.Font.body)
       .build()
   }()
 
@@ -47,6 +55,17 @@ class LookupCell: BaseCollectionViewCell {
       .setTitleColor(.white)
       .setCornerRadius(16)
       .setWidthAnchor(80)
+      .setHeightAnchor(32)
+      .build()
+  }()
+
+  lazy var moreButton: UIButton = {
+    return ButtonBuilder(type: .custom)
+      .setImage(#imageLiteral(resourceName: "moreIcon"))
+      .setImage(#imageLiteral(resourceName: "moreIcon").mergedAlpha(0.8), state: .selected)
+      .setBackgroundColor(DefaultTheme.Color.primaryColor)
+      .setCornerRadius(16)
+      .setWidthAnchor(32)
       .setHeightAnchor(32)
       .build()
   }()
@@ -69,47 +88,56 @@ class LookupCell: BaseCollectionViewCell {
   lazy var stackView: UIStackView = {
 
     /// -----------------------
-    /// [priceButton]
-    ///      | 0
-    /// [UIView]
+    /// [priceButton] - [UIView]
     /// ------------------------
     let priceWrapper = StackViewBuilder(
-      arrangedSubViews: [self.priceButton, UIView()]
-    ).build()
+      arrangedSubViews: [
+        self.priceButton,
+        UIView(),
+        self.moreButton
+      ]).build()
 
     /// --------------------------------
-    /// [nameLabel] -12- | [priceButton]
-    ///                   |    | 0
-    ///                  | [UIView]
+    /// [nameLabel]
+    ///  | 4
+    /// [companyLabel]
+    ///  | 4
+    /// [UIView]
+    ///  | 4
+    /// [priceWrapper]
     /// -------------------------------
     let namePriceWrapper = StackViewBuilder(
-      arrangedSubViews: [self.nameLabel, priceWrapper, UIView()
-      ]).setAxis(.vertical).setSpacing(12).build()
+      arrangedSubViews: [
+        self.nameLabel,
+        self.companyLabel,
+        UIView(),
+        priceWrapper
+      ]).setAxis(.vertical).setSpacing(4).build()
 
-    /// -----------------------------------------------------------
-    ///  [appIconImageView]   -16-  |  [nameLabel] -12- | [priceButton
-    ///                            | -------------------------------
-    ///                            |
-    ///                            |
-    /// -----------------------------------------------------------
+    /// --------------------------------------------
+    ///  [appIconImageView] -20- [namePriceWrapper]
+    /// --------------------------------------------
 
     let topInfoWrapper = StackViewBuilder(
-      arrangedSubViews: [self.appIconImageView, namePriceWrapper]
-    ).setSpacing(20).build()
+      arrangedSubViews: [
+        self.appIconImageView,
+        namePriceWrapper
+      ]).setSpacing(20).build()
 
-    /// -----------------------------------------------------------
-    ///  [appIconImageView]   -16-  |  [nameLabel] -12- | [priceButton
-    ///                            | -------------------------------
-    ///                            |
-    ///                            |
-    /// -----------------------------------------------------------
-    /// [whatsNewLabel]--------------------------------------------
+    /// ----------------------
+    /// [appIconImageView]
     ///   | 16
-    /// [releaseNotesLabel]----------------------------------------
+    /// [whatsNewLabel]
+    ///   | 16
+    /// [releaseNotesLabel]
+    /// ----------------------
 
     return StackViewBuilder(
-      arrangedSubViews: [topInfoWrapper, self.whatsNewLabel, self.releaseNotesLabel]
-    ).setAxis(.vertical).setSpacing(16).build()
+      arrangedSubViews: [
+        topInfoWrapper,
+        self.whatsNewLabel,
+        self.releaseNotesLabel
+      ]).setAxis(.vertical).setSpacing(16).build()
   }()
 
   override func setupSubView() {
@@ -149,6 +177,11 @@ extension LookupCell: LookupViewModelBindable {
     viewModel.outputs.name
       .asDriverJustComplete()
       .drive(nameLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.company
+      .asDriverJustComplete()
+      .drive(companyLabel.rx.text)
       .disposed(by: disposeBag)
 
     viewModel.outputs.releaseNote

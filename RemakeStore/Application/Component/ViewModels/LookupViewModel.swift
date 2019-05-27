@@ -9,6 +9,7 @@ import RxSwift
 
 protocol LookupViewModelOutput {
   var name: Observable<String> { get }
+  var company: Observable<String> { get }
   var releaseNote: Observable<String> { get }
   var appIconImageUrlPath: Observable<String> { get }
   var priceFormat: Observable<String> { get }
@@ -45,6 +46,7 @@ class LookupViewModel: LookupViewModelType {
   // MARK: - Outputs
 
   var name: Observable<String>
+  var company: Observable<String>
   var releaseNote: Observable<String>
   var appIconImageUrlPath: Observable<String>
   var priceFormat: Observable<String>
@@ -58,6 +60,7 @@ class LookupViewModel: LookupViewModelType {
 
     let informationAction = Observable.just(result).observeOn(MainScheduler.asyncInstance)
     name = informationAction.map { $0.trackName }
+    company = informationAction.map { $0.artistName ?? "" }
     releaseNote = informationAction.map { $0.releaseNotes ?? "" }
     appIconImageUrlPath = informationAction.map { $0.artworkUrl100 }
     category = informationAction.map { $0.primaryGenreName }
