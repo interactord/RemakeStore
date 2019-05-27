@@ -130,4 +130,13 @@ extension Reactive where Base: AppDetailResultView {
     }
   }
 
+  internal var showLookupCell: Binder<Bool> {
+    return Binder(self.base) { base, result in
+      guard let cell = base.cellForItem(at: [0, 0]) as? LookupCell else {
+        return
+      }
+      cell.showItem(!result)
+    }
+  }
+
 }

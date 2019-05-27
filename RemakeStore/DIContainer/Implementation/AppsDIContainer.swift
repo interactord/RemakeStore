@@ -95,6 +95,7 @@ struct AppsDIContainer: DIContainer {
     }
 
     navController.makeTabBarStyle(with: "Apps", imageName: "Apps")
+    navController.cleanStyleTheme()
     return navController
   }()
 
