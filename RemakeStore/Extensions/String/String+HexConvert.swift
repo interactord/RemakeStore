@@ -29,7 +29,5 @@ extension String {
     default:
       return UIColor()
     }
-
   }
-
 }

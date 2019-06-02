@@ -14,8 +14,9 @@ protocol LookupViewModelOutput {
   var appIconImageUrlPath: Observable<String> { get }
   var priceFormat: Observable<String> { get }
   var category: Observable<String> { get }
-  var rating: Observable<String> { get }
+  var rating: Observable<Float> { get }
   var screenshotUrlPaths: Observable<[String]> { get }
+  var reviewCount: Observable<String> { get }
 
   var result: LookupInformation { get }
 }
@@ -51,9 +52,10 @@ class LookupViewModel: LookupViewModelType {
   var appIconImageUrlPath: Observable<String>
   var priceFormat: Observable<String>
   var category: Observable<String>
-  var rating: Observable<String>
+  var rating: Observable<Float>
   var result: LookupInformation
   var screenshotUrlPaths: Observable<[String]>
+  var reviewCount: Observable<String>
 
   init(withResult result: LookupInformation) {
     self.result = result
@@ -64,8 +66,9 @@ class LookupViewModel: LookupViewModelType {
     releaseNote = informationAction.map { $0.releaseNotes ?? "" }
     appIconImageUrlPath = informationAction.map { $0.artworkUrl100 }
     category = informationAction.map { $0.primaryGenreName }
-    rating = informationAction.map { "\($0.averageUserRating ?? 0)" }
+    rating = informationAction.map { Float($0.averageUserRating ?? 0) }
     priceFormat = informationAction.map { $0.formattedPrice ?? "" }
     screenshotUrlPaths = informationAction.map { $0.screenshotUrls }.ignoreNil()
+    reviewCount = informationAction.map { $0.userRatingCount?.formatUsingAbbrevation() ?? "" }
   }
 }

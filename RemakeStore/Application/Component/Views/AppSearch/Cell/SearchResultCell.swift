@@ -9,6 +9,7 @@ import RxSwift
 import RxCocoa
 import SCUIBuildKit
 import SCLayoutKit
+import SCReviewRatingKit
 import moa
 
 private protocol SearchResultCellMakeElement {
@@ -41,9 +42,22 @@ class SearchResultCell: BaseCollectionViewCell {
       .build()
   }()
 
-  lazy var ratingsLabel: UILabel = {
+  lazy var reviewCountLabel: UILabel = {
     return LabelBuilder()
       .setText("611k")
+      .setFont(DefaultTheme.Font.callout)
+      .build()
+  }()
+
+  lazy var ratingsView: SCReviewRatingView = {
+    return RatingStarBuilder()
+      .setValue(currentValue: 2, minimumValue: 0, maximumValue: 5)
+      .setMode(allowHalfMode: true, accuratedHalfMode: true)
+      .setColor(tintColor: .lightGray)
+      .setBackgroundColor(.white)
+      .setSpacing(2)
+      .setHeigthAnchor(20)
+      .setWidthAnchor(64)
       .build()
   }()
 
@@ -59,10 +73,15 @@ class SearchResultCell: BaseCollectionViewCell {
   }()
 
   private lazy var infoTopStackView: UIStackView = {
+    let ratingSteckView = StackViewBuilder(arrangedSubViews: [
+      ratingsView,
+      reviewCountLabel
+    ]).build()
+
     let verticalStackView = StackViewBuilder(arrangedSubViews: [
       nameLabel,
       categoryLabel,
-      ratingsLabel
+      ratingSteckView
     ])
       .setAxis(.vertical)
       .build()
@@ -115,7 +134,8 @@ class SearchResultCell: BaseCollectionViewCell {
     appIconImageView.image = nil
     nameLabel.text = ""
     categoryLabel.text = ""
-    ratingsLabel.text = ""
+    reviewCountLabel.text = ""
+    ratingsView.currentValue = 0
     _ = screenshortsStackView.removeAllArrangedSubviews()
   }
 }
@@ -138,7 +158,12 @@ extension SearchResultCell: LookupViewModelBindable {
 
     viewModel.outputs.rating
       .asDriverJustComplete()
-      .drive(ratingsLabel.rx.text)
+      .drive(ratingsView.rx.currentValue)
+      .disposed(by: disposeBag)
+
+    viewModel.outputs.reviewCount
+      .asDriverJustComplete()
+      .drive(reviewCountLabel.rx.text)
       .disposed(by: disposeBag)
 
     viewModel.outputs.appIconImageUrlPath

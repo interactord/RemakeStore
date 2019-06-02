@@ -28,7 +28,7 @@ class LookupViewModelSpec: XCTestCase {
     let expectedReleaseNote = "test release"
     let expectedAppIconImageUrlPath = "testImage.com"
     let expectedCategory = "testcategory"
-    let expectedRating = "1.0"
+    let expectedRating: Float = 1.0
     let expectedPriceFormat = "Free"
     let exptectScreenshotUrls = ["testscreenshot.com"]
     sut = LookupViewModel(withResult: makeInformation())
@@ -44,7 +44,7 @@ class LookupViewModelSpec: XCTestCase {
 
   func test_output_option_nil() {
     let expectedReleaseNote = ""
-    let exptectedRating = "0.0"
+    let exptectedRating: Float = 0.0
     let expectedPriceFormat = ""
 
     sut = LookupViewModel(withResult: makeOptionalInformation())
@@ -66,21 +66,25 @@ class LookupViewModelSpec: XCTestCase {
       description: "test description",
       releaseNotes: "test release",
       artistName: "test",
-      collectionName: "testCollection")
+      collectionName: "testCollection",
+      userRatingCount: 2_124
+    )
   }
 
   func makeOptionalInformation() -> LookupInformation {
     return LookupInformation(
-    trackId: 123,
-    trackName: "testTrack",
-    primaryGenreName: "testcategory",
-    averageUserRating: nil,
-    screenshotUrls: nil,
-    artworkUrl100: "testImage.com",
-    formattedPrice: nil,
-    description: nil,
-    releaseNotes: nil,
-    artistName: nil,
-    collectionName: nil)
+      trackId: 123,
+      trackName: "testTrack",
+      primaryGenreName: "testcategory",
+      averageUserRating: nil,
+      screenshotUrls: nil,
+      artworkUrl100: "testImage.com",
+      formattedPrice: nil,
+      description: nil,
+      releaseNotes: nil,
+      artistName: nil,
+      collectionName: nil,
+      userRatingCount: nil
+    )
   }
 }

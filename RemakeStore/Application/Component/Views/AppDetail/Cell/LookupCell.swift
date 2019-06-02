@@ -146,7 +146,7 @@ class LookupCell: BaseCollectionViewCell {
 
     addSubview(stackView)
     stackView.fillSuperView(
-      padding: .init(top: 20, left: 20, bottom: 20, right: 20)
+      padding: .init(top: 20, left: 20, bottom: 20, right: 30)
     )
   }
 

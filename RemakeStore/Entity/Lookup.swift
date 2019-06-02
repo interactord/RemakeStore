@@ -23,4 +23,5 @@ struct LookupInformation: Decodable {
   var releaseNotes: String?
   var artistName: String?
   var collectionName: String?
+  var userRatingCount: Int?
 }

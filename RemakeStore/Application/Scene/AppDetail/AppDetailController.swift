@@ -34,7 +34,6 @@ class AppDetailController: BaseController {
 
   override func setupConstraints() {
     super.setupConstraints()
-
     appDetailResultView.fillSuperView()
   }
 

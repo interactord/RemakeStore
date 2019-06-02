@@ -48,7 +48,8 @@ class SearchResultCellSpec: XCTestCase {
       description: nil,
       releaseNotes: nil,
       artistName: nil,
-      collectionName: nil
+      collectionName: nil,
+      userRatingCount: nil
     )
 
     let viewModel: LookupViewModeling = LookupViewModel(withResult: lookup)

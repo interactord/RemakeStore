@@ -10,55 +10,59 @@ import RxCocoa
 
 class PreviewScreenshotsView: BaseCollectionView {
 
-	// MARK: - Public
+  // MARK: - Public
 
-	var screenshotViewModels: [ScreenshotViewModeling]?
+  var screenshotViewModels: [ScreenshotViewModeling]?
 
-	// MARK: - Private
+  // MARK: - Private
 
-	private let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+  private let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 26)
 
-	override func setupDelegate() {
-		super.setupDelegate()
-		self.dataSource = self
-		self.delegate = self
-	}
+  override func setupDelegate() {
+    super.setupDelegate()
+    self.dataSource = self
+    self.delegate = self
+  }
 
-	override func registerCell() {
-		super.registerCell()
-		self.register(cellType: ScreenshotCell.self)
-	}
+  override func registerCell() {
+    super.registerCell()
+    self.register(cellType: ScreenshotCell.self)
+  }
 
-	override func setupView() {
-		super.setupView()
-		contentInset = padding
-		backgroundColor = .white
-	}
+  override func setupView() {
+    super.setupView()
+    contentInset = padding
+    backgroundColor = .white
+  }
 }
 
 // MARK: - UICollectionViewDataSource
 
 extension PreviewScreenshotsView: UICollectionViewDataSource {
 
-	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return screenshotViewModels?.count ?? 0
-	}
+  }
 
-	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell: ScreenshotCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell: ScreenshotCell = collectionView.dequeueReusableCell(indexPath: indexPath)
     if let viewModel = screenshotViewModels?[indexPath.item] {
       cell.bind(to: viewModel)
     }
-		return cell
-	}
+    return cell
+  }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension PreviewScreenshotsView: UICollectionViewDelegateFlowLayout {
-	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return .init(width: 250, height: frame.height)
-	}
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return .init(width: 250, height: frame.height)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 15
+  }
 }
 
 // MARK: - RX Binder

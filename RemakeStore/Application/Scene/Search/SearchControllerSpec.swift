@@ -60,7 +60,8 @@ class SearchControllerSpec: XCTestCase {
           description: nil,
           releaseNotes: nil,
           artistName: nil,
-          collectionName: nil
+          collectionName: nil,
+          userRatingCount: nil
         ))]
     let resultView = sut.searchResultView
     resultView.lookupViewModels = lookupViewModels
