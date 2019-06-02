@@ -17,6 +17,8 @@ class PreviewScreenshotsView: BaseCollectionView {
   // MARK: - Private
 
   private let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 26)
+  private let cellMargin: CGFloat = 15
+  private let screenShotCellWidth: CGFloat = 250
 
   override func setupDelegate() {
     super.setupDelegate()
@@ -57,11 +59,11 @@ extension PreviewScreenshotsView: UICollectionViewDataSource {
 
 extension PreviewScreenshotsView: UICollectionViewDelegateFlowLayout {
   public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return .init(width: 250, height: frame.height)
+    return .init(width: screenShotCellWidth, height: frame.height)
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 15
+    return cellMargin
   }
 }
 

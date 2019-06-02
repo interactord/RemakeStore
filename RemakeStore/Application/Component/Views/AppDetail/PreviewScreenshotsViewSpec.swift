@@ -89,4 +89,22 @@ class PreviewScreenshotsViewSpec: XCTestCase {
     XCTAssertEqual(expectedCellSizeWidth, cellSize?.width)
 
   }
+
+  func test_delegate_minimumLineSpacingForSectionAt() {
+
+    let expectedCellMinimumSpacing: CGFloat = 15
+    sut = PreviewScreenshotsView()
+
+    guard
+      let sut = sut,
+      let delegate = sut.delegate as? UICollectionViewDelegateFlowLayout,
+      let layout = sut.collectionViewLayout as? UICollectionViewFlowLayout
+      else {
+        fatalError("Should be not nil")
+    }
+
+    let cellSpacing = delegate.collectionView?(sut, layout: layout, minimumLineSpacingForSectionAt: 0)
+    XCTAssertEqual(expectedCellMinimumSpacing, cellSpacing)
+
+  }
 }
