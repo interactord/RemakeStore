@@ -12,6 +12,7 @@ target 'RemakeStore' do
   pod 'SCUIBuildKit'
   pod 'SCServiceKit'
   pod 'SCLayoutKit'
+  pod 'SCReviewRatingKit/RxSwift'
   pod 'moa'
 
 

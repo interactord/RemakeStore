@@ -17,6 +17,11 @@ PODS:
   - RxTest (5.0.0):
     - RxSwift (~> 5)
   - SCLayoutKit (1.0.1)
+  - SCReviewRatingKit/Core (1.0.0)
+  - SCReviewRatingKit/RxSwift (1.0.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+    - SCReviewRatingKit/Core
   - SCServiceKit (1.0.1):
     - RxSwift (>= 4.5.0)
     - SwiftyBeaver (>= 1.7.0)
@@ -34,6 +39,7 @@ DEPENDENCIES:
   - RxSwift
   - RxTest
   - SCLayoutKit
+  - SCReviewRatingKit/RxSwift
   - SCServiceKit
   - SCUIBuildKit
   - Swifter
@@ -50,6 +56,7 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SCLayoutKit
+    - SCReviewRatingKit
     - SCServiceKit
     - SCUIBuildKit
     - Swifter
@@ -66,12 +73,13 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   SCLayoutKit: 6bf7eb9f75e6fbe5e80e5e3c813f957f7d24c009
+  SCReviewRatingKit: e356da17823e4649de0f423cb08e546d470054a7
   SCServiceKit: dc1bca393d7f49495f3a03138d906fff7688e3d6
   SCUIBuildKit: c25594a8a05e96cb1531f0a9a62362847c73b38f
   Swifter: 2ed278fbf7b16cbe97269eb56d8e8749b1ec4042
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 43129b5951cdcd29e7bad948b1c501b4b4e27cbb
+PODFILE CHECKSUM: 60e47d3d80414aa7122d071e298d2352268d6f13
 
 COCOAPODS: 1.6.1
