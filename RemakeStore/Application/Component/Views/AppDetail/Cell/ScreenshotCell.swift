@@ -16,6 +16,7 @@ class ScreenshotCell: BaseCollectionViewCell {
     let imgView = ImageViewBuilder()
       .setBackgroundColor(DefaultTheme.Color.placeHolderColor)
       .setCornerRadius(12)
+      .setClipToBounds(true)
       .setContentMode(.scaleAspectFill)
       .build()
 
