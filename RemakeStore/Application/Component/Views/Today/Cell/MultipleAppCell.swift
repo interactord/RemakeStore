@@ -39,9 +39,9 @@ class MultipleAppCell: BaseCollectionViewCell {
     return ButtonBuilder()
       .setTitle("GET")
       .setBackgroundColor(DefaultTheme.Color.lightGrayColor)
+      .setContentEdgeInsets(.init(top: 0, left: 16, bottom: 0, right: 16))
       .setFont(DefaultTheme.Font.bodyBold)
       .setCornerRadius(16)
-      .setWidthAnchor(80)
       .setHeightAnchor(32)
       .build()
   }()
@@ -81,6 +81,7 @@ class MultipleAppCell: BaseCollectionViewCell {
       arrangedSubViews: [
         iconImageView,
         textVerticalGroup,
+        UIView(),
         getButton
       ])
       .setAlignment(.center)

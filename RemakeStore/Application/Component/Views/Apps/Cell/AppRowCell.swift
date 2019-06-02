@@ -39,8 +39,8 @@ class AppRowCell: BaseCollectionViewCell {
       .setTitle("GET")
       .setFont(DefaultTheme.Font.bodyBold)
       .setBackgroundColor(DefaultTheme.Color.lightGrayColor)
+      .setContentEdgeInsets(.init(top: 0, left: 16, bottom: 0, right: 16))
       .setCornerRadius(16)
-      .setWidthAnchor(80)
       .setHeightAnchor(32)
       .build()
   }()
@@ -64,7 +64,7 @@ class AppRowCell: BaseCollectionViewCell {
 
     /// ------------
     ///                   | [nameLabel]    |
-    /// [imageView] - 4 - |      | 4       | - 4 - [getButton]
+    /// [imageView] - 4 - |      | 4       | - 4 - [UIVIew] - 4 - [getButton]
     ///                   | [companyLabel] |
     /// ------------
 
@@ -72,6 +72,7 @@ class AppRowCell: BaseCollectionViewCell {
       arrangedSubViews: [
         imageView,
         horizonStackView,
+        UIView(),
         getButton
       ])
       .setSpacing(4)

@@ -181,6 +181,11 @@ extension SearchResultCell: LookupViewModelBindable {
       .asDriverJustComplete()
       .drive(rx.updateScreenshots)
       .disposed(by: disposeBag)
+
+    viewModel.outputs.priceFormat
+      .asDriverJustComplete()
+      .drive(getButton.rx.updateNormalStateTitle)
+      .disposed(by: disposeBag)
   }
 }
 

@@ -825,6 +825,7 @@
 		29DACC99229640CD00184E59 /* AppDetail */ = {
 			isa = PBXGroup;
 			children = (
+				29E30FF8229AB6C20060804A /* AppDetailNavigationItem.swift */,
 				F426E9E5E27FA3F985392C26 /* AppDetailResultView.swift */,
 				F426E2EB711735338D481C34 /* AppDetailResultViewSpec.swift */,
 				F426EA56C4D0791B6BBE2B7C /* PreviewScreenshotsView.swift */,
@@ -832,7 +833,6 @@
 				F426E222E508A49332F48150 /* ReviewListView.swift */,
 				F426EECC773317113414DBFF /* ReviewListViewSpec.swift */,
 				29DACC9A229640E000184E59 /* Cell */,
-				29E30FF8229AB6C20060804A /* AppDetailNavigationItem.swift */,
 			);
 			path = AppDetail;
 			sourceTree = "<group>";
