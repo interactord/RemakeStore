@@ -45,7 +45,8 @@ class SearchResultCell: BaseCollectionViewCell {
   lazy var reviewCountLabel: UILabel = {
     return LabelBuilder()
       .setText("611k")
-      .setFont(DefaultTheme.Font.callout)
+      .setFont(DefaultTheme.Font.footnote)
+      .setTextColor(.lightGray)
       .build()
   }()
 
@@ -76,7 +77,9 @@ class SearchResultCell: BaseCollectionViewCell {
     let ratingSteckView = StackViewBuilder(arrangedSubViews: [
       ratingsView,
       reviewCountLabel
-    ]).build()
+    ])
+    .setSpacing(4)
+    .build()
 
     let verticalStackView = StackViewBuilder(arrangedSubViews: [
       nameLabel,
