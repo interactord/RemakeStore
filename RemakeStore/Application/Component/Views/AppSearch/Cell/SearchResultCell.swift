@@ -39,6 +39,8 @@ class SearchResultCell: BaseCollectionViewCell {
   lazy var categoryLabel: UILabel = {
     return LabelBuilder()
       .setText("Photo & Video")
+      .setTextColor(.darkGray)
+      .setFont(DefaultTheme.Font.footnote)
       .build()
   }()
 
@@ -74,7 +76,7 @@ class SearchResultCell: BaseCollectionViewCell {
   }()
 
   private lazy var infoTopStackView: UIStackView = {
-    let ratingSteckView = StackViewBuilder(arrangedSubViews: [
+    let ratingWrapperSteckView = StackViewBuilder(arrangedSubViews: [
       ratingsView,
       reviewCountLabel
     ])
@@ -84,8 +86,9 @@ class SearchResultCell: BaseCollectionViewCell {
     let verticalStackView = StackViewBuilder(arrangedSubViews: [
       nameLabel,
       categoryLabel,
-      ratingSteckView
+      ratingWrapperSteckView
     ])
+      .setSpacing(5)
       .setAxis(.vertical)
       .build()
 
