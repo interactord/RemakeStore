@@ -39,6 +39,7 @@ class MultipleAppCell: BaseCollectionViewCell {
     return ButtonBuilder()
       .setTitle("GET")
       .setBackgroundColor(DefaultTheme.Color.lightGrayColor)
+      .setFont(DefaultTheme.Font.bodyBold)
       .setCornerRadius(16)
       .setWidthAnchor(80)
       .setHeightAnchor(32)

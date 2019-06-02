@@ -67,7 +67,7 @@ class SearchResultCell: BaseCollectionViewCell {
   lazy var getButton: UIButton = {
     return ButtonBuilder()
       .setTitle("GET")
-      .setFont(DefaultTheme.Font.body)
+      .setFont(DefaultTheme.Font.bodyBold)
       .setWidthAnchor(80)
       .setHeightAnchor(32)
       .setBackgroundColor(DefaultTheme.Color.secondaryColor)

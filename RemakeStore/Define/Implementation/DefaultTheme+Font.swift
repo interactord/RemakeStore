@@ -31,6 +31,10 @@ extension DefaultTheme {
       return .systemFont(ofSize: 17, weight: .regular)
     }
 
+    static var bodyBold: UIFont {
+      return .systemFont(ofSize: 17, weight: .bold)
+    }
+
     static var callout: UIFont {
       return .systemFont(ofSize: 16, weight: .regular)
     }

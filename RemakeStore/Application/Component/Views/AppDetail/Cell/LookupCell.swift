@@ -50,7 +50,7 @@ class LookupCell: BaseCollectionViewCell {
   lazy var priceButton: UIButton = {
     return ButtonBuilder()
       .setTitle("$4.99")
-      .setFont(DefaultTheme.Font.headline)
+      .setFont(DefaultTheme.Font.bodyBold)
       .setBackgroundColor(DefaultTheme.Color.primaryColor)
       .setTitleColor(.white)
       .setCornerRadius(16)

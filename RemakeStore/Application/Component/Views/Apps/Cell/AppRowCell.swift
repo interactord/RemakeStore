@@ -37,7 +37,7 @@ class AppRowCell: BaseCollectionViewCell {
   lazy var getButton: UIButton = {
     return ButtonBuilder()
       .setTitle("GET")
-      .setFont(DefaultTheme.Font.body)
+      .setFont(DefaultTheme.Font.bodyBold)
       .setBackgroundColor(DefaultTheme.Color.lightGrayColor)
       .setCornerRadius(16)
       .setWidthAnchor(80)

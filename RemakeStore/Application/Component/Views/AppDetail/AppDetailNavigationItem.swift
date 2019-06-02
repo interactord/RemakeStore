@@ -38,7 +38,7 @@ class AppDetailNavigationItem: NSObject {
       .setTitleColor(.white)
       .setBackgroundColor(DefaultTheme.Color.primaryColor)
       .setCornerRadius(14)
-      .setFont(DefaultTheme.Font.subhead)
+      .setFont(DefaultTheme.Font.bodyBold)
       .setWidthAnchor(60)
       .setHeightAnchor(28)
       .setTag(itemTag)
